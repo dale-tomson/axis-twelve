@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axis Twelve - Examples & Demo</title>
-  <link rel="stylesheet" href="./dist/style.css">
+  <link rel="stylesheet" href="/axis-twelve/dist/style.css">
   <style>
     :root {
       --blue-primary: #007bff;
@@ -225,7 +225,20 @@
 
     /* Example card links already have good styling from .example-card, no additional styling needed */
   </style>
-</head>
+  <script>
+    // Fix CSS path for GitHub Pages deployment
+    const link = document.querySelector('link[rel="stylesheet"]');
+    if (link && link.href.includes('/axis-twelve/')) {
+      // Already GitHub Pages path, don't change
+    } else if (link && !window.location.hostname.includes('localhost')) {
+      // On GitHub Pages but relative path, fix it
+      const currentPath = window.location.pathname;
+      if (!currentPath.includes('/axis-twelve/')) {
+        link.href = '/axis-twelve/dist/style.css';
+      }
+    }
+  </script>
+  </head>
 <body>
   <header class="py-lg">
     <div class="center">
