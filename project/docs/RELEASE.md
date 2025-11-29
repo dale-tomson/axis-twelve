@@ -2,6 +2,29 @@
 
 This guide explains how to create releases for Axis Twelve with automated asset packaging.
 
+## Changelog Organization
+
+Axis Twelve uses a structured changelog approach:
+
+- **Main Changelog**: `CHANGELOG.md` - Overview of all versions with links
+- **Version Files**: `project/docs/changelog/v{VERSION}.md` - Detailed notes per version
+
+### Version File Structure
+
+Each version file includes:
+- **Release date** and type
+- **What's Changed** - Features, improvements, fixes
+- **Technical Details** - Architecture changes, performance improvements
+- **Migration Guide** - Upgrade instructions and breaking changes (if any)
+- **File Comparisons** - Size metrics showing optimization improvements
+- **Benefits** - Why users should upgrade
+
+### Example Version Files
+- [v0.0.1.md](../changelog/v0.0.1.md) - Initial release
+- [v0.0.2.md](../changelog/v0.0.2.md) - Performance & optimization
+
+---
+
 ## Release Types
 
 ### 1. Git Tag Release (Manual GitHub Release)
@@ -51,7 +74,22 @@ npm run release:github
 
 ## Release Workflow
 
-1. **Update version in package.json** (or let pre-commit hook do it)
+1. **Create changelog entry** (create new version file)
+   ```bash
+   # Create: project/docs/changelog/v{VERSION}.md
+   # Follow the format of previous versions (v0.0.1.md, v0.0.2.md)
+   # Include: What's Changed, Key Features, Migration Guide (if needed), File Size Comparison
+   ```
+
+2. **Update main CHANGELOG.md** (link to new version)
+   ```bash
+   # Edit: CHANGELOG.md
+   # Add entry to "Released Versions" section
+   # Link to: ./project/docs/changelog/v{VERSION}.md
+   # Update version table
+   ```
+
+3. **Update version in package.json** (or let pre-commit hook do it)
    ```bash
    # If you've modified SCSS, the pre-commit hook auto-bumps patch version
    git add src/scss/...
@@ -59,7 +97,7 @@ npm run release:github
    # Version bumped automatically
    ```
 
-2. **Create the release**
+4. **Create the release**
    ```bash
    # Option A: Manual git tag
    npm run release
@@ -68,7 +106,7 @@ npm run release:github
    npm run release:github
    ```
 
-3. **Verify release**
+5. **Verify release**
    - Visit: https://github.com/dale-tomson/axis-twelve/releases
    - Download and verify the dist tarball
 
