@@ -5,9 +5,11 @@
   "type": "module",
   "main": "dist/style.css",
   "exports": {
-    ".": "./dist/style.css",
+    ".": "./dist/style.min.css",
     "./style.css": "./dist/style.css",
-    "./src": "./src/scss/style.scss"
+    "./style.min.css": "./dist/style.min.css",
+    "./src": "./src/scss/style.scss",
+    "./package.json": "./package.json"
   },
   "files": [
     "dist",
@@ -17,7 +19,8 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "pnpm exec sass src/scss:dist --style=compressed",
+    "build": "pnpm exec sass src/scss/style.scss dist/style.min.css --style=compressed && pnpm exec sass src/scss/style.scss dist/style.css --style=expanded --no-source-map",
+    "build:watch": "pnpm exec sass src/scss:dist --watch",
     "watch": "pnpm exec sass --watch src/scss:dist",
     "dev": "pnpm exec sass src/scss:dist --no-source-map",
     "start": "node server.js",
