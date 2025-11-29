@@ -52,9 +52,8 @@
     "ui-framework"
   ],
   "categories": [
-    "Styling",
-    "Layout",
-    "Utilities"
+    "Formatters",
+    "Other"
   ],
   "repository": {
     "type": "git",
