@@ -35,7 +35,7 @@ Axis Twelve is a lightweight, responsive CSS framework built with SCSS that prov
 - **[Installation](installation.md)** - Get Axis Twelve up and running
 - **[Quick Start](quick-start.md)** - Create your first layout
 - **[Grid System](grid.md)** - Learn about the 12-column grid
-- **[Changelog](../CHANGELOG.md)** - View release notes and version history
+- **[Changelog](../CHANGELOG.md)** ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/CHANGELOG.md)) - View release notes and version history
 
 ## Development Setup
 
@@ -110,6 +110,6 @@ The framework is built on modern CSS features (CSS Grid, Flexbox) and uses SCSS 
 
 **Axis Twelve v0.0.2** - Latest stable release with optimized CSS (52KB minified)
 
-- ✨ [View v0.0.2 Release Notes](../project/docs/changelog/v0.0.2.md) - Performance & Optimization Release
-- 🎯 [View v0.0.1 Release Notes](../project/docs/changelog/v0.0.1.md) - Initial Release
-- 📋 [Full Changelog](../CHANGELOG.md) - All releases and updates
+- ✨ [View v0.0.2 Release Notes](../project/docs/changelog/v0.0.2.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v0.0.2.md)) - Performance & Optimization Release
+- 🎯 [View v0.0.1 Release Notes](../project/docs/changelog/v0.0.1.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v0.0.1.md)) - Initial Release
+- 📋 [Full Changelog](../CHANGELOG.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/CHANGELOG.md)) - All releases and updates

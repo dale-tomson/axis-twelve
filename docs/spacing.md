@@ -18,7 +18,7 @@ Axis Twelve uses a consistent spacing scale derived from a base `$spacer` unit:
 
 Additionally, numeric scale from 0-24 is available (0, 1, 2, 3, ... 24).
 
-> **v0.0.2 Update**: Spacing scale optimized from 34 to 20 values for better performance. See [v0.0.2 Release Notes](../CHANGELOG.md) for migration guide.
+> **v0.0.2 Update**: Spacing scale optimized from 34 to 20 values for better performance. See [v0.0.2 Release Notes](../CHANGELOG.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v0.0.2.md)) for migration guide.
 
 ## Padding
 
