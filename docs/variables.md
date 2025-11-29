@@ -91,7 +91,7 @@ $spacing-map: (
 );
 ```
 
-> **v0.0.2 Update**: Spacing scale optimized from 34 to 20 values. Large values (28-96rem) removed. See [Changelog](../CHANGELOG.md) for details.
+> **v0.0.2 Update**: Spacing scale optimized from 34 to 20 values. Large values (28-96rem) removed. See [Changelog](../CHANGELOG.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/CHANGELOG.md)) for details.
 
 ### Spacing Scale
 
