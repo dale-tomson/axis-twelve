@@ -8,16 +8,23 @@ The changelog is organized by version. Click on any version below to see detaile
 
 ## Released Versions
 
-### [v0.0.3](./project/docs/changelog/v0.0.3.md) - Code Quality & Cleanup
+### [v0.0.3](./project/docs/changelog/v0.0.3.md) - Code Quality & CDN Ready
 **November 29, 2025**
 
-🧹 **Code organization improvements** - Cleaner SCSS architecture with centralized utilities
+🧹 **Code organization + 📦 CDN improvements** - Cleaner SCSS architecture and production-ready distribution
 
 Key highlights:
 - Centralized spacing utilities (gap, margin-auto) in single module
 - Removed SCSS duplicates for better maintainability
+- **Minified & unminified CSS versions** for CDN distribution
+- **MIT License** - Free for commercial & private projects
+- GitHub Actions workflow optimized to deploy on relevant changes
 - Updated documentation to reflect architecture changes
 - No breaking changes
+
+CDN Ready:
+- Production: `https://unpkg.com/axis-twelve@0.0.3/dist/style.min.css`
+- Development: `https://unpkg.com/axis-twelve@0.0.3/dist/style.css`
 
 [Read full release notes →](./project/docs/changelog/v0.0.3.md)
 
@@ -93,7 +100,7 @@ npm update axis-twelve
 
 | Version | Date | Type | Key Changes |
 |---------|------|------|-------------|
-| v0.0.3 | Nov 29, 2025 | Code Quality | Centralized utilities, removed duplicates |
+| v0.0.3 | Nov 29, 2025 | Quality & CDN | Centralized utilities, minified/unminified versions, MIT License, workflow optimization |
 | v0.0.2 | Nov 29, 2025 | Optimization | 56% CSS reduction, 20 spacing values |
 | v0.0.1 | Nov 29, 2025 | Initial | Grid, flexbox, spacing, 6 breakpoints |
 
