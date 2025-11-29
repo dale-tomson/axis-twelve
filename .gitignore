@@ -5,9 +5,11 @@ package-lock.json
 yarn.lock
 
 # Build output
-dist/
+# dist/ is committed - needed for GitHub Pages deployment
 *.css
+!dist/
 !dist/style.css
+!dist/style.css.map
 
 # Development
 .env
