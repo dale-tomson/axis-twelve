@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# Pre-push hook: Ensure CHANGELOG is updated for version changes
+# This checks if package.json version differs from last pushed version
+# and verifies that CHANGELOG.md or version-specific files have been updated
+
+# Get the current version
+CURRENT_VERSION=$(grep '"version"' package.json | head -1 | sed -E 's/.*"version":\s*"([^"]+)".*/\1/')
+
+# Get list of commits to be pushed
+COMMITS_TO_PUSH=$(git rev-list @{u}..HEAD 2>/dev/null | wc -l)
+
+# If no commits to push, exit successfully
+if [ "$COMMITS_TO_PUSH" -eq 0 ]; then
+  exit 0
+fi
+
+echo "📋 Pre-push validation: Checking changelog..."
+echo "Current version: $CURRENT_VERSION"
+
+# Check if CHANGELOG.md has been modified in commits to push
+if git log @{u}..HEAD --name-only --pretty=format: | grep -q "CHANGELOG.md"; then
+  echo "✅ CHANGELOG.md updated in commits to push"
+  CHANGELOG_UPDATED=1
+else
+  CHANGELOG_UPDATED=0
+fi
+
+# Check if any version-specific changelog files have been updated
+if git log @{u}..HEAD --name-only --pretty=format: | grep -q "project/docs/changelog/"; then
+  echo "✅ Version changelog file updated in commits to push"
+  VERSION_FILE_UPDATED=1
+else
+  VERSION_FILE_UPDATED=0
+fi
+
+# If version changed in commits, changelog must be updated
+VERSION_CHANGED=$(git log @{u}..HEAD --name-only --pretty=format: | grep -q "package.json" && echo 1 || echo 0)
+
+if [ "$VERSION_CHANGED" -eq 1 ]; then
+  if [ "$CHANGELOG_UPDATED" -eq 0 ] && [ "$VERSION_FILE_UPDATED" -eq 0 ]; then
+    echo ""
+    echo "❌ Error: Version changed but CHANGELOG not updated!"
+    echo ""
+    echo "You must update one of the following:"
+    echo "  1. CHANGELOG.md - Main changelog overview"
+    echo "  2. project/docs/changelog/v${CURRENT_VERSION}.md - Version-specific changelog"
+    echo ""
+    echo "Example: Create project/docs/changelog/v${CURRENT_VERSION}.md with release notes"
+    echo ""
+    echo "Then run:"
+    echo "  git add CHANGELOG.md (or project/docs/changelog/v${CURRENT_VERSION}.md)"
+    echo "  git commit --amend --no-edit"
+    echo "  git push"
+    echo ""
+    exit 1
+  fi
+fi
+
+# Check if version file exists for current version
+VERSION_FILE="project/docs/changelog/v${CURRENT_VERSION}.md"
+if [ ! -f "$VERSION_FILE" ] && grep -q "v${CURRENT_VERSION}" CHANGELOG.md 2>/dev/null; then
+  echo "⚠️  Warning: CHANGELOG.md mentions v${CURRENT_VERSION} but version file doesn't exist"
+  echo "  Consider creating: $VERSION_FILE"
+fi
+
+echo "✅ Changelog validation passed"
+exit 0
