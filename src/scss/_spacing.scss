@@ -1,0 +1,237 @@
+// ===========================
+// Spacing Utilities (Padding & Margin)
+// ===========================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Padding Utilities
+// p-{size} - padding all sides
+// pt-{size} - padding top
+// pb-{size} - padding bottom
+// pl-{size} - padding left
+// pr-{size} - padding right
+// px-{size} - padding left & right
+// py-{size} - padding top & bottom
+
+@each $name, $value in $spacing-map {
+  .p-#{$name} {
+    padding: $value;
+  }
+
+  .pt-#{$name} {
+    padding-top: $value;
+  }
+
+  .pb-#{$name} {
+    padding-bottom: $value;
+  }
+
+  .pl-#{$name} {
+    padding-left: $value;
+  }
+
+  .pr-#{$name} {
+    padding-right: $value;
+  }
+
+  .px-#{$name} {
+    padding-right: $value;
+    padding-left: $value;
+  }
+
+  .py-#{$name} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+// Margin Utilities
+// m-{size} - margin all sides
+// mt-{size} - margin top
+// mb-{size} - margin bottom
+// ml-{size} - margin left
+// mr-{size} - margin right
+// mx-{size} - margin left & right
+// my-{size} - margin top & bottom
+
+@each $name, $value in $spacing-map {
+  .m-#{$name} {
+    margin: $value;
+  }
+
+  .mt-#{$name} {
+    margin-top: $value;
+  }
+
+  .mb-#{$name} {
+    margin-bottom: $value;
+  }
+
+  .ml-#{$name} {
+    margin-left: $value;
+  }
+
+  .mr-#{$name} {
+    margin-right: $value;
+  }
+
+  .mx-#{$name} {
+    margin-right: $value;
+    margin-left: $value;
+  }
+
+  .my-#{$name} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}
+
+// Auto Margin Utilities
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+// Responsive Padding Utilities
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint) {
+      @each $name, $value in $spacing-map {
+        .p-#{$breakpoint}-#{$name} {
+          padding: $value;
+        }
+
+        .pt-#{$breakpoint}-#{$name} {
+          padding-top: $value;
+        }
+
+        .pb-#{$breakpoint}-#{$name} {
+          padding-bottom: $value;
+        }
+
+        .pl-#{$breakpoint}-#{$name} {
+          padding-left: $value;
+        }
+
+        .pr-#{$breakpoint}-#{$name} {
+          padding-right: $value;
+        }
+
+        .px-#{$breakpoint}-#{$name} {
+          padding-right: $value;
+          padding-left: $value;
+        }
+
+        .py-#{$breakpoint}-#{$name} {
+          padding-top: $value;
+          padding-bottom: $value;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Margin Utilities
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint) {
+      @each $name, $value in $spacing-map {
+        .m-#{$breakpoint}-#{$name} {
+          margin: $value;
+        }
+
+        .mt-#{$breakpoint}-#{$name} {
+          margin-top: $value;
+        }
+
+        .mb-#{$breakpoint}-#{$name} {
+          margin-bottom: $value;
+        }
+
+        .ml-#{$breakpoint}-#{$name} {
+          margin-left: $value;
+        }
+
+        .mr-#{$breakpoint}-#{$name} {
+          margin-right: $value;
+        }
+
+        .mx-#{$breakpoint}-#{$name} {
+          margin-right: $value;
+          margin-left: $value;
+        }
+
+        .my-#{$breakpoint}-#{$name} {
+          margin-top: $value;
+          margin-bottom: $value;
+        }
+      }
+    }
+  }
+}
+
+// Gap Utilities (for flex and grid)
+// gap-{size} - gap for both flex and grid
+// gap-x-{size} - column gap (gap-column)
+// gap-y-{size} - row gap (gap-row)
+
+@each $name, $value in $spacing-map {
+  .gap-#{$name} {
+    gap: $value;
+  }
+
+  .gap-x-#{$name} {
+    column-gap: $value;
+  }
+
+  .gap-y-#{$name} {
+    row-gap: $value;
+  }
+}
+
+// Responsive Gap Utilities
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint) {
+      @each $name, $value in $spacing-map {
+        .gap-#{$breakpoint}-#{$name} {
+          gap: $value;
+        }
+
+        .gap-x-#{$breakpoint}-#{$name} {
+          column-gap: $value;
+        }
+
+        .gap-y-#{$breakpoint}-#{$name} {
+          row-gap: $value;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axis Twelve - Flexbox Examples</title>
+  <link rel="stylesheet" href="../dist/style.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 2rem;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .example-section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .example-section h2 {
+      margin-bottom: 1.5rem;
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+    }
+
+    .example-section h3 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #495057;
+    }
+
+    .demo-item {
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 500;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .demo-item.alt1 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .demo-item.alt2 {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .demo-item.alt3 {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+
+    .flex-demo {
+      background: #f0f0f0;
+      padding: 2rem;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: #d63384;
+    }
+
+    .example-code {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    h1 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      text-align: center;
+      color: #6c757d;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Axis Twelve Flexbox</h1>
+  <p class="tagline">Build faster, center easier. The 12-column solution.</p>
+
+  <!-- Basic Flex Layouts -->
+  <div class="example-section">
+    <h2>Basic Flex Layouts</h2>
+
+    <h3>Simple Row (Default)</h3>
+    <div class="flex gap-md flex-demo">
+      <div class="demo-item" style="flex: 1;">Item 1</div>
+      <div class="demo-item alt1" style="flex: 1;">Item 2</div>
+      <div class="demo-item alt2" style="flex: 1;">Item 3</div>
+    </div>
+
+    <h3>Column Layout</h3>
+    <div class="flex flex-column gap-md flex-demo">
+      <div class="demo-item">Item 1</div>
+      <div class="demo-item alt1">Item 2</div>
+      <div class="demo-item alt2">Item 3</div>
+    </div>
+
+    <h3>Flex with Fixed Width Items</h3>
+    <div class="flex gap-md flex-demo">
+      <div class="demo-item" style="width: 100px;">100px</div>
+      <div class="demo-item alt1" style="flex: 1;">Flexible</div>
+      <div class="demo-item alt2" style="width: 150px;">150px</div>
+    </div>
+
+    <div class="example-code">&lt;div class="flex gap-md"&gt;
+  &lt;div style="flex: 1;"&gt;Item 1&lt;/div&gt;
+  &lt;div style="flex: 1;"&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Justify Content -->
+  <div class="example-section">
+    <h2>Justify Content (Horizontal Alignment)</h2>
+
+    <h3>Justify Start (Default)</h3>
+    <div class="flex justify-start gap-md flex-demo">
+      <div class="demo-item">Item</div>
+      <div class="demo-item alt1">Item</div>
+    </div>
+
+    <h3>Justify Center</h3>
+    <div class="flex justify-center gap-md flex-demo">
+      <div class="demo-item">Item</div>
+      <div class="demo-item alt1">Item</div>
+    </div>
+
+    <h3>Justify End</h3>
+    <div class="flex justify-end gap-md flex-demo">
+      <div class="demo-item">Item</div>
+      <div class="demo-item alt1">Item</div>
+    </div>
+
+    <h3>Justify Between</h3>
+    <div class="flex justify-between gap-md flex-demo">
+      <div class="demo-item">Left</div>
+      <div class="demo-item alt1">Right</div>
+    </div>
+
+    <h3>Justify Around</h3>
+    <div class="flex justify-around gap-md flex-demo">
+      <div class="demo-item">Item</div>
+      <div class="demo-item alt1">Item</div>
+      <div class="demo-item alt2">Item</div>
+    </div>
+
+    <h3>Justify Evenly</h3>
+    <div class="flex justify-evenly gap-md flex-demo">
+      <div class="demo-item">Item</div>
+      <div class="demo-item alt1">Item</div>
+      <div class="demo-item alt2">Item</div>
+    </div>
+
+    <div class="example-code">&lt;div class="flex justify-center gap-md"&gt;
+  &lt;div&gt;Centered Items&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Align Items -->
+  <div class="example-section">
+    <h2>Align Items (Vertical Alignment)</h2>
+
+    <h3>Align Start</h3>
+    <div class="flex items-start gap-md flex-demo" style="min-height: 120px;">
+      <div class="demo-item" style="height: 60px;">Item 1</div>
+      <div class="demo-item alt1" style="height: 100px;">Item 2</div>
+      <div class="demo-item alt2" style="height: 80px;">Item 3</div>
+    </div>
+
+    <h3>Align Center</h3>
+    <div class="flex items-center gap-md flex-demo" style="min-height: 120px;">
+      <div class="demo-item" style="height: 60px;">Item 1</div>
+      <div class="demo-item alt1" style="height: 100px;">Item 2</div>
+      <div class="demo-item alt2" style="height: 80px;">Item 3</div>
+    </div>
+
+    <h3>Align End</h3>
+    <div class="flex items-end gap-md flex-demo" style="min-height: 120px;">
+      <div class="demo-item" style="height: 60px;">Item 1</div>
+      <div class="demo-item alt1" style="height: 100px;">Item 2</div>
+      <div class="demo-item alt2" style="height: 80px;">Item 3</div>
+    </div>
+
+    <h3>Align Stretch</h3>
+    <div class="flex items-stretch gap-md flex-demo" style="min-height: 120px;">
+      <div class="demo-item" style="flex: 1;">Item 1</div>
+      <div class="demo-item alt1" style="flex: 1;">Item 2</div>
+      <div class="demo-item alt2" style="flex: 1;">Item 3</div>
+    </div>
+
+    <div class="example-code">&lt;div class="flex items-center gap-md"&gt;
+  &lt;div&gt;Vertically Centered&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Combined Alignments -->
+  <div class="example-section">
+    <h2>Combined Alignments</h2>
+
+    <h3>Center Both Directions</h3>
+    <div class="flex justify-center items-center flex-demo" style="min-height: 200px;">
+      <div class="demo-item">Perfectly Centered</div>
+    </div>
+
+    <h3>Space Between with Vertical Center</h3>
+    <div class="flex justify-between items-center flex-demo" style="min-height: 120px;">
+      <div class="demo-item" style="width: 150px;">Left</div>
+      <div class="demo-item alt1" style="width: 150px;">Center</div>
+      <div class="demo-item alt2" style="width: 150px;">Right</div>
+    </div>
+
+    <h3>Navigation Bar Pattern</h3>
+    <div class="flex justify-between items-center flex-demo">
+      <div class="demo-item" style="flex: 0 0 auto;">Logo</div>
+      <div class="flex gap-md">
+        <div class="demo-item alt1" style="width: 80px; height: 40px; font-size: 0.9rem;">Home</div>
+        <div class="demo-item alt1" style="width: 80px; height: 40px; font-size: 0.9rem;">About</div>
+        <div class="demo-item alt1" style="width: 80px; height: 40px; font-size: 0.9rem;">Contact</div>
+      </div>
+      <div class="demo-item alt2" style="flex: 0 0 auto;">User</div>
+    </div>
+
+    <div class="example-code">&lt;div class="flex justify-between items-center"&gt;
+  &lt;div&gt;Logo&lt;/div&gt;
+  &lt;div&gt;Menu&lt;/div&gt;
+  &lt;div&gt;User&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Flex Wrapping -->
+  <div class="example-section">
+    <h2>Flex Wrapping & Gaps</h2>
+
+    <h3>Flex Wrap with Gap</h3>
+    <div class="flex flex-wrap gap-md flex-demo">
+      <div class="demo-item" style="width: 150px;">Item 1</div>
+      <div class="demo-item alt1" style="width: 150px;">Item 2</div>
+      <div class="demo-item alt2" style="width: 150px;">Item 3</div>
+      <div class="demo-item alt3" style="width: 150px;">Item 4</div>
+      <div class="demo-item" style="width: 150px;">Item 5</div>
+    </div>
+
+    <h3>Gap Utilities</h3>
+    <p style="margin-bottom: 1rem;"><code>gap-sm</code> - Small gap</p>
+    <div class="flex gap-sm flex-demo">
+      <div class="demo-item" style="flex: 1;">Item</div>
+      <div class="demo-item alt1" style="flex: 1;">Item</div>
+      <div class="demo-item alt2" style="flex: 1;">Item</div>
+    </div>
+
+    <p style="margin-bottom: 1rem; margin-top: 2rem;"><code>gap-md</code> - Medium gap</p>
+    <div class="flex gap-md flex-demo">
+      <div class="demo-item" style="flex: 1;">Item</div>
+      <div class="demo-item alt1" style="flex: 1;">Item</div>
+      <div class="demo-item alt2" style="flex: 1;">Item</div>
+    </div>
+
+    <p style="margin-bottom: 1rem; margin-top: 2rem;"><code>gap-lg</code> - Large gap</p>
+    <div class="flex gap-lg flex-demo">
+      <div class="demo-item" style="flex: 1;">Item</div>
+      <div class="demo-item alt1" style="flex: 1;">Item</div>
+      <div class="demo-item alt2" style="flex: 1;">Item</div>
+    </div>
+  </div>
+
+  <!-- Practical Examples -->
+  <div class="example-section">
+    <h2>Practical Examples</h2>
+
+    <h3>Card List</h3>
+    <div class="flex flex-wrap gap-lg flex-demo">
+      <div style="flex: 1 1 200px; background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div style="background: #667eea; color: white; padding: 1rem; height: 100px; display: flex; align-items: center; justify-content: center;">Card 1</div>
+        <div style="padding: 1rem;">Card content here</div>
+      </div>
+      <div style="flex: 1 1 200px; background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div style="background: #f093fb; color: white; padding: 1rem; height: 100px; display: flex; align-items: center; justify-content: center;">Card 2</div>
+        <div style="padding: 1rem;">Card content here</div>
+      </div>
+      <div style="flex: 1 1 200px; background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div style="background: #4facfe; color: white; padding: 1rem; height: 100px; display: flex; align-items: center; justify-content: center;">Card 3</div>
+        <div style="padding: 1rem;">Card content here</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 3rem;">Button Group</h3>
+    <div class="flex gap-sm flex-demo">
+      <button style="padding: 0.75rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Primary</button>
+      <button style="padding: 0.75rem 1.5rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">Secondary</button>
+      <button style="padding: 0.75rem 1.5rem; background: #f8f9fa; color: #333; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">Tertiary</button>
+    </div>
+
+    <div class="example-code">&lt;div class="flex gap-sm"&gt;
+  &lt;button&gt;Primary&lt;/button&gt;
+  &lt;button&gt;Secondary&lt;/button&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <footer style="text-align: center; margin-top: 3rem; padding: 2rem; color: #6c757d;">
+    <p>Axis Twelve - Build faster, center easier</p>
+  </footer>
+</body>
+</html>

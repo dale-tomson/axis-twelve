@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axis Twelve - Spacing Examples</title>
+  <link rel="stylesheet" href="../dist/style.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 2rem;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .example-section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .example-section h2 {
+      margin-bottom: 1.5rem;
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+    }
+
+    .example-section h3 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #495057;
+    }
+
+    .demo-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1rem;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .demo-box.alt1 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .demo-box.alt2 {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .demo-container {
+      background: #f0f0f0;
+      border-radius: 4px;
+      border: 2px dashed #ccc;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: #d63384;
+    }
+
+    .example-code {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    h1 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      text-align: center;
+      color: #6c757d;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+
+    .spacing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .spacing-table th,
+    .spacing-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .spacing-table th {
+      background: #e7f1ff;
+      color: #007bff;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <h1>Axis Twelve Spacing</h1>
+  <p class="tagline">Build faster, center easier. The 12-column solution.</p>
+
+  <!-- Spacing Scale -->
+  <div class="example-section">
+    <h2>Spacing Scale</h2>
+
+    <h3>Named Sizes</h3>
+    <table class="spacing-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Value</th>
+          <th>Padding Class</th>
+          <th>Margin Class</th>
+          <th>Gap Class</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>xs</td>
+          <td>0.25rem (4px)</td>
+          <td><code>.p-xs</code></td>
+          <td><code>.m-xs</code></td>
+          <td><code>.gap-xs</code></td>
+        </tr>
+        <tr>
+          <td>sm</td>
+          <td>0.5rem (8px)</td>
+          <td><code>.p-sm</code></td>
+          <td><code>.m-sm</code></td>
+          <td><code>.gap-sm</code></td>
+        </tr>
+        <tr>
+          <td>md</td>
+          <td>1rem (16px)</td>
+          <td><code>.p-md</code></td>
+          <td><code>.m-md</code></td>
+          <td><code>.gap-md</code></td>
+        </tr>
+        <tr>
+          <td>lg</td>
+          <td>1.5rem (24px)</td>
+          <td><code>.p-lg</code></td>
+          <td><code>.m-lg</code></td>
+          <td><code>.gap-lg</code></td>
+        </tr>
+        <tr>
+          <td>xl</td>
+          <td>2rem (32px)</td>
+          <td><code>.p-xl</code></td>
+          <td><code>.m-xl</code></td>
+          <td><code>.gap-xl</code></td>
+        </tr>
+        <tr>
+          <td>2xl</td>
+          <td>3rem (48px)</td>
+          <td><code>.p-2xl</code></td>
+          <td><code>.m-2xl</code></td>
+          <td><code>.gap-2xl</code></td>
+        </tr>
+        <tr>
+          <td>3xl</td>
+          <td>4rem (64px)</td>
+          <td><code>.p-3xl</code></td>
+          <td><code>.m-3xl</code></td>
+          <td><code>.gap-3xl</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Padding Examples -->
+  <div class="example-section">
+    <h2>Padding (Internal Spacing)</h2>
+
+    <h3>Padding All Sides</h3>
+    <div class="demo-container">
+      <div class="p-xs demo-box">p-xs (4px)</div>
+      <div class="p-sm demo-box" style="margin-top: 1rem;">p-sm (8px)</div>
+      <div class="p-md demo-box alt1" style="margin-top: 1rem;">p-md (16px)</div>
+      <div class="p-lg demo-box alt2" style="margin-top: 1rem;">p-lg (24px)</div>
+    </div>
+
+    <h3>Padding Specific Sides</h3>
+    <p><code>.pt-[size]</code> - Top, <code>.pb-[size]</code> - Bottom, <code>.pl-[size]</code> - Left, <code>.pr-[size]</code> - Right</p>
+    <div class="demo-container">
+      <div class="pt-lg pb-lg demo-box">Vertical Padding (Top & Bottom)</div>
+      <div class="pl-lg pr-lg demo-box alt1" style="margin-top: 1rem;">Horizontal Padding (Left & Right)</div>
+    </div>
+
+    <h3>Padding Directions</h3>
+    <p><code>.pv-[size]</code> - Vertical, <code>.ph-[size]</code> - Horizontal</p>
+    <div class="demo-container">
+      <div class="pv-md demo-box">Vertical: pv-md</div>
+      <div class="ph-md demo-box alt1" style="margin-top: 1rem;">Horizontal: ph-md</div>
+    </div>
+
+    <div class="example-code">&lt;div class="p-md"&gt;Padded on all sides&lt;/div&gt;
+&lt;div class="pt-lg pb-lg"&gt;Vertical padding&lt;/div&gt;
+&lt;div class="ph-lg"&gt;Horizontal padding&lt;/div&gt;</div>
+  </div>
+
+  <!-- Margin Examples -->
+  <div class="example-section">
+    <h2>Margin (External Spacing)</h2>
+
+    <h3>Margin All Sides</h3>
+    <div class="demo-container">
+      <div class="m-2 demo-box">m-2 (8px)</div>
+      <div class="m-4 demo-box alt1">m-4 (16px)</div>
+      <div class="m-6 demo-box alt2">m-6 (24px)</div>
+    </div>
+
+    <h3>Margin Specific Sides</h3>
+    <p><code>.mt-[size]</code> - Top, <code>.mb-[size]</code> - Bottom, <code>.ml-[size]</code> - Left, <code>.mr-[size]</code> - Right</p>
+    <div class="demo-container">
+      <div class="mb-4 demo-box" style="margin: 0;">mb-4 (16px bottom margin)</div>
+      <div class="ml-4 demo-box alt1" style="margin: 0;">ml-4 (16px left margin)</div>
+    </div>
+
+    <h3>Margin Directions</h3>
+    <p><code>.mv-[size]</code> - Vertical, <code>.mh-[size]</code> - Horizontal, <code>.mx-auto</code> - Center horizontally</p>
+    <div class="demo-container">
+      <div class="mx-auto demo-box" style="width: 200px; text-align: center;">mx-auto (Centered)</div>
+    </div>
+
+    <div class="example-code">&lt;div class="m-4"&gt;Margin on all sides&lt;/div&gt;
+&lt;div class="mb-4"&gt;Bottom margin&lt;/div&gt;
+&lt;div class="mx-auto"&gt;Centered with auto margin&lt;/div&gt;</div>
+  </div>
+
+  <!-- Combined Spacing -->
+  <div class="example-section">
+    <h2>Combined Spacing</h2>
+
+    <h3>Padding + Margin Together</h3>
+    <div class="demo-container">
+      <div class="p-4 m-2 demo-box">p-4 + m-2 (Padding inside, Margin outside)</div>
+    </div>
+
+    <h3>Form Field Spacing</h3>
+    <div class="demo-container">
+      <div style="margin-bottom: 1.5rem;">
+        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Name</label>
+        <input type="text" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;">
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+        <input type="email" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;">
+      </div>
+      <div>
+        <button style="padding: 0.75rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
+      </div>
+    </div>
+
+    <div class="example-code">&lt;form class="p-4"&gt;
+  &lt;div class="mb-4"&gt;
+    &lt;label&gt;Name&lt;/label&gt;
+    &lt;input type="text" class="mt-2"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</div>
+  </div>
+
+  <!-- Numeric Spacing Scale -->
+  <div class="example-section">
+    <h2>Numeric Spacing Scale (0-96)</h2>
+
+    <h3>Numeric Padding</h3>
+    <p>Use <code>.p-0</code>, <code>.p-1</code>, <code>.p-2</code>, <code>.p-3</code>, etc. up to <code>.p-96</code></p>
+    <div class="demo-container">
+      <div class="p-1 demo-box">p-1</div>
+      <div class="p-2 demo-box alt1" style="margin-top: 1rem;">p-2</div>
+      <div class="p-4 demo-box alt2" style="margin-top: 1rem;">p-4</div>
+      <div class="p-8 demo-box" style="margin-top: 1rem;">p-8</div>
+    </div>
+
+    <h3>Numeric Margin</h3>
+    <p>Use <code>.m-0</code>, <code>.m-1</code>, <code>.m-2</code>, <code>.m-3</code>, etc. up to <code>.m-96</code></p>
+    <div class="demo-container">
+      <div class="m-2 demo-box">m-2</div>
+      <div class="m-4 demo-box alt1" style="margin: 1rem 0 0 0;">m-4</div>
+      <div class="m-6 demo-box alt2" style="margin: 1rem 0 0 0;">m-6</div>
+    </div>
+
+    <div class="example-code">&lt;div class="p-2"&gt;Padding: 0.5rem&lt;/div&gt;
+&lt;div class="p-4"&gt;Padding: 1rem&lt;/div&gt;
+&lt;div class="p-8"&gt;Padding: 2rem&lt;/div&gt;</div>
+  </div>
+
+  <!-- Responsive Spacing -->
+  <div class="example-section">
+    <h2>Responsive Spacing</h2>
+
+    <h3>Responsive Padding</h3>
+    <p>Different padding at different breakpoints</p>
+    <div class="p-2 md:p-4 lg:p-6 demo-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+      <strong>Resize window to see responsive padding change:</strong><br>
+      Mobile: p-2 | Tablet: p-4 | Desktop: p-6
+    </div>
+
+    <h3>Responsive Margin</h3>
+    <p>Different margin at different breakpoints</p>
+    <div class="demo-container">
+      <div class="m-2 md:m-4 lg:m-6 demo-box alt1">
+        Mobile: m-2 | Tablet: m-4 | Desktop: m-6
+      </div>
+    </div>
+
+    <div class="example-code">&lt;div class="p-2 md:p-4 lg:p-6"&gt;
+  Responsive padding
+&lt;/div&gt;
+
+&lt;div class="m-2 md:m-4 lg:m-6"&gt;
+  Responsive margin
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Card Example -->
+  <div class="example-section">
+    <h2>Practical Example: Card Layout</h2>
+
+    <h3>Card with Spacing</h3>
+    <div class="grid gap-md">
+      <div class="col-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">Card Header</div>
+        <div class="p-4">
+          <h4 style="margin-top: 0; color: #007bff;">Card Title</h4>
+          <p style="margin-bottom: 0; color: #666;">Card description goes here with proper spacing.</p>
+        </div>
+      </div>
+
+      <div class="col-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
+        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">Card Header</div>
+        <div class="p-4">
+          <h4 style="margin-top: 0; color: #007bff;">Card Title</h4>
+          <p style="margin-bottom: 0; color: #666;">Card description goes here with proper spacing.</p>
+        </div>
+      </div>
+
+      <div class="col-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
+        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">Card Header</div>
+        <div class="p-4">
+          <h4 style="margin-top: 0; color: #007bff;">Card Title</h4>
+          <p style="margin-bottom: 0; color: #666;">Card description goes here with proper spacing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align: center; margin-top: 3rem; padding: 2rem; color: #6c757d;">
+    <p>Axis Twelve - Build faster, center easier</p>
+  </footer>
+</body>
+</html>

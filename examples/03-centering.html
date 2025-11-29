@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axis Twelve - Centering Examples</title>
+  <link rel="stylesheet" href="../dist/style.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 2rem;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .example-section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .example-section h2 {
+      margin-bottom: 1.5rem;
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+    }
+
+    .example-section h3 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #495057;
+    }
+
+    .centered-container {
+      background: #f0f0f0;
+      border-radius: 4px;
+      border: 2px dashed #ccc;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .demo-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 500;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .demo-box.alt1 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .demo-box.alt2 {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: #d63384;
+    }
+
+    .example-code {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    h1 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      text-align: center;
+      color: #6c757d;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Axis Twelve Centering</h1>
+  <p class="tagline">Build faster, center easier. The 12-column solution.</p>
+
+  <!-- Row Component -->
+  <div class="example-section">
+    <h2>Row Component</h2>
+
+    <h3>Basic Row - Horizontal Centering</h3>
+    <div class="row center centered-container">
+      <div class="column">
+        <div class="demo-box">Horizontally Centered</div>
+      </div>
+    </div>
+
+    <h3>Row with Content</h3>
+    <div class="row centered-container">
+      <div class="column">
+        <h3 style="text-align: center; margin-top: 0; color: #007bff;">Row Component</h3>
+        <p style="text-align: center; color: #666;">This content is centered with consistent max-width using the .row and .column components.</p>
+        <p style="text-align: center; color: #666;">Perfect for page layouts and article content.</p>
+      </div>
+    </div>
+
+    <div class="example-code">&lt;div class="row"&gt;
+  &lt;div class="column"&gt;
+    &lt;h1&gt;Centered Content&lt;/h1&gt;
+    &lt;p&gt;Your content here&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Column Component -->
+  <div class="example-section">
+    <h2>Column Component</h2>
+
+    <h3>Column - Centered Items</h3>
+    <div class="column center centered-container" style="min-height: 200px;">
+      <div class="demo-box" style="width: 100%; max-width: 300px;">Item 1</div>
+      <div class="demo-box alt1" style="width: 100%; max-width: 300px; margin-top: 1rem;">Item 2</div>
+    </div>
+
+    <h3>Column - Vertical Centering</h3>
+    <div class="column center-v centered-container" style="min-height: 300px;">
+      <div class="demo-box">Vertically Centered Item</div>
+    </div>
+
+    <h3>Column - Multiple Items</h3>
+    <div class="column centered-container">
+      <div class="demo-box">Column Item 1</div>
+      <div class="demo-box alt1" style="margin-top: 1rem;">Column Item 2</div>
+      <div class="demo-box alt2" style="margin-top: 1rem;">Column Item 3</div>
+    </div>
+
+    <div class="example-code">&lt;div class="column center"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Flexbox Centering -->
+  <div class="example-section">
+    <h2>Flexbox Centering</h2>
+
+    <h3>Center Horizontally with Flexbox</h3>
+    <div class="flex justify-center centered-container">
+      <div class="demo-box" style="width: 300px;">Horizontally Centered</div>
+    </div>
+
+    <h3>Center Vertically with Flexbox</h3>
+    <div class="flex items-center centered-container" style="min-height: 200px;">
+      <div class="demo-box" style="width: 100%;">Vertically Centered</div>
+    </div>
+
+    <h3>Center Both Directions (Perfect Center)</h3>
+    <div class="flex justify-center items-center centered-container" style="min-height: 250px;">
+      <div class="demo-box" style="width: 300px;">Perfectly Centered</div>
+    </div>
+
+    <h3>Multiple Items - Center Group</h3>
+    <div class="flex justify-center items-center gap-md centered-container" style="min-height: 200px;">
+      <div class="demo-box" style="width: 150px;">Item 1</div>
+      <div class="demo-box alt1" style="width: 150px;">Item 2</div>
+      <div class="demo-box alt2" style="width: 150px;">Item 3</div>
+    </div>
+
+    <div class="example-code">&lt;div class="flex justify-center items-center"&gt;
+  &lt;div&gt;Perfectly Centered&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Grid Offset Centering -->
+  <div class="example-section">
+    <h2>Grid Offset Centering</h2>
+
+    <h3>Single Centered Column (offset-3 col-6)</h3>
+    <div class="grid gap-md centered-container">
+      <div class="offset-3 col-6 demo-box">Centered Column</div>
+    </div>
+
+    <h3>Multiple Centered Columns</h3>
+    <div class="grid gap-md centered-container">
+      <div class="offset-2 col-8 demo-box">Offset 2, Col 8</div>
+      <div class="offset-4 col-4 demo-box alt1" style="margin-top: 1rem;">Offset 4, Col 4</div>
+    </div>
+
+    <div class="example-code">&lt;div class="grid"&gt;
+  &lt;div class="offset-3 col-6"&gt;Centered&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Hero Sections -->
+  <div class="example-section">
+    <h2>Hero Section Examples</h2>
+
+    <h3>Hero with Flexbox</h3>
+    <div class="flex justify-center items-center flex-column centered-container" style="min-height: 300px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+      <h2 style="color: white; margin-top: 0; font-size: 2.5rem;">Welcome</h2>
+      <p style="color: rgba(255,255,255,0.9); text-align: center; margin: 0;">This is a hero section with flexbox centering</p>
+    </div>
+
+    <h3>Hero with Row Component</h3>
+    <div class="row centered-container" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 4rem 2rem;">
+      <div class="column">
+        <h2 style="color: white; margin-top: 0; text-align: center; font-size: 2.5rem;">Welcome</h2>
+        <p style="color: rgba(255,255,255,0.9); text-align: center; margin-bottom: 0;">This is a hero section with row and column components</p>
+      </div>
+    </div>
+
+    <div class="example-code">&lt;div class="flex justify-center items-center flex-column"&gt;
+  &lt;h1&gt;Welcome&lt;/h1&gt;
+  &lt;p&gt;Your content here&lt;/p&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Modal / Dialog Examples -->
+  <div class="example-section">
+    <h2>Modal / Dialog Pattern</h2>
+
+    <h3>Centered Modal Dialog</h3>
+    <div class="flex justify-center items-center centered-container" style="min-height: 300px;">
+      <div style="background: white; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); width: 400px; padding: 2rem;">
+        <h3 style="margin-top: 0; color: #007bff; text-align: center;">Modal Dialog</h3>
+        <p style="text-align: center; color: #666; margin: 1rem 0;">This is a centered modal dialog. It's perfectly centered both horizontally and vertically.</p>
+        <div class="flex gap-md" style="justify-content: center; margin-top: 2rem;">
+          <button style="padding: 0.75rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">OK</button>
+          <button style="padding: 0.75rem 1.5rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-code">&lt;div class="flex justify-center items-center"&gt;
+  &lt;div class="modal"&gt;
+    &lt;h3&gt;Modal Content&lt;/h3&gt;
+    &lt;p&gt;Dialog text&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Common Patterns -->
+  <div class="example-section">
+    <h2>Common Centering Patterns</h2>
+
+    <h3>Centered Button</h3>
+    <div class="flex justify-center centered-container">
+      <button style="padding: 1rem 2rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; font-weight: 500;">Click Me</button>
+    </div>
+
+    <h3>Centered Icon with Text</h3>
+    <div class="flex justify-center items-center flex-column centered-container" style="min-height: 200px;">
+      <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
+      <h3 style="margin: 0; color: #007bff;">Success!</h3>
+      <p style="color: #666; text-align: center;">Your action was completed successfully</p>
+    </div>
+
+    <h3>Centered Text Block</h3>
+    <div class="row centered-container" style="text-align: center;">
+      <div class="column">
+        <h2 style="color: #007bff; margin-top: 0;">Centered Heading</h2>
+        <p style="color: #666;">This paragraph is centered and has a comfortable reading width.</p>
+        <p style="color: #666;">Multiple paragraphs can be centered together.</p>
+      </div>
+    </div>
+
+    <div class="example-code">&lt;div class="row"&gt;
+  &lt;div class="column"&gt;
+    &lt;h2 style="text-align: center;"&gt;Centered&lt;/h2&gt;
+    &lt;p style="text-align: center;"&gt;Content&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <footer style="text-align: center; margin-top: 3rem; padding: 2rem; color: #6c757d;">
+    <p>Axis Twelve - Build faster, center easier</p>
+  </footer>
+</body>
+</html>
