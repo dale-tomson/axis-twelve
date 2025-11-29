@@ -4,6 +4,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'docs/**'
+      - 'src/scss/**'
+      - 'dist/**'
+      - 'index.html'
+      - 'CHANGELOG.md'
+      - 'package.json'
+      - '.github/workflows/deploy.yml'
 
 permissions:
   contents: write
