@@ -16,7 +16,9 @@ Axis Twelve uses a consistent spacing scale derived from a base `$spacer` unit:
 | 2xl | `p-2xl` `m-2xl` | 3rem (48px) |
 | 3xl | `p-3xl` `m-3xl` | 4rem (64px) |
 
-Additionally, numeric scale from 0-96 is available (0, 1, 2, 3, ... 96).
+Additionally, numeric scale from 0-24 is available (0, 1, 2, 3, ... 24).
+
+> **v0.0.2 Update**: Spacing scale optimized from 34 to 20 values for better performance. See [v0.0.2 Release Notes](../CHANGELOG.md) for migration guide.
 
 ## Padding
 
@@ -165,7 +167,7 @@ Apply different spacing at different breakpoints:
 
 ## Numeric Spacing Scale
 
-For precise control, use the numeric scale (0-96):
+For precise control, use the numeric scale (0-24):
 
 ```html
 <!-- Padding -->
@@ -174,12 +176,13 @@ For precise control, use the numeric scale (0-96):
 <div class="p-4">4 units padding</div>
 <div class="p-8">8 units padding</div>
 <div class="p-16">16 units padding</div>
+<div class="p-24">24 units padding (maximum)</div>
 
 <!-- Margins -->
 <div class="m-1">1 unit margin</div>
 <div class="m-3">3 units margin</div>
-<div class="m-5">5 units margin</div>
-<div class="m-10">10 units margin</div>
+<div class="m-6">6 units margin</div>
+<div class="m-12">12 units margin</div>
 ```
 
 ## Negative Margins

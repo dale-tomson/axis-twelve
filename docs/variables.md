@@ -87,9 +87,11 @@ $spacing-map: (
   xl: $spacer * 8,      // 2rem (32px)
   2xl: $spacer * 12,    // 3rem (48px)
   3xl: $spacer * 16,    // 4rem (64px)
-  // ... numeric scale from 0-96
+  0, 1, 2, 3, 4, 6, 8, 10, 12, 16, 20, 24, 32
 );
 ```
+
+> **v0.0.2 Update**: Spacing scale optimized from 34 to 20 values. Large values (28-96rem) removed. See [Changelog](../CHANGELOG.md) for details.
 
 ### Spacing Scale
 
@@ -105,7 +107,7 @@ $spacing-map: (
 
 ### Custom Spacing
 
-Numeric scale provides 0-96 units:
+Numeric scale provides 0-24 units (optimized for common use cases):
 
 ```scss
 .p-0 { padding: 0; }
@@ -113,7 +115,7 @@ Numeric scale provides 0-96 units:
 .p-2 { padding: 0.5rem; }
 .p-4 { padding: 1rem; }
 .p-8 { padding: 2rem; }
-// ... through .p-96
+.p-24 { padding: 6rem; } // Maximum numeric value
 ```
 
 ## Color Variables
