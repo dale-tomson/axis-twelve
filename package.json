@@ -26,6 +26,10 @@
     "lint:fix": "stylelint \"src/scss/**/*.scss\" --fix",
     "format": "prettier --write \"src/scss/**/*.scss\"",
     "check": "pnpm lint && pnpm build",
+    "publish:npm": "bash project/scripts/publish-npm.sh",
+    "release": "bash project/scripts/create-release.sh",
+    "release:github": "bash project/scripts/release-github.sh",
+    "postinstall": "bash project/scripts/install-hooks.sh",
     "prepublishOnly": "pnpm check",
     "version": "pnpm check"
   },

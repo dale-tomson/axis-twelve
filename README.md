@@ -13,6 +13,15 @@ Axis Twelve is a professional CSS framework with SCSS support featuring a powerf
 - **Full SCSS Support** - Customizable variables and modular architecture
 - **Responsive Breakpoints** - xs, sm, md, lg, xl, xxl
 
+## Documentation
+
+### Quick Links
+
+- **[Scripts & CLI Guide](project/docs/SCRIPTS.md)** - All available commands (./axis)
+- **[Release Process](project/docs/RELEASE.md)** - How to create releases
+- **[Changelog](project/docs/CHANGELOG.md)** - Version history
+- **[Interactive Docs](./docs/)** - Complete framework documentation
+
 ## Quick Start
 
 ### 1. Installation
@@ -96,19 +105,68 @@ axis-twelve/
 ├── dist/style.css            # Compiled minified CSS
 ├── index.html                # Landing page with links to examples
 ├── examples/                 # Focused example files
-│   ├── 00-all-features-demo.html       # Complete feature showcase
-│   ├── 01-grid-layouts.html            # Grid system examples
-│   ├── 02-flexbox.html                 # Flexbox utilities
-│   ├── 03-centering.html               # Centering methods
-│   ├── 04-spacing.html                 # Spacing utilities
-│   └── 05-real-world.html              # Real-world layouts
-├── docs/                     # Interactive documentation
-│   ├── index.html           # Documentation viewer
-│   └── *.md                 # Markdown guides
-└── package.json             # Dependencies & build scripts
+│   ├── 00-all-features-demo.html
+│   ├── 01-grid-layouts.html
+│   ├── 02-flexbox.html
+│   ├── 03-centering.html
+│   ├── 04-spacing.html
+│   └── 05-real-world.html
+├── docs/                     # Interactive framework documentation
+│   ├── index.html
+│   ├── getting-started.md
+│   ├── grid.md
+│   ├── flexbox.md
+│   ├── centering.md
+│   ├── spacing.md
+│   └── *.md                  # Other framework guides
+├── project/                  # Project management (development tools)
+│   ├── scripts/              # CLI helper scripts
+│   │   ├── install-hooks.sh
+│   │   ├── publish-npm.sh
+│   │   ├── create-release.sh
+│   │   └── release-github.sh
+│   ├── hooks/                # Git hook definitions
+│   │   └── pre-commit
+│   └── docs/                 # Project documentation
+│       ├── SCRIPTS.md        # CLI wrapper guide
+│       ├── RELEASE.md        # Release process
+│       └── CHANGELOG.md      # Version history
+├── axis                      # CLI wrapper script
+└── package.json
 ```
 
+## Project Documentation
+
+All project management docs are in `project/docs/`:
+
+- **[SCRIPTS.md](project/docs/SCRIPTS.md)** - Complete guide to the `./axis` CLI wrapper
+  - Development commands (build, watch, start, lint, format, check)
+  - Publishing to npm
+  - Creating releases
+  - Git hooks management
+
+- **[RELEASE.md](project/docs/RELEASE.md)** - How to create releases and publish
+  - Manual git releases
+  - Automated GitHub releases
+  - Semantic versioning
+
+- **[CHANGELOG.md](project/docs/CHANGELOG.md)** - Version history and updates
+
 ## Development
+
+### Using the CLI Wrapper
+
+All development commands are available through the `axis` CLI wrapper:
+
+```bash
+./axis help              # Show all available commands
+./axis build             # Build CSS
+./axis watch             # Watch SCSS for changes
+./axis start             # Start dev server
+./axis check             # Run quality checks
+```
+
+**See [project/docs/SCRIPTS.md](project/docs/SCRIPTS.md) for complete command reference.**
 
 ### Setup
 
@@ -120,16 +178,16 @@ pnpm install
 
 ```bash
 # Compile SCSS to CSS (production)
-pnpm build
+./axis build
 
 # Watch SCSS for changes during development
-pnpm watch
+./axis watch
 
-# Development mode with demo site
-pnpm dev
+# Development mode (no source maps)
+./axis dev
 
 # Start local development server
-pnpm start
+./axis start
 # Server runs on http://localhost:3000/
 ```
 
@@ -137,22 +195,41 @@ pnpm start
 
 ```bash
 # Check SCSS for style violations
-pnpm lint
+./axis lint
 
 # Auto-fix SCSS style issues
-pnpm lint:fix
+./axis lint:fix
 
 # Format SCSS files with prettier
-pnpm format
+./axis format
 
 # Run lint + build (quality gate check)
-pnpm check
+./axis check
 ```
+
+### Publishing
+
+```bash
+# Publish to npm (requires NPM_TOKEN in .env)
+./axis publish
+```
+
+### Releases
+
+```bash
+# Create git tag + dist asset
+./axis release
+
+# Automated GitHub release (requires gh CLI)
+./axis release:github
+```
+
+**See [project/docs/RELEASE.md](project/docs/RELEASE.md) for detailed release guide.**
 
 ### Run Development Server
 
 ```bash
-pnpm start
+./axis start
 ```
 
 Then visit:

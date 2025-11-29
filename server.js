@@ -1,42 +1,37 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
-const url = require('url');
+import http from 'http';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 3000;
 const HOST = 'localhost';
 
-const server = http.createServer((req, res) => {
-  let filePath = '.' + req.url;
-  
-  // Default to index.html
-  if (filePath === './') {
-    filePath = './index.html';
-  }
+// MIME types mapping
+const mimeTypes = {
+  '.html': 'text/html',
+  '.css': 'text/css',
+  '.js': 'text/javascript',
+  '.json': 'application/json',
+  '.md': 'text/markdown',
+  '.png': 'image/png',
+  '.jpg': 'image/jpg',
+  '.gif': 'image/gif',
+  '.svg': 'image/svg+xml',
+  '.wav': 'audio/wav',
+  '.mp4': 'video/mp4',
+  '.woff': 'application/font-woff',
+  '.ttf': 'application/font-ttf',
+  '.eot': 'application/vnd.ms-fontobject',
+  '.otf': 'application/font-otf',
+  '.wasm': 'application/wasm'
+};
 
+const serveFile = (filePath, res) => {
   // Get file extension
   const extname = String(path.extname(filePath)).toLowerCase();
-  
-  // MIME types
-  const mimeTypes = {
-    '.html': 'text/html',
-    '.css': 'text/css',
-    '.js': 'text/javascript',
-    '.json': 'application/json',
-    '.md': 'text/markdown',
-    '.png': 'image/png',
-    '.jpg': 'image/jpg',
-    '.gif': 'image/gif',
-    '.svg': 'image/svg+xml',
-    '.wav': 'audio/wav',
-    '.mp4': 'video/mp4',
-    '.woff': 'application/font-woff',
-    '.ttf': 'application/font-ttf',
-    '.eot': 'application/vnd.ms-fontobject',
-    '.otf': 'application/font-otf',
-    '.wasm': 'application/wasm'
-  };
-
   const contentType = mimeTypes[extname] || 'application/octet-stream';
 
   fs.readFile(filePath, (error, content) => {
@@ -52,6 +47,24 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { 'Content-Type': contentType });
       res.end(content, 'utf-8');
     }
+  });
+};
+
+const server = http.createServer((req, res) => {
+  let filePath = '.' + req.url;
+  
+  // Default to index.html for root
+  if (filePath === './') {
+    filePath = './index.html';
+  }
+
+  // Check if path is a directory and serve index.html
+  fs.stat(filePath, (statError, stats) => {
+    if (!statError && stats.isDirectory()) {
+      filePath = path.join(filePath, 'index.html');
+    }
+
+    serveFile(filePath, res);
   });
 });
 

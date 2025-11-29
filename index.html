@@ -162,7 +162,6 @@
 
     footer {
       background: var(--gray-100);
-      border-top: 1px solid var(--border-light);
       color: var(--gray-700);
       text-align: center;
     }
@@ -193,6 +192,38 @@
       font-family: 'Courier New', monospace;
       color: #d63384;
     }
+
+    /* Global link styles for better UX */
+    a {
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+      text-decoration: none;
+    }
+
+    a:focus {
+      outline: 2px solid var(--blue-primary);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Primary links (documentation, etc.) */
+    a[style*="color: #007bff"],
+    .intro a {
+      color: var(--blue-primary);
+      font-weight: 500;
+    }
+
+    a[style*="color: #007bff"]:hover,
+    .intro a:hover {
+      color: #0056b3;
+    }
+
+    /* Example card links already have good styling from .example-card, no additional styling needed */
   </style>
 </head>
 <body>
@@ -356,7 +387,7 @@
         &lt;link rel="stylesheet" href="dist/style.css"&gt;
       </code>
       <p class="mt-lg text-center">
-        <a href="docs/" style="color: #007bff; text-decoration: none; font-weight: 500;">📚 View Full Documentation →</a>
+        <a href="docs/">📚 View Full Documentation →</a>
       </p>
     </div>
   </div>

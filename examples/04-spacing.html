@@ -312,24 +312,39 @@
     <h3>Responsive Padding</h3>
     <p>Different padding at different breakpoints</p>
     <div class="p-2 md:p-4 lg:p-6 demo-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-      <strong>Resize window to see responsive padding change:</strong><br>
-      Mobile: p-2 | Tablet: p-4 | Desktop: p-6
+      <strong>Using numeric spacing scale:</strong><br>
+      Available sizes: 0-9 (or xs, sm, md, lg, xl, 2xl, 3xl)
     </div>
 
-    <h3>Responsive Margin</h3>
-    <p>Different margin at different breakpoints</p>
-    <div class="demo-container">
-      <div class="m-2 md:m-4 lg:m-6 demo-box alt1">
-        Mobile: m-2 | Tablet: m-4 | Desktop: m-6
+    <h3>Responsive Columns with Spacing</h3>
+    <p>Columns that respond to breakpoints with spacing</p>
+    <div class="grid gap-md">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="m-2 p-4 demo-box">
+          Mobile: Full | Tablet: 1/2 | Desktop: 1/4
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="m-2 p-4 demo-box alt1">
+          Spacing applied to all
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="m-2 p-4 demo-box alt2">
+          m-2 (margin) + p-4 (padding)
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="m-2 p-4 demo-box">
+          Responsive grid layout
+        </div>
       </div>
     </div>
 
-    <div class="example-code">&lt;div class="p-2 md:p-4 lg:p-6"&gt;
-  Responsive padding
-&lt;/div&gt;
-
-&lt;div class="m-2 md:m-4 lg:m-6"&gt;
-  Responsive margin
+    <div class="example-code">&lt;div class="col-12 col-md-6 col-lg-3"&gt;
+  &lt;div class="m-2 p-4"&gt;
+    Responsive column
+  &lt;/div&gt;
 &lt;/div&gt;</div>
   </div>
 

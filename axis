@@ -1,0 +1,161 @@
+#!/bin/bash
+
+# Axis Twelve CLI - Master wrapper script for all project tasks
+# Usage: ./axis <command> [options]
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/project/scripts" && pwd)"
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Display help message
+show_help() {
+  cat << EOF
+${BLUE}🎯 Axis Twelve CLI${NC}
+
+${YELLOW}Usage:${NC}
+  ./axis <command> [options]
+
+${YELLOW}Commands:${NC}
+
+  ${GREEN}Development${NC}
+    build                 Build SCSS to CSS (minified)
+    watch                 Watch SCSS files and rebuild
+    dev                   Build SCSS without source maps
+    start|server          Start development server
+    lint                  Run stylelint on SCSS files
+    lint:fix              Fix SCSS linting issues
+    format                Format SCSS with prettier
+    check                 Run lint + build checks
+
+  ${GREEN}Hooks & Installation${NC}
+    install:hooks         Install git hooks (auto-run on pnpm install)
+    
+  ${GREEN}Publishing${NC}
+    publish               Publish to npm (requires NPM_TOKEN in .env)
+    
+  ${GREEN}Releases${NC}
+    release               Create git tag + dist asset (manual GitHub release)
+    release:github        Automated GitHub release (requires gh CLI)
+
+  ${GREEN}Utility${NC}
+    help                  Show this help message
+    version               Show package version
+
+${YELLOW}Examples:${NC}
+  ./axis build              # Build CSS
+  ./axis watch              # Watch and rebuild
+  ./axis start              # Start dev server
+  ./axis check              # Run all checks
+  ./axis publish            # Publish to npm
+  ./axis release:github     # Create GitHub release
+
+${YELLOW}npm Aliases:${NC}
+  npm run build             # Equivalent to: ./axis build
+  npm run publish:npm       # Equivalent to: ./axis publish
+  npm run release           # Equivalent to: ./axis release
+  npm run release:github    # Equivalent to: ./axis release:github
+
+EOF
+}
+
+# Run command
+run_command() {
+  local cmd="$1"
+  shift
+  
+  case "$cmd" in
+    # Development commands
+    build)
+      echo -e "${BLUE}🏗️  Building SCSS...${NC}"
+      pnpm exec sass src/scss:dist --style=compressed
+      echo -e "${GREEN}✅ Build complete${NC}"
+      ;;
+    watch)
+      echo -e "${BLUE}👀 Watching SCSS files...${NC}"
+      pnpm exec sass --watch src/scss:dist
+      ;;
+    dev)
+      echo -e "${BLUE}🔧 Building SCSS (dev mode)...${NC}"
+      pnpm exec sass src/scss:dist --no-source-map
+      echo -e "${GREEN}✅ Build complete${NC}"
+      ;;
+    start|server)
+      echo -e "${BLUE}🚀 Starting development server...${NC}"
+      node server.js
+      ;;
+    lint)
+      echo -e "${BLUE}🔍 Running stylelint...${NC}"
+      pnpm exec stylelint "src/scss/**/*.scss"
+      echo -e "${GREEN}✅ Lint passed${NC}"
+      ;;
+    lint:fix)
+      echo -e "${BLUE}🔧 Fixing SCSS issues...${NC}"
+      pnpm exec stylelint "src/scss/**/*.scss" --fix
+      echo -e "${GREEN}✅ SCSS fixed${NC}"
+      ;;
+    format)
+      echo -e "${BLUE}✨ Formatting SCSS...${NC}"
+      pnpm exec prettier --write "src/scss/**/*.scss"
+      echo -e "${GREEN}✅ Formatted${NC}"
+      ;;
+    check)
+      echo -e "${BLUE}🔍 Running quality checks...${NC}"
+      pnpm lint && pnpm build
+      echo -e "${GREEN}✅ All checks passed${NC}"
+      ;;
+    
+    # Hooks
+    install:hooks)
+      echo -e "${BLUE}🔨 Installing git hooks...${NC}"
+      bash "$SCRIPT_DIR/install-hooks.sh"
+      ;;
+    
+    # Publishing
+    publish)
+      echo -e "${BLUE}📦 Publishing to npm...${NC}"
+      bash "$SCRIPT_DIR/publish-npm.sh"
+      ;;
+    
+    # Releases
+    release)
+      echo -e "${BLUE}🏷️  Creating release...${NC}"
+      bash "$SCRIPT_DIR/create-release.sh"
+      ;;
+    release:github)
+      echo -e "${BLUE}🚀 Creating GitHub release...${NC}"
+      bash "$SCRIPT_DIR/release-github.sh"
+      ;;
+    
+    # Utility
+    help|-h|--help)
+      show_help
+      ;;
+    version|-v|--version)
+      VERSION=$(grep '"version"' "$PROJECT_ROOT/package.json" | head -1 | sed -E 's/.*"version":\s*"([^"]+)".*/\1/')
+      echo "Axis Twelve v$VERSION"
+      ;;
+    
+    *)
+      echo -e "${RED}❌ Unknown command: $cmd${NC}"
+      echo ""
+      show_help
+      exit 1
+      ;;
+  esac
+}
+
+# Main logic
+if [ $# -eq 0 ]; then
+  show_help
+  exit 0
+fi
+
+run_command "$@"

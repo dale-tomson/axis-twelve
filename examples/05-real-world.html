@@ -69,10 +69,21 @@
       color: white;
       text-decoration: none;
       font-weight: 500;
+      position: relative;
+      transition: opacity 0.2s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      opacity: 0.8;
+    }
+
+    /* Link styles for better UX */
+    a[style*="color: #007bff"] {
+      transition: color 0.2s ease;
+    }
+
+    a[style*="color: #007bff"]:hover {
+      color: #0056b3 !important;
     }
 
     /* Footer Styles */
