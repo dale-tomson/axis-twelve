@@ -1,0 +1,193 @@
+// ===========================
+// Flexbox Framework
+// ===========================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Flex Container
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  // Direction
+  &.flex-row {
+    flex-direction: row;
+  }
+
+  &.flex-column {
+    flex-direction: column;
+  }
+
+  &.flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.flex-column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  // Justify Content
+  &.justify-start {
+    justify-content: flex-start;
+  }
+
+  &.justify-end {
+    justify-content: flex-end;
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+
+  &.justify-between {
+    justify-content: space-between;
+  }
+
+  &.justify-around {
+    justify-content: space-around;
+  }
+
+  &.justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  // Align Items
+  &.items-start {
+    align-items: flex-start;
+  }
+
+  &.items-end {
+    align-items: flex-end;
+  }
+
+  &.items-center {
+    align-items: center;
+  }
+
+  &.items-baseline {
+    align-items: baseline;
+  }
+
+  &.items-stretch {
+    align-items: stretch;
+  }
+
+  // Align Content
+  &.content-start {
+    align-content: flex-start;
+  }
+
+  &.content-end {
+    align-content: flex-end;
+  }
+
+  &.content-center {
+    align-content: center;
+  }
+
+  &.content-between {
+    align-content: space-between;
+  }
+
+  &.content-around {
+    align-content: space-around;
+  }
+
+  // Gap
+  &.gap-0 {
+    gap: 0;
+  }
+
+  &.gap-sm {
+    gap: $spacer-sm;
+  }
+
+  &.gap-md {
+    gap: $spacer-md;
+  }
+
+  &.gap-lg {
+    gap: $spacer-lg;
+  }
+
+  &.gap-xl {
+    gap: $spacer-xl;
+  }
+
+  // Flex Wrap
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  &.flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &.flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+// Flex Item
+.flex-item {
+  flex: 1;
+
+  // Flex Basis Classes
+  &.flex-1 {
+    flex: 1;
+  }
+
+  &.flex-auto {
+    flex: auto;
+  }
+
+  &.flex-none {
+    flex: none;
+  }
+
+  // Grow
+  &.grow-0 {
+    flex-grow: 0;
+  }
+
+  &.grow-1 {
+    flex-grow: 1;
+  }
+
+  // Shrink
+  &.shrink-0 {
+    flex-shrink: 0;
+  }
+
+  &.shrink-1 {
+    flex-shrink: 1;
+  }
+}
+
+// Responsive Flex Classes
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint) {
+      .flex-#{$breakpoint}-row {
+        flex-direction: row;
+      }
+
+      .flex-#{$breakpoint}-column {
+        flex-direction: column;
+      }
+
+      .justify-#{$breakpoint}-center {
+        justify-content: center;
+      }
+
+      .justify-#{$breakpoint}-between {
+        justify-content: space-between;
+      }
+
+      .items-#{$breakpoint}-center {
+        align-items: center;
+      }
+    }
+  }
+}

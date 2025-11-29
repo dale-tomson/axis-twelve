@@ -1,0 +1,61 @@
+// ===========================
+// Mixins & Utilities
+// ===========================
+
+@use 'sass:map';
+@use 'variables' as *;
+
+// Breakpoint Mixin
+@mixin respond-to($breakpoint) {
+  $breakpoint-value: map.get($grid-breakpoints, $breakpoint);
+
+  @media (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+// Flex Mixin
+@mixin flex-row($justify: flex-start, $align: flex-start, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-flow: row wrap;
+}
+
+@mixin flex-column($justify: flex-start, $align: flex-start, $gap: 0) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// Centered Flex Mixin
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+// Grid Mixin
+@mixin grid($columns: $grid-columns, $gap: $grid-gutter) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+// Column Span Mixin
+@mixin col-span($columns, $total-columns: $grid-columns) {
+  grid-column: span $columns / span $columns;
+}
+
+// Clearfix Mixin
+@mixin clearfix {
+  &::after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}

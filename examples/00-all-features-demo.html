@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axis Twelve - Complete Demo</title>
+  <base href="/">
+  <link rel="stylesheet" href="/dist/style.css">
+  <style>
+    /* Demo Styles */
+    body {
+      padding: 2rem;
+      background-color: #f5f5f5;
+    }
+
+    .demo-section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .demo-section h2 {
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+    }
+
+    .demo-item {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .demo-item.alt {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .demo-item.alt2 {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .grid > div {
+      min-height: 60px;
+    }
+
+    .flex > div {
+      padding: 1.5rem;
+      background: #667eea;
+      color: white;
+      border-radius: 4px;
+      text-align: center;
+      min-width: 80px;
+    }
+
+    .box-demo {
+      background: #667eea;
+      color: white;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .row > div,
+    .column > div {
+      padding: 1rem;
+      background: #667eea;
+      color: white;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.9rem;
+    }
+
+    .example-code {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Axis Twelve - Complete Feature Demo</h1>
+  
+  <!-- Grid Framework Demo -->
+  <div class="demo-section">
+    <h2>1. 12-Column Grid Framework</h2>
+    <p>Responsive grid layout using CSS Grid with 12 columns</p>
+    
+    <h3>Full Width Grid</h3>
+    <div class="grid" style="margin-bottom: 2rem;">
+      <div class="col-12 demo-item">col-12 (Full Width)</div>
+    </div>
+
+    <h3>6-6 Split</h3>
+    <div class="grid" style="margin-bottom: 2rem;">
+      <div class="col-6 demo-item">col-6</div>
+      <div class="col-6 demo-item alt">col-6</div>
+    </div>
+
+    <h3>4-4-4 Split</h3>
+    <div class="grid" style="margin-bottom: 2rem;">
+      <div class="col-4 demo-item">col-4</div>
+      <div class="col-4 demo-item alt">col-4</div>
+      <div class="col-4 demo-item alt2">col-4</div>
+    </div>
+
+    <h3>3-6-3 Split</h3>
+    <div class="grid" style="margin-bottom: 2rem;">
+      <div class="col-3 demo-item">col-3</div>
+      <div class="col-6 demo-item alt">col-6</div>
+      <div class="col-3 demo-item alt2">col-3</div>
+    </div>
+
+    <h3>Grid with Gaps</h3>
+    <div class="grid gap-lg" style="margin-bottom: 2rem;">
+      <div class="col-4 demo-item">col-4 (gap-lg)</div>
+      <div class="col-4 demo-item alt">col-4</div>
+      <div class="col-4 demo-item alt2">col-4</div>
+    </div>
+
+    <h3>Grid with Offsets</h3>
+    <div class="grid">
+      <div class="col-6 demo-item">col-6</div>
+      <div class="offset-3 col-3 demo-item alt">offset-3 col-3</div>
+    </div>
+
+    <div class="example-code">
+&lt;div class="grid"&gt;
+  &lt;div class="col-6"&gt;...&lt;/div&gt;
+  &lt;div class="col-6"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid gap-lg"&gt;
+  &lt;div class="col-4"&gt;...&lt;/div&gt;
+  &lt;div class="col-4"&gt;...&lt;/div&gt;
+  &lt;div class="col-4"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+    </div>
+  </div>
+
+  <!-- Flexbox Framework Demo -->
+  <div class="demo-section">
+    <h2>2. 12-Column Flexbox Framework</h2>
+    <p>Responsive flexbox layout with alignment utilities</p>
+
+    <h3>Basic Flex Row</h3>
+    <div class="flex gap-md" style="margin-bottom: 2rem;">
+      <div style="flex: 1;">Item 1</div>
+      <div style="flex: 1;">Item 2</div>
+      <div style="flex: 1;">Item 3</div>
+    </div>
+
+    <h3>Flex with Justify Center</h3>
+    <div class="flex justify-center gap-md" style="margin-bottom: 2rem; background: #f0f0f0; padding: 2rem; border-radius: 4px;">
+      <div style="padding: 1rem; background: #667eea; color: white; border-radius: 4px;">Center 1</div>
+      <div style="padding: 1rem; background: #f093fb; color: white; border-radius: 4px;">Center 2</div>
+      <div style="padding: 1rem; background: #4facfe; color: white; border-radius: 4px;">Center 3</div>
+    </div>
+
+    <h3>Flex Column</h3>
+    <div class="flex flex-column gap-md" style="margin-bottom: 2rem;">
+      <div style="padding: 1rem; background: #667eea; color: white; border-radius: 4px;">Item 1</div>
+      <div style="padding: 1rem; background: #f093fb; color: white; border-radius: 4px;">Item 2</div>
+      <div style="padding: 1rem; background: #4facfe; color: white; border-radius: 4px;">Item 3</div>
+    </div>
+
+    <h3>Flex with Space Between</h3>
+    <div class="flex justify-between items-center" style="margin-bottom: 2rem; background: #f0f0f0; padding: 2rem; border-radius: 4px;">
+      <div style="padding: 1rem; background: #667eea; color: white; border-radius: 4px; flex: 0 0 auto;">Left</div>
+      <div style="padding: 1rem; background: #f093fb; color: white; border-radius: 4px; flex: 0 0 auto;">Right</div>
+    </div>
+
+    <div class="example-code">
+&lt;div class="flex justify-center gap-md"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="flex flex-column gap-lg"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="flex justify-between items-center"&gt;
+  &lt;div&gt;Left&lt;/div&gt;
+  &lt;div&gt;Right&lt;/div&gt;
+&lt;/div&gt;
+    </div>
+  </div>
+
+  <!-- Centering Utilities Demo -->
+  <div class="demo-section">
+    <h2>3. Centering Utilities</h2>
+    <p>Classes for centering items horizontally, vertically, or both</p>
+
+    <h3>Row - Horizontal Centering</h3>
+    <div class="row center" style="margin-bottom: 2rem; background: #f0f0f0; padding: 2rem; border-radius: 4px; min-height: 100px;">
+      <div style="padding: 1rem; background: #667eea; color: white; border-radius: 4px;">Centered Item</div>
+    </div>
+
+    <h3>Row - Vertical Centering</h3>
+    <div class="row center-v" style="margin-bottom: 2rem; background: #f0f0f0; padding: 2rem; border-radius: 4px; min-height: 150px;">
+      <div style="padding: 1rem; background: #f093fb; color: white; border-radius: 4px; width: 100%; text-align: center;">Vertically Centered</div>
+    </div>
+
+    <h3>Row - Both Directions</h3>
+    <div class="row center-both" style="margin-bottom: 2rem; background: #f0f0f0; padding: 2rem; border-radius: 4px;">
+      <div style="padding: 1rem; background: #4facfe; color: white; border-radius: 4px;">Centered Both Ways</div>
+    </div>
+
+    <h3>Column - Centered Items</h3>
+    <div class="column center" style="margin-bottom: 2rem; background: #f0f0f0; padding: 2rem; border-radius: 4px; min-height: 200px;">
+      <div style="padding: 1rem; background: #667eea; color: white; border-radius: 4px;">Centered Item 1</div>
+      <div style="padding: 1rem; background: #f093fb; color: white; border-radius: 4px; margin-top: 1rem;">Centered Item 2</div>
+    </div>
+
+    <h3>Box - Full Height Center</h3>
+    <div class="box h-md" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 2rem; border-radius: 4px;">
+      <div style="color: white; text-align: center;">
+        <h3>Centered in Box (300px height)</h3>
+        <p>Both horizontally and vertically</p>
+      </div>
+    </div>
+
+    <h3>General Centering Classes</h3>
+    <div class="center" style="margin-bottom: 2rem; background: #f0f0f0; padding: 2rem; border-radius: 4px; min-height: 150px;">
+      <div style="padding: 1rem; background: #667eea; color: white; border-radius: 4px;">
+        <code>.center</code> - Flex center both ways
+      </div>
+    </div>
+
+    <div class="example-code">
+&lt;div class="row center"&gt;
+  &lt;div&gt;Horizontally Centered&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row center-v"&gt;
+  &lt;div&gt;Vertically Centered&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row center-both"&gt;
+  &lt;div&gt;Centered Both Ways&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="column center"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="box h-md"&gt;
+  &lt;div&gt;Centered Content&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="center"&gt;Center everything&lt;/div&gt;
+    </div>
+  </div>
+
+  <!-- Quick Reference -->
+  <div class="demo-section">
+    <h2>Quick Reference</h2>
+    
+    <h3>Grid Classes</h3>
+    <ul>
+      <li><code>.grid</code> - Create grid container (12 columns)</li>
+      <li><code>.col-1</code> to <code>.col-12</code> - Column span classes</li>
+      <li><code>.col-full</code> - Full width column</li>
+      <li><code>.offset-0</code> to <code>.offset-12</code> - Column offsets</li>
+      <li><code>.gap-sm</code>, <code>.gap-md</code>, <code>.gap-lg</code>, <code>.gap-xl</code> - Gap sizes</li>
+    </ul>
+
+    <h3>Flexbox Classes</h3>
+    <ul>
+      <li><code>.flex</code> - Create flex container</li>
+      <li><code>.flex-row</code>, <code>.flex-column</code> - Direction</li>
+      <li><code>.justify-start</code>, <code>.justify-center</code>, <code>.justify-between</code>, <code>.justify-around</code>, <code>.justify-evenly</code> - Justify content</li>
+      <li><code>.items-start</code>, <code>.items-center</code>, <code>.items-end</code> - Align items</li>
+      <li><code>.gap-sm</code>, <code>.gap-md</code>, <code>.gap-lg</code>, <code>.gap-xl</code> - Gap between items</li>
+    </ul>
+
+    <h3>Centering Classes</h3>
+    <ul>
+      <li><code>.row.center</code> - Horizontally centered</li>
+      <li><code>.row.center-v</code> - Vertically centered</li>
+      <li><code>.row.center-both</code> - Both directions</li>
+      <li><code>.column.center</code> - Center items horizontally in column</li>
+      <li><code>.column.center-v</code> - Center items vertically in column</li>
+      <li><code>.box</code> - Center content (both directions)</li>
+      <li><code>.box.h-sm</code>, <code>.box.h-md</code>, <code>.box.h-lg</code>, <code>.box.h-full</code> - Box heights</li>
+      <li><code>.center</code> - General flex center utility</li>
+      <li><code>.center-h</code> - Horizontal center only</li>
+      <li><code>.center-v</code> - Vertical center only</li>
+    </ul>
+  </div>
+</body>
+</html>

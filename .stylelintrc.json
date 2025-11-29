@@ -1,0 +1,128 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "order/properties-order": [
+      [
+        {
+          "groupName": "display",
+          "properties": [
+            "display",
+            "visibility",
+            "overflow"
+          ]
+        },
+        {
+          "groupName": "positioning",
+          "properties": [
+            "position",
+            "top",
+            "right",
+            "bottom",
+            "left",
+            "z-index"
+          ]
+        },
+        {
+          "groupName": "box-model",
+          "properties": [
+            "width",
+            "height",
+            "margin",
+            "margin-top",
+            "margin-right",
+            "margin-bottom",
+            "margin-left",
+            "padding",
+            "padding-top",
+            "padding-right",
+            "padding-bottom",
+            "padding-left",
+            "border",
+            "border-width",
+            "border-style",
+            "border-color",
+            "border-radius",
+            "box-sizing"
+          ]
+        },
+        {
+          "groupName": "typography",
+          "properties": [
+            "font",
+            "font-family",
+            "font-size",
+            "font-weight",
+            "line-height",
+            "text-align",
+            "text-transform",
+            "color",
+            "letter-spacing"
+          ]
+        },
+        {
+          "groupName": "flexbox",
+          "properties": [
+            "flex",
+            "flex-direction",
+            "flex-wrap",
+            "justify-content",
+            "align-items",
+            "align-content",
+            "gap"
+          ]
+        },
+        {
+          "groupName": "grid",
+          "properties": [
+            "grid",
+            "grid-template-columns",
+            "grid-template-rows",
+            "grid-column",
+            "grid-row",
+            "grid-gap"
+          ]
+        },
+        {
+          "groupName": "backgrounds",
+          "properties": [
+            "background",
+            "background-color",
+            "background-image",
+            "background-size",
+            "background-position"
+          ]
+        },
+        {
+          "groupName": "effects",
+          "properties": [
+            "opacity",
+            "transform",
+            "transition",
+            "animation",
+            "box-shadow",
+            "filter"
+          ]
+        }
+      ],
+      {
+        "unspecified": "bottom",
+        "disableFix": false
+      }
+    ],
+    "scss/no-global-function-names": null,
+    "color-no-invalid-hex": true,
+    "selector-pseudo-element-no-unknown": true,
+    "declaration-no-important": null,
+    "no-descending-specificity": null,
+    "declaration-block-no-redundant-longhand-properties": null
+  },
+  "ignoreFiles": [
+    "dist/**/*",
+    "node_modules/**/*"
+  ]
+}

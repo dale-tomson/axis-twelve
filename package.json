@@ -1,0 +1,76 @@
+{
+  "name": "axis-twelve",
+  "version": "0.0.2",
+  "description": "Build faster, center easier. The 12-column solution. Professional CSS framework with grid, flexbox, centering, and spacing utilities.",
+  "type": "module",
+  "main": "dist/style.css",
+  "exports": {
+    ".": "./dist/style.css",
+    "./style.css": "./dist/style.css",
+    "./src": "./src/scss/style.scss"
+  },
+  "files": [
+    "dist",
+    "src/scss",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "pnpm exec sass src/scss:dist --style=compressed",
+    "watch": "pnpm exec sass --watch src/scss:dist",
+    "dev": "pnpm exec sass src/scss:dist --no-source-map",
+    "start": "node server.js",
+    "server": "node server.js",
+    "lint": "stylelint \"src/scss/**/*.scss\"",
+    "lint:fix": "stylelint \"src/scss/**/*.scss\" --fix",
+    "format": "prettier --write \"src/scss/**/*.scss\"",
+    "check": "pnpm lint && pnpm build",
+    "publish:npm": "bash project/scripts/publish-npm.sh",
+    "release": "bash project/scripts/create-release.sh",
+    "release:github": "bash project/scripts/release-github.sh",
+    "postinstall": "bash project/scripts/install-hooks.sh",
+    "prepublishOnly": "pnpm check",
+    "version": "0.0.2"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "grid",
+    "12-column",
+    "flexbox",
+    "scss",
+    "centering",
+    "spacing",
+    "responsive",
+    "utilities",
+    "css-grid",
+    "layout",
+    "ui-framework"
+  ],
+  "categories": [
+    "Styling",
+    "Layout",
+    "Utilities"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dale-tomson/axis-twelve.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dale-tomson/axis-twelve/issues"
+  },
+  "homepage": "https://github.com/dale-tomson/axis-twelve#readme",
+  "author": "Dale Tomson",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-order": "^6.0.0",
+    "prettier": "^3.0.0"
+  }
+}

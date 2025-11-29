@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axis Twelve - Grid Layouts Examples</title>
+  <base href="/">
+  <link rel="stylesheet" href="/dist/style.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 2rem;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    .example-section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .example-section h2 {
+      margin-bottom: 1.5rem;
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+    }
+
+    .example-section h3 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #495057;
+    }
+
+    .demo-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 500;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .demo-box.alt1 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .demo-box.alt2 {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .demo-box.alt3 {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: #d63384;
+    }
+
+    .example-code {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    h1 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      text-align: center;
+      color: #6c757d;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Axis Twelve Grid Layouts</h1>
+  <p class="tagline">Build faster, center easier. The 12-column solution.</p>
+
+  <!-- Basic Grid Layouts -->
+  <div class="example-section">
+    <h2>Basic Grid Layouts</h2>
+
+    <h3>Full Width (12/12)</h3>
+    <div class="grid" style="margin-bottom: 2rem;">
+      <div class="col-12 demo-box">Full Width Column</div>
+    </div>
+
+    <h3>Two Equal Columns (6/6)</h3>
+    <div class="grid gap-md" style="margin-bottom: 2rem;">
+      <div class="col-6 demo-box">Column 1 (6/12)</div>
+      <div class="col-6 demo-box alt1">Column 2 (6/12)</div>
+    </div>
+
+    <h3>Three Equal Columns (4/4/4)</h3>
+    <div class="grid gap-md" style="margin-bottom: 2rem;">
+      <div class="col-4 demo-box">Column 1 (4/12)</div>
+      <div class="col-4 demo-box alt1">Column 2 (4/12)</div>
+      <div class="col-4 demo-box alt2">Column 3 (4/12)</div>
+    </div>
+
+    <h3>Four Equal Columns (3/3/3/3)</h3>
+    <div class="grid gap-md" style="margin-bottom: 2rem;">
+      <div class="col-3 demo-box">1</div>
+      <div class="col-3 demo-box alt1">2</div>
+      <div class="col-3 demo-box alt2">3</div>
+      <div class="col-3 demo-box alt3">4</div>
+    </div>
+
+    <h3>Asymmetric Layout (3/6/3)</h3>
+    <div class="grid gap-md" style="margin-bottom: 2rem;">
+      <div class="col-3 demo-box">Sidebar</div>
+      <div class="col-6 demo-box alt1">Main Content</div>
+      <div class="col-3 demo-box alt2">Sidebar</div>
+    </div>
+
+    <div class="example-code">&lt;div class="grid gap-md"&gt;
+  &lt;div class="col-3"&gt;Sidebar&lt;/div&gt;
+  &lt;div class="col-6"&gt;Main&lt;/div&gt;
+  &lt;div class="col-3"&gt;Sidebar&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Complex Grid Layouts -->
+  <div class="example-section">
+    <h2>Complex Grid Layouts</h2>
+
+    <h3>Responsive Cards (Wrapping)</h3>
+    <div class="grid gap-md">
+      <div class="col-4 demo-box">Card 1</div>
+      <div class="col-4 demo-box alt1">Card 2</div>
+      <div class="col-4 demo-box alt2">Card 3</div>
+      <div class="col-4 demo-box alt3">Card 4</div>
+      <div class="col-4 demo-box">Card 5</div>
+      <div class="col-4 demo-box alt1">Card 6</div>
+    </div>
+
+    <h3>Mixed Column Sizes</h3>
+    <div class="grid gap-md" style="margin-top: 2rem;">
+      <div class="col-2 demo-box">2</div>
+      <div class="col-7 demo-box alt1">7</div>
+      <div class="col-3 demo-box alt2">3</div>
+    </div>
+
+    <h3>Header-Content-Footer Pattern</h3>
+    <div class="grid gap-md" style="margin-top: 2rem;">
+      <div class="col-12 demo-box" style="min-height: 80px;">Header (12)</div>
+      <div class="col-3 demo-box" style="min-height: 200px;">Sidebar (3)</div>
+      <div class="col-9 demo-box alt1" style="min-height: 200px;">Main Content (9)</div>
+      <div class="col-12 demo-box alt2" style="min-height: 60px;">Footer (12)</div>
+    </div>
+
+    <div class="example-code">&lt;div class="grid gap-md"&gt;
+  &lt;div class="col-12"&gt;Header&lt;/div&gt;
+  &lt;div class="col-3"&gt;Sidebar&lt;/div&gt;
+  &lt;div class="col-9"&gt;Main&lt;/div&gt;
+  &lt;div class="col-12"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Grid with Offsets -->
+  <div class="example-section">
+    <h2>Grid with Offsets</h2>
+
+    <h3>Centered Column (Offset 3)</h3>
+    <div class="grid gap-md" style="margin-bottom: 2rem;">
+      <div class="offset-3 col-6 demo-box">Centered (offset-3 col-6)</div>
+    </div>
+
+    <h3>Multiple Offsets</h3>
+    <div class="grid gap-md" style="margin-bottom: 2rem;">
+      <div class="col-4 demo-box">Column 1</div>
+      <div class="offset-2 col-6 demo-box alt1">Offset 2, Column 6</div>
+    </div>
+
+    <h3>Right-Aligned Content</h3>
+    <div class="grid gap-md">
+      <div class="offset-8 col-4 demo-box">Offset 8, Col 4</div>
+    </div>
+
+    <div class="example-code">&lt;div class="grid gap-md"&gt;
+  &lt;div class="offset-3 col-6"&gt;Centered&lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <!-- Gap Utilities -->
+  <div class="example-section">
+    <h2>Grid Gaps</h2>
+
+    <h3>No Gap</h3>
+    <div class="grid">
+      <div class="col-3 demo-box" style="border-right: 1px solid #999;">No Gap</div>
+      <div class="col-3 demo-box alt1" style="border-right: 1px solid #999;">No Gap</div>
+      <div class="col-3 demo-box alt2" style="border-right: 1px solid #999;">No Gap</div>
+      <div class="col-3 demo-box alt3">No Gap</div>
+    </div>
+
+    <h3>Small Gap (gap-sm)</h3>
+    <div class="grid gap-sm" style="margin-top: 2rem; margin-bottom: 2rem;">
+      <div class="col-3 demo-box">Small</div>
+      <div class="col-3 demo-box alt1">Small</div>
+      <div class="col-3 demo-box alt2">Small</div>
+      <div class="col-3 demo-box alt3">Small</div>
+    </div>
+
+    <h3>Medium Gap (gap-md)</h3>
+    <div class="grid gap-md" style="margin-bottom: 2rem;">
+      <div class="col-3 demo-box">Medium</div>
+      <div class="col-3 demo-box alt1">Medium</div>
+      <div class="col-3 demo-box alt2">Medium</div>
+      <div class="col-3 demo-box alt3">Medium</div>
+    </div>
+
+    <h3>Large Gap (gap-lg)</h3>
+    <div class="grid gap-lg" style="margin-bottom: 2rem;">
+      <div class="col-3 demo-box">Large</div>
+      <div class="col-3 demo-box alt1">Large</div>
+      <div class="col-3 demo-box alt2">Large</div>
+      <div class="col-3 demo-box alt3">Large</div>
+    </div>
+
+    <h3>Extra Large Gap (gap-xl)</h3>
+    <div class="grid gap-xl">
+      <div class="col-3 demo-box">Extra</div>
+      <div class="col-3 demo-box alt1">Large</div>
+      <div class="col-3 demo-box alt2">Gap</div>
+      <div class="col-3 demo-box alt3">Here</div>
+    </div>
+  </div>
+
+  <!-- Nested Grids -->
+  <div class="example-section">
+    <h2>Nested Grids</h2>
+
+    <h3>Grid within Grid</h3>
+    <div class="grid gap-md">
+      <div class="col-6">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">Parent Col 6</div>
+        <div class="grid gap-sm">
+          <div class="col-6 demo-box alt1" style="font-size: 0.9rem;">Nested 1</div>
+          <div class="col-6 demo-box alt2" style="font-size: 0.9rem;">Nested 2</div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">Parent Col 6</div>
+        <div class="grid gap-sm">
+          <div class="col-4 demo-box alt3" style="font-size: 0.9rem;">N1</div>
+          <div class="col-4 demo-box" style="font-size: 0.9rem;">N2</div>
+          <div class="col-4 demo-box alt1" style="font-size: 0.9rem;">N3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-code">&lt;div class="grid gap-md"&gt;
+  &lt;div class="col-6"&gt;
+    &lt;div class="grid gap-sm"&gt;
+      &lt;div class="col-6"&gt;Nested 1&lt;/div&gt;
+      &lt;div class="col-6"&gt;Nested 2&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+  </div>
+
+  <footer style="text-align: center; margin-top: 3rem; padding: 2rem; color: #6c757d;">
+    <p>Axis Twelve - Build faster, center easier</p>
+  </footer>
+</body>
+</html>

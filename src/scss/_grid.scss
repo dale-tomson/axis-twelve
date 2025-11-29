@@ -1,0 +1,85 @@
+// ===========================
+// CSS Grid Framework
+// ===========================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Grid Container
+.grid {
+  @include grid($grid-columns, $grid-gutter);
+
+  width: 100%;
+  max-width: 100%;
+
+  // Responsive Grid Gutters
+  &.gap-sm {
+    gap: $spacer-sm;
+  }
+
+  &.gap-md {
+    gap: $spacer-md;
+  }
+
+  &.gap-lg {
+    gap: $spacer-lg;
+  }
+
+  &.gap-xl {
+    gap: $spacer-xl;
+  }
+
+  &.gap-0 {
+    gap: 0;
+  }
+}
+
+// Grid Columns - Generate column classes from 1-12
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    @include col-span($i);
+  }
+}
+
+// Responsive Grid Classes
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint) {
+      @for $i from 1 through $grid-columns {
+        .col-#{$breakpoint}-#{$i} {
+          @include col-span($i);
+        }
+      }
+    }
+  }
+}
+
+// Auto Grid Column
+.col-auto {
+  grid-column: auto;
+}
+
+// Full Width Column
+.col-full {
+  grid-column: 1 / -1;
+}
+
+// Offset Columns
+@for $i from 0 through $grid-columns {
+  .offset-#{$i} {
+    grid-column-start: $i + 1;
+  }
+}
+
+// Responsive Offsets
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint) {
+      @for $i from 0 through $grid-columns {
+        .offset-#{$breakpoint}-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      }
+    }
+  }
+}

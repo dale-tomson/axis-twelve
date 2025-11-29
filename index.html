@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axis Twelve - Examples & Demo</title>
+  <base href="/">
+  <link rel="stylesheet" href="/dist/style.css">
+  <style>
+    :root {
+      --blue-primary: #007bff;
+      --blue-dark: #003d99;
+      --blue-darker: #001a4d;
+      --blue-light: #e7f1ff;
+      --gray-100: #f8f9fa;
+      --gray-200: #f5f5f5;
+      --gray-600: #666;
+      --gray-700: #6c757d;
+      --border-light: #dee2e6;
+      --border-radius: 8px;
+      --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #333;
+      background: var(--gray-200);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-darker) 100%);
+      color: white;
+      box-shadow: var(--box-shadow);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 0;
+      font-weight: 500;
+      color: var(--blue-light);
+    }
+
+    .intro {
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    .intro h2 {
+      color: var(--blue-primary);
+      margin-top: 0;
+    }
+
+    .intro p {
+      color: var(--gray-600);
+      line-height: 1.8;
+    }
+
+    .example-card {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .example-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .example-card-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .example-card.grid-example .example-card-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .example-card.flexbox-example .example-card-header {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .example-card.centering-example .example-card-header {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    }
+
+    .example-card.spacing-example .example-card-header {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+
+    .example-card.real-world-example .example-card-header {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+
+    .example-card.all-features-example .example-card-header {
+      background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    }
+
+    .example-card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .example-card-description {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .example-card-topics {
+      background: var(--gray-100);
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .example-card-topics strong {
+      color: var(--blue-primary);
+      display: block;
+    }
+
+    .example-card-topics ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: var(--gray-600);
+    }
+
+    .example-card-topics li {
+      margin-bottom: 0.25rem;
+    }
+
+    .example-card-link {
+      display: inline-block;
+      background: var(--blue-primary);
+      color: white;
+      text-align: center;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+      margin-top: auto;
+    }
+
+    .example-card-link:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      background: var(--gray-100);
+      color: var(--gray-700);
+      text-align: center;
+    }
+
+    .feature-item {
+      text-align: center;
+    }
+
+    .feature-item-icon {
+      font-size: 2rem;
+    }
+
+    .feature-item h3 {
+      color: var(--blue-primary);
+      margin: 0.5rem 0;
+    }
+
+    .feature-item p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      color: #d63384;
+    }
+
+    /* Global link styles for better UX */
+    a {
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+      text-decoration: none;
+    }
+
+    a:focus {
+      outline: 2px solid var(--blue-primary);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Primary links (documentation, etc.) */
+    a[style*="color: #007bff"],
+    .intro a {
+      color: var(--blue-primary);
+      font-weight: 500;
+    }
+
+    a[style*="color: #007bff"]:hover,
+    .intro a:hover {
+      color: #0056b3;
+    }
+
+    /* Example card links already have good styling from .example-card, no additional styling needed */
+  </style>
+</head>
+<body>
+  <header class="py-lg">
+    <div class="center">
+      <h1>Axis Twelve</h1>
+      <p>Build faster, center easier. The 12-column solution.</p>
+    </div>
+  </header>
+
+  <div class="p-lg">
+    <!-- Intro -->
+    <div class="intro p-md mx-auto mb-xl" style="max-width: 600px;">
+      <h2 class="text-center">Welcome to Axis Twelve</h2>
+      <p class="text-center">Axis Twelve is a professional CSS framework with SCSS support featuring a powerful 12-column grid system, comprehensive flexbox utilities, powerful centering components, and extensive spacing utilities. Everything you need to build modern, responsive web layouts quickly and easily.</p>
+    </div>
+
+    <!-- Key Features -->
+    <h2 class="text-center m-xl">Key Features</h2>
+    <div class="grid gap-lg mb-xl">
+      <div class="feature-item col-12 col-md-6 col-lg-3">
+        <div class="feature-item-icon mb-2">📐</div>
+        <h3>12-Column Grid</h3>
+        <p>Powerful responsive grid system with breakpoints and offsets</p>
+      </div>
+      <div class="feature-item col-12 col-md-6 col-lg-3">
+        <div class="feature-item-icon mb-2">⚡</div>
+        <h3>Flexbox Ready</h3>
+        <p>Complete flexbox utilities for modern layouts</p>
+      </div>
+      <div class="feature-item col-12 col-md-6 col-lg-3">
+        <div class="feature-item-icon mb-2">🎯</div>
+        <h3>Easy Centering</h3>
+        <p>Powerful centering utilities for perfect alignment</p>
+      </div>
+      <div class="feature-item col-12 col-md-6 col-lg-3">
+        <div class="feature-item-icon mb-2">📏</div>
+        <h3>Spacing Utilities</h3>
+        <p>Comprehensive padding, margin, and gap utilities</p>
+      </div>
+    </div>
+
+    <!-- Examples -->
+    <h2 class="text-center m-xl">Interactive Examples</h2>
+    
+    <div class="grid gap-lg mb-xl">
+      <!-- All Features Demo -->
+      <a href="examples/00-all-features-demo.html" class="example-card all-features-example col-12 col-md-6 col-lg-4">
+        <div class="example-card-header p-md">Complete Feature Demo</div>
+        <div class="example-card-body p-md">
+          <p class="example-card-description mb-2">A comprehensive showcase of all Axis Twelve features including grid layouts, flexbox utilities, centering components, and spacing utilities.</p>
+          <div class="example-card-topics p-2 mb-2">
+            <strong class="d-block mb-1">Topics Covered:</strong>
+            <ul class="m-0 pl-0">
+              <li>✓ Grid system (all column splits)</li>
+              <li>✓ Flexbox layouts</li>
+              <li>✓ Centering methods</li>
+              <li>✓ Quick reference</li>
+            </ul>
+          </div>
+          <div class="example-card-link py-2 px-3">View Demo →</div>
+        </div>
+      </a>
+
+      <!-- Grid Layouts -->
+      <a href="examples/01-grid-layouts.html" class="example-card grid-example col-12 col-md-6 col-lg-4">
+        <div class="example-card-header p-md">Grid Layouts</div>
+        <div class="example-card-body p-md">
+          <p class="example-card-description mb-2">Master the 12-column grid system with basic layouts, complex designs, offsets, gap utilities, and nested grids.</p>
+          <div class="example-card-topics p-2 mb-2">
+            <strong class="d-block mb-1">Topics Covered:</strong>
+            <ul class="m-0 pl-0">
+              <li>✓ Basic grid layouts</li>
+              <li>✓ Column splits & gaps</li>
+              <li>✓ Offsets & alignment</li>
+              <li>✓ Nested grids</li>
+            </ul>
+          </div>
+          <div class="example-card-link py-2 px-3">View Examples →</div>
+        </div>
+      </a>
+
+      <!-- Flexbox -->
+      <a href="examples/02-flexbox.html" class="example-card flexbox-example col-12 col-md-6 col-lg-4">
+        <div class="example-card-header p-md">Flexbox Utilities</div>
+        <div class="example-card-body p-md">
+          <p class="example-card-description mb-2">Explore flexbox layouts with direction control, alignment options, gap utilities, and practical components.</p>
+          <div class="example-card-topics p-2 mb-2">
+            <strong class="d-block mb-1">Topics Covered:</strong>
+            <ul class="m-0 pl-0">
+              <li>✓ Flex direction & wrapping</li>
+              <li>✓ Justify content options</li>
+              <li>✓ Align items utilities</li>
+              <li>✓ Practical patterns</li>
+            </ul>
+          </div>
+          <div class="example-card-link py-2 px-3">View Examples →</div>
+        </div>
+      </a>
+
+      <!-- Centering -->
+      <a href="examples/03-centering.html" class="example-card centering-example col-12 col-md-6 col-lg-4">
+        <div class="example-card-header p-md">Centering Components</div>
+        <div class="example-card-body p-md">
+          <p class="example-card-description mb-2">Learn multiple ways to center content: row component, column component, flexbox, grid offsets, and hero sections.</p>
+          <div class="example-card-topics p-2 mb-2">
+            <strong class="d-block mb-1">Topics Covered:</strong>
+            <ul class="m-0 pl-0">
+              <li>✓ Row & column components</li>
+              <li>✓ Flexbox centering</li>
+              <li>✓ Grid offset centering</li>
+              <li>✓ Hero sections & modals</li>
+            </ul>
+          </div>
+          <div class="example-card-link py-2 px-3">View Examples →</div>
+        </div>
+      </a>
+
+      <!-- Spacing -->
+      <a href="examples/04-spacing.html" class="example-card spacing-example col-12 col-md-6 col-lg-4">
+        <div class="example-card-header p-md">Spacing Utilities</div>
+        <div class="example-card-body p-md">
+          <p class="example-card-description mb-2">Master spacing with padding, margin, and gap utilities. Learn named sizes, numeric scale, and responsive spacing.</p>
+          <div class="example-card-topics p-2 mb-2">
+            <strong class="d-block mb-1">Topics Covered:</strong>
+            <ul class="m-0 pl-0">
+              <li>✓ Padding & margin utilities</li>
+              <li>✓ Named & numeric sizes</li>
+              <li>✓ Responsive spacing</li>
+              <li>✓ Practical patterns</li>
+            </ul>
+          </div>
+          <div class="example-card-link py-2 px-3">View Examples →</div>
+        </div>
+      </a>
+
+      <!-- Real World Examples -->
+      <a href="examples/05-real-world.html" class="example-card real-world-example col-12 col-md-6 col-lg-4">
+        <div class="example-card-header p-md">Real-World Examples</div>
+        <div class="example-card-body p-md">
+          <p class="example-card-description mb-2">See Axis Twelve in action with real-world layouts including headers, hero sections, features, products, and more.</p>
+          <div class="example-card-topics p-2 mb-2">
+            <strong class="d-block mb-1">Topics Covered:</strong>
+            <ul class="m-0 pl-0">
+              <li>✓ Website headers</li>
+              <li>✓ Hero sections</li>
+              <li>✓ Product showcases</li>
+              <li>✓ Blog layouts</li>
+            </ul>
+          </div>
+          <div class="example-card-link py-2 px-3">View Examples →</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Quick Start -->
+    <div class="intro p-md mx-auto mb-xl" style="max-width: 600px;">
+      <h2 class="text-center">Quick Start</h2>
+      <p class="mb-lg text-center">Get started with Axis Twelve in seconds. Simply include the CSS file and start building:</p>
+      <code style="display: block; background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 4px; text-align: left; overflow-x: auto; margin: 1rem 0;">
+        &lt;link rel="stylesheet" href="dist/style.css"&gt;
+      </code>
+      <p class="mt-lg text-center">
+        <a href="docs/">📚 View Full Documentation →</a>
+      </p>
+    </div>
+  </div>
+
+  <footer class="py-lg">
+    <p class="m-0">&copy; 2025 Axis Twelve. All rights reserved.</p>
+    <p class="m-0"><strong>Build faster, center easier. The 12-column solution.</strong></p>
+  </footer>
+</body>
+</html>

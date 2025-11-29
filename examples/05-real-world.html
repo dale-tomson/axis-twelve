@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axis Twelve - Real World Examples</title>
+  <base href="/">
+  <link rel="stylesheet" href="/dist/style.css">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1 { text-align: center; color: #007bff; margin-bottom: 0.5rem; padding-top: 2rem; }
+    .tagline { text-align: center; color: #6c757d; margin-bottom: 3rem; font-size: 1.1rem; }
+
+    .example-section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+
+    .example-section h2 {
+      margin-bottom: 1.5rem;
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 0.5rem;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: #d63384;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+    }
+
+    header .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      color: white;
+      margin: 0;
+      padding: 1rem 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    /* Link styles for better UX */
+    a[style*="color: #007bff"] {
+      transition: color 0.2s ease;
+    }
+
+    a[style*="color: #007bff"]:hover {
+      color: #0056b3 !important;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: #f8f9fa;
+      border-top: 1px solid #dee2e6;
+      margin-top: 3rem;
+      padding: 2rem;
+      text-align: center;
+      color: #6c757d;
+    }
+
+    /* Blog Post Styles */
+    .blog-post {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .blog-post h1 {
+      color: #007bff;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-meta {
+      color: #6c757d;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .blog-post p {
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: #495057;
+    }
+
+    .blog-post h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #333;
+      border-bottom: 1px solid #dee2e6;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Product Card Styles */
+    .product-card {
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .product-image {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 500;
+    }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-info h3 {
+      margin-top: 0;
+      color: #007bff;
+    }
+
+    .product-info p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #007bff;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Axis Twelve Real-World Examples</h1>
+  <p class="tagline">Build faster, center easier. The 12-column solution.</p>
+
+  <!-- Website Header Example -->
+  <div class="example-section">
+    <h2>Website Header/Navigation</h2>
+    
+    <header style="margin: -2rem -2rem 2rem -2rem;">
+      <div class="row p-4">
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+          <h1 style="margin: 0; font-size: 1.5rem;">Logo</h1>
+          <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+          </nav>
+          <button style="padding: 0.5rem 1rem; background: white; color: #007bff; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Sign In</button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero Section Example -->
+  <div class="example-section">
+    <h2>Hero Section</h2>
+
+    <div class="flex justify-center items-center flex-column" style="background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; min-height: 400px; border-radius: 8px; padding: 4rem 2rem; text-align: center;">
+      <h1 style="color: white; margin-bottom: 1rem; font-size: 3rem;">Welcome to Axis Twelve</h1>
+      <p style="color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px;">Build faster, center easier. The 12-column solution for modern web development.</p>
+      <div class="flex gap-md" style="justify-content: center;">
+        <button style="padding: 1rem 2rem; background: white; color: #007bff; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 1rem;">Get Started</button>
+        <button style="padding: 1rem 2rem; background: transparent; color: white; border: 2px solid white; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 1rem;">Learn More</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section Example -->
+  <div class="example-section">
+    <h2>Features Section</h2>
+
+    <div class="grid gap-lg">
+      <div class="col-4">
+        <div style="background: #f0f0f0; border-radius: 8px; padding: 2rem; text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📐</div>
+          <h3 style="color: #007bff;">12-Column Grid</h3>
+          <p style="color: #666; margin: 0;">Powerful responsive grid system for any layout.</p>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div style="background: #f0f0f0; border-radius: 8px; padding: 2rem; text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+          <h3 style="color: #007bff;">Flexbox Ready</h3>
+          <p style="color: #666; margin: 0;">Complete flexbox utilities for modern layouts.</p>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div style="background: #f0f0f0; border-radius: 8px; padding: 2rem; text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+          <h3 style="color: #007bff;">Easy Centering</h3>
+          <p style="color: #666; margin: 0;">Powerful centering utilities for perfect alignment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Showcase Example -->
+  <div class="example-section">
+    <h2>Product Showcase</h2>
+
+    <div class="grid gap-lg">
+      <div class="col-4">
+        <div class="product-card">
+          <div class="product-image">Premium Product</div>
+          <div class="product-info">
+            <h3>Premium Plan</h3>
+            <p>Get access to all features and priority support.</p>
+            <div class="product-price">$99/month</div>
+            <button class="btn">Choose Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="product-card" style="border: 2px solid #007bff;">
+          <div style="background: #007bff; color: white; padding: 0.5rem; text-align: center; font-weight: 600;">Most Popular</div>
+          <div class="product-image" style="background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);">Popular Product</div>
+          <div class="product-info">
+            <h3>Professional Plan</h3>
+            <p>Everything in Premium, plus advanced features.</p>
+            <div class="product-price">$199/month</div>
+            <button class="btn">Choose Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="product-card">
+          <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">Enterprise Product</div>
+          <div class="product-info">
+            <h3>Enterprise Plan</h3>
+            <p>Custom solutions for large teams and organizations.</p>
+            <div class="product-price">Custom</div>
+            <button class="btn">Contact Sales</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Layout Example -->
+  <div class="example-section">
+    <h2>Blog Post Layout</h2>
+
+    <div class="grid gap-lg">
+      <div class="col-8">
+        <div class="blog-post">
+          <h1>Getting Started with Axis Twelve</h1>
+          <div class="blog-meta">Published on November 29, 2025 • by John Doe</div>
+
+          <p>Axis Twelve is a modern CSS framework designed to make web development faster and easier. With its 12-column grid system, comprehensive flexbox utilities, and powerful centering components, you can build beautiful responsive layouts in minutes.</p>
+
+          <h2>Why Choose Axis Twelve?</h2>
+          <p>The framework provides a solid foundation for any web project. Whether you're building a simple landing page or a complex web application, Axis Twelve has the tools you need to succeed.</p>
+
+          <h2>Key Features</h2>
+          <ul>
+            <li><strong>12-Column Grid:</strong> Powerful responsive grid system</li>
+            <li><strong>Flexbox Utilities:</strong> Complete flex utilities for alignment</li>
+            <li><strong>Centering Components:</strong> Easy horizontal and vertical centering</li>
+            <li><strong>Spacing Utilities:</strong> Comprehensive padding and margin utilities</li>
+          </ul>
+
+          <h2>Getting Started</h2>
+          <p>Simply include the CSS file in your HTML and start using the framework. No build process required for basic usage, but SCSS source files are available for customization.</p>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; height: fit-content;">
+          <h3 style="margin-top: 0; color: #007bff;">About This Blog</h3>
+          <p style="color: #666; margin: 0;">Tips, tricks, and tutorials for using Axis Twelve in your projects.</p>
+        </div>
+
+        <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem;">
+          <h3 style="margin-top: 0; color: #007bff;">Recent Posts</h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin-bottom: 1rem;"><a href="#" style="color: #007bff; text-decoration: none;">Getting Started with Axis Twelve</a></li>
+            <li style="margin-bottom: 1rem;"><a href="#" style="color: #007bff; text-decoration: none;">Advanced Grid Layouts</a></li>
+            <li><a href="#" style="color: #007bff; text-decoration: none;">Responsive Design Best Practices</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form Example -->
+  <div class="example-section">
+    <h2>Contact Form</h2>
+
+    <div class="grid gap-lg">
+      <div class="col-8 offset-2">
+        <form style="background: #f8f9fa; padding: 2rem; border-radius: 8px;">
+          <h3 style="margin-top: 0; color: #007bff;">Get In Touch</h3>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Name</label>
+            <input type="text" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+            <input type="email" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Subject</label>
+            <input type="text" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
+            <textarea style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; min-height: 150px; box-sizing: border-box;"></textarea>
+          </div>
+
+          <div style="display: flex; gap: 1rem;">
+            <button type="submit" style="padding: 0.75rem 2rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; flex: 1;">Send Message</button>
+            <button type="reset" style="padding: 0.75rem 2rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; flex: 1;">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="row">
+      <div class="column">
+        <p>&copy; 2025 Axis Twelve. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

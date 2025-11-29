@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Pre-commit hook: Auto-bump version when SCSS files change
+# This checks if any SCSS files are being committed and bumps the patch version
+
+# Check if any SCSS files are staged
+if git diff --cached --name-only | grep -q '\.scss$'; then
+  # Get current version from package.json
+  CURRENT_VERSION=$(grep '"version"' package.json | head -1 | sed -E 's/.*"version":\s*"([^"]+)".*/\1/')
+  
+  echo "📦 SCSS files detected in commit"
+  echo "Current version: $CURRENT_VERSION"
+  
+  # Parse version parts
+  MAJOR=$(echo $CURRENT_VERSION | cut -d. -f1)
+  MINOR=$(echo $CURRENT_VERSION | cut -d. -f2)
+  PATCH=$(echo $CURRENT_VERSION | cut -d. -f3)
+  
+  # Increment patch version
+  NEW_PATCH=$((PATCH + 1))
+  NEW_VERSION="$MAJOR.$MINOR.$NEW_PATCH"
+  
+  echo "Bumping version to: $NEW_VERSION"
+  
+  # Update package.json
+  sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$NEW_VERSION\"/" package.json
+  
+  # Stage the updated package.json
+  git add package.json
+  
+  echo "✅ Version bumped in package.json"
+fi
+
+exit 0
