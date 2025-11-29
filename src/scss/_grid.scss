@@ -12,26 +12,7 @@
   width: 100%;
   max-width: 100%;
 
-  // Responsive Grid Gutters
-  &.gap-sm {
-    gap: $spacer-sm;
-  }
-
-  &.gap-md {
-    gap: $spacer-md;
-  }
-
-  &.gap-lg {
-    gap: $spacer-lg;
-  }
-
-  &.gap-xl {
-    gap: $spacer-xl;
-  }
-
-  &.gap-0 {
-    gap: 0;
-  }
+  // Gap utilities are in _spacing.scss
 }
 
 // Grid Columns - Generate column classes from 1-12

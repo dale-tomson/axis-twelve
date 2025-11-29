@@ -8,6 +8,21 @@ The changelog is organized by version. Click on any version below to see detaile
 
 ## Released Versions
 
+### [v0.0.3](./project/docs/changelog/v0.0.3.md) - Code Quality & Cleanup
+**November 29, 2025**
+
+🧹 **Code organization improvements** - Cleaner SCSS architecture with centralized utilities
+
+Key highlights:
+- Centralized spacing utilities (gap, margin-auto) in single module
+- Removed SCSS duplicates for better maintainability
+- Updated documentation to reflect architecture changes
+- No breaking changes
+
+[Read full release notes →](./project/docs/changelog/v0.0.3.md)
+
+---
+
 ### [v0.0.2](./project/docs/changelog/v0.0.2.md) - Performance & Optimization Release
 **November 29, 2025**
 
@@ -78,6 +93,7 @@ npm update axis-twelve
 
 | Version | Date | Type | Key Changes |
 |---------|------|------|-------------|
+| v0.0.3 | Nov 29, 2025 | Code Quality | Centralized utilities, removed duplicates |
 | v0.0.2 | Nov 29, 2025 | Optimization | 56% CSS reduction, 20 spacing values |
 | v0.0.1 | Nov 29, 2025 | Initial | Grid, flexbox, spacing, 6 breakpoints |
 

@@ -12,14 +12,15 @@ Axis Twelve is a professional CSS framework with SCSS support featuring a powerf
 - **Extensive Spacing Scale** - Named sizes (xs-3xl) and numeric scale (0-24)
 - **Full SCSS Support** - Customizable variables and modular architecture
 - **Responsive Breakpoints** - xs, sm, md, lg, xl, xxl
-- **Ultra-Lightweight** - Only 52KB CSS (7.4KB gzipped) - 56% optimized
+- **Ultra-Lightweight** - Only 52.63 KB CSS (7.42 KB gzipped) - 55.5% optimized
 
 ## Documentation
 
 ### Quick Links
 
 - **[Changelog](CHANGELOG.md)** - View all releases and updates
-- **[v0.0.2 Release Notes](project/docs/changelog/v0.0.2.md)** - Latest: Performance & Optimization (52KB CSS, 56% reduction)
+- **[v0.0.3 Release Notes](project/docs/changelog/v0.0.3.md)** - Latest: Code Quality & Cleanup (improved architecture)
+- **[v0.0.2 Release Notes](project/docs/changelog/v0.0.2.md)** - Performance & Optimization (52KB CSS, 56% reduction)
 - **[v0.0.1 Release Notes](project/docs/changelog/v0.0.1.md)** - Initial stable release
 - **[Scripts & CLI Guide](project/docs/SCRIPTS.md)** - All available commands (./axis)
 - **[Release Process](project/docs/RELEASE.md)** - How to create releases

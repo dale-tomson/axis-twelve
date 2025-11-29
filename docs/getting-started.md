@@ -18,7 +18,7 @@ Axis Twelve is a lightweight, responsive CSS framework built with SCSS that prov
 ✅ **Flexible** - Grid, flexbox, and centering all in one  
 ✅ **Responsive** - Mobile-first with 6 responsive breakpoints  
 ✅ **Customizable** - Full SCSS variables for theming  
-✅ **Lightweight** - Only 52KB CSS (7.4KB gzipped) - 56% optimized in v0.0.2  
+✅ **Lightweight** - Only 52.63 KB CSS (7.42 KB gzipped) - 55.5% optimized  
 ✅ **Modern** - Built with modern Sass @use syntax
 
 ## Quick Example
@@ -108,8 +108,9 @@ The framework is built on modern CSS features (CSS Grid, Flexbox) and uses SCSS 
 
 ## Current Version
 
-**Axis Twelve v0.0.2** - Latest stable release with optimized CSS (52KB minified)
+**Axis Twelve v0.0.3** - Latest stable release with improved code organization and centralized utilities
 
+- 🧹 [View v0.0.3 Release Notes](../project/docs/changelog/v0.0.3.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v0.0.3.md)) - Code Quality & Cleanup Release
 - ✨ [View v0.0.2 Release Notes](../project/docs/changelog/v0.0.2.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v0.0.2.md)) - Performance & Optimization Release
 - 🎯 [View v0.0.1 Release Notes](../project/docs/changelog/v0.0.1.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v0.0.1.md)) - Initial Release
 - 📋 [Full Changelog](../CHANGELOG.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/CHANGELOG.md)) - All releases and updates

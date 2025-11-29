@@ -47,8 +47,8 @@ Add padding (internal spacing) to elements:
 - `.pr-[size]` - Right only
 - `.pb-[size]` - Bottom only
 - `.pl-[size]` - Left only
-- `.pv-[size]` - Vertical (top + bottom)
-- `.ph-[size]` - Horizontal (left + right)
+- `.px-[size]` - Horizontal (left + right)
+- `.py-[size]` - Vertical (top + bottom)
 
 ## Margins
 
@@ -79,11 +79,11 @@ Add margins (external spacing) to elements:
 - `.mr-[size]` - Right only
 - `.mb-[size]` - Bottom only
 - `.ml-[size]` - Left only
-- `.mv-[size]` - Vertical (top + bottom)
-- `.mh-[size]` - Horizontal (left + right)
-- `.mh-auto` - Auto horizontal (centers element)
-- `.mx-auto` - Alias for `.mh-auto`
+- `.mx-[size]` - Horizontal (left + right)
+- `.my-[size]` - Vertical (top + bottom)
+- `.mx-auto` - Auto horizontal (centers element)
 - `.my-auto` - Auto vertical
+- `.m-auto` - Auto all sides
 
 ## Combining Padding and Margins
 

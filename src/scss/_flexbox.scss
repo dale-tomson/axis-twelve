@@ -94,26 +94,7 @@
     align-content: space-around;
   }
 
-  // Gap
-  &.gap-0 {
-    gap: 0;
-  }
-
-  &.gap-sm {
-    gap: $spacer-sm;
-  }
-
-  &.gap-md {
-    gap: $spacer-md;
-  }
-
-  &.gap-lg {
-    gap: $spacer-lg;
-  }
-
-  &.gap-xl {
-    gap: $spacer-xl;
-  }
+  // Gap utilities are in _spacing.scss
 
   // Flex Wrap
   &.flex-wrap {

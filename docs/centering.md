@@ -205,6 +205,27 @@ Center text content within elements:
 </div>
 ```
 
+## Margin Auto Centering
+
+Center elements using auto margins from the [Spacing](spacing.md) utilities:
+
+```html
+<!-- Horizontal center -->
+<div class="mx-auto" style="width: 500px;">
+  Centered content
+</div>
+
+<!-- Vertical center -->
+<div class="my-auto" style="height: 300px;">
+  Vertically centered
+</div>
+
+<!-- Both directions -->
+<div class="m-auto" style="width: 400px; height: 400px;">
+  Centered both ways
+</div>
+```
+
 ## Responsive Centering
 
 Apply centering at specific breakpoints:

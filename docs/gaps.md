@@ -1,6 +1,6 @@
 # Gaps
 
-Control spacing between grid and flexbox items with gap utilities.
+Control spacing between grid and flexbox items with gap utilities. Gap utilities are centralized in the spacing module and work seamlessly with both `.flex` and `.grid` containers.
 
 ## Gap Sizes
 
