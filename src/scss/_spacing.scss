@@ -4,6 +4,7 @@
 
 @use 'variables' as *;
 @use 'mixins' as *;
+@use 'sass:map';
 
 // Padding Utilities
 // p-{size} - padding all sides
@@ -118,78 +119,70 @@
   margin-right: auto;
 }
 
-// Responsive Padding Utilities
+// Responsive Padding Utilities (optimized for common values only)
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
   @if $breakpoint != 'xs' {
     @include respond-to($breakpoint) {
-      @each $name, $value in $spacing-map {
-        .p-#{$breakpoint}-#{$name} {
-          padding: $value;
-        }
+      @each $name in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24') {
+        @if map.has-key($spacing-map, $name) {
+          $value: map.get($spacing-map, $name);
 
-        .pt-#{$breakpoint}-#{$name} {
-          padding-top: $value;
-        }
+          .p-#{$breakpoint}-#{$name} {
+            padding: $value;
+          }
 
-        .pb-#{$breakpoint}-#{$name} {
-          padding-bottom: $value;
-        }
+          .pt-#{$breakpoint}-#{$name} {
+            padding-top: $value;
+          }
 
-        .pl-#{$breakpoint}-#{$name} {
-          padding-left: $value;
-        }
+          .pb-#{$breakpoint}-#{$name} {
+            padding-bottom: $value;
+          }
 
-        .pr-#{$breakpoint}-#{$name} {
-          padding-right: $value;
-        }
+          .px-#{$breakpoint}-#{$name} {
+            padding-right: $value;
+            padding-left: $value;
+          }
 
-        .px-#{$breakpoint}-#{$name} {
-          padding-right: $value;
-          padding-left: $value;
-        }
-
-        .py-#{$breakpoint}-#{$name} {
-          padding-top: $value;
-          padding-bottom: $value;
+          .py-#{$breakpoint}-#{$name} {
+            padding-top: $value;
+            padding-bottom: $value;
+          }
         }
       }
     }
   }
 }
 
-// Responsive Margin Utilities
+// Responsive Margin Utilities (optimized for common values only)
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
   @if $breakpoint != 'xs' {
     @include respond-to($breakpoint) {
-      @each $name, $value in $spacing-map {
-        .m-#{$breakpoint}-#{$name} {
-          margin: $value;
-        }
+      @each $name in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24') {
+        @if map.has-key($spacing-map, $name) {
+          $value: map.get($spacing-map, $name);
 
-        .mt-#{$breakpoint}-#{$name} {
-          margin-top: $value;
-        }
+          .m-#{$breakpoint}-#{$name} {
+            margin: $value;
+          }
 
-        .mb-#{$breakpoint}-#{$name} {
-          margin-bottom: $value;
-        }
+          .mt-#{$breakpoint}-#{$name} {
+            margin-top: $value;
+          }
 
-        .ml-#{$breakpoint}-#{$name} {
-          margin-left: $value;
-        }
+          .mb-#{$breakpoint}-#{$name} {
+            margin-bottom: $value;
+          }
 
-        .mr-#{$breakpoint}-#{$name} {
-          margin-right: $value;
-        }
+          .mx-#{$breakpoint}-#{$name} {
+            margin-right: $value;
+            margin-left: $value;
+          }
 
-        .mx-#{$breakpoint}-#{$name} {
-          margin-right: $value;
-          margin-left: $value;
-        }
-
-        .my-#{$breakpoint}-#{$name} {
-          margin-top: $value;
-          margin-bottom: $value;
+          .my-#{$breakpoint}-#{$name} {
+            margin-top: $value;
+            margin-bottom: $value;
+          }
         }
       }
     }
