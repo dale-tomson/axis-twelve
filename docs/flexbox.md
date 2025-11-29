@@ -96,7 +96,7 @@ Quick center alignment with combined classes:
 
 ## Gap
 
-Add consistent spacing between flex items:
+Add consistent spacing between flex items using gap utilities:
 
 ```html
 <div class="flex gap-md">
@@ -106,14 +106,7 @@ Add consistent spacing between flex items:
 </div>
 ```
 
-Gap sizes available:
-- `.gap-xs` - Extra small
-- `.gap-sm` - Small
-- `.gap-md` - Medium
-- `.gap-lg` - Large
-- `.gap-xl` - Extra large
-- `.gap-2xl` - 2X large
-- `.gap-3xl` - 3X large
+Gap utilities are centralized in the spacing module and work with both flexbox and grid. See [Spacing](spacing.md) documentation for the complete list of available gap sizes and responsive gap utilities.
 
 ## Wrapping
 

@@ -41,7 +41,7 @@ Create a grid with the `.grid` class and add columns:
 
 ## Gap Utilities
 
-Add consistent spacing between grid items using gap classes:
+Add consistent spacing between grid items using gap classes. Gap utilities are defined in the spacing module and work with both grid and flexbox:
 
 ```html
 <div class="grid gap-md">
@@ -50,14 +50,7 @@ Add consistent spacing between grid items using gap classes:
 </div>
 ```
 
-Available gap sizes:
-- `.gap-xs` - Extra small gap
-- `.gap-sm` - Small gap
-- `.gap-md` - Medium gap (default is no gap)
-- `.gap-lg` - Large gap
-- `.gap-xl` - Extra large gap
-- `.gap-2xl` - 2X large gap
-- `.gap-3xl` - 3X large gap
+See [Spacing](spacing.md) documentation for the complete list of available gap sizes and responsive gap utilities.
 
 ## Offsets
 
