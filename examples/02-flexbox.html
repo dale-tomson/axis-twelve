@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axis Twelve - Flexbox Examples</title>
-  <link rel="stylesheet" href="../dist/style.css">
+  <link rel="stylesheet" href="/axis-twelve/dist/style.css">
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -101,7 +101,20 @@
       font-size: 1.1rem;
     }
   </style>
-</head>
+  <script>
+    // Fix CSS path for GitHub Pages deployment
+    const link = document.querySelector('link[rel="stylesheet"]');
+    if (link && link.href.includes('/axis-twelve/')) {
+      // Already GitHub Pages path, don't change
+    } else if (link && !window.location.hostname.includes('localhost')) {
+      // On GitHub Pages but relative path, fix it
+      const currentPath = window.location.pathname;
+      if (!currentPath.includes('/axis-twelve/')) {
+        link.href = '/axis-twelve/dist/style.css';
+      }
+    }
+  </script>
+  </head>
 <body>
   <h1>Axis Twelve Flexbox</h1>
   <p class="tagline">Build faster, center easier. The 12-column solution.</p>
