@@ -20,6 +20,12 @@ echo "📦 Installing git hooks..."
 # Copy hooks
 for hook in $HOOKS_DIR/*; do
   hook_name=$(basename "$hook")
+  
+  # Skip markdown files (documentation)
+  if [[ "$hook_name" == *.md ]]; then
+    continue
+  fi
+
   cp "$hook" "$GIT_HOOKS_DIR/$hook_name"
   chmod +x "$GIT_HOOKS_DIR/$hook_name"
   echo "✅ Installed $hook_name"

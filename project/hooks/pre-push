@@ -15,6 +15,12 @@ if [ "$COMMITS_TO_PUSH" -eq 0 ]; then
   exit 0
 fi
 
+echo "🧪 Running tests..."
+if ! npm test; then
+  echo "❌ Tests failed. Push aborted."
+  exit 1
+fi
+
 echo "📋 Pre-push validation: Checking changelog..."
 echo "Current version: $CURRENT_VERSION"
 

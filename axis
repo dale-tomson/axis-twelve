@@ -13,7 +13,17 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
+BLUE='\033[0;34m'
 NC='\033[0m' # No Color
+
+# Helper: Ensure node_modules exists
+ensure_deps() {
+  if [ ! -d "$PROJECT_ROOT/node_modules" ]; then
+    echo -e "${RED}❌ Error: node_modules not found.${NC}"
+    echo -e "${YELLOW}Please run: pnpm install${NC}"
+    exit 1
+  fi
+}
 
 # Display help message
 show_help() {
@@ -33,7 +43,10 @@ ${YELLOW}Commands:${NC}
     lint                  Run stylelint on SCSS files
     lint:fix              Fix SCSS linting issues
     format                Format SCSS with prettier
+    format                Format SCSS with prettier
     check                 Run lint + build checks
+    test                  Alias for check
+    clean                 Remove build artifacts (dist/)
 
   ${GREEN}Hooks & Installation${NC}
     install:hooks         Install git hooks (auto-run on pnpm install)
@@ -74,42 +87,62 @@ run_command() {
   case "$cmd" in
     # Development commands
     build)
+      ensure_deps
       echo -e "${BLUE}🏗️  Building SCSS...${NC}"
-      pnpm exec sass src/scss:dist --style=compressed
+      # Compile minified and expanded versions
+      pnpm exec sass src/scss/style.scss dist/axis-twelve.min.css --style=compressed "$@"
+      pnpm exec sass src/scss/style.scss dist/axis-twelve.css --style=expanded --no-source-map "$@"
       echo -e "${GREEN}✅ Build complete${NC}"
       ;;
     watch)
+      ensure_deps
       echo -e "${BLUE}👀 Watching SCSS files...${NC}"
-      pnpm exec sass --watch src/scss:dist
+      # Watch and update both files (or at least the main dev one)
+      # Sass watch allows multiple targets? No, usually one mapping or directory.
+      # For directory: src/scss:dist -> style.css
+      # For specific: src/scss/style.scss:dist/axis-twelve.css
+      pnpm exec sass --watch src/scss/style.scss:dist/axis-twelve.css "$@"
       ;;
     dev)
+      ensure_deps
       echo -e "${BLUE}🔧 Building SCSS (dev mode)...${NC}"
-      pnpm exec sass src/scss:dist --no-source-map
+      pnpm exec sass src/scss/style.scss dist/axis-twelve.css --no-source-map "$@"
       echo -e "${GREEN}✅ Build complete${NC}"
       ;;
     start|server)
+      ensure_deps
       echo -e "${BLUE}🚀 Starting development server...${NC}"
-      node server.js
+      node server.js "$@"
       ;;
     lint)
+      ensure_deps
       echo -e "${BLUE}🔍 Running stylelint...${NC}"
-      pnpm exec stylelint "src/scss/**/*.scss"
+      pnpm exec stylelint "src/scss/**/*.scss" "$@"
       echo -e "${GREEN}✅ Lint passed${NC}"
       ;;
     lint:fix)
+      ensure_deps
       echo -e "${BLUE}🔧 Fixing SCSS issues...${NC}"
-      pnpm exec stylelint "src/scss/**/*.scss" --fix
+      pnpm exec stylelint "src/scss/**/*.scss" --fix "$@"
       echo -e "${GREEN}✅ SCSS fixed${NC}"
       ;;
     format)
+      ensure_deps
       echo -e "${BLUE}✨ Formatting SCSS...${NC}"
-      pnpm exec prettier --write "src/scss/**/*.scss"
+      pnpm exec prettier --write "src/scss/**/*.scss" "$@"
       echo -e "${GREEN}✅ Formatted${NC}"
       ;;
-    check)
+    check|test)
+      ensure_deps
       echo -e "${BLUE}🔍 Running quality checks...${NC}"
       pnpm lint && pnpm build
       echo -e "${GREEN}✅ All checks passed${NC}"
+      ;;
+
+    clean)
+      echo -e "${BLUE}🧹 Cleaning dist directory...${NC}"
+      rm -rf dist
+      echo -e "${GREEN}✅ Cleaned dist/${NC}"
       ;;
     
     # Hooks

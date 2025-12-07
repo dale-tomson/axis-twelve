@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axis Twelve - Examples & Demo</title>
-  <link rel="stylesheet" href="/axis-twelve/dist/style.css">
+  <link rel="stylesheet" href="/axis-twelve/dist/axis-twelve.css">
   <style>
     :root {
       --blue-primary: #007bff;
@@ -75,7 +76,7 @@
 
     .example-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     }
 
     .example-card-header {
@@ -234,11 +235,12 @@
       // On GitHub Pages but relative path, fix it
       const currentPath = window.location.pathname;
       if (!currentPath.includes('/axis-twelve/')) {
-        link.href = '/axis-twelve/dist/style.css';
+        link.href = '/axis-twelve/dist/axis-twelve.css';
       }
     }
   </script>
-  </head>
+</head>
+
 <body>
   <header class="py-lg">
     <div class="center">
@@ -251,7 +253,9 @@
     <!-- Intro -->
     <div class="intro p-md mx-auto mb-xl" style="max-width: 600px;">
       <h2 class="text-center">Welcome to Axis Twelve</h2>
-      <p class="text-center">Axis Twelve is a professional CSS framework with SCSS support featuring a powerful 12-column grid system, comprehensive flexbox utilities, powerful centering components, and extensive spacing utilities. Everything you need to build modern, responsive web layouts quickly and easily.</p>
+      <p class="text-center">Axis Twelve is a professional CSS framework with SCSS support featuring a powerful
+        12-column grid system, comprehensive flexbox utilities, powerful centering components, and extensive spacing
+        utilities. Everything you need to build modern, responsive web layouts quickly and easily.</p>
     </div>
 
     <!-- Key Features -->
@@ -281,13 +285,14 @@
 
     <!-- Examples -->
     <h2 class="text-center m-xl">Interactive Examples</h2>
-    
+
     <div class="grid gap-lg mb-xl">
       <!-- All Features Demo -->
       <a href="examples/00-all-features-demo.html" class="example-card all-features-example col-12 col-md-6 col-lg-4">
         <div class="example-card-header p-md">Complete Feature Demo</div>
         <div class="example-card-body p-md">
-          <p class="example-card-description mb-2">A comprehensive showcase of all Axis Twelve features including grid layouts, flexbox utilities, centering components, and spacing utilities.</p>
+          <p class="example-card-description mb-2">A comprehensive showcase of all Axis Twelve features including grid
+            layouts, flexbox utilities, centering components, and spacing utilities.</p>
           <div class="example-card-topics p-2 mb-2">
             <strong class="d-block mb-1">Topics Covered:</strong>
             <ul class="m-0 pl-0">
@@ -305,7 +310,8 @@
       <a href="examples/01-grid-layouts.html" class="example-card grid-example col-12 col-md-6 col-lg-4">
         <div class="example-card-header p-md">Grid Layouts</div>
         <div class="example-card-body p-md">
-          <p class="example-card-description mb-2">Master the 12-column grid system with basic layouts, complex designs, offsets, gap utilities, and nested grids.</p>
+          <p class="example-card-description mb-2">Master the 12-column grid system with basic layouts, complex designs,
+            offsets, gap utilities, and nested grids.</p>
           <div class="example-card-topics p-2 mb-2">
             <strong class="d-block mb-1">Topics Covered:</strong>
             <ul class="m-0 pl-0">
@@ -323,7 +329,8 @@
       <a href="examples/02-flexbox.html" class="example-card flexbox-example col-12 col-md-6 col-lg-4">
         <div class="example-card-header p-md">Flexbox Utilities</div>
         <div class="example-card-body p-md">
-          <p class="example-card-description mb-2">Explore flexbox layouts with direction control, alignment options, gap utilities, and practical components.</p>
+          <p class="example-card-description mb-2">Explore flexbox layouts with direction control, alignment options,
+            gap utilities, and practical components.</p>
           <div class="example-card-topics p-2 mb-2">
             <strong class="d-block mb-1">Topics Covered:</strong>
             <ul class="m-0 pl-0">
@@ -341,7 +348,8 @@
       <a href="examples/03-centering.html" class="example-card centering-example col-12 col-md-6 col-lg-4">
         <div class="example-card-header p-md">Centering Components</div>
         <div class="example-card-body p-md">
-          <p class="example-card-description mb-2">Learn multiple ways to center content: row component, column component, flexbox, grid offsets, and hero sections.</p>
+          <p class="example-card-description mb-2">Learn multiple ways to center content: row component, column
+            component, flexbox, grid offsets, and hero sections.</p>
           <div class="example-card-topics p-2 mb-2">
             <strong class="d-block mb-1">Topics Covered:</strong>
             <ul class="m-0 pl-0">
@@ -359,7 +367,8 @@
       <a href="examples/04-spacing.html" class="example-card spacing-example col-12 col-md-6 col-lg-4">
         <div class="example-card-header p-md">Spacing Utilities</div>
         <div class="example-card-body p-md">
-          <p class="example-card-description mb-2">Master spacing with padding, margin, and gap utilities. Learn named sizes, numeric scale, and responsive spacing.</p>
+          <p class="example-card-description mb-2">Master spacing with padding, margin, and gap utilities. Learn named
+            sizes, numeric scale, and responsive spacing.</p>
           <div class="example-card-topics p-2 mb-2">
             <strong class="d-block mb-1">Topics Covered:</strong>
             <ul class="m-0 pl-0">
@@ -377,7 +386,8 @@
       <a href="examples/05-real-world.html" class="example-card real-world-example col-12 col-md-6 col-lg-4">
         <div class="example-card-header p-md">Real-World Examples</div>
         <div class="example-card-body p-md">
-          <p class="example-card-description mb-2">See Axis Twelve in action with real-world layouts including headers, hero sections, features, products, and more.</p>
+          <p class="example-card-description mb-2">See Axis Twelve in action with real-world layouts including headers,
+            hero sections, features, products, and more.</p>
           <div class="example-card-topics p-2 mb-2">
             <strong class="d-block mb-1">Topics Covered:</strong>
             <ul class="m-0 pl-0">
@@ -395,9 +405,11 @@
     <!-- Quick Start -->
     <div class="intro p-md mx-auto mb-xl" style="max-width: 600px;">
       <h2 class="text-center">Quick Start</h2>
-      <p class="mb-lg text-center">Get started with Axis Twelve in seconds. Simply include the CSS file and start building:</p>
-      <code style="display: block; background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 4px; text-align: left; overflow-x: auto; margin: 1rem 0;">
-        &lt;link rel="stylesheet" href="dist/style.css"&gt;
+      <p class="mb-lg text-center">Get started with Axis Twelve in seconds. Simply include the CSS file and start
+        building:</p>
+      <code
+        style="display: block; background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 4px; text-align: left; overflow-x: auto; margin: 1rem 0;">
+        &lt;link rel="stylesheet" href="dist/axis-twelve.css"&gt;
       </code>
       <p class="mt-lg text-center">
         <a href="docs/">📚 View Full Documentation →</a>
@@ -410,4 +422,5 @@
     <p class="m-0"><strong>Build faster, center easier. The 12-column solution.</strong></p>
   </footer>
 </body>
+
 </html>

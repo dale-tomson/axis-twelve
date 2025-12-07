@@ -1,13 +1,15 @@
 {
   "name": "axis-twelve",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Build faster, center easier. The 12-column solution. Professional CSS framework with grid, flexbox, centering, and spacing utilities.",
   "type": "module",
-  "main": "dist/style.css",
+  "main": "dist/axis-twelve.css",
   "exports": {
-    ".": "./dist/style.min.css",
-    "./style.css": "./dist/style.css",
-    "./style.min.css": "./dist/style.min.css",
+    ".": "./dist/axis-twelve.min.css",
+    "./style.css": "./dist/axis-twelve.css",
+    "./style.min.css": "./dist/axis-twelve.min.css",
+    "./axis-twelve.css": "./dist/axis-twelve.css",
+    "./axis-twelve.min.css": "./dist/axis-twelve.min.css",
     "./src": "./src/scss/style.scss",
     "./package.json": "./package.json"
   },
@@ -19,7 +21,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "pnpm exec sass src/scss/style.scss dist/style.min.css --style=compressed && pnpm exec sass src/scss/style.scss dist/style.css --style=expanded --no-source-map",
+    "build": "pnpm exec sass src/scss/style.scss dist/axis-twelve.min.css --style=compressed && pnpm exec sass src/scss/style.scss dist/axis-twelve.css --style=expanded --no-source-map",
     "build:watch": "pnpm exec sass src/scss:dist --watch",
     "watch": "pnpm exec sass --watch src/scss:dist",
     "dev": "pnpm exec sass src/scss:dist --no-source-map",
@@ -33,8 +35,9 @@
     "release": "bash project/scripts/create-release.sh",
     "release:github": "bash project/scripts/release-github.sh",
     "postinstall": "bash project/scripts/install-hooks.sh",
+    "test": "pnpm check",
     "prepublishOnly": "pnpm check",
-    "version": "0.0.3"
+    "version": "0.0.4"
   },
   "keywords": [
     "css",

@@ -7,7 +7,7 @@ Get Axis Twelve up and running in your project.
 The simplest way to get started is using the CDN link:
 
 ```html
-<link rel="stylesheet" href="https://cdn.example.com/axis-twelve/dist/style.css">
+<link rel="stylesheet" href="https://cdn.example.com/axis-twelve/dist/axis-twelve.css">
 ```
 
 ## Via npm
@@ -21,7 +21,7 @@ npm install axis-twelve
 Then import in your project:
 
 ```js
-import 'axis-twelve/dist/style.css';
+import 'axis-twelve/dist/axis-twelve.css';
 ```
 
 ## Manual Setup
@@ -31,7 +31,7 @@ import 'axis-twelve/dist/style.css';
 3. Link the CSS file in your HTML:
 
 ```html
-<link rel="stylesheet" href="path/to/axis-twelve/dist/style.css">
+<link rel="stylesheet" href="path/to/axis-twelve/dist/axis-twelve.css">
 ```
 
 ## SCSS Setup

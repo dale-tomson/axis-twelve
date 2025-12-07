@@ -41,7 +41,9 @@ npm run <command>
 ./axis lint               # Run stylelint on SCSS files
 ./axis lint:fix           # Auto-fix SCSS linting issues
 ./axis format             # Format SCSS with prettier
+./axis format             # Format SCSS with prettier
 ./axis check              # Run lint + build (quality gate)
+./axis test               # Alias for check
 ```
 
 **Examples:**
@@ -141,7 +143,9 @@ npm start                 # ./axis start
 npm run lint              # ./axis lint
 npm run lint:fix          # ./axis lint:fix
 npm run format            # ./axis format
+npm run format            # ./axis format
 npm run check             # ./axis check
+npm test                  # ./axis test
 npm run publish:npm       # ./axis publish
 npm run release           # ./axis release
 npm run release:github    # ./axis release:github
@@ -186,8 +190,7 @@ git commit -m "Update styles"
 Pre-commit hook automatically bumps patch version when SCSS files are committed:
 
 ```bash
-git add src/scss/style.scss
-git commit -m "Update styles"
+git add src/scss/axis-twelve.scss
 # Hook detects SCSS changes → auto-bumps version in package.json
 ```
 

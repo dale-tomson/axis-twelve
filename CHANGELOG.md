@@ -100,6 +100,7 @@ npm update axis-twelve
 
 | Version | Date | Type | Key Changes |
 |---------|------|------|-------------|
+| Unreleased | TBD | Improvements | Renamed distribution files, enhanced CLI, improved git hooks, added version banner |
 | v0.0.3 | Nov 29, 2025 | Quality & CDN | Centralized utilities, minified/unminified versions, MIT License, workflow optimization |
 | v0.0.2 | Nov 29, 2025 | Optimization | 56% CSS reduction, 20 spacing values |
 | v0.0.1 | Nov 29, 2025 | Initial | Grid, flexbox, spacing, 6 breakpoints |

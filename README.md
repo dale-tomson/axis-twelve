@@ -45,13 +45,13 @@ pnpm install axis-twelve
 **Or use the compiled CSS directly:**
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/style.css">
+<link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/axis-twelve.css">
 ```
 
 Then include in your HTML:
 
 ```html
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/style.css">
+<link rel="stylesheet" href="node_modules/axis-twelve/dist/axis-twelve.css">
 ```
 
 Or if using SCSS imports:
@@ -106,7 +106,7 @@ Documentation guides:
 ```
 axis-twelve/
 ├── src/scss/                 # SCSS source files
-├── dist/style.css            # Compiled minified CSS
+├── dist/axis-twelve.css      # Compiled minified CSS
 ├── index.html                # Landing page with links to examples
 ├── examples/                 # Focused example files
 │   ├── 00-all-features-demo.html
