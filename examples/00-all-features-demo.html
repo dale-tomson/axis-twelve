@@ -5,14 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axis Twelve - Complete Demo</title>
-  <link rel="stylesheet" href="/axis-twelve/dist/axis-twelve.css">
+  <link rel="stylesheet" href="/dist/axis-twelve.css">
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* Demo Styles */
-    body {
-      padding: 2rem;
-      background-color: #f5f5f5;
-    }
-
+    /* File-specific Demo Styles */
     .demo-section {
       margin-bottom: 3rem;
       background: white;
@@ -72,34 +68,16 @@
       border-radius: 4px;
       text-align: center;
     }
-
-    code {
-      background: #f0f0f0;
-      padding: 0.25rem 0.5rem;
-      border-radius: 3px;
-      font-size: 0.9rem;
-    }
-
-    .example-code {
-      background: #2d2d2d;
-      color: #f8f8f2;
-      padding: 1rem;
-      border-radius: 4px;
-      overflow-x: auto;
-      margin: 1rem 0;
-      font-family: 'Courier New', monospace;
-      font-size: 0.85rem;
-    }
   </style>
   <script>
-    // Fix CSS path for GitHub Pages deployment
+    // Fix CSS path for GitHub Pages vs localhost
     const link = document.querySelector('link[rel="stylesheet"]');
-    if (link && link.href.includes('/axis-twelve/')) {
-      // Already GitHub Pages path, don't change
-    } else if (link && !window.location.hostname.includes('localhost')) {
-      // On GitHub Pages but relative path, fix it
-      const currentPath = window.location.pathname;
-      if (!currentPath.includes('/axis-twelve/')) {
+    if (link) {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        // Running locally
+        link.href = '/dist/axis-twelve.css';
+      } else {
+        // GitHub Pages
         link.href = '/axis-twelve/dist/axis-twelve.css';
       }
     }

@@ -5,6 +5,9 @@
 
 # Check if any SCSS files are staged
 if git diff --cached --name-only | grep -q '\.scss$'; then
+  echo "Formatting code"
+  npm run format
+  
   echo "🔍 Running linting on staged changes..."
   if ! npm run lint; then
     echo "❌ Linting failed. Commit aborted."

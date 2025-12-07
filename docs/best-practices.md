@@ -26,25 +26,25 @@ Use semantic HTML elements for better accessibility:
 
 ```html
 <!-- ✅ Good: Semantic structure -->
-<header class="row p-4">
+<header class="row p-md">
   <div class="column">
     <h1>Site Title</h1>
   </div>
 </header>
 
-<main class="grid gap-md p-4">
+<main class="grid gap-md p-md">
   <article class="col-8">Main content</article>
   <aside class="col-4">Sidebar</aside>
 </main>
 
-<footer class="row p-4">
+<footer class="row p-md">
   <div class="column">
     <p>&copy; 2024</p>
   </div>
 </footer>
 
 <!-- ❌ Avoid: Divs everywhere -->
-<div class="row p-4">
+<div class="row p-md">
   <div class="column">
     <div>Site Title</div>
   </div>
@@ -58,7 +58,7 @@ Use semantic HTML elements for better accessibility:
 Use `.row` and `.column` for consistent page width:
 
 ```html
-<div class="row p-4">
+<div class="row p-md">
   <div class="column">
     <h1>Consistent Width</h1>
     <p>Content stays centered with max-width</p>
@@ -72,7 +72,7 @@ Create a sidebar layout:
 
 ```html
 <div class="grid gap-lg">
-  <aside class="col-3 p-3">
+  <aside class="col-3 p-md">
     <nav>
       <ul>
         <li><a href="#">Link 1</a></li>
@@ -80,7 +80,7 @@ Create a sidebar layout:
       </ul>
     </nav>
   </aside>
-  <main class="col-9 p-3">
+  <main class="col-9 p-md">
     <h2>Main Content</h2>
     <p>Your content here</p>
   </main>
@@ -93,7 +93,7 @@ Create responsive card layouts:
 
 ```html
 <div class="grid gap-md">
-  <div class="col-12 md:col-6 lg:col-4 p-3">
+  <div class="col-12 md:col-6 lg:col-4 p-md">
     <div class="card">
       <h3>Card Title</h3>
       <p>Card content</p>
@@ -108,7 +108,7 @@ Create responsive card layouts:
 Full-width sections with centered content:
 
 ```html
-<section class="p-6" style="background: #f8f9fa;">
+<section class="p-xl" style="background: #f8f9fa;">
   <div class="row">
     <div class="column">
       <h2>Section Title</h2>
@@ -123,7 +123,7 @@ Full-width sections with centered content:
 ### Navigation Bar
 
 ```html
-<nav class="flex justify-between items-center p-3" style="background: #f8f9fa;">
+<nav class="flex justify-between items-center p-md" style="background: #f8f9fa;">
   <div style="font-weight: bold;">Logo</div>
   <div class="flex gap-md">
     <a href="#">Home</a>
@@ -160,15 +160,15 @@ Full-width sections with centered content:
 ### Consistent Section Spacing
 
 ```html
-<section class="p-4 mb-6">
-  <h2 class="mb-4">Section Title</h2>
-  <p class="mb-3">First paragraph with margin.</p>
-  <p class="mb-3">Second paragraph with margin.</p>
+<section class="p-md mb-lg">
+  <h2 class="mb-md">Section Title</h2>
+  <p class="mb-md">First paragraph with margin.</p>
+  <p class="mb-md">Second paragraph with margin.</p>
   <p>Last paragraph.</p>
 </section>
 
-<section class="p-4">
-  <h2 class="mb-4">Another Section</h2>
+<section class="p-md">
+  <h2 class="mb-md">Another Section</h2>
   <p>Content here</p>
 </section>
 ```
@@ -177,17 +177,17 @@ Full-width sections with centered content:
 
 ```html
 <div class="flex gap-sm">
-  <button class="p-3">Primary</button>
-  <button class="p-3">Secondary</button>
-  <button class="p-3">Tertiary</button>
+  <button class="p-md">Primary</button>
+  <button class="p-md">Secondary</button>
+  <button class="p-md">Tertiary</button>
 </div>
 ```
 
 ### Form Layout
 
 ```html
-<form class="p-4">
-  <div class="mb-4">
+<form class="p-md">
+  <div class="mb-md">
     <label>Name</label>
     <input type="text" class="mt-2" style="width: 100%; padding: 0.5rem;">
   </div>

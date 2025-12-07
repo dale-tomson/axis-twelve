@@ -12,6 +12,7 @@ yarn.lock
 !dist/axis-twelve.min.css
 !dist/axis-twelve.css.map
 !dist/axis-twelve.min.css.map
+!examples/style.css
 
 # Development
 .env

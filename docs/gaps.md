@@ -38,9 +38,9 @@ Gaps are the preferred way to space items in grid and flexbox containers:
 
 <!-- ❌ Avoid: Don't use margin for grid items -->
 <div class="grid">
-  <div class="col-4 m-2">Item 1</div>
-  <div class="col-4 m-2">Item 2</div>
-  <div class="col-4 m-2">Item 3</div>
+  <div class="col-4 m-sm">Item 1</div>
+  <div class="col-4 m-sm">Item 2</div>
+  <div class="col-4 m-sm">Item 3</div>
 </div>
 ```
 
@@ -114,7 +114,7 @@ Add spacing between flex items:
     <h3>Card 2</h3>
     <p>Content</p>
   </div>
-  <div class="col-4 p-3" style="background: #f8f9fa; border-radius: 4px;">
+  <div class="col-4 p-md" style="background: #f8f9fa; border-radius: 4px;">
     <h3>Card 3</h3>
     <p>Content</p>
   </div>
@@ -133,7 +133,7 @@ Add spacing between flex items:
     <h3>Responsive Card</h3>
     <p>Full width on mobile, half on tablet, 1/3 on desktop</p>
   </div>
-  <div class="col-12 md:col-6 lg:col-4 p-3" style="background: #f8f9fa;">
+  <div class="col-12 md:col-6 lg:col-4 p-md" style="background: #f8f9fa;">
     <h3>Responsive Card</h3>
     <p>Full width on mobile, half on tablet, 1/3 on desktop</p>
   </div>
@@ -143,7 +143,7 @@ Add spacing between flex items:
 ### Navigation with Gaps
 
 ```html
-<div class="flex gap-md p-3" style="background: #f8f9fa;">
+<div class="flex gap-md p-md" style="background: #f8f9fa;">
   <a href="#">Home</a>
   <a href="#">About</a>
   <a href="#">Services</a>
@@ -154,7 +154,7 @@ Add spacing between flex items:
 ### Form Layout with Gaps
 
 ```html
-<form class="flex flex-column gap-md p-4">
+<form class="flex flex-column gap-md p-md">
   <div>
     <label>First Name</label>
     <input type="text" style="width: 100%; padding: 0.5rem;">
@@ -218,7 +218,7 @@ Apply different gap sizes at different breakpoints:
 ### Good Example
 
 ```html
-<div class="grid gap-md p-4">
+<div class="grid gap-md p-md">
   <!-- Container has padding (outer spacing) -->
   <!-- Grid items have gap between them -->
   <div class="col-6">Item 1</div>
@@ -231,8 +231,8 @@ Apply different gap sizes at different breakpoints:
 ```html
 <div class="grid">
   <!-- Manual margins make gaps inconsistent -->
-  <div class="col-6 m-2">Item 1</div>
-  <div class="col-6 m-2">Item 2</div>
+  <div class="col-6 m-sm">Item 1</div>
+  <div class="col-6 m-sm">Item 2</div>
 </div>
 ```
 

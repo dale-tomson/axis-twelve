@@ -11,7 +11,7 @@ $grid-breakpoints: (
   'md': 768px,
   'lg': 992px,
   'xl': 1200px,
-  'xxl': 1400px
+  'xxl': 1400px,
 );
 
 // Container Widths
@@ -20,7 +20,7 @@ $container-widths: (
   'md': 720px,
   'lg': 960px,
   'xl': 1140px,
-  'xxl': 1320px
+  'xxl': 1320px,
 );
 
 // Colors
@@ -45,6 +45,7 @@ $spacer-2xl: 4rem;
 $spacer-3xl: 6rem;
 
 // Spacing Map for utilities generation
+// Spacing Map for utilities generation
 $spacing-map: (
   'xs': $spacer-xs,
   'sm': $spacer-sm,
@@ -57,13 +58,12 @@ $spacing-map: (
   '1': 0.25rem,
   '2': 0.5rem,
   '3': 0.75rem,
-  '4': 1rem,
-  '6': 1.5rem,
+  // '4' is md
+  // '6' is lg
   '8': 2rem,
   '10': 2.5rem,
-  '12': 3rem,
-  '16': 4rem,
-  '20': 5rem,
-  '24': 6rem,
-  '32': 8rem
+  // '12' is xl
+  // '16' is 2xl
+  '20': 5rem // '24' is 3xl
+  , // '32' is 8rem (removed as excessive)
 );

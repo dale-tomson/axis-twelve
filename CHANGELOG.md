@@ -4,6 +4,21 @@ For a full history of changes, please visit the [Changelog Directory](./project/
 
 ---
 
+## [v1.0.1](./project/docs/changelog/v1.0.1.md) - Mobile Responsiveness & CSS Consolidation
+**December 7, 2025**
+
+### 📱 Mobile Improvements
+- Added comprehensive mobile responsiveness to all HTML pages (index, docs, examples)
+- Responsive font sizes, padding, and touch-friendly elements (44px minimum)
+- Horizontal scroll prevention for tables and code blocks
+
+### 🎨 CSS Consolidation
+- Created shared `examples/style.css` with common styles
+- Removed ~535 lines of duplicate CSS across example files
+- Improved maintainability and browser caching
+
+---
+
 ## [v0.0.4](./project/docs/changelog/v0.0.4.md) - CLI & Distribution Improvements
 **December 7, 2025**
 
@@ -19,4 +34,14 @@ For a full history of changes, please visit the [Changelog Directory](./project/
     - `pre-push` now runs tests/builds before allowing push.
 - Added version/license banner to compiled CSS files.
 
-[Read full release notes →](./project/docs/changelog/v0.0.4.md)
+## [v1.0.0](./project/docs/changelog/v1.0.0.md) - SCSS Optimization
+**December 7, 2025**
+
+### ⚡ Performance & Optimization
+- **Breaking Change**: Removed redundant numeric spacing classes (`p-4`, `m-2`, etc.) in favor of standard T-shirt sizes (`p-md`, `m-sm`).
+    - Migration: Replace `*-2` with `*-sm`, `*-4` with `*-md`, `*-6` with `*-lg`, etc.
+- Optimized SCSS structure:
+    - Flattened flexbox selectors to reduce specificity.
+    - Consolidated grid responsive loops to reduce CSS file size (~40KB minified).
+
+[Read full release notes →](./project/docs/changelog/v0.0.5.md)

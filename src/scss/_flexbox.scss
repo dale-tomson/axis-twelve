@@ -9,141 +9,139 @@
 .flex {
   display: flex;
   flex-wrap: wrap;
+}
 
-  // Direction
-  &.flex-row {
-    flex-direction: row;
-  }
+// Direction
+.flex-row {
+  flex-direction: row;
+}
 
-  &.flex-column {
-    flex-direction: column;
-  }
+.flex-column {
+  flex-direction: column;
+}
 
-  &.flex-row-reverse {
-    flex-direction: row-reverse;
-  }
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
 
-  &.flex-column-reverse {
-    flex-direction: column-reverse;
-  }
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
 
-  // Justify Content
-  &.justify-start {
-    justify-content: flex-start;
-  }
+// Justify Content
+.justify-start {
+  justify-content: flex-start;
+}
 
-  &.justify-end {
-    justify-content: flex-end;
-  }
+.justify-end {
+  justify-content: flex-end;
+}
 
-  &.justify-center {
-    justify-content: center;
-  }
+.justify-center {
+  justify-content: center;
+}
 
-  &.justify-between {
-    justify-content: space-between;
-  }
+.justify-between {
+  justify-content: space-between;
+}
 
-  &.justify-around {
-    justify-content: space-around;
-  }
+.justify-around {
+  justify-content: space-around;
+}
 
-  &.justify-evenly {
-    justify-content: space-evenly;
-  }
+.justify-evenly {
+  justify-content: space-evenly;
+}
 
-  // Align Items
-  &.items-start {
-    align-items: flex-start;
-  }
+// Align Items
+.items-start {
+  align-items: flex-start;
+}
 
-  &.items-end {
-    align-items: flex-end;
-  }
+.items-end {
+  align-items: flex-end;
+}
 
-  &.items-center {
-    align-items: center;
-  }
+.items-center {
+  align-items: center;
+}
 
-  &.items-baseline {
-    align-items: baseline;
-  }
+.items-baseline {
+  align-items: baseline;
+}
 
-  &.items-stretch {
-    align-items: stretch;
-  }
+.items-stretch {
+  align-items: stretch;
+}
 
-  // Align Content
-  &.content-start {
-    align-content: flex-start;
-  }
+// Align Content
+.content-start {
+  align-content: flex-start;
+}
 
-  &.content-end {
-    align-content: flex-end;
-  }
+.content-end {
+  align-content: flex-end;
+}
 
-  &.content-center {
-    align-content: center;
-  }
+.content-center {
+  align-content: center;
+}
 
-  &.content-between {
-    align-content: space-between;
-  }
+.content-between {
+  align-content: space-between;
+}
 
-  &.content-around {
-    align-content: space-around;
-  }
+.content-around {
+  align-content: space-around;
+}
 
-  // Gap utilities are in _spacing.scss
+// Flex Wrap
+.flex-wrap {
+  flex-wrap: wrap;
+}
 
-  // Flex Wrap
-  &.flex-wrap {
-    flex-wrap: wrap;
-  }
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
 
-  &.flex-nowrap {
-    flex-wrap: nowrap;
-  }
-
-  &.flex-wrap-reverse {
-    flex-wrap: wrap-reverse;
-  }
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
 }
 
 // Flex Item
 .flex-item {
   flex: 1;
+}
 
-  // Flex Basis Classes
-  &.flex-1 {
-    flex: 1;
-  }
+// Flex Basis Classes
+.flex-1 {
+  flex: 1;
+}
 
-  &.flex-auto {
-    flex: auto;
-  }
+.flex-auto {
+  flex: auto;
+}
 
-  &.flex-none {
-    flex: none;
-  }
+.flex-none {
+  flex: none;
+}
 
-  // Grow
-  &.grow-0 {
-    flex-grow: 0;
-  }
+// Grow
+.grow-0 {
+  flex-grow: 0;
+}
 
-  &.grow-1 {
-    flex-grow: 1;
-  }
+.grow-1 {
+  flex-grow: 1;
+}
 
-  // Shrink
-  &.shrink-0 {
-    flex-shrink: 0;
-  }
+// Shrink
+.shrink-0 {
+  flex-shrink: 0;
+}
 
-  &.shrink-1 {
-    flex-shrink: 1;
-  }
+.shrink-1 {
+  flex-shrink: 1;
 }
 
 // Responsive Flex Classes
