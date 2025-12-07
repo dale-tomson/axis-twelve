@@ -4,18 +4,22 @@ For a full history of changes, please visit the [Changelog Directory](./project/
 
 ---
 
-## [v1.0.1](./project/docs/changelog/v1.0.1.md) - Mobile Responsiveness & CSS Consolidation
+## [v1.0.1](./project/docs/changelog/v1.0.1.md) - Documentation & Tooling Improvements
 **December 7, 2025**
 
-### 📱 Mobile Improvements
-- Added comprehensive mobile responsiveness to all HTML pages (index, docs, examples)
-- Responsive font sizes, padding, and touch-friendly elements (44px minimum)
-- Horizontal scroll prevention for tables and code blocks
+> **No framework changes** - CSS output identical to v1.0.0
 
-### 🎨 CSS Consolidation
-- Created shared `examples/style.css` with common styles
-- Removed ~535 lines of duplicate CSS across example files
-- Improved maintainability and browser caching
+### 📝 Documentation
+- Added mobile responsiveness to all HTML pages (index, docs, examples)
+- Added version display to index.html and docs/index.html
+- Updated docs/getting-started.md with current version info
+- Consolidated duplicate CSS in example files (~535 lines removed)
+
+### 🔧 Tooling
+- Created update-version.sh script for automatic version sync
+- Moved version bumps from pre-commit to pre-push hook
+- Removed redundant scripts (superseded by GitHub Actions)
+- Improved git hooks workflow
 
 ---
 

@@ -21,6 +21,75 @@ if ! npm test; then
   exit 1
 fi
 
+# Check if any SCSS files changed in commits to push
+SCSS_CHANGED=$(git log @{u}..HEAD --name-only --pretty=format: | grep -q '\.scss$' && echo 1 || echo 0)
+
+if [ "$SCSS_CHANGED" -eq 1 ]; then
+  # Check if package.json version was already manually updated
+  VERSION_MANUALLY_UPDATED=$(git log @{u}..HEAD --name-only --pretty=format: | grep -q 'package.json' && echo 1 || echo 0)
+  
+  if [ "$VERSION_MANUALLY_UPDATED" -eq 0 ]; then
+    # Get current version
+    CURRENT_VERSION=$(grep '"version"' package.json | head -1 | sed -E 's/.*"version":\s*"([^"]+)".*/\1/')
+    
+    echo ""
+    echo "📦 SCSS files changed in commits to push"
+    echo "Current version: $CURRENT_VERSION"
+    echo ""
+    
+    # Interactive version bump prompt
+    BUMP_TYPE="skip"
+    if [ -t 1 ]; then
+      exec < /dev/tty
+      echo -e "Choose version bump: (p)atch, (m)inor, (M)ajor, (s)kip [default] > \c"
+      read -r choice
+      case "$choice" in
+        p|patch) BUMP_TYPE="patch" ;;
+        m|minor) BUMP_TYPE="minor" ;;
+        M|Major) BUMP_TYPE="major" ;;
+        *)       BUMP_TYPE="skip" ;;
+      esac
+    fi
+    
+    if [ "$BUMP_TYPE" != "skip" ]; then
+      # Parse version parts
+      MAJOR=$(echo $CURRENT_VERSION | cut -d. -f1)
+      MINOR=$(echo $CURRENT_VERSION | cut -d. -f2)
+      PATCH=$(echo $CURRENT_VERSION | cut -d. -f3)
+      
+      if [ "$BUMP_TYPE" == "major" ]; then
+        NEW_MAJOR=$((MAJOR + 1))
+        NEW_VERSION="$NEW_MAJOR.0.0"
+      elif [ "$BUMP_TYPE" == "minor" ]; then
+        NEW_MINOR=$((MINOR + 1))
+        NEW_VERSION="$MAJOR.$NEW_MINOR.0"
+      else
+        NEW_PATCH=$((PATCH + 1))
+        NEW_VERSION="$MAJOR.$MINOR.$NEW_PATCH"
+      fi
+      
+      echo ""
+      echo "📝 Bumping version ($BUMP_TYPE): $CURRENT_VERSION → $NEW_VERSION"
+      
+      # Update package.json
+      sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$NEW_VERSION\"/" package.json
+      
+      # Update version in HTML and documentation files
+      bash project/scripts/update-version.sh
+      
+      # Commit the version bump
+      git add package.json index.html docs/index.html docs/getting-started.md
+      git commit -m "chore: bump version to v$NEW_VERSION"
+      
+      echo "✅ Version bumped to v$NEW_VERSION and committed"
+      echo ""
+      echo "⚠️  Remember to update CHANGELOG.md or create project/docs/changelog/v$NEW_VERSION.md"
+      echo "   Then amend the commit: git commit --amend --no-edit"
+      echo ""
+    fi
+  fi
+fi
+
 echo "📋 Pre-push validation: Checking changelog..."
 echo "Current version: $CURRENT_VERSION"
 
