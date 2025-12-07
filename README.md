@@ -4,8 +4,10 @@
 
 <img src="https://img.shields.io/npm/v/axis-twelve?color=blue&style=flat-square" alt="NPM Version" />
 <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License" />
-<img src="https://img.shields.io/badge/size-40.6kB-orange?style=flat-square" alt="Size" />
-<img src="https://img.shields.io/badge/gzip-6.0kB-success?style=flat-square" alt="Gzip Size" />
+<img src="https://img.shields.io/badge/css-57kB-orange?style=flat-square" alt="CSS Size" />
+<img src="https://img.shields.io/badge/css.gz-6.5kB-success?style=flat-square" alt="CSS Gzipped" />
+<img src="https://img.shields.io/badge/min.css-40kB-orange?style=flat-square" alt="Minified Size" />
+<img src="https://img.shields.io/badge/min.css.gz-5.9kB-success?style=flat-square" alt="Minified Gzipped" />
 
 **Build faster, center easier. The 12-column solution.**
 
@@ -21,7 +23,7 @@ Axis Twelve is a professional CSS framework with SCSS support featuring a powerf
 - **Extensive Spacing Scale** - Named sizes (xs-3xl) and consistent numeric mapping
 - **Full SCSS Support** - Customizable variables and modular architecture
 - **Responsive Breakpoints** - xs, sm, md, lg, xl, xxl
-- **Ultra-Lightweight** - Only 40.6 KB CSS (6.0 KB gzipped) - Significantly optimized
+- **Ultra-Lightweight** - 57 KB expanded (6.5 KB gzipped) / 40 KB minified (5.9 KB gzipped)
 
 ## Documentation
 
