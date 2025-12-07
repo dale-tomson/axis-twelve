@@ -8,10 +8,10 @@ yarn.lock
 # dist/ is committed - needed for GitHub Pages deployment
 *.css
 !dist/
-!dist/style.css
-!dist/style.min.css
-!dist/style.css.map
-!dist/style.min.css.map
+!dist/axis-twelve.css
+!dist/axis-twelve.min.css
+!dist/axis-twelve.css.map
+!dist/axis-twelve.min.css.map
 
 # Development
 .env
