@@ -108,7 +108,7 @@ The framework is built on modern CSS features (CSS Grid, Flexbox) and uses SCSS 
 
 ## Current Version
 
-**Axis Twelve v1.0.1** - Latest stable release with mobile responsiveness and CSS consolidation
+**Axis Twelve v1.0.1** - Latest release with documentation and tooling improvements (no framework changes)
 
 - 📱 [View v1.0.1 Release Notes](../project/docs/changelog/v1.0.1.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v1.0.1.md)) - Mobile Responsiveness & CSS Consolidation
 - ⚡ [View v1.0.0 Release Notes](../project/docs/changelog/v1.0.0.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v1.0.0.md)) - SCSS Optimization
