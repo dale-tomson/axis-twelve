@@ -4,6 +4,21 @@ For a full history of changes, please visit the [Changelog Directory](./project/
 
 ---
 
+## [v1.0.1](./project/docs/changelog/v1.0.1.md) - Mobile Responsiveness & CSS Consolidation
+**December 7, 2025**
+
+### 📱 Mobile Improvements
+- Added comprehensive mobile responsiveness to all HTML pages (index, docs, examples)
+- Responsive font sizes, padding, and touch-friendly elements (44px minimum)
+- Horizontal scroll prevention for tables and code blocks
+
+### 🎨 CSS Consolidation
+- Created shared `examples/style.css` with common styles
+- Removed ~535 lines of duplicate CSS across example files
+- Improved maintainability and browser caching
+
+---
+
 ## [v0.0.4](./project/docs/changelog/v0.0.4.md) - CLI & Distribution Improvements
 **December 7, 2025**
 

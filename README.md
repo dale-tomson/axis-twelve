@@ -115,6 +115,7 @@ axis-twelve/
 ├── dist/axis-twelve.css      # Compiled minified CSS
 ├── index.html                # Landing page with links to examples
 ├── examples/                 # Focused example files
+│   ├── style.css             # Shared styles for all examples
 │   ├── 00-all-features-demo.html
 │   ├── 01-grid-layouts.html
 │   ├── 02-flexbox.html

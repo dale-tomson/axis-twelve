@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axis Twelve - Examples & Demo</title>
-  <link rel="stylesheet" href="/axis-twelve/dist/axis-twelve.css">
+  <link rel="stylesheet" href="/dist/axis-twelve.css">
   <style>
     :root {
       --blue-primary: #007bff;
@@ -225,6 +225,84 @@
     }
 
     /* Example card links already have good styling from .example-card, no additional styling needed */
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.75rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .p-lg {
+        padding: 1rem !important;
+      }
+
+      .py-lg {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+      }
+
+      .m-xl {
+        margin: 1.5rem !important;
+      }
+
+      .mb-xl {
+        margin-bottom: 1.5rem !important;
+      }
+
+      .intro h2 {
+        font-size: 1.5rem;
+      }
+
+      .intro p {
+        font-size: 0.95rem;
+      }
+
+      .feature-item-icon {
+        font-size: 1.5rem;
+      }
+
+      .feature-item h3 {
+        font-size: 1.1rem;
+      }
+
+      .feature-item p {
+        font-size: 0.9rem;
+      }
+
+      .example-card-header {
+        font-size: 1.1rem;
+      }
+
+      .example-card-description {
+        font-size: 0.9rem;
+      }
+
+      /* Ensure touch-friendly links */
+      a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .example-card-link {
+        padding: 0.75rem 1rem;
+        min-height: 44px;
+      }
+
+      /* Code block horizontal scroll */
+      code {
+        word-break: break-word;
+      }
+
+      pre code {
+        display: block;
+        overflow-x: auto;
+      }
+    }
   </style>
   <script>
     // Fix CSS path for GitHub Pages deployment
