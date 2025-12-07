@@ -138,68 +138,70 @@
     <h2>Spacing Scale</h2>
 
     <h3>Named Sizes</h3>
-    <table class="spacing-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Value</th>
-          <th>Padding Class</th>
-          <th>Margin Class</th>
-          <th>Gap Class</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>xs</td>
-          <td>0.25rem (4px)</td>
-          <td><code>.p-xs</code></td>
-          <td><code>.m-xs</code></td>
-          <td><code>.gap-xs</code></td>
-        </tr>
-        <tr>
-          <td>sm</td>
-          <td>0.5rem (8px)</td>
-          <td><code>.p-sm</code></td>
-          <td><code>.m-sm</code></td>
-          <td><code>.gap-sm</code></td>
-        </tr>
-        <tr>
-          <td>md</td>
-          <td>1rem (16px)</td>
-          <td><code>.p-md</code></td>
-          <td><code>.m-md</code></td>
-          <td><code>.gap-md</code></td>
-        </tr>
-        <tr>
-          <td>lg</td>
-          <td>1.5rem (24px)</td>
-          <td><code>.p-lg</code></td>
-          <td><code>.m-lg</code></td>
-          <td><code>.gap-lg</code></td>
-        </tr>
-        <tr>
-          <td>xl</td>
-          <td>2rem (32px)</td>
-          <td><code>.p-xl</code></td>
-          <td><code>.m-xl</code></td>
-          <td><code>.gap-xl</code></td>
-        </tr>
-        <tr>
-          <td>2xl</td>
-          <td>3rem (48px)</td>
-          <td><code>.p-2xl</code></td>
-          <td><code>.m-2xl</code></td>
-          <td><code>.gap-2xl</code></td>
-        </tr>
-        <tr>
-          <td>3xl</td>
-          <td>4rem (64px)</td>
-          <td><code>.p-3xl</code></td>
-          <td><code>.m-3xl</code></td>
-          <td><code>.gap-3xl</code></td>
-        </tr>
-      </tbody>
-    </table>
+    <div style="overflow-x: auto;">
+      <table class="spacing-table" style="min-width: 500px;">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Padding Class</th>
+            <th>Margin Class</th>
+            <th>Gap Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>xs</td>
+            <td>0.25rem (4px)</td>
+            <td><code>.p-xs</code></td>
+            <td><code>.m-xs</code></td>
+            <td><code>.gap-xs</code></td>
+          </tr>
+          <tr>
+            <td>sm</td>
+            <td>0.5rem (8px)</td>
+            <td><code>.p-sm</code></td>
+            <td><code>.m-sm</code></td>
+            <td><code>.gap-sm</code></td>
+          </tr>
+          <tr>
+            <td>md</td>
+            <td>1rem (16px)</td>
+            <td><code>.p-md</code></td>
+            <td><code>.m-md</code></td>
+            <td><code>.gap-md</code></td>
+          </tr>
+          <tr>
+            <td>lg</td>
+            <td>1.5rem (24px)</td>
+            <td><code>.p-lg</code></td>
+            <td><code>.m-lg</code></td>
+            <td><code>.gap-lg</code></td>
+          </tr>
+          <tr>
+            <td>xl</td>
+            <td>2rem (32px)</td>
+            <td><code>.p-xl</code></td>
+            <td><code>.m-xl</code></td>
+            <td><code>.gap-xl</code></td>
+          </tr>
+          <tr>
+            <td>2xl</td>
+            <td>3rem (48px)</td>
+            <td><code>.p-2xl</code></td>
+            <td><code>.m-2xl</code></td>
+            <td><code>.gap-2xl</code></td>
+          </tr>
+          <tr>
+            <td>3xl</td>
+            <td>4rem (64px)</td>
+            <td><code>.p-3xl</code></td>
+            <td><code>.m-3xl</code></td>
+            <td><code>.gap-3xl</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- Padding Examples -->
@@ -216,7 +218,8 @@
 
     <h3>Padding Specific Sides</h3>
     <p><code>.pt-[size]</code> - Top, <code>.pb-[size]</code> - Bottom, <code>.pl-[size]</code> - Left,
-      <code>.pr-[size]</code> - Right</p>
+      <code>.pr-[size]</code> - Right
+    </p>
     <div class="demo-container">
       <div class="pt-lg pb-lg demo-box">Vertical Padding (Top & Bottom)</div>
       <div class="pl-lg pr-lg demo-box alt1" style="margin-top: 1rem;">Horizontal Padding (Left & Right)</div>
@@ -247,7 +250,8 @@
 
     <h3>Margin Specific Sides</h3>
     <p><code>.mt-[size]</code> - Top, <code>.mb-[size]</code> - Bottom, <code>.ml-[size]</code> - Left,
-      <code>.mr-[size]</code> - Right</p>
+      <code>.mr-[size]</code> - Right
+    </p>
     <div class="demo-container">
       <div class="mb-4 demo-box" style="margin: 0;">mb-4 (16px bottom margin)</div>
       <div class="ml-4 demo-box alt1" style="margin: 0;">ml-4 (16px left margin)</div>
@@ -373,7 +377,7 @@
 
     <h3>Card with Spacing</h3>
     <div class="grid gap-md">
-      <div class="col-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
+      <div class="col-12 col-md-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
         <div
           style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">
           Card Header</div>
@@ -383,7 +387,7 @@
         </div>
       </div>
 
-      <div class="col-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
+      <div class="col-12 col-md-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
         <div
           style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">
           Card Header</div>
@@ -393,7 +397,7 @@
         </div>
       </div>
 
-      <div class="col-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
+      <div class="col-12 col-md-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
         <div
           style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">
           Card Header</div>
