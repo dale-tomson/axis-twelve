@@ -126,10 +126,11 @@
     <h2>Basic Flex Layouts</h2>
 
     <h3>Simple Row (Default)</h3>
-    <div class="flex gap-md flex-demo">
-      <div class="demo-item" style="flex: 1;">Item 1</div>
-      <div class="demo-item alt1" style="flex: 1;">Item 2</div>
-      <div class="demo-item alt2" style="flex: 1;">Item 3</div>
+    <h3>Simple Row (Default)</h3>
+    <div class="flex flex-wrap gap-md flex-demo">
+      <div class="demo-item" style="flex: 1 1 200px;">Item 1</div>
+      <div class="demo-item alt1" style="flex: 1 1 200px;">Item 2</div>
+      <div class="demo-item alt2" style="flex: 1 1 200px;">Item 3</div>
     </div>
 
     <h3>Column Layout</h3>
@@ -140,9 +141,9 @@
     </div>
 
     <h3>Flex with Fixed Width Items</h3>
-    <div class="flex gap-md flex-demo">
+    <div class="flex flex-wrap gap-md flex-demo">
       <div class="demo-item" style="width: 100px;">100px</div>
-      <div class="demo-item alt1" style="flex: 1;">Flexible</div>
+      <div class="demo-item alt1" style="flex: 1; min-width: 150px;">Flexible</div>
       <div class="demo-item alt2" style="width: 150px;">150px</div>
     </div>
 
@@ -157,38 +158,38 @@
     <h2>Justify Content (Horizontal Alignment)</h2>
 
     <h3>Justify Start (Default)</h3>
-    <div class="flex justify-start gap-md flex-demo">
+    <div class="flex justify-start flex-wrap gap-md flex-demo">
       <div class="demo-item">Item</div>
       <div class="demo-item alt1">Item</div>
     </div>
 
     <h3>Justify Center</h3>
-    <div class="flex justify-center gap-md flex-demo">
+    <div class="flex justify-center flex-wrap gap-md flex-demo">
       <div class="demo-item">Item</div>
       <div class="demo-item alt1">Item</div>
     </div>
 
     <h3>Justify End</h3>
-    <div class="flex justify-end gap-md flex-demo">
+    <div class="flex justify-end flex-wrap gap-md flex-demo">
       <div class="demo-item">Item</div>
       <div class="demo-item alt1">Item</div>
     </div>
 
     <h3>Justify Between</h3>
-    <div class="flex justify-between gap-md flex-demo">
+    <div class="flex justify-between flex-wrap gap-md flex-demo">
       <div class="demo-item">Left</div>
       <div class="demo-item alt1">Right</div>
     </div>
 
     <h3>Justify Around</h3>
-    <div class="flex justify-around gap-md flex-demo">
+    <div class="flex justify-around flex-wrap gap-md flex-demo">
       <div class="demo-item">Item</div>
       <div class="demo-item alt1">Item</div>
       <div class="demo-item alt2">Item</div>
     </div>
 
     <h3>Justify Evenly</h3>
-    <div class="flex justify-evenly gap-md flex-demo">
+    <div class="flex justify-evenly flex-wrap gap-md flex-demo">
       <div class="demo-item">Item</div>
       <div class="demo-item alt1">Item</div>
       <div class="demo-item alt2">Item</div>
@@ -204,7 +205,7 @@
     <h2>Align Items (Vertical Alignment)</h2>
 
     <h3>Align Start</h3>
-    <div class="flex items-start gap-md flex-demo" style="min-height: 120px;">
+    <div class="flex items-start flex-wrap gap-md flex-demo" style="min-height: 120px;">
       <div class="demo-item" style="height: 60px;">Item 1</div>
       <div class="demo-item alt1" style="height: 100px;">Item 2</div>
       <div class="demo-item alt2" style="height: 80px;">Item 3</div>
@@ -225,10 +226,10 @@
     </div>
 
     <h3>Align Stretch</h3>
-    <div class="flex items-stretch gap-md flex-demo" style="min-height: 120px;">
-      <div class="demo-item" style="flex: 1;">Item 1</div>
-      <div class="demo-item alt1" style="flex: 1;">Item 2</div>
-      <div class="demo-item alt2" style="flex: 1;">Item 3</div>
+    <div class="flex items-stretch flex-wrap gap-md flex-demo" style="min-height: 120px;">
+      <div class="demo-item" style="flex: 1 1 150px;">Item 1</div>
+      <div class="demo-item alt1" style="flex: 1 1 150px;">Item 2</div>
+      <div class="demo-item alt2" style="flex: 1 1 150px;">Item 3</div>
     </div>
 
     <div class="example-code">&lt;div class="flex items-center gap-md"&gt;
@@ -246,16 +247,16 @@
     </div>
 
     <h3>Space Between with Vertical Center</h3>
-    <div class="flex justify-between items-center flex-demo" style="min-height: 120px;">
+    <div class="flex justify-between items-center flex-wrap gap-md flex-demo" style="min-height: 120px;">
       <div class="demo-item" style="width: 150px;">Left</div>
       <div class="demo-item alt1" style="width: 150px;">Center</div>
       <div class="demo-item alt2" style="width: 150px;">Right</div>
     </div>
 
     <h3>Navigation Bar Pattern</h3>
-    <div class="flex justify-between items-center flex-demo">
+    <div class="flex justify-between items-center flex-wrap gap-md flex-demo">
       <div class="demo-item" style="flex: 0 0 auto;">Logo</div>
-      <div class="flex gap-md">
+      <div class="flex flex-wrap justify-center gap-md" style="flex: 1;">
         <div class="demo-item alt1" style="width: 80px; height: 40px; font-size: 0.9rem;">Home</div>
         <div class="demo-item alt1" style="width: 80px; height: 40px; font-size: 0.9rem;">About</div>
         <div class="demo-item alt1" style="width: 80px; height: 40px; font-size: 0.9rem;">Contact</div>
@@ -336,13 +337,13 @@
     </div>
 
     <h3 style="margin-top: 3rem;">Button Group</h3>
-    <div class="flex gap-sm flex-demo">
+    <div class="flex flex-wrap gap-sm flex-demo">
       <button
-        style="padding: 0.75rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Primary</button>
+        style="padding: 0.75rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; flex: 1 1 auto;">Primary</button>
       <button
-        style="padding: 0.75rem 1.5rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">Secondary</button>
+        style="padding: 0.75rem 1.5rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; flex: 1 1 auto;">Secondary</button>
       <button
-        style="padding: 0.75rem 1.5rem; background: #f8f9fa; color: #333; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">Tertiary</button>
+        style="padding: 0.75rem 1.5rem; background: #f8f9fa; color: #333; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; flex: 1 1 auto;">Tertiary</button>
     </div>
 
     <div class="example-code">&lt;div class="flex gap-sm"&gt;

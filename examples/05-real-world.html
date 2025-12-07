@@ -222,9 +222,9 @@
 
     <header style="margin: -2rem -2rem 2rem -2rem;">
       <div class="row p-4">
-        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        <div class="flex flex-column flex-md-row justify-between items-center gap-md" style="width: 100%;">
           <h1 style="margin: 0; font-size: 1.5rem;">Logo</h1>
-          <nav>
+          <nav class="flex flex-column flex-md-row items-center gap-lg">
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
@@ -248,7 +248,7 @@
       <h1 style="color: white; margin-bottom: 1rem; font-size: 3rem;">Welcome to Axis Twelve</h1>
       <p style="color: rgba(255,255,255,0.9); font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px;">Build faster,
         center easier. The 12-column solution for modern web development.</p>
-      <div class="flex gap-md" style="justify-content: center;">
+      <div class="flex flex-wrap gap-md" style="justify-content: center;">
         <button
           style="padding: 1rem 2rem; background: white; color: #007bff; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 1rem;">Get
           Started</button>
@@ -264,7 +264,7 @@
     <h2>Features Section</h2>
 
     <div class="grid gap-lg">
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div style="background: #f0f0f0; border-radius: 8px; padding: 2rem; text-align: center;">
           <div style="font-size: 2.5rem; margin-bottom: 1rem;">📐</div>
           <h3 style="color: #007bff;">12-Column Grid</h3>
@@ -272,7 +272,7 @@
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div style="background: #f0f0f0; border-radius: 8px; padding: 2rem; text-align: center;">
           <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
           <h3 style="color: #007bff;">Flexbox Ready</h3>
@@ -280,7 +280,7 @@
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div style="background: #f0f0f0; border-radius: 8px; padding: 2rem; text-align: center;">
           <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
           <h3 style="color: #007bff;">Easy Centering</h3>
@@ -295,7 +295,7 @@
     <h2>Product Showcase</h2>
 
     <div class="grid gap-lg">
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div class="product-card">
           <div class="product-image">Premium Product</div>
           <div class="product-info">
@@ -307,7 +307,7 @@
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div class="product-card" style="border: 2px solid #007bff;">
           <div style="background: #007bff; color: white; padding: 0.5rem; text-align: center; font-weight: 600;">Most
             Popular</div>
@@ -322,7 +322,7 @@
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div class="product-card">
           <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">Enterprise
             Product</div>
@@ -342,7 +342,7 @@
     <h2>Blog Post Layout</h2>
 
     <div class="grid gap-lg">
-      <div class="col-8">
+      <div class="col-12 col-lg-8">
         <div class="blog-post">
           <h1>Getting Started with Axis Twelve</h1>
           <div class="blog-meta">Published on November 29, 2025 • by John Doe</div>
@@ -369,7 +369,7 @@
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col-12 col-lg-4">
         <div
           style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; height: fit-content;">
           <h3 style="margin-top: 0; color: #007bff;">About This Blog</h3>
@@ -395,7 +395,7 @@
     <h2>Contact Form</h2>
 
     <div class="grid gap-lg">
-      <div class="col-8 offset-2">
+      <div class="col-12 col-md-8 offset-md-2">
         <form style="background: #f8f9fa; padding: 2rem; border-radius: 8px;">
           <h3 style="margin-top: 0; color: #007bff;">Get In Touch</h3>
 

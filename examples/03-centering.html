@@ -181,7 +181,7 @@
 
     <h3>Center Horizontally with Flexbox</h3>
     <div class="flex justify-center centered-container">
-      <div class="demo-box" style="width: 300px;">Horizontally Centered</div>
+      <div class="demo-box" style="width: 100%; max-width: 300px;">Horizontally Centered</div>
     </div>
 
     <h3>Center Vertically with Flexbox</h3>
@@ -191,11 +191,11 @@
 
     <h3>Center Both Directions (Perfect Center)</h3>
     <div class="flex justify-center items-center centered-container" style="min-height: 250px;">
-      <div class="demo-box" style="width: 300px;">Perfectly Centered</div>
+      <div class="demo-box" style="width: 100%; max-width: 300px;">Perfectly Centered</div>
     </div>
 
     <h3>Multiple Items - Center Group</h3>
-    <div class="flex justify-center items-center gap-md centered-container" style="min-height: 200px;">
+    <div class="flex justify-center items-center flex-wrap gap-md centered-container" style="min-height: 200px;">
       <div class="demo-box" style="width: 150px;">Item 1</div>
       <div class="demo-box alt1" style="width: 150px;">Item 2</div>
       <div class="demo-box alt2" style="width: 150px;">Item 3</div>
@@ -212,13 +212,13 @@
 
     <h3>Single Centered Column (offset-3 col-6)</h3>
     <div class="grid gap-md centered-container">
-      <div class="offset-3 col-6 demo-box">Centered Column</div>
+      <div class="col-12 col-md-6 offset-md-3 demo-box">Centered Column</div>
     </div>
 
     <h3>Multiple Centered Columns</h3>
     <div class="grid gap-md centered-container">
-      <div class="offset-2 col-8 demo-box">Offset 2, Col 8</div>
-      <div class="offset-4 col-4 demo-box alt1" style="margin-top: 1rem;">Offset 4, Col 4</div>
+      <div class="col-12 col-md-8 offset-md-2 demo-box">Offset 2, Col 8</div>
+      <div class="col-12 col-md-4 offset-md-4 demo-box alt1" style="margin-top: 1rem;">Offset 4, Col 4</div>
     </div>
 
     <div class="example-code">&lt;div class="grid"&gt;
@@ -259,9 +259,9 @@
     <h2>Modal / Dialog Pattern</h2>
 
     <h3>Centered Modal Dialog</h3>
-    <div class="flex justify-center items-center centered-container" style="min-height: 300px;">
+    <div class="flex justify-center items-center centered-container" style="min-height: 300px; padding: 1rem;">
       <div
-        style="background: white; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); width: 400px; padding: 2rem;">
+        style="background: white; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); width: 100%; max-width: 400px; padding: 2rem;">
         <h3 style="margin-top: 0; color: #007bff; text-align: center;">Modal Dialog</h3>
         <p style="text-align: center; color: #666; margin: 1rem 0;">This is a centered modal dialog. It's perfectly
           centered both horizontally and vertically.</p>
