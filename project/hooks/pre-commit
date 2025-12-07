@@ -11,22 +11,57 @@ if git diff --cached --name-only | grep -q '\.scss$'; then
     exit 1
   fi
   
-  # Get current version from package.json
+  # Check if package.json is already staged (manual bump)
+  if git diff --cached --name-only | grep -q 'package.json'; then
+    echo "📦 Manual version bump detected in package.json. Skipping auto-bump."
+    exit 0
+  fi
+
+  # Get current version details
   CURRENT_VERSION=$(grep '"version"' package.json | head -1 | sed -E 's/.*"version":\s*"([^"]+)".*/\1/')
   
   echo "📦 SCSS files detected in commit"
   echo "Current version: $CURRENT_VERSION"
   
+  # Interactive check can be tricky in all git GUIs, but for CLI it works.
+  # Fallback to Patch if non-interactive.
+  BUMP_TYPE="patch"
+  
+  # Check if running in a terminal
+  if [ -t 1 ]; then
+    exec < /dev/tty
+    echo -e "Choose version bump: (p)atch [default], (m)inor, (M)ajor, (s)kip > \c"
+    read -r choice
+    case "$choice" in
+      m|minor) BUMP_TYPE="minor" ;;
+      M|Major) BUMP_TYPE="major" ;;
+      s|skip)  BUMP_TYPE="skip" ;;
+      *)       BUMP_TYPE="patch" ;;
+    esac
+  fi
+
+  if [ "$BUMP_TYPE" == "skip" ]; then
+    echo "⏩ Skipping version bump."
+    exit 0
+  fi
+
   # Parse version parts
   MAJOR=$(echo $CURRENT_VERSION | cut -d. -f1)
   MINOR=$(echo $CURRENT_VERSION | cut -d. -f2)
   PATCH=$(echo $CURRENT_VERSION | cut -d. -f3)
   
-  # Increment patch version
-  NEW_PATCH=$((PATCH + 1))
-  NEW_VERSION="$MAJOR.$MINOR.$NEW_PATCH"
+  if [ "$BUMP_TYPE" == "major" ]; then
+    NEW_MAJOR=$((MAJOR + 1))
+    NEW_VERSION="$NEW_MAJOR.0.0"
+  elif [ "$BUMP_TYPE" == "minor" ]; then
+    NEW_MINOR=$((MINOR + 1))
+    NEW_VERSION="$MAJOR.$NEW_MINOR.0"
+  else
+    NEW_PATCH=$((PATCH + 1))
+    NEW_VERSION="$MAJOR.$MINOR.$NEW_PATCH"
+  fi
   
-  echo "Bumping version to: $NEW_VERSION"
+  echo "Bumping version ($BUMP_TYPE) to: $NEW_VERSION"
   
   # Update package.json
   sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$NEW_VERSION\"/" package.json
