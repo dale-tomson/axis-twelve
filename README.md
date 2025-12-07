@@ -29,9 +29,6 @@ Axis Twelve is a professional CSS framework with SCSS support featuring a powerf
 
 - **[📖 Interactive Documentation](https://dale-tomson.github.io/axis-twelve/)** - Full documentation site on GitHub Pages
 - **[Changelog](CHANGELOG.md)** - View all releases and updates
-- **[v0.0.3 Release Notes](project/docs/changelog/v0.0.3.md)** - Latest: Code Quality & Cleanup (improved architecture)
-- **[v0.0.2 Release Notes](project/docs/changelog/v0.0.2.md)** - Performance & Optimization (52KB CSS, 56% reduction)
-- **[v0.0.1 Release Notes](project/docs/changelog/v0.0.1.md)** - Initial stable release
 - **[Scripts & CLI Guide](project/docs/SCRIPTS.md)** - All available commands (./axis)
 - **[Release Process](project/docs/RELEASE.md)** - How to create releases
 
