@@ -1,6 +1,15 @@
 # Axis Twelve
 
+<div align="center">
+
+<img src="https://img.shields.io/npm/v/axis-twelve?color=blue&style=flat-square" alt="NPM Version" />
+<img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License" />
+<img src="https://img.shields.io/badge/size-52.6kB-orange?style=flat-square" alt="Size" />
+<img src="https://img.shields.io/badge/gzip-7.4kB-success?style=flat-square" alt="Gzip Size" />
+
 **Build faster, center easier. The 12-column solution.**
+
+</div>
 
 Axis Twelve is a professional CSS framework with SCSS support featuring a powerful 12-column grid system, comprehensive flexbox utilities, powerful centering components, and extensive spacing utilities.
 
