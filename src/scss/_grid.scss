@@ -22,16 +22,10 @@
   }
 }
 
-// Responsive Grid Classes
-@each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint != 'xs' {
-    @include respond-to($breakpoint) {
-      @for $i from 1 through $grid-columns {
-        .col-#{$breakpoint}-#{$i} {
-          @include col-span($i);
-        }
-      }
-    }
+// Offset Columns
+@for $i from 0 through $grid-columns {
+  .offset-#{$i} {
+    grid-column-start: $i + 1;
   }
 }
 
@@ -45,17 +39,18 @@
   grid-column: 1 / -1;
 }
 
-// Offset Columns
-@for $i from 0 through $grid-columns {
-  .offset-#{$i} {
-    grid-column-start: $i + 1;
-  }
-}
-
-// Responsive Offsets
+// Responsive Grid Classes (Columns & Offsets Consolidated)
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
   @if $breakpoint != 'xs' {
     @include respond-to($breakpoint) {
+      // Responsive Columns
+      @for $i from 1 through $grid-columns {
+        .col-#{$breakpoint}-#{$i} {
+          @include col-span($i);
+        }
+      }
+
+      // Responsive Offsets
       @for $i from 0 through $grid-columns {
         .offset-#{$breakpoint}-#{$i} {
           grid-column-start: $i + 1;

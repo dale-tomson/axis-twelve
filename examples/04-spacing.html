@@ -243,9 +243,9 @@
 
     <h3>Margin All Sides</h3>
     <div class="demo-container">
-      <div class="m-2 demo-box">m-2 (8px)</div>
-      <div class="m-4 demo-box alt1">m-4 (16px)</div>
-      <div class="m-6 demo-box alt2">m-6 (24px)</div>
+      <div class="m-sm demo-box">m-sm (8px)</div>
+      <div class="m-md demo-box alt1">m-md (16px)</div>
+      <div class="m-lg demo-box alt2">m-lg (24px)</div>
     </div>
 
     <h3>Margin Specific Sides</h3>
@@ -253,8 +253,8 @@
       <code>.mr-[size]</code> - Right
     </p>
     <div class="demo-container">
-      <div class="mb-4 demo-box" style="margin: 0;">mb-4 (16px bottom margin)</div>
-      <div class="ml-4 demo-box alt1" style="margin: 0;">ml-4 (16px left margin)</div>
+      <div class="mb-md demo-box" style="margin: 0;">mb-md (16px bottom margin)</div>
+      <div class="ml-md demo-box alt1" style="margin: 0;">ml-md (16px left margin)</div>
     </div>
 
     <h3>Margin Directions</h3>
@@ -264,8 +264,8 @@
       <div class="mx-auto demo-box" style="width: 200px; text-align: center;">mx-auto (Centered)</div>
     </div>
 
-    <div class="example-code">&lt;div class="m-4"&gt;Margin on all sides&lt;/div&gt;
-      &lt;div class="mb-4"&gt;Bottom margin&lt;/div&gt;
+    <div class="example-code">&lt;div class="m-md"&gt;Margin on all sides&lt;/div&gt;
+      &lt;div class="mb-md"&gt;Bottom margin&lt;/div&gt;
       &lt;div class="mx-auto"&gt;Centered with auto margin&lt;/div&gt;</div>
   </div>
 
@@ -275,7 +275,7 @@
 
     <h3>Padding + Margin Together</h3>
     <div class="demo-container">
-      <div class="p-4 m-2 demo-box">p-4 + m-2 (Padding inside, Margin outside)</div>
+      <div class="p-md m-sm demo-box">p-md + m-sm (Padding inside, Margin outside)</div>
     </div>
 
     <h3>Form Field Spacing</h3>
@@ -294,10 +294,10 @@
       </div>
     </div>
 
-    <div class="example-code">&lt;form class="p-4"&gt;
-      &lt;div class="mb-4"&gt;
-      &lt;label&gt;Name&lt;/label&gt;
-      &lt;input type="text" class="mt-2"&gt;
+    <div class="example-code">&lt;form class="p-md"&gt;
+      &lt;div class="mb-md"&gt;
+      &lt;label class="block mb-sm"&gt;Label&lt;/label&gt;
+      &lt;input type="text" class="mt-sm"&gt;
       &lt;/div&gt;
       &lt;/form&gt;</div>
   </div>
@@ -311,7 +311,7 @@
     <div class="demo-container">
       <div class="p-1 demo-box">p-1</div>
       <div class="p-2 demo-box alt1" style="margin-top: 1rem;">p-2</div>
-      <div class="p-4 demo-box alt2" style="margin-top: 1rem;">p-4</div>
+      <div class="p-md demo-box alt2" style="margin-top: 1rem;">p-md</div>
       <div class="p-8 demo-box" style="margin-top: 1rem;">p-8</div>
     </div>
 
@@ -319,12 +319,12 @@
     <p>Use <code>.m-0</code>, <code>.m-1</code>, <code>.m-2</code>, <code>.m-3</code>, etc. up to <code>.m-96</code></p>
     <div class="demo-container">
       <div class="m-2 demo-box">m-2</div>
-      <div class="m-4 demo-box alt1" style="margin: 1rem 0 0 0;">m-4</div>
-      <div class="m-6 demo-box alt2" style="margin: 1rem 0 0 0;">m-6</div>
+      <div class="m-md demo-box alt1" style="margin: 1rem 0 0 0;">m-md</div>
+      <div class="m-lg demo-box alt2" style="margin: 1rem 0 0 0;">m-lg</div>
     </div>
 
-    <div class="example-code">&lt;div class="p-2"&gt;Padding: 0.5rem&lt;/div&gt;
-      &lt;div class="p-4"&gt;Padding: 1rem&lt;/div&gt;
+    <div class="example-code">&lt;div class="p-sm"&gt;Padding: 0.5rem&lt;/div&gt;
+      &lt;div class="p-md"&gt;Padding: 1rem&lt;/div&gt;
       &lt;div class="p-8"&gt;Padding: 2rem&lt;/div&gt;</div>
   </div>
 
@@ -334,7 +334,7 @@
 
     <h3>Responsive Padding</h3>
     <p>Different padding at different breakpoints</p>
-    <div class="p-2 md:p-4 lg:p-6 demo-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="p-sm md:p-md lg:p-lg demo-box" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
       <strong>Using numeric spacing scale:</strong><br>
       Available sizes: 0-9 (or xs, sm, md, lg, xl, 2xl, 3xl)
     </div>
@@ -343,29 +343,29 @@
     <p>Columns that respond to breakpoints with spacing</p>
     <div class="grid gap-md">
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="m-2 p-4 demo-box">
+        <div class="m-sm p-md demo-box">
           Mobile: Full | Tablet: 1/2 | Desktop: 1/4
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="m-2 p-4 demo-box alt1">
+        <div class="m-sm p-md demo-box alt1">
           Spacing applied to all
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="m-2 p-4 demo-box alt2">
-          m-2 (margin) + p-4 (padding)
+        <div class="m-sm p-md demo-box alt2">
+          m-sm (margin) + p-md (padding)
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3">
-        <div class="m-2 p-4 demo-box">
+        <div class="m-sm p-md demo-box">
           Responsive grid layout
         </div>
       </div>
     </div>
 
     <div class="example-code">&lt;div class="col-12 col-md-6 col-lg-3"&gt;
-      &lt;div class="m-2 p-4"&gt;
+      &lt;div class="m-sm p-md"&gt;
       Responsive column
       &lt;/div&gt;
       &lt;/div&gt;</div>
@@ -381,7 +381,7 @@
         <div
           style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">
           Card Header</div>
-        <div class="p-4">
+        <div class="p-md">
           <h4 style="margin-top: 0; color: #007bff;">Card Title</h4>
           <p style="margin-bottom: 0; color: #666;">Card description goes here with proper spacing.</p>
         </div>
@@ -391,7 +391,7 @@
         <div
           style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">
           Card Header</div>
-        <div class="p-4">
+        <div class="p-md">
           <h4 style="margin-top: 0; color: #007bff;">Card Title</h4>
           <p style="margin-bottom: 0; color: #666;">Card description goes here with proper spacing.</p>
         </div>
@@ -401,7 +401,7 @@
         <div
           style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">
           Card Header</div>
-        <div class="p-4">
+        <div class="p-md">
           <h4 style="margin-top: 0; color: #007bff;">Card Title</h4>
           <p style="margin-bottom: 0; color: #666;">Card description goes here with proper spacing.</p>
         </div>

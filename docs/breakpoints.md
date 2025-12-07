@@ -63,13 +63,13 @@ Change flex direction based on screen size:
 Adjust padding and margins for different screen sizes:
 
 ```html
-<div class="p-2 md:p-4 lg:p-6">
+<div class="p-sm md:p-md lg:p-lg">
   Small padding on mobile
   Medium padding on tablet
   Large padding on desktop
 </div>
 
-<div class="m-2 md:m-4 lg:m-0">
+<div class="m-sm md:m-md lg:m-0">
   Responsive margins
 </div>
 ```
@@ -147,12 +147,12 @@ Change grid column offsets responsively:
 </head>
 <body>
   <!-- Header -->
-  <header class="p-3 md:p-4 lg:p-6" style="background: #f8f9fa; margin-bottom: 2rem;">
+  <header class="p-md md:p-md lg:p-lg" style="background: #f8f9fa; margin-bottom: 2rem;">
     <h1>Responsive Layout</h1>
   </header>
 
   <!-- Main Content -->
-  <div class="grid gap-md p-3 md:p-4 lg:p-6">
+  <div class="grid gap-md p-md md:p-md lg:p-lg">
     <!-- Sidebar: hidden on mobile, visible on tablet+ -->
     <aside class="col-12 md:col-3" style="display: none;" class="md:display-block">
       <nav>
@@ -171,7 +171,7 @@ Change grid column offsets responsively:
   </div>
 
   <!-- Features Grid -->
-  <div class="grid gap-md p-3 md:gap-lg md:p-4 lg:gap-xl lg:p-6">
+  <div class="grid gap-md p-md md:gap-lg md:p-md lg:gap-xl lg:p-lg">
     <!-- Each card: full width on mobile, half on tablet, 1/3 on desktop -->
     <div class="col-12 md:col-6 lg:col-4 p-3" style="background: #f8f9fa;">
       <h3>Feature 1</h3>
@@ -181,14 +181,14 @@ Change grid column offsets responsively:
       <h3>Feature 2</h3>
       <p>Responsive card</p>
     </div>
-    <div class="col-12 md:col-6 lg:col-4 p-3" style="background: #f8f9fa;">
+    <div class="col-12 md:col-6 lg:col-4 p-md" style="background: #f8f9fa;">
       <h3>Feature 3</h3>
       <p>Responsive card</p>
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="p-3 md:p-4 lg:p-6 mt-6" style="background: #f8f9fa; text-align: center;">
+  <footer class="p-md md:p-md lg:p-lg mt-lg" style="background: #f8f9fa; text-align: center;">
     <p>&copy; 2024. All rights reserved.</p>
   </footer>
 </body>

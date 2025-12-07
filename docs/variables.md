@@ -111,11 +111,13 @@ Numeric scale provides 0-24 units (optimized for common use cases):
 
 ```scss
 .p-0 { padding: 0; }
-.p-1 { padding: 0.25rem; }
-.p-2 { padding: 0.5rem; }
-.p-4 { padding: 1rem; }
-.p-8 { padding: 2rem; }
-.p-24 { padding: 6rem; } // Maximum numeric value
+.p-xs { padding: 0.25rem; }
+.p-sm { padding: 0.5rem; }
+.p-md { padding: 1rem; }
+.p-lg { padding: 1.5rem; }
+.p-xl { padding: 3rem; }
+.p-2xl { padding: 4rem; }
+.p-3xl { padding: 6rem; }
 ```
 
 ## Color Variables

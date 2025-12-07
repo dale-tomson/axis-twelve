@@ -4,8 +4,8 @@
 
 <img src="https://img.shields.io/npm/v/axis-twelve?color=blue&style=flat-square" alt="NPM Version" />
 <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License" />
-<img src="https://img.shields.io/badge/size-52.6kB-orange?style=flat-square" alt="Size" />
-<img src="https://img.shields.io/badge/gzip-7.4kB-success?style=flat-square" alt="Gzip Size" />
+<img src="https://img.shields.io/badge/size-40.6kB-orange?style=flat-square" alt="Size" />
+<img src="https://img.shields.io/badge/gzip-6.0kB-success?style=flat-square" alt="Gzip Size" />
 
 **Build faster, center easier. The 12-column solution.**
 
@@ -18,10 +18,10 @@ Axis Twelve is a professional CSS framework with SCSS support featuring a powerf
 - **12-Column Grid System** - Responsive, flexible, and easy to use
 - **Complete Flexbox Utilities** - Direction, alignment, and gap controls
 - **Powerful Centering** - Multiple methods for perfect alignment
-- **Extensive Spacing Scale** - Named sizes (xs-3xl) and numeric scale (0-24)
+- **Extensive Spacing Scale** - Named sizes (xs-3xl) and consistent numeric mapping
 - **Full SCSS Support** - Customizable variables and modular architecture
 - **Responsive Breakpoints** - xs, sm, md, lg, xl, xxl
-- **Ultra-Lightweight** - Only 52.63 KB CSS (7.42 KB gzipped) - 55.5% optimized
+- **Ultra-Lightweight** - Only 40.6 KB CSS (6.0 KB gzipped) - Significantly optimized
 
 ## Documentation
 
@@ -302,8 +302,8 @@ Then visit:
 
 ```html
 <div class="p-lg m-xl">Large padding and margin</div>
-<div class="py-2 px-3">Small vertical padding, medium horizontal</div>
-<div class="mt-lg mb-2">Margin top large, margin bottom small</div>
+<div class="py-sm px-md">Small vertical padding, medium horizontal</div>
+<div class="mt-lg mb-sm">Margin top large, margin bottom small</div>
 ```
 
 ## Responsive Breakpoints
