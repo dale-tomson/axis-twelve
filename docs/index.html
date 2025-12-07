@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axis Twelve - Build faster, center easier</title>
-  <link rel="stylesheet" href="/axis-twelve/dist/style.css">
+  <link rel="stylesheet" href="/axis-twelve/dist/axis-twelve.css">
   <style>
     * {
       margin: 0;
@@ -219,7 +220,8 @@
       color: #495057;
     }
 
-    ul, ol {
+    ul,
+    ol {
       margin: 1rem 0 1rem 2rem;
       color: #495057;
     }
@@ -319,11 +321,12 @@
       // On GitHub Pages but relative path, fix it
       const currentPath = window.location.pathname;
       if (!currentPath.includes('/axis-twelve/')) {
-        link.href = '/axis-twelve/dist/style.css';
+        link.href = '/axis-twelve/dist/axis-twelve.css';
       }
     }
   </script>
-  </head>
+</head>
+
 <body>
   <!-- Header -->
   <header>
@@ -416,11 +419,11 @@
       try {
         contentEl.innerHTML = '<div class="loading">Loading...</div>';
         const response = await fetch(filepath);
-        
+
         if (!response.ok) {
           throw new Error(`Failed to load ${filepath}`);
         }
-        
+
         const markdown = await response.text();
         const html = marked.parse(markdown);
         contentEl.innerHTML = html;
@@ -462,4 +465,5 @@
     });
   </script>
 </body>
+
 </html>

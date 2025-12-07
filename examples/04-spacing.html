@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axis Twelve - Spacing Examples</title>
-  <link rel="stylesheet" href="/axis-twelve/dist/style.css">
+  <link rel="stylesheet" href="/axis-twelve/dist/axis-twelve.css">
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -18,7 +19,7 @@
       background: white;
       padding: 2rem;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .example-section h2 {
@@ -122,11 +123,12 @@
       // On GitHub Pages but relative path, fix it
       const currentPath = window.location.pathname;
       if (!currentPath.includes('/axis-twelve/')) {
-        link.href = '/axis-twelve/dist/style.css';
+        link.href = '/axis-twelve/dist/axis-twelve.css';
       }
     }
   </script>
-  </head>
+</head>
+
 <body>
   <h1>Axis Twelve Spacing</h1>
   <p class="tagline">Build faster, center easier. The 12-column solution.</p>
@@ -213,7 +215,8 @@
     </div>
 
     <h3>Padding Specific Sides</h3>
-    <p><code>.pt-[size]</code> - Top, <code>.pb-[size]</code> - Bottom, <code>.pl-[size]</code> - Left, <code>.pr-[size]</code> - Right</p>
+    <p><code>.pt-[size]</code> - Top, <code>.pb-[size]</code> - Bottom, <code>.pl-[size]</code> - Left,
+      <code>.pr-[size]</code> - Right</p>
     <div class="demo-container">
       <div class="pt-lg pb-lg demo-box">Vertical Padding (Top & Bottom)</div>
       <div class="pl-lg pr-lg demo-box alt1" style="margin-top: 1rem;">Horizontal Padding (Left & Right)</div>
@@ -227,8 +230,8 @@
     </div>
 
     <div class="example-code">&lt;div class="p-md"&gt;Padded on all sides&lt;/div&gt;
-&lt;div class="pt-lg pb-lg"&gt;Vertical padding&lt;/div&gt;
-&lt;div class="ph-lg"&gt;Horizontal padding&lt;/div&gt;</div>
+      &lt;div class="pt-lg pb-lg"&gt;Vertical padding&lt;/div&gt;
+      &lt;div class="ph-lg"&gt;Horizontal padding&lt;/div&gt;</div>
   </div>
 
   <!-- Margin Examples -->
@@ -243,21 +246,23 @@
     </div>
 
     <h3>Margin Specific Sides</h3>
-    <p><code>.mt-[size]</code> - Top, <code>.mb-[size]</code> - Bottom, <code>.ml-[size]</code> - Left, <code>.mr-[size]</code> - Right</p>
+    <p><code>.mt-[size]</code> - Top, <code>.mb-[size]</code> - Bottom, <code>.ml-[size]</code> - Left,
+      <code>.mr-[size]</code> - Right</p>
     <div class="demo-container">
       <div class="mb-4 demo-box" style="margin: 0;">mb-4 (16px bottom margin)</div>
       <div class="ml-4 demo-box alt1" style="margin: 0;">ml-4 (16px left margin)</div>
     </div>
 
     <h3>Margin Directions</h3>
-    <p><code>.mv-[size]</code> - Vertical, <code>.mh-[size]</code> - Horizontal, <code>.mx-auto</code> - Center horizontally</p>
+    <p><code>.mv-[size]</code> - Vertical, <code>.mh-[size]</code> - Horizontal, <code>.mx-auto</code> - Center
+      horizontally</p>
     <div class="demo-container">
       <div class="mx-auto demo-box" style="width: 200px; text-align: center;">mx-auto (Centered)</div>
     </div>
 
     <div class="example-code">&lt;div class="m-4"&gt;Margin on all sides&lt;/div&gt;
-&lt;div class="mb-4"&gt;Bottom margin&lt;/div&gt;
-&lt;div class="mx-auto"&gt;Centered with auto margin&lt;/div&gt;</div>
+      &lt;div class="mb-4"&gt;Bottom margin&lt;/div&gt;
+      &lt;div class="mx-auto"&gt;Centered with auto margin&lt;/div&gt;</div>
   </div>
 
   <!-- Combined Spacing -->
@@ -280,16 +285,17 @@
         <input type="email" style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;">
       </div>
       <div>
-        <button style="padding: 0.75rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
+        <button
+          style="padding: 0.75rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
       </div>
     </div>
 
     <div class="example-code">&lt;form class="p-4"&gt;
-  &lt;div class="mb-4"&gt;
-    &lt;label&gt;Name&lt;/label&gt;
-    &lt;input type="text" class="mt-2"&gt;
-  &lt;/div&gt;
-&lt;/form&gt;</div>
+      &lt;div class="mb-4"&gt;
+      &lt;label&gt;Name&lt;/label&gt;
+      &lt;input type="text" class="mt-2"&gt;
+      &lt;/div&gt;
+      &lt;/form&gt;</div>
   </div>
 
   <!-- Numeric Spacing Scale -->
@@ -314,8 +320,8 @@
     </div>
 
     <div class="example-code">&lt;div class="p-2"&gt;Padding: 0.5rem&lt;/div&gt;
-&lt;div class="p-4"&gt;Padding: 1rem&lt;/div&gt;
-&lt;div class="p-8"&gt;Padding: 2rem&lt;/div&gt;</div>
+      &lt;div class="p-4"&gt;Padding: 1rem&lt;/div&gt;
+      &lt;div class="p-8"&gt;Padding: 2rem&lt;/div&gt;</div>
   </div>
 
   <!-- Responsive Spacing -->
@@ -355,10 +361,10 @@
     </div>
 
     <div class="example-code">&lt;div class="col-12 col-md-6 col-lg-3"&gt;
-  &lt;div class="m-2 p-4"&gt;
-    Responsive column
-  &lt;/div&gt;
-&lt;/div&gt;</div>
+      &lt;div class="m-2 p-4"&gt;
+      Responsive column
+      &lt;/div&gt;
+      &lt;/div&gt;</div>
   </div>
 
   <!-- Card Example -->
@@ -368,7 +374,9 @@
     <h3>Card with Spacing</h3>
     <div class="grid gap-md">
       <div class="col-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
-        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">Card Header</div>
+        <div
+          style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">
+          Card Header</div>
         <div class="p-4">
           <h4 style="margin-top: 0; color: #007bff;">Card Title</h4>
           <p style="margin-bottom: 0; color: #666;">Card description goes here with proper spacing.</p>
@@ -376,7 +384,9 @@
       </div>
 
       <div class="col-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
-        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">Card Header</div>
+        <div
+          style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">
+          Card Header</div>
         <div class="p-4">
           <h4 style="margin-top: 0; color: #007bff;">Card Title</h4>
           <p style="margin-bottom: 0; color: #666;">Card description goes here with proper spacing.</p>
@@ -384,7 +394,9 @@
       </div>
 
       <div class="col-4 demo-container" style="border: 1px solid #ddd; background: white; padding: 0;">
-        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">Card Header</div>
+        <div
+          style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; height: 150px; display: flex; align-items: center; justify-content: center; font-weight: 500;">
+          Card Header</div>
         <div class="p-4">
           <h4 style="margin-top: 0; color: #007bff;">Card Title</h4>
           <p style="margin-bottom: 0; color: #666;">Card description goes here with proper spacing.</p>
@@ -397,4 +409,5 @@
     <p>Axis Twelve - Build faster, center easier</p>
   </footer>
 </body>
+
 </html>

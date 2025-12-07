@@ -5,6 +5,12 @@
 
 # Check if any SCSS files are staged
 if git diff --cached --name-only | grep -q '\.scss$'; then
+  echo "🔍 Running linting on staged changes..."
+  if ! npm run lint; then
+    echo "❌ Linting failed. Commit aborted."
+    exit 1
+  fi
+  
   # Get current version from package.json
   CURRENT_VERSION=$(grep '"version"' package.json | head -1 | sed -E 's/.*"version":\s*"([^"]+)".*/\1/')
   
