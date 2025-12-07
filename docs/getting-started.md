@@ -108,9 +108,10 @@ The framework is built on modern CSS features (CSS Grid, Flexbox) and uses SCSS 
 
 ## Current Version
 
-**Axis Twelve v0.0.3** - Latest stable release with improved code organization and centralized utilities
+**Axis Twelve v1.0.1** - Latest stable release with mobile responsiveness and CSS consolidation
 
+- 📱 [View v1.0.1 Release Notes](../project/docs/changelog/v1.0.1.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v1.0.1.md)) - Mobile Responsiveness & CSS Consolidation
+- ⚡ [View v1.0.0 Release Notes](../project/docs/changelog/v1.0.0.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v1.0.0.md)) - SCSS Optimization
+- 🏗️ [View v0.0.4 Release Notes](../project/docs/changelog/v0.0.4.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v0.0.4.md)) - CLI & Distribution Improvements
 - 🧹 [View v0.0.3 Release Notes](../project/docs/changelog/v0.0.3.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v0.0.3.md)) - Code Quality & Cleanup Release
-- ✨ [View v0.0.2 Release Notes](../project/docs/changelog/v0.0.2.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v0.0.2.md)) - Performance & Optimization Release
-- 🎯 [View v0.0.1 Release Notes](../project/docs/changelog/v0.0.1.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/project/docs/changelog/v0.0.1.md)) - Initial Release
 - 📋 [Full Changelog](../CHANGELOG.md) ([GitHub](https://github.com/dale-tomson/axis-twelve/blob/main/CHANGELOG.md)) - All releases and updates
