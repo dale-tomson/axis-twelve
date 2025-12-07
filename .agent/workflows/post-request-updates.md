@@ -27,7 +27,31 @@ Review and update relevant documentation files:
 - [ ] Are there new configuration options?
 - [ ] Did folder structure change?
 
-### 2. Update Changelogs
+### 2. Determine if Version Bump is Needed
+
+**CRITICAL: Only create changelog versions for framework changes!**
+
+**Create new version (changelog + version bump) if:**
+- ✅ SCSS source files changed (`src/scss/**/*.scss`)
+- ✅ CSS output changed (`dist/axis-twelve.css`)
+- ✅ Framework functionality changed (grid, flexbox, spacing, etc.)
+- ✅ Breaking changes to class names or behavior
+- ✅ New framework features added
+
+**DO NOT create new version for:**
+- ❌ Documentation updates only (README, docs/*)
+- ❌ Tooling changes (scripts, CLI, workflows)
+- ❌ Example file updates (examples/*.html)
+- ❌ Configuration changes (.gitignore, package.json scripts)
+- ❌ Code cleanup without functional changes
+
+**For non-framework changes:**
+- Use `chore:` or `docs:` commit prefix
+- Update documentation as needed
+- Do NOT create changelog version
+- Do NOT bump version number
+
+### 3. Update Changelogs (Only if Version Bump Needed)
 
 #### 2.a Create New Version Changelog
 
@@ -89,7 +113,7 @@ Update the main `CHANGELOG.md` file:
 - Older versions remain in `project/docs/changelog/` directory
 - Users can access full history via the changelog directory
 
-### 3. Update Examples (if applicable)
+### 4. Update Examples (if applicable)
 
 If there were changes to SCSS source or CSS output:
 
@@ -114,7 +138,7 @@ If there were changes to SCSS source or CSS output:
 - Remove deprecated examples
 - Ensure all examples still work correctly
 
-### 4. Update README.md (Major Changes Only)
+### 5. Update README.md (Major Changes Only)
 
 Update `README.md` only for information already present that needs updating:
 
@@ -131,7 +155,7 @@ Update `README.md` only for information already present that needs updating:
 - Detailed API changes (those go in docs/)
 - Version-specific information (that goes in changelog)
 
-### 5. Version Bumping
+### 6. Version Bumping
 
 **DO NOT manually update version numbers.**
 
@@ -198,6 +222,9 @@ git commit -m "feat: add mobile responsiveness to all pages"
 - **Keep history**: Never delete old changelog files, just remove from main CHANGELOG.md
 
 ## Common Mistakes to Avoid
+
+❌ **Don't** create changelog versions for non-framework changes  
+✅ **Do** only create versions when SCSS/CSS or framework functionality changes
 
 ❌ **Don't** manually update version in package.json  
 ✅ **Do** let pre-commit hook handle versioning
