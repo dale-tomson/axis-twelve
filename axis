@@ -13,7 +13,6 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
-BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Helper: Ensure node_modules exists
@@ -43,20 +42,12 @@ ${YELLOW}Commands:${NC}
     lint                  Run stylelint on SCSS files
     lint:fix              Fix SCSS linting issues
     format                Format SCSS with prettier
-    format                Format SCSS with prettier
     check                 Run lint + build checks
     test                  Alias for check
     clean                 Remove build artifacts (dist/)
 
   ${GREEN}Hooks & Installation${NC}
     install:hooks         Install git hooks (auto-run on pnpm install)
-    
-  ${GREEN}Publishing${NC}
-    publish               Publish to npm (requires NPM_TOKEN in .env)
-    
-  ${GREEN}Releases${NC}
-    release               Create git tag + dist asset (manual GitHub release)
-    release:github        Automated GitHub release (requires gh CLI)
 
   ${GREEN}Utility${NC}
     help                  Show this help message
@@ -67,14 +58,10 @@ ${YELLOW}Examples:${NC}
   ./axis watch              # Watch and rebuild
   ./axis start              # Start dev server
   ./axis check              # Run all checks
-  ./axis publish            # Publish to npm
-  ./axis release:github     # Create GitHub release
 
-${YELLOW}npm Aliases:${NC}
-  npm run build             # Equivalent to: ./axis build
-  npm run publish:npm       # Equivalent to: ./axis publish
-  npm run release           # Equivalent to: ./axis release
-  npm run release:github    # Equivalent to: ./axis release:github
+${YELLOW}Note:${NC}
+  Publishing and releases are handled automatically by GitHub Actions.
+  Push a tag (e.g., v1.0.2) to trigger automated release and npm publish.
 
 EOF
 }
@@ -149,22 +136,6 @@ run_command() {
     install:hooks)
       echo -e "${BLUE}🔨 Installing git hooks...${NC}"
       bash "$SCRIPT_DIR/install-hooks.sh"
-      ;;
-    
-    # Publishing
-    publish)
-      echo -e "${BLUE}📦 Publishing to npm...${NC}"
-      bash "$SCRIPT_DIR/publish-npm.sh"
-      ;;
-    
-    # Releases
-    release)
-      echo -e "${BLUE}🏷️  Creating release...${NC}"
-      bash "$SCRIPT_DIR/create-release.sh"
-      ;;
-    release:github)
-      echo -e "${BLUE}🚀 Creating GitHub release...${NC}"
-      bash "$SCRIPT_DIR/release-github.sh"
       ;;
     
     # Utility
