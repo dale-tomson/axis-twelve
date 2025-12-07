@@ -7,7 +7,6 @@ on:
     paths:
       - 'docs/**'
       - 'src/scss/**'
-      - 'dist/**'
       - 'index.html'
       - 'CHANGELOG.md'
       - 'package.json'
