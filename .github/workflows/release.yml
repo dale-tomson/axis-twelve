@@ -3,6 +3,11 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name (e.g. v2.0.1)'
+        required: true
+        type: string
 
 jobs:
   build:
@@ -49,6 +54,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ github.event.inputs.tag_name || github.ref_name }}
           files: |
             dist/*.css
             dist/modules/*.css
