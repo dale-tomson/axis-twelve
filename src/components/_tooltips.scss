@@ -56,17 +56,25 @@
 [data-ax-tooltip],
 [data-ax-tooltip-position='top'] {
   &::after {
+    top: auto;
+    right: auto;
     bottom: 100%;
     left: 50%;
-    margin-bottom: 5px;
-    transform: translateX(-50%) translateY(-8px);
+    margin-top: 0;
+    margin-bottom: 8px;
+    transform: translateX(-50%);
   }
 
   &::before {
+    top: auto;
+    right: auto;
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
     border-top-color: var(--ax-gray-900, $gray-900);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
   }
 }
 
@@ -74,16 +82,24 @@
 [data-ax-tooltip-position='bottom'] {
   &::after {
     top: 100%;
+    right: auto;
+    bottom: auto;
     left: 50%;
-    margin-top: 5px;
-    transform: translateX(-50%) translateY(8px);
+    margin-top: 8px;
+    margin-bottom: 0;
+    transform: translateX(-50%);
   }
 
   &::before {
     top: 100%;
+    right: auto;
+    bottom: auto;
     left: 50%;
     transform: translateX(-50%);
     border-bottom-color: var(--ax-gray-900, $gray-900);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
   }
 }
 
@@ -92,15 +108,23 @@
   &::after {
     top: 50%;
     right: 100%;
-    margin-right: 5px;
-    transform: translateY(-50%) translateX(-8px);
+    bottom: auto;
+    left: auto;
+    margin-right: 8px;
+    margin-left: 0;
+    transform: translateY(-50%);
   }
 
   &::before {
     top: 50%;
     right: 100%;
+    bottom: auto;
+    left: auto;
     transform: translateY(-50%);
     border-left-color: var(--ax-gray-900, $gray-900);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
   }
 }
 
@@ -108,16 +132,24 @@
 [data-ax-tooltip-position='right'] {
   &::after {
     top: 50%;
+    right: auto;
+    bottom: auto;
     left: 100%;
-    margin-left: 5px;
-    transform: translateY(-50%) translateX(8px);
+    margin-right: 0;
+    margin-left: 8px;
+    transform: translateY(-50%);
   }
 
   &::before {
     top: 50%;
+    right: auto;
+    bottom: auto;
     left: 100%;
     transform: translateY(-50%);
     border-right-color: var(--ax-gray-900, $gray-900);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
   }
 }
 

@@ -1,0 +1,107 @@
+<header style="margin-bottom: 2rem;">
+    <h1>Modals</h1>
+    <p>Flexible dialog prompts for notifications, forms, and custom content.</p>
+</header>
+
+<section class="example-section">
+    <h2>Basic Modals</h2>
+    <div class="example-item">
+        <div class="example-header">
+            <h4 class="example-title">Live Demos</h4>
+            <button class="toggle-code">Show Code</button>
+        </div>
+        <div class="example-preview">
+            <button class="ax-btn ax-btn--primary" onclick="openModal('modal-demo')">Open Modal</button>
+
+            <!-- Modal Structure -->
+            <div class="ax-modal" id="modal-demo" role="dialog" aria-modal="true" data-open="false">
+                <div class="ax-modal__dialog">
+                    <div class="ax-modal__content">
+                        <div class="ax-modal__header">
+                            <h5 class="ax-modal__title">Modal Title</h5>
+                            <button class="ax-modal__close" aria-label="Close"
+                                onclick="closeModal('modal-demo')">&times;</button>
+                        </div>
+                        <div class="ax-modal__body">
+                            <p>This is a standard modal dialog. You can put any content here, including text, forms, or
+                                images.</p>
+                        </div>
+                        <div class="ax-modal__footer">
+                            <button class="ax-btn ax-btn--secondary" onclick="closeModal('modal-demo')">Cancel</button>
+                            <button class="ax-btn ax-btn--primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="example-code">
+            <pre><code>&lt;button class="ax-btn ax-btn--primary" onclick="openModal('m1')"&gt;Open Modal&lt;/button&gt;
+
+&lt;div class="ax-modal" id="m1" data-open="false"&gt;
+  &lt;div class="ax-modal__dialog"&gt;
+    &lt;div class="ax-modal__content"&gt;
+      &lt;div class="ax-modal__header"&gt;...&lt;/div&gt;
+      &lt;div class="ax-modal__body"&gt;...&lt;/div&gt;
+      &lt;div class="ax-modal__footer"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+    </div>
+</section>
+
+<section class="example-section">
+    <h2>Sizing Options</h2>
+    <div class="example-item">
+        <div class="example-header">
+            <h4 class="example-title">Modal Scales</h4>
+            <button class="toggle-code">Show Code</button>
+        </div>
+        <div class="example-preview">
+            <button class="ax-btn ax-btn--secondary" onclick="openModal('modal-sm')">Small</button>
+            <button class="ax-btn ax-btn--secondary" onclick="openModal('modal-lg')">Large</button>
+            <button class="ax-btn ax-btn--secondary" onclick="openModal('modal-full')">Full Screen</button>
+
+            <!-- Modals -->
+            <div class="ax-modal ax-modal--sm" id="modal-sm" data-open="false">
+                <div class="ax-modal__dialog">
+                    <div class="ax-modal__content">
+                        <div class="ax-modal__header">
+                            <h5 class="ax-modal__title">Small Modal</h5><button class="ax-modal__close"
+                                onclick="closeModal('modal-sm')">&times;</button>
+                        </div>
+                        <div class="ax-modal__body">Short content...</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ax-modal ax-modal--lg" id="modal-lg" data-open="false">
+                <div class="ax-modal__dialog">
+                    <div class="ax-modal__content">
+                        <div class="ax-modal__header">
+                            <h5 class="ax-modal__title">Large Modal</h5><button class="ax-modal__close"
+                                onclick="closeModal('modal-lg')">&times;</button>
+                        </div>
+                        <div class="ax-modal__body">Plenty of space for content...</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ax-modal ax-modal--full" id="modal-full" data-open="false">
+                <div class="ax-modal__dialog">
+                    <div class="ax-modal__content">
+                        <div class="ax-modal__header">
+                            <h5 class="ax-modal__title">Full Screen Modal</h5><button class="ax-modal__close"
+                                onclick="closeModal('modal-full')">&times;</button>
+                        </div>
+                        <div class="ax-modal__body">Taking over the world...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="example-code">
+            <pre><code>&lt;!-- Sizing modifiers --&gt;
+&lt;div class="ax-modal ax-modal--sm"&gt;...&lt;/div&gt;
+&lt;div class="ax-modal ax-modal--lg"&gt;...&lt;/div&gt;
+&lt;div class="ax-modal ax-modal--full"&gt;...&lt;/div&gt;</code></pre>
+        </div>
+    </div>
+</section>

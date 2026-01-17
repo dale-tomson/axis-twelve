@@ -1,0 +1,126 @@
+{% extends 'layout.twig' %}
+
+{% set current_page = 'examples' %}
+
+{% block main %}
+<aside class="sidebar">
+    <ul class="sidebar-menu">
+        {% for example in examples %}
+            <li>
+                <a href="/examples?m={{ example.id }}" class="{% if currentModule == example.id %}active{% endif %}">
+                    {{ example.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</aside>
+
+<div class="content-area example-viewer">
+    <div class="ax-container">
+        {{ content|raw }}
+    </div>
+</div>
+
+<style>
+    .example-viewer {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .example-section { margin-bottom: 3rem; }
+    .example-section h2 { font-size: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e2e8f0; }
+    
+    .example-item { 
+        background: white; 
+        border: 1px solid #e2e8f0; 
+        border-radius: 0.75rem; 
+        margin-bottom: 1.5rem; 
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        overflow: visible; /* Important for tooltips */
+    }
+    
+    .example-header { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 0.75rem 1.25rem; 
+        background: #f1f5f9; 
+        border-bottom: 1px solid #e2e8f0; 
+        border-radius: 0.75rem 0.75rem 0 0;
+    }
+    
+    .example-title { 
+        margin: 0; 
+        font-size: 0.875rem; 
+        font-weight: 600; 
+        color: #64748b; 
+        text-transform: uppercase; 
+        letter-spacing: 0.025em;
+    }
+    
+    .toggle-code { 
+        font-size: 0.75rem; 
+        font-weight: 600; 
+        cursor: pointer; 
+        padding: 0.25rem 0.5rem; 
+        border-radius: 0.375rem; 
+        border: 1px solid #cbd5e1; 
+        background: white; 
+        color: #475569; 
+        transition: all 0.2s;
+    }
+    .toggle-code:hover {
+        background: #f8fafc;
+        border-color: #94a3b8;
+    }
+
+    .example-preview { padding: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    
+    .example-code { 
+        display: none; 
+        background: #1e293b !important; 
+        padding: 1.5rem !important; 
+        border-top: 1px solid #334155;
+        border-radius: 0 0 0.75rem 0.75rem;
+    }
+    
+    .example-code pre, .example-code code { 
+        margin: 0 !important; 
+        padding: 0 !important; 
+        background: transparent !important; 
+        color: #f8fafc !important; 
+        font-size: 0.875rem !important; 
+        font-family: 'Fira Code', monospace !important; 
+        line-height: 1.6 !important; 
+        border: none !important; 
+        white-space: pre !important; 
+    }
+
+    /* Helper styles for layout visualization */
+    .grid-box { background: #3b82f6; color: white; padding: 0.75rem; text-align: center; border-radius: 0.375rem; font-weight: 500; font-size: 0.875rem; border: 1px solid #2563eb; }
+    .flex-box { background: #10b981; color: white; padding: 1rem 1.5rem; border-radius: 0.375rem; border: 1px solid #059669; font-weight: 500; }
+    .spacing-box { background: #8b5cf6; color: white; display: inline-flex; align-items: center; justify-content: center; border-radius: 4px; }
+</style>
+
+<script>
+    // Global Modal Helpers
+    window.openModal = function(id) {
+        document.getElementById(id).setAttribute('data-open', 'true');
+        document.body.classList.add('ax-scroll-lock');
+    };
+    window.closeModal = function(id) {
+        document.getElementById(id).setAttribute('data-open', 'false');
+        document.body.classList.remove('ax-scroll-lock');
+    };
+
+    // Toggle Code Snippets
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('toggle-code')) {
+            const item = e.target.closest('.example-item');
+            const code = item.querySelector('.example-code');
+            const isHidden = code.style.display === 'none' || !code.style.display;
+            code.style.display = isHidden ? 'block' : 'none';
+            e.target.textContent = isHidden ? 'Hide Code' : 'Show Code';
+        }
+    });
+</script>
+{% endblock %}

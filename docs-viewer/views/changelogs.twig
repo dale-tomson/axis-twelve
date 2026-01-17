@@ -1,0 +1,120 @@
+{% extends 'layout.twig' %}
+
+{% set current_page = 'changelogs' %}
+
+{% block main %}
+<aside class="sidebar">
+    <div class="sidebar-label" style="padding: 0 1rem 0.5rem; font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Versions</div>
+    <ul class="sidebar-menu">
+        {% for log in changelogs %}
+            <li>
+                <a href="/changelogs?v={{ log.id }}" class="{% if currentVersion == log.id %}active{% endif %}">
+                    {{ log.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</aside>
+
+<div class="content-area">
+    <nav class="doc-nav doc-nav--top">
+        {% if prevVersion %}
+            <a href="/changelogs?v={{ prevVersion.id }}" class="doc-nav__link doc-nav__link--prev">
+                <span class="doc-nav__arrow">&larr;</span> Newer: {{ prevVersion.title }}
+            </a>
+        {% else %}
+            <span></span>
+        {% endif %}
+        {% if nextVersion %}
+            <a href="/changelogs?v={{ nextVersion.id }}" class="doc-nav__link doc-nav__link--next">
+                Older: {{ nextVersion.title }} <span class="doc-nav__arrow">&rarr;</span>
+            </a>
+        {% endif %}
+    </nav>
+
+    <div class="card markdown-body">
+        {{ content|raw }}
+    </div>
+
+    <nav class="doc-nav doc-nav--bottom">
+        {% if prevVersion %}
+            <a href="/changelogs?v={{ prevVersion.id }}" class="doc-nav__link doc-nav__link--prev">
+                <div class="doc-nav__label">Newer Version</div>
+                <div class="doc-nav__title"><span class="doc-nav__arrow">&larr;</span> {{ prevVersion.title }}</div>
+            </a>
+        {% else %}
+            <span></span>
+        {% endif %}
+        {% if nextVersion %}
+            <a href="/changelogs?v={{ nextVersion.id }}" class="doc-nav__link doc-nav__link--next">
+                <div class="doc-nav__label">Older Version</div>
+                <div class="doc-nav__title">{{ nextVersion.title }} <span class="doc-nav__arrow">&rarr;</span></div>
+            </a>
+        {% endif %}
+    </nav>
+</div>
+
+<style>
+    .doc-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    .doc-nav--bottom {
+        margin-top: 3rem;
+        margin-bottom: 0;
+        padding-top: 2rem;
+        border-top: 1px solid #e2e8f0;
+    }
+    .doc-nav__link {
+        text-decoration: none;
+        color: #3b82f6;
+        font-weight: 600;
+        transition: transform 0.2s;
+        display: flex;
+        flex-direction: column;
+    }
+    .doc-nav--top .doc-nav__link {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+    }
+    .doc-nav__link--next {
+        text-align: right;
+        align-items: flex-end;
+    }
+    .doc-nav__link--prev {
+        text-align: left;
+        align-items: flex-start;
+    }
+    .doc-nav__link:hover {
+        transform: translateY(-2px);
+        color: #2563eb;
+    }
+    .doc-nav__label {
+        font-size: 0.75rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.25rem;
+    }
+    .doc-nav__title {
+        font-size: 1.125rem;
+    }
+    .doc-nav__arrow {
+        font-size: 1.25rem;
+        line-height: 1;
+    }
+
+    /* Markdown Styles (Matching Docs) */
+    .markdown-body h1 { font-size: 2.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+    .markdown-body h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .markdown-body h3 { font-size: 1.4rem; margin-top: 2rem; }
+    .markdown-body p { line-height: 1.6; margin-bottom: 1rem; }
+    .markdown-body ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .markdown-body li { margin-bottom: 0.5rem; }
+    .markdown-body code { background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-family: monospace; }
+</style>
+{% endblock %}

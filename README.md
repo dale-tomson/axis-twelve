@@ -11,7 +11,7 @@
 
 </div>
 
-Axis Twelve is a professional, modular CSS framework featuring a powerful 12-column grid system, comprehensive flexbox utilities, powerful centering components, and a complete suite of UI components including buttons, forms, modals, tables, cards, and tooltips.
+Axis Twelve is a professional, modular CSS framework featuring a powerful 12-column grid system, comprehensive flexbox utilities, powerful centering components, and a suite of UI components. Now featuring a built-in **Interactive Documentation Viewer** for a seamless development experience.
 
 ## ✨ Key Features
 
@@ -85,16 +85,17 @@ Import only the modules you need:
 
 ## 📦 Available Modules
 
-| Module | Size (min) | Description |
-|--------|-----------|-------------|
-| **axis-twelve** | 77KB | Full framework bundle |
-| **axis-layout** | 57KB | Grid, flexbox, centering, spacing |
-| **axis-buttons** | 5.5KB | Button components with variants |
-| **axis-forms** | 8.6KB | Form inputs, selects, checkboxes |
-| **axis-modals** | 2.9KB | Modal dialogs with backdrop |
-| **axis-tooltips** | 3.0KB | CSS-only tooltips |
-| **axis-tables** | 2.7KB | Responsive tables |
-| **axis-cards** | 2.8KB | Card components |
+| Module | Size (min) | Diff (vs v1) | Description |
+|--------|-----------|--------------|-------------|
+| **axis-twelve** | 77KB | +37KB | Full framework bundle |
+| **axis-layout** | 57KB | N/A | Grid, flexbox, centering, spacing |
+| **axis-buttons** | 5.5KB | N/A | Button components with variants |
+| **axis-forms** | 8.6KB | N/A | Form inputs, selects, checkboxes |
+| **axis-modals** | 2.9KB | N/A | Modal dialogs with backdrop |
+| **axis-tooltips** | 3.0KB | N/A | CSS-only tooltips |
+| **axis-tables** | 2.7KB | N/A | Responsive tables |
+| **axis-cards** | 2.8KB | N/A | Card components |
+| **legacy** | 40KB | +0KB | Legacy v1.x compatible build |
 
 ## 💡 Quick Examples
 
@@ -302,6 +303,9 @@ MIT © Dale Tomson
 
 - [GitHub Repository](https://github.com/dale-tomson/axis-twelve)
 - [npm Package](https://www.npmjs.com/package/axis-twelve)
+- [**Interactive Documentation**](docs-viewer/README.md)
+- [Changelog History](CHANGELOG.md)
+- [Available Scripts](SCRIPTS.md)
 - [Report Issues](https://github.com/dale-tomson/axis-twelve/issues)
 
 ---

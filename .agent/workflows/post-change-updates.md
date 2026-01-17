@@ -16,10 +16,10 @@ Run this workflow after completing any feature implementation, bug fix, or signi
 
 Review and update relevant documentation files:
 
-- **`README.md`**: Update for major information changes (features, installation, usage)
-- **`docs/*.md`**: Update framework documentation if API or usage changed
-- **`project/docs/SCRIPTS.md`**: Update if new commands were added
-- **`project/docs/RELEASE.md`**: Update if release process changed
+- **`README.md`**: Update for major information changes (features, installation, usage).
+- **`docs-viewer/content/docs/*.md`**: Update framework documentation if API or usage changed.
+- **`SCRIPTS.md`**: Update if new build commands were added.
+- **`docs-viewer/README.md`**: Update if deployment or setup process changed.
 
 **Check:**
 - [ ] Is there new functionality that needs documentation?
@@ -32,211 +32,70 @@ Review and update relevant documentation files:
 **CRITICAL: Only create changelog versions for framework changes!**
 
 **Create new version (changelog + version bump) if:**
-- ✅ SCSS source files changed (`src/scss/**/*.scss`)
-- ✅ CSS output changed (`dist/axis-twelve.css`)
+- ✅ SCSS source files changed (`src/**/*.scss`)
+- ✅ CSS output changed (`dist/**/*.css`)
 - ✅ Framework functionality changed (grid, flexbox, spacing, etc.)
-- ✅ Breaking changes to class names or behavior
-- ✅ New framework features added
+- ✅ Breaking changes to class names (e.g., `.ax-` prefix)
+- ✅ New framework modules or components added
 
 **DO NOT create new version for:**
-- ❌ Documentation updates only (README, docs/*)
+- ❌ Documentation updates only
 - ❌ Tooling changes (scripts, CLI, workflows)
-- ❌ Example file updates (examples/*.html)
-- ❌ Configuration changes (.gitignore, package.json scripts)
+- ❌ Configuration changes (.gitignore, .npmrc)
 - ❌ Code cleanup without functional changes
-
-**For non-framework changes:**
-- Use `chore:` or `docs:` commit prefix
-- Update documentation as needed
-- Do NOT create changelog version
-- Do NOT bump version number
 
 ### 3. Update Changelogs (Only if Version Bump Needed)
 
 #### 2.a Create New Version Changelog
-
-Create a new detailed changelog file in `project/docs/changelog/`:
+Create a new detailed changelog file in `docs-viewer/content/changelogs/`:
 
 ```bash
-# Create new version file (e.g., v1.0.2.md)
-touch project/docs/changelog/v[VERSION].md
+# Create new version file (e.g., v2.0.1.md)
+touch docs-viewer/content/changelogs/v[VERSION].md
 ```
 
-**Template structure:**
-```markdown
-# v[VERSION] - [Title]
-
-**Date:** [Date]
-
-## 🎯 [Category] (e.g., Features, Bug Fixes, Performance)
-
-### [Subsection if needed]
-- **Change description**: Details
-- **Impact**: What this means for users
-
-## 📦 [Another Category]
-...
-```
-
-**Categories to consider:**
-- ⚡ Performance & Optimization
-- 🐛 Bug Fixes
-- ✨ New Features
-- 📱 Mobile/Responsive
-- 🎨 Styling/UI
-- 🔧 Configuration
-- 📝 Documentation
-- 🚨 Breaking Changes
+**Requirements:**
+- Detailed breakdown of features, bug fixes, and breaking changes.
+- High-level "Impact" descriptions for users.
 
 #### 2.b Update CHANGELOG.md
-
-Update the main `CHANGELOG.md` file:
-
-1. **Add new version entry** at the top (after the header)
-2. **Keep only the last 5 version entries** in the main changelog
-3. **Link to detailed changelog** in `project/docs/changelog/`
-
-**Format:**
-```markdown
-## [v[VERSION]](./project/docs/changelog/v[VERSION].md) - [Title]
-**[Date]**
-
-### [Category Icon] [Category Name]
-- Brief summary point 1
-- Brief summary point 2
-
----
-```
-
-**Remove older entries:**
-- Keep versions: current + 4 previous
-- Older versions remain in `project/docs/changelog/` directory
-- Users can access full history via the changelog directory
+Update the main `CHANGELOG.md` file in the root:
+1. **Add new version entry** at the top.
+2. **Consolidate summaries**: Keep the root changelog scannable.
+3. **Reference the viewer**: Mention that full history is available in the Interactive Documentation.
 
 ### 4. Update Examples (if applicable)
 
 If there were changes to SCSS source or CSS output:
 
 **Check:**
-- [ ] Do example HTML files need updated class names?
+- [ ] Do example HTML files in `docs-viewer/content/examples/` need updated class names?
 - [ ] Do examples need new demonstrations?
-- [ ] Is `examples/style.css` still appropriate?
-- [ ] Do inline styles in examples conflict with new framework styles?
-
-**Files to review:**
-- `examples/00-all-features-demo.html`
-- `examples/01-grid-layouts.html`
-- `examples/02-flexbox.html`
-- `examples/03-centering.html`
-- `examples/04-spacing.html`
-- `examples/05-real-world.html`
-- `examples/style.css`
+- [ ] Are the SVG icons still rendering correctly?
 
 **Actions:**
-- Update class usage if framework classes changed
-- Add new examples for new features
-- Remove deprecated examples
-- Ensure all examples still work correctly
+- Use the **centralized layout system** (`views/examples.twig`) for all new examples.
+- Ensure only component markup is added to `.html` files (no `<html>`/`<body>`).
 
-### 5. Update README.md (Major Changes Only)
+### 5. Independent Deployment Check
+The `docs-viewer` is designed for standalone deployment (e.g., GitHub Pages).
 
-Update `README.md` only for information already present that needs updating:
-
-**Update if:**
-- [ ] File size changed significantly (update badges)
-- [ ] New major features added (update Key Features section)
-- [ ] Installation process changed
-- [ ] Folder structure changed
-- [ ] Quick start examples need updates
-- [ ] Links are broken or outdated
-
-**Do NOT add:**
-- Minor feature details (those go in docs/)
-- Detailed API changes (those go in docs/)
-- Version-specific information (that goes in changelog)
+- [ ] Ensure all changelogs are stored in `docs-viewer/content/changelogs/`.
+- [ ] Verify that `docs-viewer/src/services/content.js` uses internal relative paths.
+- [ ] If changing metadata, update both root `package.json` and ensure consistency with the home page logic.
 
 ### 6. Version Bumping
-
-**DO NOT manually update version numbers.**
-
-Version bumping is handled automatically by the pre-commit hook:
-- `package.json` version field
-- `package.json` version script
-
-The pre-commit hook will:
-1. Detect changes
-2. Prompt for version bump (patch/minor/major)
-3. Update version in package.json
-4. Ensure changelog matches version
+1. Manually update the version in the root `package.json`.
+2. Ensure the `README.md` version badge matches.
+3. Verify that the `CHANGELOG.md` header matches exactly.
 
 ## Verification Checklist
 
 Before committing:
 
-- [ ] New changelog file created in `project/docs/changelog/v[VERSION].md`
-- [ ] `CHANGELOG.md` updated with new entry at top
-- [ ] `CHANGELOG.md` contains only last 5 versions
-- [ ] Documentation updated for changed functionality
-- [ ] Examples updated if framework classes changed
-- [ ] `README.md` updated only for major information changes
-- [ ] No manual version changes in package.json
-- [ ] All links in documentation are valid
-- [ ] No placeholder text like "TODO" or "TBD"
-
-## Example Workflow Run
-
-```bash
-# 1. After implementing mobile responsiveness changes
-
-# 2. Create new changelog
-touch project/docs/changelog/v1.0.1.md
-# Edit with detailed changes
-
-# 3. Update CHANGELOG.md
-# - Add v1.0.1 entry at top
-# - Remove v0.0.3 entry (keeping only last 5)
-
-# 4. Update docs if needed
-# - Updated docs/responsive.md with new breakpoint info
-
-# 5. Update examples
-# - Added mobile media queries to all example files
-
-# 6. Update README.md
-# - Updated folder structure to include examples/style.css
-
-# 7. Commit (pre-commit hook will handle version bump)
-git add .
-git commit -m "feat: add mobile responsiveness to all pages"
-# Hook prompts: "Bump version? (patch/minor/major)"
-# Select: minor (0.0.4 -> 0.1.0)
-```
-
-## Tips
-
-- **Be concise in CHANGELOG.md**: Main changelog should be scannable
-- **Be detailed in version files**: Individual version files can be comprehensive
-- **Use consistent formatting**: Follow existing changelog style
-- **Link between docs**: Cross-reference related documentation
-- **Test examples**: Ensure all examples still work after changes
-- **Keep history**: Never delete old changelog files, just remove from main CHANGELOG.md
-
-## Common Mistakes to Avoid
-
-❌ **Don't** create changelog versions for non-framework changes  
-✅ **Do** only create versions when SCSS/CSS or framework functionality changes
-
-❌ **Don't** manually update version in package.json  
-✅ **Do** let pre-commit hook handle versioning
-
-❌ **Don't** keep all versions in CHANGELOG.md  
-✅ **Do** keep only last 5 versions, link to full history
-
-❌ **Don't** add minor details to README.md  
-✅ **Do** keep README.md high-level and scannable
-
-❌ **Don't** forget to update examples  
-✅ **Do** verify examples work with new changes
-
-❌ **Don't** create changelog without version file  
-✅ **Do** create both CHANGELOG.md entry and version file
+- [ ] New changelog file created in `docs-viewer/content/changelogs/v[VERSION].md`.
+- [ ] `CHANGELOG.md` updated with new entry at top.
+- [ ] Root `package.json` version bumped.
+- [ ] Examples updated if framework classes changed.
+- [ ] `docs-viewer/node app.js` runs without error.
+- [ ] All links in README.md are valid.

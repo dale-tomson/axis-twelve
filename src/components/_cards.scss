@@ -19,8 +19,10 @@
   background-clip: border-box;
 }
 
-// Card Media (image container)
-.ax-card__media {
+// Card Media / Image
+.ax-card__media,
+.ax-card__image {
+  display: block;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -31,6 +33,10 @@
     object-fit: cover;
     vertical-align: middle;
   }
+}
+
+.ax-card__image {
+  object-fit: cover;
 }
 
 // Card Body (content area)
@@ -85,12 +91,15 @@
 // Card Variants
 
 // Elevated Card (shadow instead of border)
-.ax-card--elevated {
-  border: none;
-  transition: box-shadow 0.3s ease;
+.ax-card--elevated,
+.ax-card--shadow {
+  border-color: transparent;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
   box-shadow:
-    0 1px 3px 0 rgb(0 0 0 / 10%),
-    0 1px 2px 0 rgb(0 0 0 / 6%);
+    0 4px 6px -1px rgb(0 0 0 / 10%),
+    0 2px 4px -1px rgb(0 0 0 / 6%);
 
   &:hover {
     box-shadow:

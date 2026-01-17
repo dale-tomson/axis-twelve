@@ -5,13 +5,18 @@ All notable changes to Axis Twelve will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0] - 2026-01-17
+## [[2.0.0]](./docs-viewer/content/changelogs/v2.0.0.md) - 2026-01-17
 
 ### 🎉 Major Release - Modular Architecture
 
-Complete rewrite of Axis Twelve with modular architecture and comprehensive UI components.
+Complete rewrite of Axis Twelve with modular architecture and comprehensive UI components. Now featuring a built-in **Interactive Documentation Viewer**.
 
 ### ✨ Added
+
+#### Documentation & Examples
+- **Docs Viewer 2.0** - A new Node.js powered interactive documentation explorer with static examples and relational navigation.
+- **Changelog Viewer** - Dedicated sub-viewer for version history with deep links.
+- **Improved Side Menu** - Reordered links alphabetically with Home (index) prioritized.
 
 #### Architecture
 - **Modular build system** - Separate builds for each component module
@@ -19,35 +24,35 @@ Complete rewrite of Axis Twelve with modular architecture and comprehensive UI c
 - **CSS Custom Properties** - Runtime theming support with CSS variables
 - **BEM naming convention** - All classes use `.ax-` prefix for namespace protection
 
-#### New Component Modules
-- **Buttons** (`axis-buttons.css`) - Semantic variants, sizes, button groups, icon buttons
-- **Forms** (`axis-forms.css`) - Inputs, selects, checkboxes, radios, floating labels, validation states
-- **Modals** (`axis-modals.css`) - Dialog components with backdrop and scroll lock
-- **Tooltips** (`axis-tooltips.css`) - CSS-only tooltips with positioning variants
-- **Tables** (`axis-tables.css`) - Responsive tables with mobile card transformation
-- **Cards** (`axis-cards.css`) - Flexible card containers with media, body, footer sections
+#### UI Components
+- **Buttons** (`axis-buttons.css`) - Semantic variants, sizes, button groups, and high-contrast SVG icon support.
+- **Forms** (`axis-forms.css`) - Inputs, selects, checkboxes, radios, floating labels, validation states.
+- **Modals** (`axis-modals.css`) - Dialog components with backdrop and scroll lock.
+- **Tooltips** (`axis-tooltips.css`) - CSS-only tooltips with robust positioning and arrow fixes.
+- **Tables** (`axis-tables.css`) - Responsive tables with mobile card transformation.
+- **Cards** (`axis-cards.css`) - Flexible card containers with shadow elevation and robust image handling.
 
 #### Features
-- **Accessibility-first design** - WCAG 2.1 compliant with keyboard navigation support
-- **Fluid typography** - Responsive font sizing using CSS clamp()
-- **Comprehensive color system** - Neutral grays, semantic colors, theme maps
-- **Enhanced spacing scale** - Named and numeric values for precise control
-- **Centralized z-index management** - Prevents stacking context conflicts
-- **Legacy v1.x build** - Backward compatibility support (deprecated, removal in v2.2)
+- **Accessibility-first design** - WCAG 2.1 compliant with keyboard navigation support.
+- **Fluid typography** - Responsive font sizing using CSS clamp().
+- **Comprehensive color system** - Neutral grays, semantic colors, theme maps.
+- **Enhanced spacing scale** - Named and numeric values for precise control.
+- **Centralized z-index management** - Prevents stacking context conflicts.
+- **Legacy v1.x build** - Backward compatibility support (deprecated, removal in v2.2).
 
-#### Build System
-- **20 CSS output files** - Full framework + 7 modules + legacy (expanded + minified)
-- **Package exports** - Direct imports for all modules
-- **Optimized builds** - Individual modules from 2.7KB to 77KB minified
+### 🛠 Fixed
+- **Cards** - Fixed `.ax-card--shadow` modifier not appearing in compiled CSS.
+- **Tooltips** - Fixed arrow detachment and positioning conflicts across all directions.
+- **Tooltips** - Improved rendering on void elements (like inputs) via semantic mapping hints.
+- **Buttons** - Improved color contrast for all semantic variants on dark/colored backgrounds.
+- **Performance** - Drastically reduced example markup by centralizing shared styles and scripts.
 
 ### 🔄 Changed
-
-#### Breaking Changes
 - **All classes renamed** - Now use `.ax-` prefix (`.grid` → `.ax-grid`, `.flex` → `.ax-flex`, etc.)
-- **Directory structure** - Completely reorganized from flat to layered architecture
-- **Import paths** - SCSS imports changed from `src/scss/style` to `src/builds/axis-twelve`
-- **Package main** - Now points to minified version by default
-- **Version bump** - 1.0.1 → 2.0.0
+- **Directory structure** - Completely reorganized from flat to layered architecture.
+- **Import paths** - SCSS imports changed from `src/scss/style` to `src/builds/axis-twelve`.
+- **Package main** - Now points to minified version by default.
+- **Viewer Architecture** - Refactored docs viewer backend into a modular route/service structure.
 
 #### Improvements
 - **Better modularity** - Zero cross-component dependencies
@@ -123,14 +128,14 @@ Complete rewrite of Axis Twelve with modular architecture and comprehensive UI c
 
 ---
 
-## [1.0.1] - 2025-12-07
+## [[1.0.1]](./docs-viewer/content/changelogs/v1.0.1.md) - 2025-12-07
 
 ### Fixed
 - Build workflow improvements
 - Documentation updates
 - Version consistency across files
 
-## [1.0.0] - 2025-12-07
+## [[1.0.0]](./docs-viewer/content/changelogs/v1.0.0.md) - 2025-12-07
 
 ### Added
 - Initial release

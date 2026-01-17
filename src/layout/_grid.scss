@@ -15,6 +15,19 @@
   // Gap utilities are in utilities/_spacing.scss
 }
 
+// Container
+.ax-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacer-md;
+  padding-left: $spacer-md;
+
+  @include respond-to('xxl', $grid-breakpoints) {
+    max-width: 1320px;
+  }
+}
+
 // Grid Columns - Generate column classes from 1-12
 @for $i from 1 through $grid-columns {
   .ax-col-#{$i} {
