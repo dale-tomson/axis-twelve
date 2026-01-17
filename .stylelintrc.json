@@ -115,6 +115,8 @@
       }
     ],
     "scss/no-global-function-names": null,
+    "scss/operator-no-unspaced": null,
+    "selector-class-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
     "color-no-invalid-hex": true,
     "selector-pseudo-element-no-unknown": true,
     "declaration-no-important": null,

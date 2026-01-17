@@ -1,0 +1,265 @@
+// ===========================
+// Forms Component
+// ===========================
+// Form inputs, selects, checkboxes, radios with accessibility
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Base Input Styles
+.ax-input,
+.ax-select,
+.ax-textarea {
+  display: block;
+  width: 100%;
+  padding: $spacer-sm $spacer-md;
+  border: 1px solid var(--ax-border-color, $border-color);
+  border-radius: 0.375rem;
+  font-family: inherit;
+  font-size: $font-size-base;
+  line-height: $leading-normal;
+  color: var(--ax-color-dark, $dark);
+  background-color: #fff;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  background-clip: padding-box;
+  appearance: none;
+
+  &::placeholder {
+    color: var(--ax-gray-400, $gray-400);
+    opacity: 1;
+  }
+
+  &:focus {
+    border-color: var(--ax-color-primary, $primary);
+    color: var(--ax-color-dark, $dark);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+    outline: 0;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: var(--ax-gray-100, $gray-100);
+    opacity: 1;
+    cursor: not-allowed;
+  }
+}
+
+// Textarea specific
+.ax-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+// Select Dropdown (custom arrow)
+.ax-select {
+  padding-right: $spacer-xl;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-size: 16px 12px;
+  background-position: right $spacer-sm center;
+  background-repeat: no-repeat;
+
+  &:focus {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%233b82f6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  }
+}
+
+// Validation States
+.ax-input--valid,
+.ax-select--valid,
+.ax-textarea--valid {
+  border-color: var(--ax-color-success, $success);
+
+  &:focus {
+    border-color: var(--ax-color-success, $success);
+    box-shadow: 0 0 0 3px rgba($success, 0.1);
+  }
+}
+
+.ax-input--invalid,
+.ax-select--invalid,
+.ax-textarea--invalid {
+  border-color: var(--ax-color-danger, $danger);
+
+  &:focus {
+    border-color: var(--ax-color-danger, $danger);
+    box-shadow: 0 0 0 3px rgba($danger, 0.1);
+  }
+}
+
+// Only show validation after interaction
+.ax-input:not(:placeholder-shown):invalid,
+.ax-select:not(:placeholder-shown):invalid,
+.ax-textarea:not(:placeholder-shown):invalid {
+  border-color: var(--ax-color-danger, $danger);
+}
+
+// Input Sizes
+.ax-input--sm,
+.ax-select--sm,
+.ax-textarea--sm {
+  padding: $spacer-xs $spacer-sm;
+  font-size: map.get($type-scale, 'sm');
+}
+
+.ax-input--lg,
+.ax-select--lg,
+.ax-textarea--lg {
+  padding: $spacer-md $spacer-lg;
+  font-size: map.get($type-scale, 'lg');
+}
+
+// Form Group (label + input wrapper)
+.ax-form-group {
+  margin-bottom: $spacer-md;
+}
+
+// Label
+.ax-label {
+  display: inline-block;
+  margin-bottom: $spacer-xs;
+  font-weight: $font-weight-medium;
+  color: var(--ax-color-dark, $dark);
+}
+
+// Help Text
+.ax-form-text {
+  display: block;
+  margin-top: $spacer-xs;
+  font-size: map.get($type-scale, 'sm');
+  color: var(--ax-gray-600, $gray-600);
+}
+
+// Error Message
+.ax-form-error {
+  display: block;
+  margin-top: $spacer-xs;
+  font-size: map.get($type-scale, 'sm');
+  color: var(--ax-color-danger, $danger);
+}
+
+// Floating Label Pattern
+.ax-input-group {
+  display: flex;
+  position: relative;
+  flex-direction: column-reverse;
+
+  .ax-input,
+  .ax-textarea {
+    &:placeholder-shown + .ax-label {
+      position: absolute;
+      top: $spacer-sm;
+      left: $spacer-md;
+      font-size: $font-size-base;
+      color: var(--ax-gray-400, $gray-400);
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+
+    &:focus + .ax-label,
+    &:not(:placeholder-shown) + .ax-label {
+      position: static;
+      margin-bottom: $spacer-xs;
+      font-size: map.get($type-scale, 'sm');
+      color: var(--ax-color-dark, $dark);
+    }
+  }
+}
+
+// Checkbox & Radio (Custom Styling)
+.ax-checkbox,
+.ax-radio {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+
+    & + .ax-checkbox__label,
+    & + .ax-radio__label {
+      position: relative;
+      padding-left: $spacer-lg;
+      user-select: none;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--ax-border-color, $border-color);
+        background-color: #fff;
+        transform: translateY(-50%);
+        transition: all 0.15s ease;
+        content: '';
+      }
+    }
+
+    &:checked + .ax-checkbox__label::before,
+    &:checked + .ax-radio__label::before {
+      border-color: var(--ax-color-primary, $primary);
+      background-color: var(--ax-color-primary, $primary);
+    }
+
+    &:checked + .ax-checkbox__label::after,
+    &:checked + .ax-radio__label::after {
+      position: absolute;
+      top: 50%;
+      left: 6px;
+      width: 6px;
+      height: 10px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: translateY(-50%) rotate(45deg);
+      content: '';
+    }
+
+    &:focus + .ax-checkbox__label::before,
+    &:focus + .ax-radio__label::before {
+      outline: 2px solid var(--ax-color-primary, $primary);
+      outline-offset: 2px;
+    }
+
+    &:disabled + .ax-checkbox__label,
+    &:disabled + .ax-radio__label {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Radio specific (circular)
+.ax-radio {
+  input[type='radio'] {
+    & + .ax-radio__label::before {
+      border-radius: 50%;
+    }
+
+    &:checked + .ax-radio__label::after {
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      border: none;
+      border-radius: 50%;
+      background-color: #fff;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+// Checkbox specific (square with rounded corners)
+.ax-checkbox {
+  input[type='checkbox'] {
+    & + .ax-checkbox__label::before {
+      border-radius: 0.25rem;
+    }
+  }
+}

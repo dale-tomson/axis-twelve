@@ -1,0 +1,138 @@
+// ===========================
+// Modal Component
+// ===========================
+// CSS-only modal with backdrop and scroll lock
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Modal Container (hidden by default)
+.ax-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--ax-z-modal, $z-index-modal);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-x: hidden;
+  overflow-y: auto;
+  pointer-events: none;
+
+  // Open state (controlled by data attribute)
+  &[data-open='true'] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// Modal Backdrop
+.ax-modal__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--ax-z-modal-backdrop, $z-index-modal-backdrop);
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 50%);
+  backdrop-filter: blur(2px);
+}
+
+// Modal Dialog (centered container)
+.ax-modal__dialog {
+  position: relative;
+  z-index: var(--ax-z-modal, $z-index-modal);
+  width: 100%;
+  margin: $spacer-xl auto;
+  padding: $spacer-md;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 10%),
+    0 10px 10px -5px rgb(0 0 0 / 4%);
+  max-width: 500px;
+
+  @include respond-to('md', $grid-breakpoints) {
+    margin: $spacer-3xl auto;
+  }
+}
+
+// Modal Header
+.ax-modal__header {
+  display: flex;
+  padding-bottom: $spacer-md;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--ax-border-color, $border-color);
+}
+
+// Modal Title
+.ax-modal__title {
+  margin: 0;
+  font-size: map.get($type-scale, 'xl');
+  font-weight: $font-weight-bold;
+  line-height: $leading-tight;
+  color: var(--ax-color-dark, $dark);
+}
+
+// Modal Close Button
+.ax-modal__close {
+  margin: (-$spacer-xs) (-$spacer-xs) (-$spacer-xs) auto;
+  padding: $spacer-xs;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--ax-gray-100, $gray-100);
+  }
+
+  &:focus {
+    outline: 2px solid var(--ax-color-primary, $primary);
+    outline-offset: 2px;
+  }
+}
+
+// Modal Body
+.ax-modal__body {
+  padding: $spacer-md 0;
+  color: var(--ax-gray-700, $gray-700);
+}
+
+// Modal Footer
+.ax-modal__footer {
+  display: flex;
+  padding-top: $spacer-md;
+  justify-content: flex-end;
+  align-items: center;
+  gap: $spacer-sm;
+  border-top: 1px solid var(--ax-border-color, $border-color);
+}
+
+// Modal Size Variants
+.ax-modal__dialog--sm {
+  max-width: 300px;
+}
+
+.ax-modal__dialog--lg {
+  max-width: 800px;
+}
+
+.ax-modal__dialog--xl {
+  max-width: 1140px;
+}
+
+.ax-modal__dialog--full {
+  margin: 0;
+  border-radius: 0;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+// Scroll Lock Utility (apply to body when modal is open)
+.ax-scroll-lock {
+  overflow: hidden;
+}

@@ -1,0 +1,103 @@
+// ===========================
+// Base Typography
+// ===========================
+// Global typography styles applied to body and headings
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Body Typography
+body {
+  font-family: var(--ax-font-sans, $font-family-sans);
+  font-size: var(--ax-font-size-base, $font-size-base);
+  line-height: var(--ax-line-height-base, $leading-normal);
+  color: var(--ax-color-dark, $dark);
+  background-color: var(--ax-bg-body, $bg-body);
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: $spacer-md;
+  font-weight: $font-weight-bold;
+  line-height: $leading-tight;
+  color: inherit;
+}
+
+h1 {
+  font-size: map.get($type-scale, '4xl');
+}
+
+h2 {
+  font-size: map.get($type-scale, '3xl');
+}
+
+h3 {
+  font-size: map.get($type-scale, '2xl');
+}
+
+h4 {
+  font-size: map.get($type-scale, 'xl');
+}
+
+h5 {
+  font-size: map.get($type-scale, 'lg');
+}
+
+h6 {
+  font-size: map.get($type-scale, 'base');
+}
+
+// Paragraphs
+p {
+  margin-top: 0;
+  margin-bottom: $spacer-md;
+}
+
+// Links
+a {
+  color: var(--ax-color-primary, $primary);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: $spacer-md;
+  padding-left: $spacer-lg;
+}
+
+// Code
+code,
+pre {
+  font-family: var(--ax-font-mono, $font-family-mono);
+  font-size: 0.875em;
+}
+
+code {
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--ax-gray-100, $gray-100);
+}
+
+pre {
+  padding: $spacer-md;
+  border-radius: 0.375rem;
+  background-color: var(--ax-gray-100, $gray-100);
+  overflow-x: auto;
+
+  code {
+    padding: 0;
+    background-color: transparent;
+  }
+}

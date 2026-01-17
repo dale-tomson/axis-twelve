@@ -1,0 +1,233 @@
+// ===========================
+// Spacing Utilities (Padding & Margin)
+// ===========================
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Padding Utilities
+// ax-p-{size} - padding all sides
+// ax-pt-{size} - padding top
+// ax-pb-{size} - padding bottom
+// ax-pl-{size} - padding left
+// ax-pr-{size} - padding right
+// ax-px-{size} - padding left & right
+// ax-py-{size} - padding top & bottom
+
+@each $name, $value in $spacing-map {
+  .ax-p-#{$name} {
+    padding: $value;
+  }
+
+  .ax-pt-#{$name} {
+    padding-top: $value;
+  }
+
+  .ax-pb-#{$name} {
+    padding-bottom: $value;
+  }
+
+  .ax-pl-#{$name} {
+    padding-left: $value;
+  }
+
+  .ax-pr-#{$name} {
+    padding-right: $value;
+  }
+
+  .ax-px-#{$name} {
+    padding-right: $value;
+    padding-left: $value;
+  }
+
+  .ax-py-#{$name} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+// Margin Utilities
+// ax-m-{size} - margin all sides
+// ax-mt-{size} - margin top
+// ax-mb-{size} - margin bottom
+// ax-ml-{size} - margin left
+// ax-mr-{size} - margin right
+// ax-mx-{size} - margin left & right
+// ax-my-{size} - margin top & bottom
+
+@each $name, $value in $spacing-map {
+  .ax-m-#{$name} {
+    margin: $value;
+  }
+
+  .ax-mt-#{$name} {
+    margin-top: $value;
+  }
+
+  .ax-mb-#{$name} {
+    margin-bottom: $value;
+  }
+
+  .ax-ml-#{$name} {
+    margin-left: $value;
+  }
+
+  .ax-mr-#{$name} {
+    margin-right: $value;
+  }
+
+  .ax-mx-#{$name} {
+    margin-right: $value;
+    margin-left: $value;
+  }
+
+  .ax-my-#{$name} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+}
+
+// Auto Margin Utilities
+.ax-mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.ax-my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.ax-m-auto {
+  margin: auto;
+}
+
+.ax-mt-auto {
+  margin-top: auto;
+}
+
+.ax-mb-auto {
+  margin-bottom: auto;
+}
+
+.ax-ml-auto {
+  margin-left: auto;
+}
+
+.ax-mr-auto {
+  margin-right: auto;
+}
+
+// Responsive Padding Utilities (optimized for common values only)
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      @each $name
+        in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24')
+      {
+        @if map.has-key($spacing-map, $name) {
+          $value: map.get($spacing-map, $name);
+
+          .ax-p-#{$breakpoint}-#{$name} {
+            padding: $value;
+          }
+
+          .ax-pt-#{$breakpoint}-#{$name} {
+            padding-top: $value;
+          }
+
+          .ax-pb-#{$breakpoint}-#{$name} {
+            padding-bottom: $value;
+          }
+
+          .ax-px-#{$breakpoint}-#{$name} {
+            padding-right: $value;
+            padding-left: $value;
+          }
+
+          .ax-py-#{$breakpoint}-#{$name} {
+            padding-top: $value;
+            padding-bottom: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Margin Utilities (optimized for common values only)
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      @each $name
+        in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24')
+      {
+        @if map.has-key($spacing-map, $name) {
+          $value: map.get($spacing-map, $name);
+
+          .ax-m-#{$breakpoint}-#{$name} {
+            margin: $value;
+          }
+
+          .ax-mt-#{$breakpoint}-#{$name} {
+            margin-top: $value;
+          }
+
+          .ax-mb-#{$breakpoint}-#{$name} {
+            margin-bottom: $value;
+          }
+
+          .ax-mx-#{$breakpoint}-#{$name} {
+            margin-right: $value;
+            margin-left: $value;
+          }
+
+          .ax-my-#{$breakpoint}-#{$name} {
+            margin-top: $value;
+            margin-bottom: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Gap Utilities (for flex and grid)
+// ax-gap-{size} - gap for both flex and grid
+// ax-gap-x-{size} - column gap (gap-column)
+// ax-gap-y-{size} - row gap (gap-row)
+
+@each $name, $value in $spacing-map {
+  .ax-gap-#{$name} {
+    gap: $value;
+  }
+
+  .ax-gap-x-#{$name} {
+    column-gap: $value;
+  }
+
+  .ax-gap-y-#{$name} {
+    row-gap: $value;
+  }
+}
+
+// Responsive Gap Utilities
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      @each $name, $value in $spacing-map {
+        .ax-gap-#{$breakpoint}-#{$name} {
+          gap: $value;
+        }
+
+        .ax-gap-x-#{$breakpoint}-#{$name} {
+          column-gap: $value;
+        }
+
+        .ax-gap-y-#{$breakpoint}-#{$name} {
+          row-gap: $value;
+        }
+      }
+    }
+  }
+}

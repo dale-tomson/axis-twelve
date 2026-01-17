@@ -1,0 +1,11 @@
+// Axis Twelve v1.x Legacy Build
+// DEPRECATED: This build will be removed in v2.2
+// Please migrate to the new .ax- prefixed classes
+
+@use '../scss/variables' as *;
+@use '../scss/mixins' as *;
+@use '../scss/reset';
+@use '../scss/grid';
+@use '../scss/flexbox';
+@use '../scss/centering';
+@use '../scss/spacing';

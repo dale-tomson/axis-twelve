@@ -1,0 +1,44 @@
+// ===========================
+// Functions
+// ===========================
+// Utility functions for calculations and transformations
+
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:string';
+@use 'sass:color';
+
+// Get value from nested map
+// Usage: map-deep-get($theme-colors, 'primary')
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map.get($map, $key);
+  }
+
+  @return $map;
+}
+
+// Strip unit from value
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+// Convert px to rem
+@function px-to-rem($px, $base: 16px) {
+  @return math.div(strip-unit($px), strip-unit($base)) * 1rem;
+}
+
+// Convert rem to px
+@function rem-to-px($rem, $base: 16px) {
+  @return strip-unit($rem) * strip-unit($base) * 1px;
+}
+
+// Lighten color (alternative to deprecated lighten())
+@function tint($color, $percentage) {
+  @return color.mix(white, $color, $percentage);
+}
+
+// Darken color (alternative to deprecated darken())
+@function shade($color, $percentage) {
+  @return color.mix(black, $color, $percentage);
+}

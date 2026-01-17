@@ -1,0 +1,61 @@
+// ===========================
+// CSS Grid Framework
+// ===========================
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Grid Container
+.ax-grid {
+  @include grid($grid-columns, $grid-gutter);
+
+  width: 100%;
+  max-width: 100%;
+
+  // Gap utilities are in utilities/_spacing.scss
+}
+
+// Grid Columns - Generate column classes from 1-12
+@for $i from 1 through $grid-columns {
+  .ax-col-#{$i} {
+    @include col-span($i);
+  }
+}
+
+// Offset Columns
+@for $i from 0 through $grid-columns {
+  .ax-offset-#{$i} {
+    grid-column-start: $i + 1;
+  }
+}
+
+// Auto Grid Column
+.ax-col-auto {
+  grid-column: auto;
+}
+
+// Full Width Column
+.ax-col-full {
+  grid-column: 1 / -1;
+}
+
+// Responsive Grid Classes (Columns & Offsets Consolidated)
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      // Responsive Columns
+      @for $i from 1 through $grid-columns {
+        .ax-col-#{$breakpoint}-#{$i} {
+          @include col-span($i);
+        }
+      }
+
+      // Responsive Offsets
+      @for $i from 0 through $grid-columns {
+        .ax-offset-#{$breakpoint}-#{$i} {
+          grid-column-start: $i + 1;
+        }
+      }
+    }
+  }
+}

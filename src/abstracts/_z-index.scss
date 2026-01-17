@@ -1,0 +1,14 @@
+// ===========================
+// Z-Index Scale
+// ===========================
+// Centralized z-index management to prevent stacking context conflicts
+
+$z-index-base: 0;
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+$z-index-notification: 1080;

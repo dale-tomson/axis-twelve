@@ -1,0 +1,171 @@
+// ===========================
+// Button Component
+// ===========================
+// Normalize button appearance and provide semantic variants
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Base Button
+.ax-btn {
+  // Reset & Normalize
+  display: inline-flex;
+  padding: $spacer-sm $spacer-md;
+  border: 1px solid transparent;
+  border-color: var(--ax-gray-300, $gray-300);
+  border-radius: 0.375rem;
+  font-family: inherit;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: $leading-normal;
+  text-align: center;
+
+  // Default styling
+  color: var(--ax-color-dark, $dark);
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ax-gray-200, $gray-200);
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+
+  // Minimum touch target (WCAG 2.5.5)
+  min-width: 44px;
+  min-height: 44px;
+
+  &:hover {
+    border-color: var(--ax-gray-400, $gray-400);
+    background-color: var(--ax-gray-300, $gray-300);
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 2px solid var(--ax-color-primary, $primary);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Semantic Variants (auto-generated from theme colors)
+@each $name, $color in $theme-colors {
+  .ax-btn--#{$name} {
+    border-color: $color;
+    color: #fff;
+    background-color: $color;
+
+    &:hover {
+      border-color: shade($color, 15%);
+      background-color: shade($color, 10%);
+    }
+
+    &:focus {
+      outline-color: $color;
+    }
+  }
+}
+
+// Outline Variants
+@each $name, $color in $theme-colors {
+  .ax-btn--outline-#{$name} {
+    border-color: $color;
+    color: $color;
+    background-color: transparent;
+
+    &:hover {
+      border-color: $color;
+      color: #fff;
+      background-color: $color;
+    }
+
+    &:focus {
+      outline-color: $color;
+    }
+  }
+}
+
+// Ghost Variant (no border)
+.ax-btn--ghost {
+  border-color: transparent;
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--ax-gray-100, $gray-100);
+  }
+}
+
+// Size Variants
+.ax-btn--sm {
+  padding: $spacer-xs $spacer-sm;
+  font-size: map.get($type-scale, 'sm');
+  min-height: 36px;
+}
+
+.ax-btn--lg {
+  padding: $spacer-md $spacer-lg;
+  font-size: map.get($type-scale, 'lg');
+  min-height: 52px;
+}
+
+// Block Button (full width)
+.ax-btn--block {
+  display: flex;
+  width: 100%;
+}
+
+// Button Group
+.ax-btn-group {
+  display: inline-flex;
+  gap: 0;
+
+  .ax-btn {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: 0.375rem;
+      border-bottom-left-radius: 0.375rem;
+    }
+
+    &:last-child {
+      border-top-right-radius: 0.375rem;
+      border-bottom-right-radius: 0.375rem;
+    }
+
+    &:not(:last-child) {
+      border-right-width: 0;
+    }
+
+    &:hover,
+    &:focus {
+      z-index: 1;
+    }
+  }
+}
+
+// Icon Button (square)
+.ax-btn--icon {
+  padding: $spacer-sm;
+  min-width: 44px;
+
+  &.ax-btn--sm {
+    padding: $spacer-xs;
+    min-width: 36px;
+  }
+
+  &.ax-btn--lg {
+    padding: $spacer-md;
+    min-width: 52px;
+  }
+}

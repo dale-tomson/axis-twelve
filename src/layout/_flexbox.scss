@@ -1,0 +1,172 @@
+// ===========================
+// Flexbox Framework
+// ===========================
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Flex Container
+.ax-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// Direction
+.ax-flex-row {
+  flex-direction: row;
+}
+
+.ax-flex-column {
+  flex-direction: column;
+}
+
+.ax-flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.ax-flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+// Justify Content
+.ax-justify-start {
+  justify-content: flex-start;
+}
+
+.ax-justify-end {
+  justify-content: flex-end;
+}
+
+.ax-justify-center {
+  justify-content: center;
+}
+
+.ax-justify-between {
+  justify-content: space-between;
+}
+
+.ax-justify-around {
+  justify-content: space-around;
+}
+
+.ax-justify-evenly {
+  justify-content: space-evenly;
+}
+
+// Align Items
+.ax-items-start {
+  align-items: flex-start;
+}
+
+.ax-items-end {
+  align-items: flex-end;
+}
+
+.ax-items-center {
+  align-items: center;
+}
+
+.ax-items-baseline {
+  align-items: baseline;
+}
+
+.ax-items-stretch {
+  align-items: stretch;
+}
+
+// Align Content
+.ax-content-start {
+  align-content: flex-start;
+}
+
+.ax-content-end {
+  align-content: flex-end;
+}
+
+.ax-content-center {
+  align-content: center;
+}
+
+.ax-content-between {
+  align-content: space-between;
+}
+
+.ax-content-around {
+  align-content: space-around;
+}
+
+// Flex Wrap
+.ax-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.ax-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.ax-flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+// Flex Item
+.ax-flex-item {
+  flex: 1;
+}
+
+// Flex Basis Classes
+.ax-flex-1 {
+  flex: 1;
+}
+
+.ax-flex-auto {
+  flex: auto;
+}
+
+.ax-flex-none {
+  flex: none;
+}
+
+// Grow
+.ax-grow-0 {
+  flex-grow: 0;
+}
+
+.ax-grow-1 {
+  flex-grow: 1;
+}
+
+// Shrink
+.ax-shrink-0 {
+  flex-shrink: 0;
+}
+
+.ax-shrink-1 {
+  flex-shrink: 1;
+}
+
+// Responsive Flex Classes
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      .ax-flex-#{$breakpoint}-row {
+        flex-direction: row;
+      }
+
+      .ax-flex-#{$breakpoint}-column {
+        flex-direction: column;
+      }
+
+      .ax-justify-#{$breakpoint}-center {
+        justify-content: center;
+      }
+
+      .ax-justify-#{$breakpoint}-between {
+        justify-content: space-between;
+      }
+
+      .ax-items-#{$breakpoint}-center {
+        align-items: center;
+      }
+    }
+  }
+}

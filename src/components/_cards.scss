@@ -1,0 +1,126 @@
+// ===========================
+// Card Component
+// ===========================
+// Flexible card container with media, body, and footer sections
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Card Container
+.ax-card {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--ax-border-color, $border-color);
+  border-radius: 0.5rem;
+  flex-direction: column;
+  background-color: #fff;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+}
+
+// Card Media (image container)
+.ax-card__media {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+}
+
+// Card Body (content area)
+.ax-card__body {
+  padding: $spacer-md;
+  flex: 1 1 auto;
+}
+
+// Card Title
+.ax-card__title {
+  margin-top: 0;
+  margin-bottom: $spacer-sm;
+  font-size: map.get($type-scale, 'xl');
+  font-weight: $font-weight-bold;
+  line-height: $leading-tight;
+  color: var(--ax-gray-900, $gray-900);
+}
+
+// Card Subtitle
+.ax-card__subtitle {
+  margin-top: -$spacer-xs;
+  margin-bottom: $spacer-sm;
+  font-size: map.get($type-scale, 'sm');
+  color: var(--ax-gray-600, $gray-600);
+}
+
+// Card Text
+.ax-card__text {
+  margin-bottom: $spacer-md;
+  color: var(--ax-gray-700, $gray-700);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Card Footer (action area)
+.ax-card__footer {
+  margin-top: auto; // Push to bottom
+  padding: $spacer-md;
+  background-color: var(--ax-gray-50, $gray-50);
+  border-top: 1px solid var(--ax-border-color, $border-color);
+}
+
+// Card Header (optional)
+.ax-card__header {
+  padding: $spacer-md;
+  background-color: var(--ax-gray-50, $gray-50);
+  border-bottom: 1px solid var(--ax-border-color, $border-color);
+}
+
+// Card Variants
+
+// Elevated Card (shadow instead of border)
+.ax-card--elevated {
+  border: none;
+  transition: box-shadow 0.3s ease;
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 10%),
+    0 1px 2px 0 rgb(0 0 0 / 6%);
+
+  &:hover {
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 10%),
+      0 4px 6px -2px rgb(0 0 0 / 5%);
+  }
+}
+
+// Horizontal Card
+.ax-card--horizontal {
+  flex-direction: row;
+
+  .ax-card__media {
+    max-width: 40%;
+  }
+
+  @media (max-width: map.get($grid-breakpoints, 'md')) {
+    flex-direction: column;
+
+    .ax-card__media {
+      max-width: 100%;
+    }
+  }
+}
+
+// Compact Card (smaller padding)
+.ax-card--compact {
+  .ax-card__body,
+  .ax-card__header,
+  .ax-card__footer {
+    padding: $spacer-sm;
+  }
+}

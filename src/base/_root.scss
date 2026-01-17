@@ -1,0 +1,65 @@
+// ===========================
+// CSS Custom Properties (Root)
+// ===========================
+// Map Sass variables to CSS Custom Properties for runtime theming
+
+@use '../abstracts' as *;
+
+:root {
+  // ===== Colors =====
+
+  // Semantic Colors
+  --ax-color-primary: #{$primary};
+  --ax-color-secondary: #{$secondary};
+  --ax-color-success: #{$success};
+  --ax-color-danger: #{$danger};
+  --ax-color-warning: #{$warning};
+  --ax-color-info: #{$info};
+  --ax-color-light: #{$light};
+  --ax-color-dark: #{$dark};
+
+  // Neutral Grays
+  --ax-gray-50: #{$gray-50};
+  --ax-gray-100: #{$gray-100};
+  --ax-gray-200: #{$gray-200};
+  --ax-gray-300: #{$gray-300};
+  --ax-gray-400: #{$gray-400};
+  --ax-gray-500: #{$gray-500};
+  --ax-gray-600: #{$gray-600};
+  --ax-gray-700: #{$gray-700};
+  --ax-gray-800: #{$gray-800};
+  --ax-gray-900: #{$gray-900};
+
+  // Border & Background
+  --ax-border-color: #{$border-color};
+  --ax-bg-body: #{$bg-body};
+  --ax-bg-surface: #{$bg-surface};
+
+  // ===== Spacing =====
+
+  --ax-spacing-xs: #{$spacer-xs};
+  --ax-spacing-sm: #{$spacer-sm};
+  --ax-spacing-md: #{$spacer-md};
+  --ax-spacing-lg: #{$spacer-lg};
+  --ax-spacing-xl: #{$spacer-xl};
+  --ax-spacing-2xl: #{$spacer-2xl};
+  --ax-spacing-3xl: #{$spacer-3xl};
+
+  // ===== Typography =====
+
+  --ax-font-sans: #{$font-family-sans};
+  --ax-font-serif: #{$font-family-serif};
+  --ax-font-mono: #{$font-family-mono};
+  --ax-font-size-base: #{$font-size-base};
+  --ax-line-height-base: #{$leading-normal};
+
+  // ===== Z-Index =====
+
+  --ax-z-dropdown: #{$z-index-dropdown};
+  --ax-z-sticky: #{$z-index-sticky};
+  --ax-z-fixed: #{$z-index-fixed};
+  --ax-z-modal-backdrop: #{$z-index-modal-backdrop};
+  --ax-z-modal: #{$z-index-modal};
+  --ax-z-popover: #{$z-index-popover};
+  --ax-z-tooltip: #{$z-index-tooltip};
+}

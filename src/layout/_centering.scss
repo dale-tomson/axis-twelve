@@ -1,0 +1,179 @@
+// ===========================
+// Centering Utilities
+// ===========================
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Row Centering - Horizontal Center
+.ax-row {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  &.ax-center {
+    justify-content: center;
+  }
+
+  &.ax-center-v {
+    align-items: center;
+  }
+
+  &.ax-center-both {
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+  }
+
+  &.ax-center-start {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &.ax-center-end {
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &.ax-center-between {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// Column Centering - Vertical Center
+.ax-column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  &.ax-center {
+    align-items: center;
+  }
+
+  &.ax-center-v {
+    justify-content: center;
+  }
+
+  &.ax-center-both {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.ax-center-start {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &.ax-center-end {
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+// Box Centering - Flexible container for centering content
+.ax-box {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  &.ax-center {
+    // Already centered by default
+  }
+
+  &.ax-center-h {
+    justify-content: center;
+  }
+
+  &.ax-center-v {
+    align-items: center;
+  }
+
+  &.ax-center-both {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.ax-center-start {
+    justify-content: flex-start;
+  }
+
+  &.ax-center-end {
+    justify-content: flex-end;
+  }
+
+  &.ax-center-between {
+    justify-content: space-between;
+  }
+
+  // Heights for vertical centering
+  &.ax-h-sm {
+    min-height: 150px;
+  }
+
+  &.ax-h-md {
+    min-height: 300px;
+  }
+
+  &.ax-h-lg {
+    min-height: 500px;
+  }
+
+  &.ax-h-full {
+    min-height: 100vh;
+  }
+}
+
+// General Centering Utilities
+.ax-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ax-center-h {
+  display: flex;
+  justify-content: center;
+}
+
+.ax-center-v {
+  display: flex;
+  align-items: center;
+}
+
+// Text Alignment Utilities
+.ax-text-center {
+  text-align: center;
+}
+
+.ax-text-left {
+  text-align: left;
+}
+
+.ax-text-right {
+  text-align: right;
+}
+
+// Margin auto centering utilities are in utilities/_spacing.scss
+
+// Responsive Centering
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      .ax-center-#{$breakpoint} {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .ax-center-h-#{$breakpoint} {
+        justify-content: center;
+      }
+
+      .ax-center-v-#{$breakpoint} {
+        align-items: center;
+      }
+    }
+  }
+}
