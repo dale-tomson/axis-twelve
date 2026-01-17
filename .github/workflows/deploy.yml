@@ -43,8 +43,8 @@ jobs:
       - name: Export Static Docs
         run: |
           cd docs-viewer
-          npm install
-          BASE_URL=/axis-twelve/v2 node static-export.js
+          pnpm install
+          BASE_URL=/axis-twelve/v2 pnpm run export
 
       - name: Run linting
         run: pnpm lint

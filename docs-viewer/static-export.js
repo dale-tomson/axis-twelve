@@ -113,12 +113,19 @@ async function exportStatic() {
 
     // 5. Copy Assets
     console.log('📦 Copying Assets...');
-    await fs.copy(path.join(__dirname, 'public'), OUT_DIR);
+    const publicDir = path.join(__dirname, 'public');
+    if (await fs.pathExists(publicDir)) {
+        await fs.copy(publicDir, OUT_DIR);
+    }
 
-    // Copy latest dist to out/dist if localDist doesn't exist
-    if (!fs.existsSync(path.join(__dirname, 'public/dist'))) {
-        await fs.ensureDir(path.join(OUT_DIR, 'dist'));
-        await fs.copy(path.join(__dirname, '../dist'), path.join(OUT_DIR, 'dist'));
+    // Ensure dist is always present in the output
+    const outDistDir = path.join(OUT_DIR, 'dist');
+    const rootDistDir = path.join(__dirname, '../dist');
+
+    if (!(await fs.pathExists(outDistDir))) {
+        console.log('📦 Bundling framework assets (dist)...');
+        await fs.ensureDir(outDistDir);
+        await fs.copy(rootDistDir, outDistDir);
     }
 
     console.log('✅ Static export complete! Files are in docs-viewer/out');
