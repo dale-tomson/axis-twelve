@@ -3,11 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - 'ver-*'
     paths:
-      - 'docs/**'
-      - 'src/scss/**'
-      - 'index.html'
+      - 'docs-viewer/**'
+      - 'src/**'
       - 'CHANGELOG.md'
       - 'package.json'
       - '.github/workflows/deploy.yml'
