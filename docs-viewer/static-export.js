@@ -24,6 +24,7 @@ async function renderView(view, data) {
 async function exportStatic() {
     console.log('🚀 Starting static export...');
     await fs.emptyDir(OUT_DIR);
+    await fs.ensureFile(path.join(OUT_DIR, '.nojekyll'));
 
     // 1. Export Home
     console.log('🏠 Exporting Home...');
