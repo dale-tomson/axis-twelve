@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - 'ver-*'
+      - 'ver-2.x'
     paths:
       - 'docs-viewer/**'
       - 'src/**'
@@ -40,6 +40,12 @@ jobs:
       - name: Build CSS
         run: pnpm build
 
+      - name: Export Static Docs
+        run: |
+          cd docs-viewer
+          npm install
+          BASE_URL=/axis-twelve/v2 node static-export.js
+
       - name: Run linting
         run: pnpm lint
 
@@ -47,7 +53,9 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./docs-viewer/out
+          destination_dir: v2
+          keep_files: true
 
   maintain-release:
     needs: deploy

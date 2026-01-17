@@ -8,7 +8,7 @@
     <ul class="sidebar-menu">
         {% for log in changelogs %}
             <li>
-                <a href="/changelogs?v={{ log.id }}" class="{% if currentVersion == log.id %}active{% endif %}">
+                <a href="{{ baseUrl }}/changelogs/{{ log.id }}" class="{% if currentVersion == log.id %}active{% endif %}">
                     {{ log.title }}
                 </a>
             </li>
@@ -19,14 +19,14 @@
 <div class="content-area">
     <nav class="doc-nav doc-nav--top">
         {% if prevVersion %}
-            <a href="/changelogs?v={{ prevVersion.id }}" class="doc-nav__link doc-nav__link--prev">
+            <a href="{{ baseUrl }}/changelogs/{{ prevVersion.id }}" class="doc-nav__link doc-nav__link--prev">
                 <span class="doc-nav__arrow">&larr;</span> Newer: {{ prevVersion.title }}
             </a>
         {% else %}
             <span></span>
         {% endif %}
         {% if nextVersion %}
-            <a href="/changelogs?v={{ nextVersion.id }}" class="doc-nav__link doc-nav__link--next">
+            <a href="{{ baseUrl }}/changelogs/{{ nextVersion.id }}" class="doc-nav__link doc-nav__link--next">
                 Older: {{ nextVersion.title }} <span class="doc-nav__arrow">&rarr;</span>
             </a>
         {% endif %}
@@ -38,7 +38,7 @@
 
     <nav class="doc-nav doc-nav--bottom">
         {% if prevVersion %}
-            <a href="/changelogs?v={{ prevVersion.id }}" class="doc-nav__link doc-nav__link--prev">
+            <a href="{{ baseUrl }}/changelogs/{{ prevVersion.id }}" class="doc-nav__link doc-nav__link--prev">
                 <div class="doc-nav__label">Newer Version</div>
                 <div class="doc-nav__title"><span class="doc-nav__arrow">&larr;</span> {{ prevVersion.title }}</div>
             </a>
@@ -46,7 +46,7 @@
             <span></span>
         {% endif %}
         {% if nextVersion %}
-            <a href="/changelogs?v={{ nextVersion.id }}" class="doc-nav__link doc-nav__link--next">
+            <a href="{{ baseUrl }}/changelogs/{{ nextVersion.id }}" class="doc-nav__link doc-nav__link--next">
                 <div class="doc-nav__label">Older Version</div>
                 <div class="doc-nav__title">{{ nextVersion.title }} <span class="doc-nav__arrow">&rarr;</span></div>
             </a>

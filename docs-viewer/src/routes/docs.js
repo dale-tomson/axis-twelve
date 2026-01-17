@@ -2,16 +2,18 @@ const express = require('express');
 const router = express.Router();
 const { getDocs, getDocContent } = require('../services/content');
 
-router.get('/', async (req, res) => {
+router.get(['/', '/:id'], async (req, res) => {
     const docs = await getDocs();
     const indexDoc = docs.find(d => d.id === 'index');
     const firstDoc = indexDoc ? indexDoc.id : (docs[0] ? docs[0].id : null);
 
-    if (firstDoc && !req.query.m) {
-        return res.redirect(`/docs?m=${firstDoc}`);
+    const currentModule = req.params.id || firstDoc;
+
+    // Redirect /docs to /docs/index (or whatever firstDoc is) for consistency
+    if (!req.params.id && currentModule) {
+        return res.redirect(`${res.locals.baseUrl}/docs/${currentModule}`);
     }
 
-    const currentModule = req.query.m || firstDoc;
     const content = await getDocContent(currentModule) || '';
 
     let prevDoc = null;

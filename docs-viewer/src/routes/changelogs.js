@@ -2,15 +2,16 @@ const express = require('express');
 const router = express.Router();
 const { getChangelogs, getChangelogContent } = require('../services/content');
 
-router.get('/', async (req, res) => {
+router.get(['/', '/:id'], async (req, res) => {
     const changelogs = await getChangelogs();
     const firstLog = changelogs[0] ? changelogs[0].id : null;
 
-    if (firstLog && !req.query.v) {
-        return res.redirect(`/changelogs?v=${firstLog}`);
+    const currentVersion = req.params.id || firstLog;
+
+    if (!req.params.id && currentVersion) {
+        return res.redirect(`${res.locals.baseUrl}/changelogs/${currentVersion}`);
     }
 
-    const currentVersion = req.query.v || firstLog;
     const content = await getChangelogContent(currentVersion) || '';
 
     let prevLog = null;

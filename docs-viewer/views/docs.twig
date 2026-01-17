@@ -7,7 +7,7 @@
     <ul class="sidebar-menu">
         {% for doc in docs %}
             <li>
-                <a href="/docs?m={{ doc.id }}" class="{% if currentModule == doc.id %}active{% endif %}">
+                <a href="{{ baseUrl }}/docs/{{ doc.id }}" class="{% if currentModule == doc.id %}active{% endif %}">
                     {{ doc.title }}
                 </a>
             </li>
@@ -18,14 +18,14 @@
 <div class="content-area">
     <nav class="doc-nav doc-nav--top">
         {% if prevDoc %}
-            <a href="/docs?m={{ prevDoc.id }}" class="doc-nav__link doc-nav__link--prev">
+            <a href="{{ baseUrl }}/docs/{{ prevDoc.id }}" class="doc-nav__link doc-nav__link--prev">
                 <span class="doc-nav__arrow">&larr;</span> {{ prevDoc.title }}
             </a>
         {% else %}
             <span></span>
         {% endif %}
         {% if nextDoc %}
-            <a href="/docs?m={{ nextDoc.id }}" class="doc-nav__link doc-nav__link--next">
+            <a href="{{ baseUrl }}/docs/{{ nextDoc.id }}" class="doc-nav__link doc-nav__link--next">
                 {{ nextDoc.title }} <span class="doc-nav__arrow">&rarr;</span>
             </a>
         {% endif %}
@@ -37,7 +37,7 @@
 
     <nav class="doc-nav doc-nav--bottom">
         {% if prevDoc %}
-            <a href="/docs?m={{ prevDoc.id }}" class="doc-nav__link doc-nav__link--prev">
+            <a href="{{ baseUrl }}/docs/{{ prevDoc.id }}" class="doc-nav__link doc-nav__link--prev">
                 <div class="doc-nav__label">Previous</div>
                 <div class="doc-nav__title"><span class="doc-nav__arrow">&larr;</span> {{ prevDoc.title }}</div>
             </a>
@@ -45,7 +45,7 @@
             <span></span>
         {% endif %}
         {% if nextDoc %}
-            <a href="/docs?m={{ nextDoc.id }}" class="doc-nav__link doc-nav__link--next">
+            <a href="{{ baseUrl }}/docs/{{ nextDoc.id }}" class="doc-nav__link doc-nav__link--next">
                 <div class="doc-nav__label">Next</div>
                 <div class="doc-nav__title">{{ nextDoc.title }} <span class="doc-nav__arrow">&rarr;</span></div>
             </a>

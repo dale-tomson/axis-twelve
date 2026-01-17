@@ -7,7 +7,7 @@
     <ul class="sidebar-menu">
         {% for example in examples %}
             <li>
-                <a href="/examples?m={{ example.id }}" class="{% if currentModule == example.id %}active{% endif %}">
+                <a href="{{ baseUrl }}/examples/{{ example.id }}" class="{% if currentModule == example.id %}active{% endif %}">
                     {{ example.title }}
                 </a>
             </li>

@@ -6351,8 +6351,8 @@ pre code {
 .ax-radio input[type=checkbox]:checked + .ax-radio__label::before,
 .ax-radio input[type=radio]:checked + .ax-checkbox__label::before,
 .ax-radio input[type=radio]:checked + .ax-radio__label::before {
-  background-color: var(--ax-color-primary, #3b82f6);
   border: 0;
+  background-color: var(--ax-color-primary, #3b82f6);
 }
 .ax-checkbox input[type=checkbox]:checked + .ax-checkbox__label::after, .ax-checkbox input[type=checkbox]:checked + .ax-radio__label::after,
 .ax-checkbox input[type=radio]:checked + .ax-checkbox__label::after,
@@ -6399,10 +6399,10 @@ pre code {
   left: 10px;
   width: 10px;
   height: 10px;
+  margin-top: 0;
   border: none;
   border-radius: 50%;
   background-color: #fff;
-  margin-top: 0;
   transform: translate(-50%, -50%);
 }
 
@@ -6564,20 +6564,20 @@ pre code {
 
 [data-ax-tooltip]::after,
 [data-ax-tooltip-position=top]::after {
-  bottom: 100%;
-  left: 50%;
   top: auto;
   right: auto;
-  margin-bottom: 8px;
+  bottom: 100%;
+  left: 50%;
   margin-top: 0;
+  margin-bottom: 8px;
   transform: translateX(-50%);
 }
 [data-ax-tooltip]::before,
 [data-ax-tooltip-position=top]::before {
-  bottom: 100%;
-  left: 50%;
   top: auto;
   right: auto;
+  bottom: 100%;
+  left: 50%;
   transform: translateX(-50%);
   border-top-color: var(--ax-gray-900, #111827);
   border-bottom-color: transparent;
@@ -6587,18 +6587,18 @@ pre code {
 
 [data-ax-tooltip-position=bottom]::after {
   top: 100%;
+  right: auto;
   bottom: auto;
   left: 50%;
-  right: auto;
   margin-top: 8px;
   margin-bottom: 0;
   transform: translateX(-50%);
 }
 [data-ax-tooltip-position=bottom]::before {
   top: 100%;
+  right: auto;
   bottom: auto;
   left: 50%;
-  right: auto;
   transform: translateX(-50%);
   border-bottom-color: var(--ax-gray-900, #111827);
   border-top-color: transparent;
@@ -6629,18 +6629,18 @@ pre code {
 
 [data-ax-tooltip-position=right]::after {
   top: 50%;
-  left: 100%;
-  bottom: auto;
   right: auto;
-  margin-left: 8px;
+  bottom: auto;
+  left: 100%;
   margin-right: 0;
+  margin-left: 8px;
   transform: translateY(-50%);
 }
 [data-ax-tooltip-position=right]::before {
   top: 50%;
-  left: 100%;
-  bottom: auto;
   right: auto;
+  bottom: auto;
+  left: 100%;
   transform: translateY(-50%);
   border-right-color: var(--ax-gray-900, #111827);
   border-top-color: transparent;
@@ -6757,10 +6757,10 @@ pre code {
 
 .ax-card__media,
 .ax-card__image {
+  display: block;
   overflow: hidden;
   position: relative;
   width: 100%;
-  display: block;
 }
 .ax-card__media img,
 .ax-card__image img {
@@ -6818,9 +6818,9 @@ pre code {
 
 .ax-card--elevated,
 .ax-card--shadow {
+  border-color: transparent;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  border-color: transparent;
 }
 .ax-card--elevated:hover,
 .ax-card--shadow:hover {

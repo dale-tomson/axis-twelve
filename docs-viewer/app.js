@@ -4,6 +4,7 @@ const fs = require('fs');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const baseUrl = process.env.BASE_URL || '';
 
 // Setup Twig
 app.set('views', path.join(__dirname, 'views'));
@@ -11,6 +12,12 @@ app.set('view engine', 'twig');
 app.set('twig options', {
     allowAsync: true,
     strict_variables: false
+});
+
+// Pass baseUrl to all templates
+app.use((req, res, next) => {
+    res.locals.baseUrl = baseUrl;
+    next();
 });
 
 // Static files

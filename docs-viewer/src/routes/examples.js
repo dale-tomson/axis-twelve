@@ -2,16 +2,17 @@ const express = require('express');
 const router = express.Router();
 const { getExamples, getExampleContent } = require('../services/content');
 
-router.get('/', async (req, res) => {
+router.get(['/', '/:id'], async (req, res) => {
     const examples = await getExamples();
     const indexExample = examples.find(e => e.id === 'index');
     const firstExample = indexExample ? indexExample.id : (examples[0] ? examples[0].id : null);
 
-    if (firstExample && !req.query.m) {
-        return res.redirect(`/examples?m=${firstExample}`);
+    const currentModule = req.params.id || firstExample;
+
+    if (!req.params.id && currentModule) {
+        return res.redirect(`${res.locals.baseUrl}/examples/${currentModule}`);
     }
 
-    const currentModule = req.query.m || firstExample;
     const content = await getExampleContent(currentModule) || '';
 
     res.render('examples', {

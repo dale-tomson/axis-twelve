@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title|default('Axis Twelve') }}</title>
-    <link rel="stylesheet" href="/dist/axis-twelve.min.css">
+    <link rel="stylesheet" href="{{ baseUrl }}/dist/axis-twelve.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <style>
         :root {
@@ -141,12 +141,12 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" class="navbar-brand">Axis Twelve</a>
+        <a href="{{ baseUrl }}/" class="navbar-brand">Axis Twelve</a>
         <div class="navbar-menu">
-            <a href="/" class="{% if current_page == 'home' %}active{% endif %}">Home</a>
-            <a href="/docs" class="{% if current_page == 'docs' %}active{% endif %}">Documentation</a>
-            <a href="/examples" class="{% if current_page == 'examples' %}active{% endif %}">Examples</a>
-            <a href="/changelogs" class="{% if current_page == 'changelogs' %}active{% endif %}">Changelogs</a>
+            <a href="{{ baseUrl }}/" class="{% if current_page == 'home' %}active{% endif %}">Home</a>
+            <a href="{{ baseUrl }}/docs" class="{% if current_page == 'docs' %}active{% endif %}">Documentation</a>
+            <a href="{{ baseUrl }}/examples" class="{% if current_page == 'examples' %}active{% endif %}">Examples</a>
+            <a href="{{ baseUrl }}/changelogs" class="{% if current_page == 'changelogs' %}active{% endif %}">Changelogs</a>
         </div>
     </nav>
 
