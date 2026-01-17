@@ -1,4 +1,5 @@
 {
+  "name": "axis-twelve",
   "version": "2.0.0",
   "description": "Build faster, center easier. Modular CSS framework with grid, flexbox, centering, buttons, forms, modals, tables, cards, and tooltips.",
   "type": "module",
