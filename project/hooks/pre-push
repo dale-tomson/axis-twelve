@@ -75,12 +75,12 @@ if [ "$SCSS_CHANGED" -eq 1 ]; then
       bash project/scripts/update-version.sh
       
       # Commit the version bump
-      git add package.json README.md docs-viewer/content/docs/*.md
+      git add package.json README.md index.html docs/*.md
       git commit -m "chore: bump version to v$NEW_VERSION"
       
       echo "✅ Version bumped to v$NEW_VERSION and committed"
       echo ""
-      echo "⚠️  Remember to update CHANGELOG.md or create docs-viewer/content/changelogs/v$NEW_VERSION.md"
+      echo "⚠️  Remember to update CHANGELOG.md or create docs/changelogs/v$NEW_VERSION.md"
       echo "   Then amend the commit: git commit --amend --no-edit"
       echo ""
       
@@ -105,7 +105,7 @@ else
 fi
 
 # Check if any version-specific changelog files have been updated
-if git log @{u}..HEAD --name-only --pretty=format: | grep -q "docs-viewer/content/changelogs/"; then
+if git log @{u}..HEAD --name-only --pretty=format: | grep -q "docs/changelogs/"; then
   echo "✅ Version changelog file updated in commits to push"
   VERSION_FILE_UPDATED=1
 else
@@ -122,12 +122,12 @@ if [ "$VERSION_CHANGED" -eq 1 ]; then
     echo ""
     echo "You must update one of the following:"
     echo "  1. CHANGELOG.md - Main changelog overview"
-    echo "  2. docs-viewer/content/changelogs/v${CURRENT_VERSION}.md - Version-specific changelog"
+    echo "  2. docs/changelogs/v${CURRENT_VERSION}.md - Version-specific changelog"
     echo ""
-    echo "Example: Create docs-viewer/content/changelogs/v${CURRENT_VERSION}.md with release notes"
+    echo "Example: Create docs/changelogs/v${CURRENT_VERSION}.md with release notes"
     echo ""
     echo "Then run:"
-    echo "  git add CHANGELOG.md (or docs-viewer/content/changelogs/v${CURRENT_VERSION}.md)"
+    echo "  git add CHANGELOG.md (or docs/changelogs/v${CURRENT_VERSION}.md)"
     echo "  git commit --amend --no-edit"
     echo "  git push"
     echo ""
@@ -136,7 +136,7 @@ if [ "$VERSION_CHANGED" -eq 1 ]; then
 fi
 
 # Check if version file exists for current version
-VERSION_FILE="docs-viewer/content/changelogs/v${CURRENT_VERSION}.md"
+VERSION_FILE="docs/changelogs/v${CURRENT_VERSION}.md"
 if [ ! -f "$VERSION_FILE" ] && grep -q "v${CURRENT_VERSION}" CHANGELOG.md 2>/dev/null; then
   echo "⚠️  Warning: CHANGELOG.md mentions v${CURRENT_VERSION} but version file doesn't exist"
   echo "  Consider creating: $VERSION_FILE"

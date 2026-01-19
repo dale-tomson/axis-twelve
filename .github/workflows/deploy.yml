@@ -40,12 +40,6 @@ jobs:
       - name: Build CSS
         run: pnpm build
 
-      - name: Export Static Docs
-        run: |
-          cd docs-viewer
-          pnpm install
-          BASE_URL=/axis-twelve/v2 pnpm run export
-
       - name: Run linting
         run: pnpm lint
 
@@ -53,7 +47,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs-viewer/out
+          publish_dir: ./
           destination_dir: v2
           keep_files: true
 
