@@ -5,7 +5,8 @@ on:
     branches:
       - 'ver-2.x'
     paths:
-      - 'docs-viewer/**'
+      - 'docs/**'
+      - 'index.html'
       - 'src/**'
       - 'CHANGELOG.md'
       - 'package.json'
