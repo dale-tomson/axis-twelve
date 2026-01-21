@@ -47,8 +47,6 @@
     "build:cards": "pnpm exec sass src/builds/axis-cards.scss dist/modules/axis-cards.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-cards.scss dist/modules/axis-cards.min.css --style=compressed",
     "build:legacy": "pnpm exec sass src/builds/axis-twelve-legacy.scss dist/axis-twelve-legacy.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-twelve-legacy.scss dist/axis-twelve-legacy.min.css --style=compressed",
     "watch": "pnpm exec sass --watch src/builds:dist",
-    "start": "node server.js",
-    "server": "node server.js",
     "lint": "stylelint \"src/**/*.scss\"",
     "lint:fix": "stylelint \"src/**/*.scss\" --fix",
     "format": "prettier --write \"src/**/*.scss\"",

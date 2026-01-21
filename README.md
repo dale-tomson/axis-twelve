@@ -11,7 +11,8 @@
 
 </div>
 
-Axis Twelve is a professional, modular CSS framework featuring a powerful 12-column grid system, comprehensive flexbox utilities, powerful centering components, and a suite of UI components. Now featuring a built-in **Interactive Documentation Viewer** for a seamless development experience.
+Axis Twelve is a professional, modular CSS framework featuring a powerful 12-column grid system, comprehensive flexbox utilities, powerful centering components, and a suite of UI components.
+
 
 ## ✨ Key Features
 
@@ -303,7 +304,9 @@ MIT © Dale Tomson
 
 - [GitHub Repository](https://github.com/dale-tomson/axis-twelve)
 - [npm Package](https://www.npmjs.com/package/axis-twelve)
-- [**Interactive Documentation**](docs-viewer/README.md)
+- [Interactive Documentation](docs/v2.0.0/)
+- [Component Examples](docs/examples/)
+
 - [Changelog History](CHANGELOG.md)
 - [Available Scripts](SCRIPTS.md)
 - [Report Issues](https://github.com/dale-tomson/axis-twelve/issues)

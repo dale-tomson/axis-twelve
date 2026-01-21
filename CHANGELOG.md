@@ -9,14 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🎉 Major Release - Modular Architecture
 
-Complete rewrite of Axis Twelve with modular architecture and comprehensive UI components. Now featuring a built-in **Interactive Documentation Viewer**.
+Complete rewrite of Axis Twelve with modular architecture and comprehensive UI components. Documentation and examples are now served as static files in the `docs/` directory.
+
 
 ### ✨ Added
 
 #### Documentation & Examples
-- **Docs Viewer 2.0** - A new Node.js powered interactive documentation explorer with static examples and relational navigation.
-- **Changelog Viewer** - Dedicated sub-viewer for version history with deep links.
-- **Improved Side Menu** - Reordered links alphabetically with Home (index) prioritized.
+- **Static Documentation** - Markdown documentation and standalone HTML examples organized in a clean directory structure.
+- **Example Links** - All module documentation includes direct links to live component examples.
+
 
 #### Architecture
 - **Modular build system** - Separate builds for each component module
@@ -49,10 +50,11 @@ Complete rewrite of Axis Twelve with modular architecture and comprehensive UI c
 
 ### 🔄 Changed
 - **All classes renamed** - Now use `.ax-` prefix (`.grid` → `.ax-grid`, `.flex` → `.ax-flex`, etc.)
-- **Directory structure** - Completely reorganized from flat to layered architecture.
+- **Directory structure** - Reorganized from flat to layered architecture.
 - **Import paths** - SCSS imports changed from `src/scss/style` to `src/builds/axis-twelve`.
 - **Package main** - Now points to minified version by default.
-- **Viewer Architecture** - Refactored docs viewer backend into a modular route/service structure.
+- **Documentation** - Shifted from a dynamic Node.js viewer to a purely static approach.
+
 
 #### Improvements
 - **Better modularity** - Zero cross-component dependencies

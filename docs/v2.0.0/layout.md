@@ -2,6 +2,9 @@
 
 The `axis-layout` module is the foundation of the Axis Twelve framework. It provides a robust 12-column grid system, flexible flexbox utilities, and a set of spacing/typography defaults to ensure a consistent and responsive layout across all devices.
 
+[**View Live Examples &rarr;**](../examples/layout.html)
+
+
 ## 🚀 Installation
 
 ```html
