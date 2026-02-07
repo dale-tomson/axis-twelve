@@ -1,6 +1,0 @@
-dist
-node_modules
-.git
-.vscode
-.idea
-*.min.css
