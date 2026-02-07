@@ -4,10 +4,10 @@
 
 <img src="https://img.shields.io/npm/v/axis-twelve?color=blue&style=flat-square" alt="NPM Version" />
 <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License" />
-<img src="https://img.shields.io/badge/css-57kB-orange?style=flat-square" alt="CSS Size" />
-<img src="https://img.shields.io/badge/css.gz-6.5kB-success?style=flat-square" alt="CSS Gzipped" />
-<img src="https://img.shields.io/badge/min.css-40kB-orange?style=flat-square" alt="Minified Size" />
-<img src="https://img.shields.io/badge/min.css.gz-5.9kB-success?style=flat-square" alt="Minified Gzipped" />
+<img src="https://img.shields.io/badge/css-43kB-orange?style=flat-square" alt="CSS Size" />
+<img src="https://img.shields.io/badge/css.gz-5.2kB-success?style=flat-square" alt="CSS Gzipped" />
+<img src="https://img.shields.io/badge/min.css-30.5kB-orange?style=flat-square" alt="Minified Size" />
+<img src="https://img.shields.io/badge/min.css.gz-4.8kB-success?style=flat-square" alt="Minified Gzipped" />
 
 **Build faster, center easier. The 12-column solution.**
 
@@ -23,7 +23,7 @@ Axis Twelve is a professional CSS framework with SCSS support featuring a powerf
 - **Extensive Spacing Scale** - Named sizes (xs-3xl) and consistent numeric mapping
 - **Full SCSS Support** - Customizable variables and modular architecture
 - **Responsive Breakpoints** - xs, sm, md, lg, xl, xxl
-- **Ultra-Lightweight** - 57 KB expanded (6.5 KB gzipped) / 40 KB minified (5.9 KB gzipped)
+- **Ultra-Lightweight** - 43 KB expanded (5.2 KB gzipped) / 30.5 KB minified (4.8 KB gzipped)
 
 ## Documentation
 
@@ -68,62 +68,31 @@ Or if using SCSS imports:
 @import "node_modules/axis-twelve/src/scss/style";
 ```
 
-### 2. Explore Examples
+### 2. Read Documentation
 
-Open **`index.html`** in your browser to see all available examples:
+Visit the **[Interactive Documentation](https://dale-tomson.github.io/axis-twelve/)** on GitHub Pages for complete guides and examples.
 
-- **Complete Feature Demo** - All framework features in one showcase
-- **Grid Layouts** - Master the 12-column grid system
-- **Flexbox Utilities** - Learn all alignment options
-- **Centering Components** - Multiple centering methods
-- **Spacing Utilities** - Padding, margin, and gap reference
-- **Real-World Examples** - Practical website layouts
+### 3. Start Building
 
-See `/examples` folder for focused, use-case specific demonstrations.
+Use the framework classes in your HTML:
 
-### 3. Read Documentation
-
-Visit the **`/docs`** folder for complete interactive documentation:
-
-```bash
-npm start
-# Then open http://localhost:3000/docs/
+```html
+<div class="grid gap-lg">
+  <div class="col-6">Half width</div>
+  <div class="col-6">Half width</div>
+</div>
 ```
 
-Or run the server directly:
-
-```bash
-pnpm start
-# Server runs on http://localhost:3000/
-```
-
-Documentation guides:
-- Getting Started
-- Installation
-- Quick Start Guide
-- Grid System Reference
-- Flexbox Utilities
-- Centering Components
-- Spacing Utilities
-- SCSS Variables
-- Responsive Breakpoints
-- Best Practices
+See the [Quick Code Examples](#quick-code-examples) section below for more patterns.
 
 ## Folder Structure
 
 ```
 axis-twelve/
 ├── src/scss/                 # SCSS source files
-├── dist/axis-twelve.css      # Compiled minified CSS
-├── index.html                # Landing page with links to examples
-├── examples/                 # Focused example files
-│   ├── style.css             # Shared styles for all examples
-│   ├── 00-all-features-demo.html
-│   ├── 01-grid-layouts.html
-│   ├── 02-flexbox.html
-│   ├── 03-centering.html
-│   ├── 04-spacing.html
-│   └── 05-real-world.html
+├── dist/                     # Compiled CSS files
+│   ├── axis-twelve.css       # Expanded CSS
+│   └── axis-twelve.min.css   # Minified CSS
 ├── docs/                     # Interactive framework documentation
 │   ├── index.html
 │   ├── getting-started.md
@@ -134,16 +103,11 @@ axis-twelve/
 │   └── *.md                  # Other framework guides
 ├── project/                  # Project management (development tools)
 │   ├── scripts/              # CLI helper scripts
-│   │   ├── install-hooks.sh
-│   │   ├── publish-npm.sh
-│   │   ├── create-release.sh
-│   │   └── release-github.sh
 │   ├── hooks/                # Git hook definitions
-│   │   └── pre-commit
 │   └── docs/                 # Project documentation
 │       ├── SCRIPTS.md        # CLI wrapper guide
 │       ├── RELEASE.md        # Release process
-│       └── CHANGELOG.md      # Version history
+│       └── changelog/        # Version history
 ├── axis                      # CLI wrapper script
 └── package.json
 ```
@@ -246,8 +210,6 @@ pnpm install
 ```
 
 Then visit:
-- `http://localhost:3000/` - Landing page
-- `http://localhost:3000/examples/` - Example files
 - `http://localhost:3000/docs/` - Documentation
 
 ## Quick Code Examples
@@ -322,9 +284,9 @@ Use responsive column classes: `col-md-6`, `col-lg-4`, etc.
 
 ## Where to Start
 
-1. **New to CSS Frameworks?** → Start with `/docs` documentation
-2. **Want to See Examples?** → Open `index.html` to browse examples
-3. **Ready to Code?** → Check `/examples` for focused, real-world patterns
+1. **New to CSS Frameworks?** → Visit the [Interactive Documentation](https://dale-tomson.github.io/axis-twelve/)
+2. **Want to See Examples?** → Check the [Quick Code Examples](#quick-code-examples) section above
+3. **Ready to Code?** → Install via npm and start using the utility classes
 4. **Customizing?** → Edit variables in `src/scss/_variables.scss` and rebuild
 
 ## License

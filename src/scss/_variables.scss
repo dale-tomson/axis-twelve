@@ -45,7 +45,6 @@ $spacer-2xl: 4rem;
 $spacer-3xl: 6rem;
 
 // Spacing Map for utilities generation
-// Spacing Map for utilities generation
 $spacing-map: (
   'xs': $spacer-xs,
   'sm': $spacer-sm,
@@ -58,12 +57,7 @@ $spacing-map: (
   '1': 0.25rem,
   '2': 0.5rem,
   '3': 0.75rem,
-  // '4' is md
-  // '6' is lg
   '8': 2rem,
   '10': 2.5rem,
-  // '12' is xl
-  // '16' is 2xl
-  '20': 5rem // '24' is 3xl
-  , // '32' is 8rem (removed as excessive)
+  '20': 5rem,
 );

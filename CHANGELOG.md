@@ -4,6 +4,20 @@ For a full history of changes, please visit the [Changelog Directory](./project/
 
 ---
 
+## [v1.1.0](./project/docs/changelog/v1.1.0.md) - Performance Optimization
+**February 7, 2026**
+
+### ⚡ Performance & Optimization
+- **25% CSS file size reduction** (40.5KB → 30.5KB minified, 6KB → 4.8KB gzipped)
+- Limited responsive spacing utilities to commonly-used values (0, xs, sm, md, lg, xl)
+- Removed redundant `.box` centering modifiers
+- All base utilities preserved - no breaking changes for most users
+
+### 📦 Distribution
+- Removed `examples/` folder (moving to dedicated repository)
+
+---
+
 ## [v1.0.1](./project/docs/changelog/v1.0.1.md) - Documentation & Tooling Improvements
 **December 7, 2025**
 
@@ -23,21 +37,6 @@ For a full history of changes, please visit the [Changelog Directory](./project/
 
 ---
 
-## [v0.0.4](./project/docs/changelog/v0.0.4.md) - CLI & Distribution Improvements
-**December 7, 2025**
-
-### 🏗️ Improvements
-- **Breaking Change**: Renamed distribution files from `style.css` to `axis-twelve.css` (and `.min.css`).
-- Added `test` command alias for `pnpm check`.
-- Enhanced `axis` CLI:
-    - Added `clean` command to remove `dist/`.
-    - Added dependency checks for `node_modules`.
-    - Enabled argument passthrough to underlying tools (e.g., `./axis build --no-source-map`).
-- **Improved Git Hooks**:
-    - `pre-commit` now runs linting and supports **interactive/manual version bumping**.
-    - `pre-push` now runs tests/builds before allowing push.
-- Added version/license banner to compiled CSS files.
-
 ## [v1.0.0](./project/docs/changelog/v1.0.0.md) - SCSS Optimization
 **December 7, 2025**
 
@@ -48,4 +47,5 @@ For a full history of changes, please visit the [Changelog Directory](./project/
     - Flattened flexbox selectors to reduce specificity.
     - Consolidated grid responsive loops to reduce CSS file size (~40KB minified).
 
-[Read full release notes →](./project/docs/changelog/v0.0.5.md)
+[Read full release notes →](./project/docs/changelog/v1.0.0.md)
+

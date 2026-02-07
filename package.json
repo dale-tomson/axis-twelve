@@ -1,6 +1,6 @@
 {
   "name": "axis-twelve",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Build faster, center easier. The 12-column solution. Professional CSS framework with grid, flexbox, centering, and spacing utilities.",
   "type": "module",
   "main": "dist/axis-twelve.css",
@@ -35,7 +35,7 @@
     "test": "pnpm check",
     "prepublishOnly": "pnpm check",
     "release": "bash project/scripts/release.sh",
-    "version": "1.0.1"
+    "version": "1.1.0"
   },
   "keywords": [
     "css",
