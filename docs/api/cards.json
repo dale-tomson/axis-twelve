@@ -6,6 +6,11 @@
         "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
         "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-cards.min.css"
     },
+    "stats": {
+        "standard": "3.4KB",
+        "minified": "2.9KB",
+        "gzipped": "1.1KB"
+    },
     "html_snippet": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-cards.min.css\">\n    <title>Axis Cards Example</title>\n</head>\n<body>\n    <div class=\"ax-card\">\n        <div class=\"ax-card__header\">Card Header</div>\n        <div class=\"ax-card__body\">Card Body Content</div>\n    </div>\n</body>\n</html>",
     "classes": [
         {

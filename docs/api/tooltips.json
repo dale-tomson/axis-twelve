@@ -6,6 +6,11 @@
         "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
         "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-tooltips.min.css"
     },
+    "stats": {
+        "standard": "4.5KB",
+        "minified": "4.0KB",
+        "gzipped": "1.1KB"
+    },
     "html_snippet": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-tooltips.min.css\">\n    <title>Axis Tooltips Example</title>\n</head>\n<body>\n    <button data-ax-tooltip=\"Hello World!\">Tooltipped Button</button>\n</body>\n</html>",
     "attributes": [
         {

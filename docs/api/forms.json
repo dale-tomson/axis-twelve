@@ -6,6 +6,11 @@
         "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
         "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-forms.min.css"
     },
+    "stats": {
+        "standard": "9.6KB",
+        "minified": "8.7KB",
+        "gzipped": "2.0KB"
+    },
     "html_snippet": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-forms.min.css\">\n    <title>Axis Forms Example</title>\n</head>\n<body>\n    <div class=\"ax-form-group\">\n        <label class=\"ax-label\">Name</label>\n        <input type=\"text\" class=\"ax-input\" placeholder=\"Enter name\">\n    </div>\n</body>\n</html>",
     "classes": [
         {
