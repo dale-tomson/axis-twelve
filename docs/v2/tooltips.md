@@ -34,7 +34,7 @@ Simply add the `data-ax-tooltip` attribute to any element.
 
 ## 🎨 Positioning
 
-You can position the tooltip on any side of the element.
+You can position the tooltip on any side of the element. Since **v2.0.1**, these positions use **logical properties**, meaning `left` and `right` automatically swap in RTL layouts.
 
 ```html
 <span data-ax-tooltip="On the left" data-ax-tooltip-position="left">Left</span>
@@ -78,3 +78,12 @@ Tooltips are rendered using `::before` and `::after` pseudo-elements. Because **
 
 - **Keyboard Focus**: The tooltip is visible on both `:hover` and `:focus`, making it accessible to keyboard users.
 - **Screen Readers**: For accessibility, ensure the tooltip text is also available as an `aria-label` if the element itself doesn't have descriptive text.
+
+---
+
+## 📜 API Evolution
+
+| Version | Change Type | Description |
+|---------|-------------|-------------|
+| **v2.0.1** | Feature | Switched to **Logical Positioning** (`inset-inline-start/end`). Added physical fallbacks for legacy browser support. |
+| **v2.0.0** | Major | Initial v2 release with **Physical Positioning** (`left/right`). |

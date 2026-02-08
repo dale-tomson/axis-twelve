@@ -87,3 +87,12 @@ Combine modifiers for best readability.
   ...
 </table>
 ```
+
+---
+
+## 📜 API Evolution
+
+| Version | Change Type | Description |
+|---------|-------------|-------------|
+| **v2.0.1** | Internal | Refactored `text-align` to use logical `start/end` values. |
+| **v2.0.0** | Major | Initial v2 release with physical `left/right` text alignment. |

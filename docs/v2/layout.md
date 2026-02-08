@@ -97,6 +97,17 @@ Axis Twelve provides consistent spacing variables.
 
 ---
 
+---
+
+## 🌐 Logical Properties & RTL Support
+
+Starting with **v2.0.1**, Axis Twelve has transitioned to **CSS Logical Properties**. This allows your layout to automatically adapt to different text directions (LTR and RTL).
+
+- **Direction-Aware Spacing**: Classes like `.ax-pl-md` now use `padding-inline-start`, meaning it applies to the left in LTR and the right in RTL.
+- **Bi-directional Grid**: The grid system and alignment utilities respect the `dir` attribute of the document.
+
+---
+
 ## ⚙️ Customization
 
 Override these variables in your `:root` or a specific container.
@@ -107,3 +118,12 @@ Override these variables in your `:root` or a specific container.
   --ax-font-sans: "Inter", sans-serif; /* Change the brand font */
 }
 ```
+
+---
+
+## 📜 API Evolution
+
+| Version | Change Type | Description |
+|---------|-------------|-------------|
+| **v2.0.1** | Internal | Refactored spacing and alignment to use **Logical Properties** (e.g., `padding-inline-start`). |
+| **v2.0.0** | Major | Initial v2 release with **Physical Properties** (e.g., `padding-left`). |

@@ -120,3 +120,10 @@ Fully accessible and CSS-only custom controls.
 | `--ax-border-color` | `#d1d5db` | Border color for all inputs. |
 | `--ax-color-primary` | `#3b82f6` | Focus ring and active state color. |
 | `--ax-bg-surface` | `#f9fafb` | Background for disabled states. |
+
+## 📜 API Evolution
+
+| Version | Change Type | Description |
+|---------|-------------|-------------|
+| **v2.0.1** | Internal | Refactored input spacing and alignment to use logical properties. |
+| **v2.0.0** | Major | Initial v2 release with physical spacing properties. |

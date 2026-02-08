@@ -64,3 +64,12 @@ Use `.ax-card--shadow` for an elevated look.
   <div class="ax-card__body">Elevated Card</div>
 </div>
 ```
+
+---
+
+## 📜 API Evolution
+
+| Version | Change Type | Description |
+|---------|-------------|-------------|
+| **v2.0.1** | Internal | Refactored internal pacing and layout to use logical properties. |
+| **v2.0.0** | Major | Initial v2 release with physical spacing properties. |

@@ -69,3 +69,12 @@ Modify the maximum width of the dialog box.
 - **Roles**: Add `role="dialog"` and `aria-modal="true"` to `.ax-modal`.
 - **Labels**: Use `aria-labelledby` on the modal container pointing to the title ID.
 - **Focus**: When open, focus should ideally be trapped within the modal (requires minimal JS).
+
+---
+
+## 📜 API Evolution
+
+| Version | Change Type | Description |
+|---------|-------------|-------------|
+| **v2.0.1** | Internal | Refactored modal pacing and alignment to use logical properties. |
+| **v2.0.0** | Major | Initial v2 release with physical spacing properties. |

@@ -118,3 +118,12 @@ You can override these CSS variables to customize the look of all buttons.
 | `--ax-color-primary` | `#3b82f6` | Primary brand color. |
 | `--ax-spacing-sm` | `0.5rem` | Base for small padding. |
 | `--ax-spacing-md` | `1rem` | Base for medium padding. |
+
+---
+
+## 📜 API Evolution
+
+| Version | Change Type | Description |
+|---------|-------------|-------------|
+| **v2.0.1** | Internal | Refactored padding and margins to use logical properties. |
+| **v2.0.0** | Major | Initial v2 release with physical spacing properties. |
