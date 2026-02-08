@@ -200,6 +200,16 @@ pre code {
   max-width: 100%;
 }
 
+.ax-subgrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+@supports (grid-template-columns: subgrid) {
+  .ax-subgrid {
+    grid-template-columns: subgrid;
+  }
+}
+
 .ax-container {
   width: 100%;
   margin-inline-start: auto;

@@ -38,6 +38,7 @@ The grid is built using CSS Grid with a 12-column template.
 | Class | Description |
 |-------|-------------|
 | `.ax-grid` | The main grid container. Sets `display: grid` and a default gap. |
+| `.ax-subgrid` | Enables subgrid support. Inherits parent grid tracks (with 12-col fallback). |
 | `.ax-col-{1-12}`| Column span for all screen sizes. |
 | `.ax-col-{breakpoint}-{1-12}`| Responsive column span (e.g., `.ax-col-md-6`). |
 | `.ax-offset-{0-12}`| Starts a column at a specific position. |
@@ -125,5 +126,6 @@ Override these variables in your `:root` or a specific container.
 
 | Version | Change Type | Description |
 |---------|-------------|-------------|
+| **v2.0.2** | Added Utility | Added `.ax-subgrid` for nested elements to inherit parent grid tracks. |
 | **v2.0.1** | Internal | Refactored spacing and alignment to use **Logical Properties** (e.g., `padding-inline-start`). |
 | **v2.0.0** | Major | Initial v2 release with **Physical Properties** (e.g., `padding-left`). |

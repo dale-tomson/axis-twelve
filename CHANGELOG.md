@@ -5,6 +5,15 @@ All notable changes to Axis Twelve will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [[2.0.2]](./docs/changelogs/v2.0.2.md) - 2026-02-08
+
+### 📐 Subgrid Utility Integration
+
+Added the `.ax-subgrid` utility class to enable nested elements to inherit parent grid tracks, improving layout flexibility for complex components.
+
+- **Subgrid Support** - Implemented `.ax-subgrid` with `@supports` for modern browsers.
+- **Graceful Fallback** - Automatic fallback to a standard 12-column grid for legacy browser compatibility.
+
 ## [[2.0.1]](./docs/changelogs/v2.0.1.md) - 2026-02-08
 
 ### 🌐 Logical Property Refactoring

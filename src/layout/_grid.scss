@@ -15,6 +15,16 @@
   // Gap utilities are in utilities/_spacing.scss
 }
 
+// Subgrid Utility
+.ax-subgrid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr); // Fallback: Manual col distribution
+
+  @supports (grid-template-columns: subgrid) {
+    grid-template-columns: subgrid;
+  }
+}
+
 // Container
 .ax-container {
   width: 100%;
@@ -54,8 +64,9 @@
 
 // Responsive Grid Classes (Columns & Offsets Consolidated)
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint != 'xs' {
+  @if $breakpoint !='xs' {
     @include respond-to($breakpoint, $grid-breakpoints) {
+
       // Responsive Columns
       @for $i from 1 through $grid-columns {
         .ax-col-#{$breakpoint}-#{$i} {
