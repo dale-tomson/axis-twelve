@@ -29,7 +29,7 @@ Axis Twelve is a professional CSS framework with SCSS support featuring a powerf
 
 ### Quick Links
 
-- **[📖 Interactive Documentation](https://dale-tomson.github.io/axis-twelve/)** - Full documentation site on GitHub Pages
+- **[📖 Interactive Documentation](https://dale-tomson.github.io/axis-twelve-docs)** - Full documentation site on GitHub Pages
 - **[Changelog](CHANGELOG.md)** - View all releases and updates
 - **[Scripts & CLI Guide](project/docs/SCRIPTS.md)** - All available commands (./axis)
 - **[Release Process](project/docs/RELEASE.md)** - How to create releases
@@ -70,7 +70,7 @@ Or if using SCSS imports:
 
 ### 2. Read Documentation
 
-Visit the **[Interactive Documentation](https://dale-tomson.github.io/axis-twelve/)** on GitHub Pages for complete guides and examples.
+Visit the **[Interactive Documentation](https://dale-tomson.github.io/axis-twelve-docs)** on GitHub Pages for complete guides and examples.
 
 ### 3. Start Building
 
@@ -284,7 +284,7 @@ Use responsive column classes: `col-md-6`, `col-lg-4`, etc.
 
 ## Where to Start
 
-1. **New to CSS Frameworks?** → Visit the [Interactive Documentation](https://dale-tomson.github.io/axis-twelve/)
+1. **New to CSS Frameworks?** → Visit the [Interactive Documentation](https://dale-tomson.github.io/axis-twelve-docs)
 2. **Want to See Examples?** → Check the [Quick Code Examples](#quick-code-examples) section above
 3. **Ready to Code?** → Install via npm and start using the utility classes
 4. **Customizing?** → Edit variables in `src/scss/_variables.scss` and rebuild
