@@ -5,12 +5,8 @@ on:
     branches:
       - 'ver-2.x'
     paths:
-      - 'docs/**'
-      - 'index.html'
       - 'src/**'
-      - 'CHANGELOG.md'
       - 'package.json'
-      - '.github/workflows/*.yml'
 
 permissions:
   contents: write

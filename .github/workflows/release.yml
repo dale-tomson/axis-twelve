@@ -1,3 +1,5 @@
+name: GitHub and NPM Release
+
 on:
   push:
     tags:
