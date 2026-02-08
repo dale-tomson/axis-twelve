@@ -25,6 +25,7 @@ Axis Twelve is a professional, modular CSS framework featuring a powerful 12-col
 - **🔧 Full SCSS Support** - Customizable variables and modular architecture
 - **📱 Responsive Breakpoints** - xs, sm, md, lg, xl, xxl
 - **♿ Accessibility First** - WCAG 2.1 compliant, keyboard navigation support
+- **🌐 LTR & RTL Support** - Native support for all text directions via **CSS Logical Properties**
 - **🚀 Ultra-Lightweight** - Modular builds from 2.7KB to 77KB minified
 - **🎭 CSS-Only** - No JavaScript dependencies
 
