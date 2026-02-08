@@ -1,0 +1,60 @@
+{
+    "name": "Axis Twelve",
+    "version": "2.0.2",
+    "description": "Ready to use SCSS framework for building modern and lightweight websites.",
+    "links": {
+        "repository": "https://github.com/dale-tomson/axis-twelve",
+        "documentation": "https://dale-tomson.github.io/axis-twelve/",
+        "api_root": "https://dale-tomson.github.io/axis-twelve/api/"
+    },
+    "modules": [
+        {
+            "name": "layout",
+            "path": "layout.json",
+            "description": "Grid system and flexbox utilities"
+        },
+        {
+            "name": "buttons",
+            "path": "buttons.json",
+            "description": "Customizable button styles"
+        },
+        {
+            "name": "forms",
+            "path": "forms.json",
+            "description": "Accessible form controls"
+        },
+        {
+            "name": "cards",
+            "path": "cards.json",
+            "description": "Versatile content containers"
+        },
+        {
+            "name": "tables",
+            "path": "tables.json",
+            "description": "Responsive table styles"
+        },
+        {
+            "name": "modals",
+            "path": "modals.json",
+            "description": "CSS-only dialog system"
+        },
+        {
+            "name": "tooltips",
+            "path": "tooltips.json",
+            "description": "Data-driven tooltip system"
+        }
+    ],
+    "assets": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "stats": {
+            "standard": "108KB",
+            "minified": "82KB",
+            "gzipped": "12KB"
+        }
+    },
+    "latest_release": {
+        "version": "2.0.2",
+        "summary": "Integrated .ax-subgrid utility and expanded JSON API documentation with ready-to-use snippets.",
+        "changelog_url": "https://github.com/dale-tomson/axis-twelve/blob/ver-2.x/CHANGELOG.md"
+    }
+}
