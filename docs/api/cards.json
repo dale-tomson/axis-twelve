@@ -1,0 +1,66 @@
+{
+    "module": "axis-cards",
+    "version": "2.0.2",
+    "description": "Versatile content containers for everything from simple boxes to complex content dashboards.",
+    "installation": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-cards.min.css"
+    },
+    "html_snippet": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-cards.min.css\">\n    <title>Axis Cards Example</title>\n</head>\n<body>\n    <div class=\"ax-card\">\n        <div class=\"ax-card__header\">Card Header</div>\n        <div class=\"ax-card__body\">Card Body Content</div>\n    </div>\n</body>\n</html>",
+    "classes": [
+        {
+            "name": ".ax-card",
+            "description": "Base card container.",
+            "type": "Base"
+        },
+        {
+            "name": ".ax-card__header",
+            "description": "Top section of the card.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card__body",
+            "description": "Main content area.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card__footer",
+            "description": "Bottom section for metadata or actions.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card__title",
+            "description": "Styled title for use within __body.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card__text",
+            "description": "Styled text for use within __body.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card__image",
+            "description": "Full-width image that adheres to card rounding.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card--shadow",
+            "description": "Adds a subtle box-shadow for depth.",
+            "type": "Modifier"
+        }
+    ],
+    "examples": [
+        {
+            "title": "Standard Card",
+            "code": "<div class=\"ax-card\">\n  <div class=\"ax-card__header\">Header</div>\n  <div class=\"ax-card__body\">Content</div>\n</div>",
+            "description": "Basic card structure."
+        }
+    ],
+    "evolution": [
+        {
+            "version": "v2.0.1",
+            "type": "Internal",
+            "description": "Refactored internal pacing and layout to use logical properties."
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "module": "axis-tooltips",
+    "version": "2.0.2",
+    "description": "CSS-only, data-driven tooltip system requiring zero JavaScript.",
+    "installation": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-tooltips.min.css"
+    },
+    "html_snippet": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-tooltips.min.css\">\n    <title>Axis Tooltips Example</title>\n</head>\n<body>\n    <button data-ax-tooltip=\"Hello World!\">Tooltipped Button</button>\n</body>\n</html>",
+    "attributes": [
+        {
+            "name": "data-ax-tooltip",
+            "description": "The text content of the tooltip.",
+            "default": "None"
+        },
+        {
+            "name": "data-ax-tooltip-position",
+            "description": "Position: top, bottom, left, right.",
+            "default": "top"
+        },
+        {
+            "name": "data-ax-tooltip-multiline",
+            "description": "Enables wrapping for long text.",
+            "default": "false"
+        }
+    ],
+    "examples": [
+        {
+            "title": "Basic Tooltip",
+            "code": "<button data-ax-tooltip=\"Hello world!\">Hover me</button>",
+            "description": "Default top positioning."
+        }
+    ],
+    "notes": [
+        "Does not work on void elements (input, img) without a wrapper.",
+        "Positions are logical and adapt to RTL automatically."
+    ],
+    "accessibility": [
+        "Visible on both :hover and :focus",
+        "Ensure description is also in aria-label if needed"
+    ],
+    "evolution": [
+        {
+            "version": "v2.0.1",
+            "type": "Feature",
+            "description": "Switched to Logical Positioning with physical fallbacks."
+        }
+    ]
+}

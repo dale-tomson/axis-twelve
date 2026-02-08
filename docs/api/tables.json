@@ -1,0 +1,51 @@
+{
+    "module": "axis-tables",
+    "version": "2.0.2",
+    "description": "Clean, responsive table styles with support for striped rows, hover states, and small variations.",
+    "installation": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-tables.min.css"
+    },
+    "html_snippet": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-tables.min.css\">\n    <title>Axis Tables Example</title>\n</head>\n<body>\n    <table class=\"ax-table\">\n        <thead><tr><th>#</th><th>Name</th></tr></thead>\n        <tbody><tr><td>1</td><td>Item</td></tr></tbody>\n    </table>\n</body>\n</html>",
+    "classes": [
+        {
+            "name": ".ax-table",
+            "description": "Base table styling.",
+            "type": "Base"
+        },
+        {
+            "name": ".ax-table--striped",
+            "description": "Adds alternating background color to rows.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-table--hover",
+            "description": "Highlights rows on mouse hover.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-table--responsive",
+            "description": "Enables mobile-friendly stacking behavior.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-table-wrapper",
+            "description": "Container for horizontal scroll.",
+            "type": "Layout"
+        }
+    ],
+    "examples": [
+        {
+            "title": "Responsive Table",
+            "code": "<table class=\"ax-table ax-table--responsive\">\n  <thead>...</thead>\n  <tbody>\n    <tr>\n      <td data-label=\"Name\">John</td>\n    </tr>\n  </tbody>\n</table>",
+            "description": "Uses data-label for mobile labels."
+        }
+    ],
+    "evolution": [
+        {
+            "version": "v2.0.1",
+            "type": "Internal",
+            "description": "Refactored text-align to use logical start/end values."
+        }
+    ]
+}
