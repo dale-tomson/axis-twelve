@@ -76,8 +76,8 @@ Complete rewrite of Axis Twelve with modular architecture and comprehensive UI c
 
 ### 📊 Bundle Sizes
 
-- **Full framework**: 103KB expanded, 77KB minified
-- **Layout module**: 80KB expanded, 57KB minified
+- **Full framework**: 108KB expanded, 82KB minified
+- **Layout module**: 83KB expanded, 61KB minified
 - **Buttons module**: 6.4KB expanded, 5.5KB minified
 - **Forms module**: 9.5KB expanded, 8.6KB minified
 - **Modals module**: 3.4KB expanded, 2.9KB minified
@@ -87,6 +87,7 @@ Complete rewrite of Axis Twelve with modular architecture and comprehensive UI c
 
 ---
 
+[2.0.2]: https://github.com/dale-tomson/axis-twelve/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/dale-tomson/axis-twelve/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/dale-tomson/axis-twelve/releases/tag/v2.0.0
 

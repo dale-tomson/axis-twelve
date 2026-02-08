@@ -122,7 +122,7 @@
             </div>
 
             <h4 class="ax-mb-sm">Flexbox Utilities & Gaps</h4>
-            <div class="ax-flex ax-justify-between ax-items-center ax-p-md ax-bg-white ax-border ax-mb-md"
+            <div class="ax-flex ax-justify-between ax-items-center ax-p-md ax-bg-white ax-border ax-mb-lg"
                 style="border-radius: 8px;">
                 <span>Flex Start Content</span>
                 <div class="ax-flex ax-gap-sm">
@@ -130,6 +130,22 @@
                     <span class="ax-badge ax-bg-warning ax-text-white">Badge 2</span>
                 </div>
             </div>
+
+            <h4 class="ax-mb-sm">CSS Subgrid (Inherit Parent Tracks)</h4>
+            <div class="ax-grid ax-gap-md"
+                style="grid-template-columns: repeat(3, 1fr); background: #eee; padding: 1rem; border-radius: 8px;">
+                <div class="ax-col-12 ax-subgrid ax-bg-white ax-p-sm"
+                    style="border: 2px dashed #ccc; border-radius: 4px;">
+                    <div class="ax-col-1 ax-bg-primary ax-text-white ax-flex ax-justify-center"
+                        style="border-radius: 4px;">1</div>
+                    <div class="ax-col-1 ax-bg-secondary ax-text-white ax-flex ax-justify-center"
+                        style="border-radius: 4px;">2</div>
+                    <div class="ax-col-1 ax-bg-info ax-text-white ax-flex ax-justify-center"
+                        style="border-radius: 4px;">3</div>
+                </div>
+            </div>
+            <p class="ax-text-sm ax-mt-xs">Note: Child elements above (.ax-col-1) align perfectly to the 3-column parent
+                grid thanks to .ax-subgrid.</p>
         </section>
 
         <!-- 2. Buttons -->

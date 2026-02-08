@@ -4,8 +4,8 @@
 
 ![Version](https://img.shields.io/badge/version-2.0.2-blue?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
-![CSS](https://img.shields.io/badge/css-103kB-orange?style=flat-square)
-![Minified](https://img.shields.io/badge/min.css-77kB-success?style=flat-square)
+![CSS](https://img.shields.io/badge/css-108kB-orange?style=flat-square)
+![Minified](https://img.shields.io/badge/min.css-82kB-success?style=flat-square)
 
 **Build faster, center easier. Modular CSS framework.**
 
@@ -91,8 +91,8 @@ Import only the modules you need:
 
 | Module | Size (min) | Description |
 |--------|-----------|-------------|
-| **axis-twelve** | 77KB | Full framework bundle |
-| **axis-layout** | 57KB | Grid, flexbox, centering, spacing |
+| **axis-twelve** | 82KB | Full framework bundle |
+| **axis-layout** | 61KB | Grid, flexbox, centering, spacing |
 | **axis-buttons** | 5.5KB | Button components with variants |
 | **axis-forms** | 8.6KB | Form inputs, selects, checkboxes |
 | **axis-modals** | 2.9KB | Modal dialogs with backdrop |
