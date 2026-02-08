@@ -120,9 +120,11 @@
 
 // Responsive Padding Utilities (optimized for common values only)
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint !='xs' {
+  @if $breakpoint != 'xs' {
     @include respond-to($breakpoint, $grid-breakpoints) {
-      @each $name in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24') {
+      @each $name
+        in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24')
+      {
         @if map.has-key($spacing-map, $name) {
           $value: map.get($spacing-map, $name);
 
@@ -155,9 +157,11 @@
 
 // Responsive Margin Utilities (optimized for common values only)
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint !='xs' {
+  @if $breakpoint != 'xs' {
     @include respond-to($breakpoint, $grid-breakpoints) {
-      @each $name in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24') {
+      @each $name
+        in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24')
+      {
         @if map.has-key($spacing-map, $name) {
           $value: map.get($spacing-map, $name);
 
@@ -209,7 +213,7 @@
 
 // Responsive Gap Utilities
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint !='xs' {
+  @if $breakpoint != 'xs' {
     @include respond-to($breakpoint, $grid-breakpoints) {
       @each $name, $value in $spacing-map {
         .ax-gap-#{$breakpoint}-#{$name} {

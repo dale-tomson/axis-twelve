@@ -87,17 +87,16 @@ Import only the modules you need:
 
 ## 📦 Available Modules
 
-| Module | Size (min) | Diff (vs v1) | Description |
-|--------|-----------|--------------|-------------|
-| **axis-twelve** | 77KB | +37KB | Full framework bundle |
-| **axis-layout** | 57KB | N/A | Grid, flexbox, centering, spacing |
-| **axis-buttons** | 5.5KB | N/A | Button components with variants |
-| **axis-forms** | 8.6KB | N/A | Form inputs, selects, checkboxes |
-| **axis-modals** | 2.9KB | N/A | Modal dialogs with backdrop |
-| **axis-tooltips** | 3.0KB | N/A | CSS-only tooltips |
-| **axis-tables** | 2.7KB | N/A | Responsive tables |
-| **axis-cards** | 2.8KB | N/A | Card components |
-| **legacy** | 40KB | +0KB | Legacy v1.x compatible build |
+| Module | Size (min) | Description |
+|--------|-----------|-------------|
+| **axis-twelve** | 77KB | Full framework bundle |
+| **axis-layout** | 57KB | Grid, flexbox, centering, spacing |
+| **axis-buttons** | 5.5KB | Button components with variants |
+| **axis-forms** | 8.6KB | Form inputs, selects, checkboxes |
+| **axis-modals** | 2.9KB | Modal dialogs with backdrop |
+| **axis-tooltips** | 3.0KB | CSS-only tooltips |
+| **axis-tables** | 2.7KB | Responsive tables |
+| **axis-cards** | 2.8KB | Card components |
 
 ## 💡 Quick Examples
 
@@ -278,25 +277,6 @@ src/
 └── builds/           # Build entry points
 ```
 
-## 🆕 What's New in v2.0.0
-
-### Breaking Changes
-
-- **All classes now use `.ax-` prefix** (`.grid` → `.ax-grid`, `.flex` → `.ax-flex`)
-- **Modular architecture** - Import only what you need
-- **New component modules** - Buttons, forms, modals, tooltips, tables, cards
-- **SCSS import paths changed** - Use `src/builds/` instead of `src/scss/`
-
-### Migration from v1.x
-
-For backward compatibility, use the legacy build:
-
-```html
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/axis-twelve-legacy.min.css">
-```
-
-**⚠️ Note:** Legacy build is deprecated and will be removed in v2.2.
-
 ## 📄 License
 
 MIT © Dale Tomson
@@ -306,7 +286,7 @@ MIT © Dale Tomson
 - [GitHub Repository](https://github.com/dale-tomson/axis-twelve)
 - [npm Package](https://www.npmjs.com/package/axis-twelve)
 - [Interactive Documentation](https://dale-tomson.github.io/axis-twelve-docs)
-- [Component Examples](docs/examples/)
+- [Component Documentation](docs/v2/)
 
 - [Changelog History](CHANGELOG.md)
 - [Available Scripts](SCRIPTS.md)

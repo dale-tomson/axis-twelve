@@ -2,7 +2,6 @@
 
 The `axis-cards` module provides versatile content containers that can be used for everything from simple boxes to complex content dashboards.
 
-[**View Live Examples &rarr;**](../examples/cards.html)
 
 
 ## 🚀 Installation

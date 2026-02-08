@@ -2,7 +2,6 @@
 
 The `axis-modals` module provides a powerful, CSS-only dialog system. It allows you to create interactive overlays for menus, confirmations, or complex forms without requiring a single line of JavaScript.
 
-[**View Live Examples &rarr;**](../examples/modals.html)
 
 
 ## 🚀 Installation

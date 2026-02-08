@@ -2,7 +2,6 @@
 
 The `axis-buttons` module provides a set of highly customizable button styles, including variants for colors, outlines, sizes, and groups. It is designed to be accessible, responsive, and easy to integrate into any project.
 
-[**View Live Examples &rarr;**](../examples/buttons.html)
 
 
 ## 🚀 Installation

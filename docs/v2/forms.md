@@ -2,7 +2,6 @@
 
 The `axis-forms` module provides a comprehensive suite of accessible, mobile-friendly, and beautiful form controls. From basic inputs to floating labels and custom checkboxes, everything is designed for a consistent user experience.
 
-[**View Live Examples &rarr;**](../examples/forms.html)
 
 
 ## 🚀 Installation

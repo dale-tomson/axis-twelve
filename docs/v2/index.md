@@ -46,11 +46,4 @@ Explore the documentation by choosing a module from the sidebar or following the
 
 ---
 
-## 📝 Migration from v1.x
 
-Version 2.0.0 is a complete rewrite for modularity.
-- All classes now start with the `.ax-` prefix.
-- Components are decoupled; e.g., `axis-buttons` does not depend on `axis-layout`.
-- CSS variables are used for all configuration values.
-
-Read our full [Migration Guide](https://github.com/dale-tomson/axis-twelve#migration) on GitHub.

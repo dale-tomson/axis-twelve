@@ -2,7 +2,6 @@
 
 The `axis-tables` module provides clean, responsive table styles with support for striped rows, hover states, and small variations.
 
-[**View Live Examples &rarr;**](../examples/tables.html)
 
 
 ## 🚀 Installation

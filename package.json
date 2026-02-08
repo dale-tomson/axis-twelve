@@ -22,8 +22,6 @@
     "./tables.css": "./dist/modules/axis-tables.css",
     "./cards": "./dist/modules/axis-cards.min.css",
     "./cards.css": "./dist/modules/axis-cards.css",
-    "./legacy": "./dist/axis-twelve-legacy.min.css",
-    "./legacy.css": "./dist/axis-twelve-legacy.css",
     "./src": "./src/abstracts/_index.scss",
     "./package.json": "./package.json"
   },
@@ -35,7 +33,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "pnpm run build:full && pnpm run build:modules && pnpm run build:legacy",
+    "build": "pnpm run build:full && pnpm run build:modules",
     "build:full": "pnpm exec sass src/builds/axis-twelve.scss dist/axis-twelve.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-twelve.scss dist/axis-twelve.min.css --style=compressed",
     "build:modules": "pnpm run build:layout && pnpm run build:buttons && pnpm run build:forms && pnpm run build:modals && pnpm run build:tooltips && pnpm run build:tables && pnpm run build:cards",
     "build:layout": "pnpm exec sass src/builds/axis-layout.scss dist/modules/axis-layout.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-layout.scss dist/modules/axis-layout.min.css --style=compressed",
@@ -45,7 +43,6 @@
     "build:tooltips": "pnpm exec sass src/builds/axis-tooltips.scss dist/modules/axis-tooltips.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-tooltips.scss dist/modules/axis-tooltips.min.css --style=compressed",
     "build:tables": "pnpm exec sass src/builds/axis-tables.scss dist/modules/axis-tables.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-tables.scss dist/modules/axis-tables.min.css --style=compressed",
     "build:cards": "pnpm exec sass src/builds/axis-cards.scss dist/modules/axis-cards.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-cards.scss dist/modules/axis-cards.min.css --style=compressed",
-    "build:legacy": "pnpm exec sass src/builds/axis-twelve-legacy.scss dist/axis-twelve-legacy.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-twelve-legacy.scss dist/axis-twelve-legacy.min.css --style=compressed",
     "watch": "pnpm exec sass --watch src/builds:dist",
     "lint": "stylelint \"src/**/*.scss\"",
     "lint:fix": "stylelint \"src/**/*.scss\" --fix",

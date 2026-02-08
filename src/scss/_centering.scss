@@ -78,8 +78,6 @@
   justify-content: center;
   align-items: center;
 
-
-
   &.center-h {
     justify-content: center;
   }
@@ -157,7 +155,7 @@
 
 // Responsive Centering
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint !='xs' {
+  @if $breakpoint != 'xs' {
     @include respond-to($breakpoint) {
       .center-#{$breakpoint} {
         display: flex;

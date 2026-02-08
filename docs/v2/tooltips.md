@@ -2,7 +2,6 @@
 
 The `axis-tooltips` module provides a CSS-only, data-driven tooltip system. It is extremely lightweight and requires no JavaScript or additional HTML elements—just a data attribute on your existing tags.
 
-[**View Live Examples &rarr;**](../examples/tooltips.html)
 
 
 ## 🚀 Installation

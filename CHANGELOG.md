@@ -19,15 +19,12 @@ Refactored physical direction properties to logical counterparts to support mult
 
 ### 🎉 Major Release - Modular Architecture
 
-Complete rewrite of Axis Twelve with modular architecture and comprehensive UI components. Documentation and examples are now served as static files in the `docs/` directory.
-
+Complete rewrite of Axis Twelve with modular architecture and comprehensive UI components. Documentation is now served as static files in the `docs/` directory.
 
 ### ✨ Added
 
-#### Documentation & Examples
-- **Static Documentation** - Markdown documentation and standalone HTML examples organized in a clean directory structure.
-- **Example Links** - All module documentation includes direct links to live component examples.
-
+#### Documentation
+- **Static Documentation** - Markdown documentation organized in a clean directory structure.
 
 #### Architecture
 - **Modular build system** - Separate builds for each component module
@@ -49,82 +46,24 @@ Complete rewrite of Axis Twelve with modular architecture and comprehensive UI c
 - **Comprehensive color system** - Neutral grays, semantic colors, theme maps.
 - **Enhanced spacing scale** - Named and numeric values for precise control.
 - **Centralized z-index management** - Prevents stacking context conflicts.
-- **Legacy v1.x build** - Backward compatibility support (deprecated, removal in v2.2).
 
 ### 🛠 Fixed
 - **Cards** - Fixed `.ax-card--shadow` modifier not appearing in compiled CSS.
 - **Tooltips** - Fixed arrow detachment and positioning conflicts across all directions.
 - **Tooltips** - Improved rendering on void elements (like inputs) via semantic mapping hints.
 - **Buttons** - Improved color contrast for all semantic variants on dark/colored backgrounds.
-- **Performance** - Drastically reduced example markup by centralizing shared styles and scripts.
 
 ### 🔄 Changed
-- **All classes renamed** - Now use `.ax-` prefix (`.grid` → `.ax-grid`, `.flex` → `.ax-flex`, etc.)
 - **Directory structure** - Reorganized from flat to layered architecture.
 - **Import paths** - SCSS imports changed from `src/scss/style` to `src/builds/axis-twelve`.
 - **Package main** - Now points to minified version by default.
 - **Documentation** - Shifted from a dynamic Node.js viewer to a purely static approach.
-
 
 #### Improvements
 - **Better modularity** - Zero cross-component dependencies
 - **Improved accessibility** - Minimum 44x44px touch targets, high contrast focus states
 - **Enhanced documentation** - Inline comments and comprehensive README
 - **Stricter linting** - Updated stylelint config for BEM naming
-
-### 🗑️ Deprecated
-
-- **Legacy v1.x build** - Available as `axis-twelve-legacy.css` but will be removed in v2.2
-- **Old class names** - Non-prefixed classes (`.grid`, `.flex`, etc.) only in legacy build
-
-### 📦 Migration Guide
-
-#### For HTML Users
-
-**v1.x:**
-```html
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/axis-twelve.css">
-<div class="grid gap-lg">
-  <div class="col-6">Content</div>
-</div>
-```
-
-**v2.0 (Option 1 - Legacy):**
-```html
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/axis-twelve-legacy.min.css">
-<!-- No changes needed, but deprecated -->
-```
-
-**v2.0 (Option 2 - Recommended):**
-```html
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/axis-twelve.min.css">
-<div class="ax-grid ax-gap-lg">
-  <div class="ax-col-6">Content</div>
-</div>
-```
-
-**v2.0 (Option 3 - Modular):**
-```html
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/modules/axis-layout.min.css">
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/modules/axis-buttons.min.css">
-```
-
-#### For SCSS Users
-
-**v1.x:**
-```scss
-@use 'axis-twelve/src/scss/style';
-```
-
-**v2.0:**
-```scss
-// Full framework
-@use 'axis-twelve/src/builds/axis-twelve';
-
-// Or modular
-@use 'axis-twelve/src/abstracts' as ax;
-@use 'axis-twelve/src/components/buttons';
-```
 
 ### 📊 Bundle Sizes
 
@@ -136,31 +75,9 @@ Complete rewrite of Axis Twelve with modular architecture and comprehensive UI c
 - **Tooltips module**: 3.4KB expanded, 3.0KB minified
 - **Tables module**: 3.1KB expanded, 2.7KB minified
 - **Cards module**: 3.2KB expanded, 2.8KB minified
-- **Legacy build**: 57KB expanded, 40KB minified
-
----
-
-## [[1.0.1]](./docs-viewer/content/changelogs/v1.0.1.md) - 2025-12-07
-
-### Fixed
-- Build workflow improvements
-- Documentation updates
-- Version consistency across files
-
-## [[1.0.0]](./docs-viewer/content/changelogs/v1.0.0.md) - 2025-12-07
-
-### Added
-- Initial release
-- 12-column grid system
-- Flexbox utilities
-- Centering components
-- Spacing utilities
-- Responsive breakpoints
-- SCSS support
 
 ---
 
 [2.0.1]: https://github.com/dale-tomson/axis-twelve/compare/v2.0.0...v2.0.1
-[2.0.0]: https://github.com/dale-tomson/axis-twelve/compare/v1.0.1...v2.0.0
-[1.0.1]: https://github.com/dale-tomson/axis-twelve/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/dale-tomson/axis-twelve/releases/tag/v1.0.0
+[2.0.0]: https://github.com/dale-tomson/axis-twelve/releases/tag/v2.0.0
+
