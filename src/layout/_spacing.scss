@@ -28,16 +28,16 @@
   }
 
   .ax-pl-#{$name} {
-    padding-left: $value;
+    padding-inline-start: $value;
   }
 
   .ax-pr-#{$name} {
-    padding-right: $value;
+    padding-inline-end: $value;
   }
 
   .ax-px-#{$name} {
-    padding-right: $value;
-    padding-left: $value;
+    padding-inline-start: $value;
+    padding-inline-end: $value;
   }
 
   .ax-py-#{$name} {
@@ -69,16 +69,16 @@
   }
 
   .ax-ml-#{$name} {
-    margin-left: $value;
+    margin-inline-start: $value;
   }
 
   .ax-mr-#{$name} {
-    margin-right: $value;
+    margin-inline-end: $value;
   }
 
   .ax-mx-#{$name} {
-    margin-right: $value;
-    margin-left: $value;
+    margin-inline-start: $value;
+    margin-inline-end: $value;
   }
 
   .ax-my-#{$name} {
@@ -89,8 +89,8 @@
 
 // Auto Margin Utilities
 .ax-mx-auto {
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }
 
 .ax-my-auto {
@@ -111,20 +111,18 @@
 }
 
 .ax-ml-auto {
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 .ax-mr-auto {
-  margin-right: auto;
+  margin-inline-end: auto;
 }
 
 // Responsive Padding Utilities (optimized for common values only)
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint != 'xs' {
+  @if $breakpoint !='xs' {
     @include respond-to($breakpoint, $grid-breakpoints) {
-      @each $name
-        in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24')
-      {
+      @each $name in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24') {
         @if map.has-key($spacing-map, $name) {
           $value: map.get($spacing-map, $name);
 
@@ -141,8 +139,8 @@
           }
 
           .ax-px-#{$breakpoint}-#{$name} {
-            padding-right: $value;
-            padding-left: $value;
+            padding-inline-start: $value;
+            padding-inline-end: $value;
           }
 
           .ax-py-#{$breakpoint}-#{$name} {
@@ -157,11 +155,9 @@
 
 // Responsive Margin Utilities (optimized for common values only)
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint != 'xs' {
+  @if $breakpoint !='xs' {
     @include respond-to($breakpoint, $grid-breakpoints) {
-      @each $name
-        in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24')
-      {
+      @each $name in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24') {
         @if map.has-key($spacing-map, $name) {
           $value: map.get($spacing-map, $name);
 
@@ -178,8 +174,8 @@
           }
 
           .ax-mx-#{$breakpoint}-#{$name} {
-            margin-right: $value;
-            margin-left: $value;
+            margin-inline-start: $value;
+            margin-inline-end: $value;
           }
 
           .ax-my-#{$breakpoint}-#{$name} {
@@ -213,7 +209,7 @@
 
 // Responsive Gap Utilities
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint != 'xs' {
+  @if $breakpoint !='xs' {
     @include respond-to($breakpoint, $grid-breakpoints) {
       @each $name, $value in $spacing-map {
         .ax-gap-#{$breakpoint}-#{$name} {

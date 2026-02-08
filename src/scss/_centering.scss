@@ -78,9 +78,7 @@
   justify-content: center;
   align-items: center;
 
-  &.center {
-    // Already centered by default
-  }
+
 
   &.center-h {
     justify-content: center;
@@ -148,18 +146,18 @@
 }
 
 .text-left {
-  text-align: left;
+  text-align: start;
 }
 
 .text-right {
-  text-align: right;
+  text-align: end;
 }
 
 // Margin auto centering utilities are in _spacing.scss
 
 // Responsive Centering
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint != 'xs' {
+  @if $breakpoint !='xs' {
     @include respond-to($breakpoint) {
       .center-#{$breakpoint} {
         display: flex;

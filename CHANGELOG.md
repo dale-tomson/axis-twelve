@@ -5,7 +5,17 @@ All notable changes to Axis Twelve will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [[2.0.0]](./docs-viewer/content/changelogs/v2.0.0.md) - 2026-01-17
+## [[2.0.1]](./docs/changelogs/v2.0.1.md) - 2026-02-08
+
+### 🌐 Logical Property Refactoring
+
+Refactored physical direction properties to logical counterparts to support multi-directional layouts (RTL/LTR) with robust browser fallbacks.
+
+- **Spacing** - Updated padding and margin utilities to be direction-aware.
+- **Positioning** - Tooltips and layout components now use logical insets.
+- **Compatibility** - Maintained support for 2020-era browsers with physical fallbacks.
+
+## [[2.0.0]](./docs/changelogs/v2.0.0.md) - 2026-01-17
 
 ### 🎉 Major Release - Modular Architecture
 
@@ -150,6 +160,7 @@ Complete rewrite of Axis Twelve with modular architecture and comprehensive UI c
 
 ---
 
+[2.0.1]: https://github.com/dale-tomson/axis-twelve/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/dale-tomson/axis-twelve/compare/v1.0.1...v2.0.0
 [1.0.1]: https://github.com/dale-tomson/axis-twelve/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/dale-tomson/axis-twelve/releases/tag/v1.0.0

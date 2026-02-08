@@ -202,10 +202,10 @@ pre code {
 
 .ax-container {
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
 }
 @media (min-width: 1400px) {
   .ax-container {
@@ -1032,11 +1032,11 @@ pre code {
 }
 
 .ax-text-left {
-  text-align: left;
+  text-align: start;
 }
 
 .ax-text-right {
-  text-align: right;
+  text-align: end;
 }
 
 @media (min-width: 576px) {
@@ -1117,16 +1117,16 @@ pre code {
 }
 
 .ax-pl-0 {
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .ax-pr-0 {
-  padding-right: 0;
+  padding-inline-end: 0;
 }
 
 .ax-px-0 {
-  padding-right: 0;
-  padding-left: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
 }
 
 .ax-py-0 {
@@ -1147,16 +1147,16 @@ pre code {
 }
 
 .ax-pl-xs {
-  padding-left: 0.25rem;
+  padding-inline-start: 0.25rem;
 }
 
 .ax-pr-xs {
-  padding-right: 0.25rem;
+  padding-inline-end: 0.25rem;
 }
 
 .ax-px-xs {
-  padding-right: 0.25rem;
-  padding-left: 0.25rem;
+  padding-inline-start: 0.25rem;
+  padding-inline-end: 0.25rem;
 }
 
 .ax-py-xs {
@@ -1177,16 +1177,16 @@ pre code {
 }
 
 .ax-pl-sm {
-  padding-left: 0.5rem;
+  padding-inline-start: 0.5rem;
 }
 
 .ax-pr-sm {
-  padding-right: 0.5rem;
+  padding-inline-end: 0.5rem;
 }
 
 .ax-px-sm {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-inline-start: 0.5rem;
+  padding-inline-end: 0.5rem;
 }
 
 .ax-py-sm {
@@ -1207,16 +1207,16 @@ pre code {
 }
 
 .ax-pl-md {
-  padding-left: 1rem;
+  padding-inline-start: 1rem;
 }
 
 .ax-pr-md {
-  padding-right: 1rem;
+  padding-inline-end: 1rem;
 }
 
 .ax-px-md {
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
 }
 
 .ax-py-md {
@@ -1237,16 +1237,16 @@ pre code {
 }
 
 .ax-pl-lg {
-  padding-left: 1.5rem;
+  padding-inline-start: 1.5rem;
 }
 
 .ax-pr-lg {
-  padding-right: 1.5rem;
+  padding-inline-end: 1.5rem;
 }
 
 .ax-px-lg {
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 1.5rem;
 }
 
 .ax-py-lg {
@@ -1267,16 +1267,16 @@ pre code {
 }
 
 .ax-pl-xl {
-  padding-left: 3rem;
+  padding-inline-start: 3rem;
 }
 
 .ax-pr-xl {
-  padding-right: 3rem;
+  padding-inline-end: 3rem;
 }
 
 .ax-px-xl {
-  padding-right: 3rem;
-  padding-left: 3rem;
+  padding-inline-start: 3rem;
+  padding-inline-end: 3rem;
 }
 
 .ax-py-xl {
@@ -1297,16 +1297,16 @@ pre code {
 }
 
 .ax-pl-2xl {
-  padding-left: 4rem;
+  padding-inline-start: 4rem;
 }
 
 .ax-pr-2xl {
-  padding-right: 4rem;
+  padding-inline-end: 4rem;
 }
 
 .ax-px-2xl {
-  padding-right: 4rem;
-  padding-left: 4rem;
+  padding-inline-start: 4rem;
+  padding-inline-end: 4rem;
 }
 
 .ax-py-2xl {
@@ -1327,16 +1327,16 @@ pre code {
 }
 
 .ax-pl-3xl {
-  padding-left: 6rem;
+  padding-inline-start: 6rem;
 }
 
 .ax-pr-3xl {
-  padding-right: 6rem;
+  padding-inline-end: 6rem;
 }
 
 .ax-px-3xl {
-  padding-right: 6rem;
-  padding-left: 6rem;
+  padding-inline-start: 6rem;
+  padding-inline-end: 6rem;
 }
 
 .ax-py-3xl {
@@ -1357,16 +1357,16 @@ pre code {
 }
 
 .ax-pl-1 {
-  padding-left: 0.25rem;
+  padding-inline-start: 0.25rem;
 }
 
 .ax-pr-1 {
-  padding-right: 0.25rem;
+  padding-inline-end: 0.25rem;
 }
 
 .ax-px-1 {
-  padding-right: 0.25rem;
-  padding-left: 0.25rem;
+  padding-inline-start: 0.25rem;
+  padding-inline-end: 0.25rem;
 }
 
 .ax-py-1 {
@@ -1387,16 +1387,16 @@ pre code {
 }
 
 .ax-pl-2 {
-  padding-left: 0.5rem;
+  padding-inline-start: 0.5rem;
 }
 
 .ax-pr-2 {
-  padding-right: 0.5rem;
+  padding-inline-end: 0.5rem;
 }
 
 .ax-px-2 {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-inline-start: 0.5rem;
+  padding-inline-end: 0.5rem;
 }
 
 .ax-py-2 {
@@ -1417,16 +1417,16 @@ pre code {
 }
 
 .ax-pl-3 {
-  padding-left: 0.75rem;
+  padding-inline-start: 0.75rem;
 }
 
 .ax-pr-3 {
-  padding-right: 0.75rem;
+  padding-inline-end: 0.75rem;
 }
 
 .ax-px-3 {
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  padding-inline-start: 0.75rem;
+  padding-inline-end: 0.75rem;
 }
 
 .ax-py-3 {
@@ -1447,16 +1447,16 @@ pre code {
 }
 
 .ax-pl-4 {
-  padding-left: 1rem;
+  padding-inline-start: 1rem;
 }
 
 .ax-pr-4 {
-  padding-right: 1rem;
+  padding-inline-end: 1rem;
 }
 
 .ax-px-4 {
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
 }
 
 .ax-py-4 {
@@ -1477,16 +1477,16 @@ pre code {
 }
 
 .ax-pl-5 {
-  padding-left: 1.25rem;
+  padding-inline-start: 1.25rem;
 }
 
 .ax-pr-5 {
-  padding-right: 1.25rem;
+  padding-inline-end: 1.25rem;
 }
 
 .ax-px-5 {
-  padding-right: 1.25rem;
-  padding-left: 1.25rem;
+  padding-inline-start: 1.25rem;
+  padding-inline-end: 1.25rem;
 }
 
 .ax-py-5 {
@@ -1507,16 +1507,16 @@ pre code {
 }
 
 .ax-pl-6 {
-  padding-left: 1.5rem;
+  padding-inline-start: 1.5rem;
 }
 
 .ax-pr-6 {
-  padding-right: 1.5rem;
+  padding-inline-end: 1.5rem;
 }
 
 .ax-px-6 {
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 1.5rem;
 }
 
 .ax-py-6 {
@@ -1537,16 +1537,16 @@ pre code {
 }
 
 .ax-pl-8 {
-  padding-left: 2rem;
+  padding-inline-start: 2rem;
 }
 
 .ax-pr-8 {
-  padding-right: 2rem;
+  padding-inline-end: 2rem;
 }
 
 .ax-px-8 {
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-inline-start: 2rem;
+  padding-inline-end: 2rem;
 }
 
 .ax-py-8 {
@@ -1567,16 +1567,16 @@ pre code {
 }
 
 .ax-pl-10 {
-  padding-left: 2.5rem;
+  padding-inline-start: 2.5rem;
 }
 
 .ax-pr-10 {
-  padding-right: 2.5rem;
+  padding-inline-end: 2.5rem;
 }
 
 .ax-px-10 {
-  padding-right: 2.5rem;
-  padding-left: 2.5rem;
+  padding-inline-start: 2.5rem;
+  padding-inline-end: 2.5rem;
 }
 
 .ax-py-10 {
@@ -1597,16 +1597,16 @@ pre code {
 }
 
 .ax-pl-12 {
-  padding-left: 3rem;
+  padding-inline-start: 3rem;
 }
 
 .ax-pr-12 {
-  padding-right: 3rem;
+  padding-inline-end: 3rem;
 }
 
 .ax-px-12 {
-  padding-right: 3rem;
-  padding-left: 3rem;
+  padding-inline-start: 3rem;
+  padding-inline-end: 3rem;
 }
 
 .ax-py-12 {
@@ -1627,16 +1627,16 @@ pre code {
 }
 
 .ax-pl-16 {
-  padding-left: 4rem;
+  padding-inline-start: 4rem;
 }
 
 .ax-pr-16 {
-  padding-right: 4rem;
+  padding-inline-end: 4rem;
 }
 
 .ax-px-16 {
-  padding-right: 4rem;
-  padding-left: 4rem;
+  padding-inline-start: 4rem;
+  padding-inline-end: 4rem;
 }
 
 .ax-py-16 {
@@ -1657,16 +1657,16 @@ pre code {
 }
 
 .ax-pl-20 {
-  padding-left: 5rem;
+  padding-inline-start: 5rem;
 }
 
 .ax-pr-20 {
-  padding-right: 5rem;
+  padding-inline-end: 5rem;
 }
 
 .ax-px-20 {
-  padding-right: 5rem;
-  padding-left: 5rem;
+  padding-inline-start: 5rem;
+  padding-inline-end: 5rem;
 }
 
 .ax-py-20 {
@@ -1687,16 +1687,16 @@ pre code {
 }
 
 .ax-pl-24 {
-  padding-left: 6rem;
+  padding-inline-start: 6rem;
 }
 
 .ax-pr-24 {
-  padding-right: 6rem;
+  padding-inline-end: 6rem;
 }
 
 .ax-px-24 {
-  padding-right: 6rem;
-  padding-left: 6rem;
+  padding-inline-start: 6rem;
+  padding-inline-end: 6rem;
 }
 
 .ax-py-24 {
@@ -1717,16 +1717,16 @@ pre code {
 }
 
 .ax-ml-0 {
-  margin-left: 0;
+  margin-inline-start: 0;
 }
 
 .ax-mr-0 {
-  margin-right: 0;
+  margin-inline-end: 0;
 }
 
 .ax-mx-0 {
-  margin-right: 0;
-  margin-left: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 .ax-my-0 {
@@ -1747,16 +1747,16 @@ pre code {
 }
 
 .ax-ml-xs {
-  margin-left: 0.25rem;
+  margin-inline-start: 0.25rem;
 }
 
 .ax-mr-xs {
-  margin-right: 0.25rem;
+  margin-inline-end: 0.25rem;
 }
 
 .ax-mx-xs {
-  margin-right: 0.25rem;
-  margin-left: 0.25rem;
+  margin-inline-start: 0.25rem;
+  margin-inline-end: 0.25rem;
 }
 
 .ax-my-xs {
@@ -1777,16 +1777,16 @@ pre code {
 }
 
 .ax-ml-sm {
-  margin-left: 0.5rem;
+  margin-inline-start: 0.5rem;
 }
 
 .ax-mr-sm {
-  margin-right: 0.5rem;
+  margin-inline-end: 0.5rem;
 }
 
 .ax-mx-sm {
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
+  margin-inline-start: 0.5rem;
+  margin-inline-end: 0.5rem;
 }
 
 .ax-my-sm {
@@ -1807,16 +1807,16 @@ pre code {
 }
 
 .ax-ml-md {
-  margin-left: 1rem;
+  margin-inline-start: 1rem;
 }
 
 .ax-mr-md {
-  margin-right: 1rem;
+  margin-inline-end: 1rem;
 }
 
 .ax-mx-md {
-  margin-right: 1rem;
-  margin-left: 1rem;
+  margin-inline-start: 1rem;
+  margin-inline-end: 1rem;
 }
 
 .ax-my-md {
@@ -1837,16 +1837,16 @@ pre code {
 }
 
 .ax-ml-lg {
-  margin-left: 1.5rem;
+  margin-inline-start: 1.5rem;
 }
 
 .ax-mr-lg {
-  margin-right: 1.5rem;
+  margin-inline-end: 1.5rem;
 }
 
 .ax-mx-lg {
-  margin-right: 1.5rem;
-  margin-left: 1.5rem;
+  margin-inline-start: 1.5rem;
+  margin-inline-end: 1.5rem;
 }
 
 .ax-my-lg {
@@ -1867,16 +1867,16 @@ pre code {
 }
 
 .ax-ml-xl {
-  margin-left: 3rem;
+  margin-inline-start: 3rem;
 }
 
 .ax-mr-xl {
-  margin-right: 3rem;
+  margin-inline-end: 3rem;
 }
 
 .ax-mx-xl {
-  margin-right: 3rem;
-  margin-left: 3rem;
+  margin-inline-start: 3rem;
+  margin-inline-end: 3rem;
 }
 
 .ax-my-xl {
@@ -1897,16 +1897,16 @@ pre code {
 }
 
 .ax-ml-2xl {
-  margin-left: 4rem;
+  margin-inline-start: 4rem;
 }
 
 .ax-mr-2xl {
-  margin-right: 4rem;
+  margin-inline-end: 4rem;
 }
 
 .ax-mx-2xl {
-  margin-right: 4rem;
-  margin-left: 4rem;
+  margin-inline-start: 4rem;
+  margin-inline-end: 4rem;
 }
 
 .ax-my-2xl {
@@ -1927,16 +1927,16 @@ pre code {
 }
 
 .ax-ml-3xl {
-  margin-left: 6rem;
+  margin-inline-start: 6rem;
 }
 
 .ax-mr-3xl {
-  margin-right: 6rem;
+  margin-inline-end: 6rem;
 }
 
 .ax-mx-3xl {
-  margin-right: 6rem;
-  margin-left: 6rem;
+  margin-inline-start: 6rem;
+  margin-inline-end: 6rem;
 }
 
 .ax-my-3xl {
@@ -1957,16 +1957,16 @@ pre code {
 }
 
 .ax-ml-1 {
-  margin-left: 0.25rem;
+  margin-inline-start: 0.25rem;
 }
 
 .ax-mr-1 {
-  margin-right: 0.25rem;
+  margin-inline-end: 0.25rem;
 }
 
 .ax-mx-1 {
-  margin-right: 0.25rem;
-  margin-left: 0.25rem;
+  margin-inline-start: 0.25rem;
+  margin-inline-end: 0.25rem;
 }
 
 .ax-my-1 {
@@ -1987,16 +1987,16 @@ pre code {
 }
 
 .ax-ml-2 {
-  margin-left: 0.5rem;
+  margin-inline-start: 0.5rem;
 }
 
 .ax-mr-2 {
-  margin-right: 0.5rem;
+  margin-inline-end: 0.5rem;
 }
 
 .ax-mx-2 {
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
+  margin-inline-start: 0.5rem;
+  margin-inline-end: 0.5rem;
 }
 
 .ax-my-2 {
@@ -2017,16 +2017,16 @@ pre code {
 }
 
 .ax-ml-3 {
-  margin-left: 0.75rem;
+  margin-inline-start: 0.75rem;
 }
 
 .ax-mr-3 {
-  margin-right: 0.75rem;
+  margin-inline-end: 0.75rem;
 }
 
 .ax-mx-3 {
-  margin-right: 0.75rem;
-  margin-left: 0.75rem;
+  margin-inline-start: 0.75rem;
+  margin-inline-end: 0.75rem;
 }
 
 .ax-my-3 {
@@ -2047,16 +2047,16 @@ pre code {
 }
 
 .ax-ml-4 {
-  margin-left: 1rem;
+  margin-inline-start: 1rem;
 }
 
 .ax-mr-4 {
-  margin-right: 1rem;
+  margin-inline-end: 1rem;
 }
 
 .ax-mx-4 {
-  margin-right: 1rem;
-  margin-left: 1rem;
+  margin-inline-start: 1rem;
+  margin-inline-end: 1rem;
 }
 
 .ax-my-4 {
@@ -2077,16 +2077,16 @@ pre code {
 }
 
 .ax-ml-5 {
-  margin-left: 1.25rem;
+  margin-inline-start: 1.25rem;
 }
 
 .ax-mr-5 {
-  margin-right: 1.25rem;
+  margin-inline-end: 1.25rem;
 }
 
 .ax-mx-5 {
-  margin-right: 1.25rem;
-  margin-left: 1.25rem;
+  margin-inline-start: 1.25rem;
+  margin-inline-end: 1.25rem;
 }
 
 .ax-my-5 {
@@ -2107,16 +2107,16 @@ pre code {
 }
 
 .ax-ml-6 {
-  margin-left: 1.5rem;
+  margin-inline-start: 1.5rem;
 }
 
 .ax-mr-6 {
-  margin-right: 1.5rem;
+  margin-inline-end: 1.5rem;
 }
 
 .ax-mx-6 {
-  margin-right: 1.5rem;
-  margin-left: 1.5rem;
+  margin-inline-start: 1.5rem;
+  margin-inline-end: 1.5rem;
 }
 
 .ax-my-6 {
@@ -2137,16 +2137,16 @@ pre code {
 }
 
 .ax-ml-8 {
-  margin-left: 2rem;
+  margin-inline-start: 2rem;
 }
 
 .ax-mr-8 {
-  margin-right: 2rem;
+  margin-inline-end: 2rem;
 }
 
 .ax-mx-8 {
-  margin-right: 2rem;
-  margin-left: 2rem;
+  margin-inline-start: 2rem;
+  margin-inline-end: 2rem;
 }
 
 .ax-my-8 {
@@ -2167,16 +2167,16 @@ pre code {
 }
 
 .ax-ml-10 {
-  margin-left: 2.5rem;
+  margin-inline-start: 2.5rem;
 }
 
 .ax-mr-10 {
-  margin-right: 2.5rem;
+  margin-inline-end: 2.5rem;
 }
 
 .ax-mx-10 {
-  margin-right: 2.5rem;
-  margin-left: 2.5rem;
+  margin-inline-start: 2.5rem;
+  margin-inline-end: 2.5rem;
 }
 
 .ax-my-10 {
@@ -2197,16 +2197,16 @@ pre code {
 }
 
 .ax-ml-12 {
-  margin-left: 3rem;
+  margin-inline-start: 3rem;
 }
 
 .ax-mr-12 {
-  margin-right: 3rem;
+  margin-inline-end: 3rem;
 }
 
 .ax-mx-12 {
-  margin-right: 3rem;
-  margin-left: 3rem;
+  margin-inline-start: 3rem;
+  margin-inline-end: 3rem;
 }
 
 .ax-my-12 {
@@ -2227,16 +2227,16 @@ pre code {
 }
 
 .ax-ml-16 {
-  margin-left: 4rem;
+  margin-inline-start: 4rem;
 }
 
 .ax-mr-16 {
-  margin-right: 4rem;
+  margin-inline-end: 4rem;
 }
 
 .ax-mx-16 {
-  margin-right: 4rem;
-  margin-left: 4rem;
+  margin-inline-start: 4rem;
+  margin-inline-end: 4rem;
 }
 
 .ax-my-16 {
@@ -2257,16 +2257,16 @@ pre code {
 }
 
 .ax-ml-20 {
-  margin-left: 5rem;
+  margin-inline-start: 5rem;
 }
 
 .ax-mr-20 {
-  margin-right: 5rem;
+  margin-inline-end: 5rem;
 }
 
 .ax-mx-20 {
-  margin-right: 5rem;
-  margin-left: 5rem;
+  margin-inline-start: 5rem;
+  margin-inline-end: 5rem;
 }
 
 .ax-my-20 {
@@ -2287,16 +2287,16 @@ pre code {
 }
 
 .ax-ml-24 {
-  margin-left: 6rem;
+  margin-inline-start: 6rem;
 }
 
 .ax-mr-24 {
-  margin-right: 6rem;
+  margin-inline-end: 6rem;
 }
 
 .ax-mx-24 {
-  margin-right: 6rem;
-  margin-left: 6rem;
+  margin-inline-start: 6rem;
+  margin-inline-end: 6rem;
 }
 
 .ax-my-24 {
@@ -2305,8 +2305,8 @@ pre code {
 }
 
 .ax-mx-auto {
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }
 
 .ax-my-auto {
@@ -2327,11 +2327,11 @@ pre code {
 }
 
 .ax-ml-auto {
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 .ax-mr-auto {
-  margin-right: auto;
+  margin-inline-end: auto;
 }
 
 @media (min-width: 576px) {
@@ -2345,8 +2345,8 @@ pre code {
     padding-bottom: 0;
   }
   .ax-px-sm-0 {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
   .ax-py-sm-0 {
     padding-top: 0;
@@ -2362,8 +2362,8 @@ pre code {
     padding-bottom: 0.25rem;
   }
   .ax-px-sm-xs {
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
   }
   .ax-py-sm-xs {
     padding-top: 0.25rem;
@@ -2379,8 +2379,8 @@ pre code {
     padding-bottom: 0.5rem;
   }
   .ax-px-sm-sm {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
   }
   .ax-py-sm-sm {
     padding-top: 0.5rem;
@@ -2396,8 +2396,8 @@ pre code {
     padding-bottom: 1rem;
   }
   .ax-px-sm-md {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
   .ax-py-sm-md {
     padding-top: 1rem;
@@ -2413,8 +2413,8 @@ pre code {
     padding-bottom: 1.5rem;
   }
   .ax-px-sm-lg {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
   }
   .ax-py-sm-lg {
     padding-top: 1.5rem;
@@ -2430,8 +2430,8 @@ pre code {
     padding-bottom: 3rem;
   }
   .ax-px-sm-xl {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 3rem;
   }
   .ax-py-sm-xl {
     padding-top: 3rem;
@@ -2447,8 +2447,8 @@ pre code {
     padding-bottom: 4rem;
   }
   .ax-px-sm-2xl {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
   }
   .ax-py-sm-2xl {
     padding-top: 4rem;
@@ -2464,8 +2464,8 @@ pre code {
     padding-bottom: 6rem;
   }
   .ax-px-sm-3xl {
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
+    padding-inline-end: 6rem;
   }
   .ax-py-sm-3xl {
     padding-top: 6rem;
@@ -2481,8 +2481,8 @@ pre code {
     padding-bottom: 1rem;
   }
   .ax-px-sm-4 {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
   .ax-py-sm-4 {
     padding-top: 1rem;
@@ -2498,8 +2498,8 @@ pre code {
     padding-bottom: 2rem;
   }
   .ax-px-sm-8 {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
   }
   .ax-py-sm-8 {
     padding-top: 2rem;
@@ -2515,8 +2515,8 @@ pre code {
     padding-bottom: 3rem;
   }
   .ax-px-sm-12 {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 3rem;
   }
   .ax-py-sm-12 {
     padding-top: 3rem;
@@ -2532,8 +2532,8 @@ pre code {
     padding-bottom: 4rem;
   }
   .ax-px-sm-16 {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
   }
   .ax-py-sm-16 {
     padding-top: 4rem;
@@ -2549,8 +2549,8 @@ pre code {
     padding-bottom: 5rem;
   }
   .ax-px-sm-20 {
-    padding-right: 5rem;
-    padding-left: 5rem;
+    padding-inline-start: 5rem;
+    padding-inline-end: 5rem;
   }
   .ax-py-sm-20 {
     padding-top: 5rem;
@@ -2566,8 +2566,8 @@ pre code {
     padding-bottom: 6rem;
   }
   .ax-px-sm-24 {
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
+    padding-inline-end: 6rem;
   }
   .ax-py-sm-24 {
     padding-top: 6rem;
@@ -2585,8 +2585,8 @@ pre code {
     padding-bottom: 0;
   }
   .ax-px-md-0 {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
   .ax-py-md-0 {
     padding-top: 0;
@@ -2602,8 +2602,8 @@ pre code {
     padding-bottom: 0.25rem;
   }
   .ax-px-md-xs {
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
   }
   .ax-py-md-xs {
     padding-top: 0.25rem;
@@ -2619,8 +2619,8 @@ pre code {
     padding-bottom: 0.5rem;
   }
   .ax-px-md-sm {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
   }
   .ax-py-md-sm {
     padding-top: 0.5rem;
@@ -2636,8 +2636,8 @@ pre code {
     padding-bottom: 1rem;
   }
   .ax-px-md-md {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
   .ax-py-md-md {
     padding-top: 1rem;
@@ -2653,8 +2653,8 @@ pre code {
     padding-bottom: 1.5rem;
   }
   .ax-px-md-lg {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
   }
   .ax-py-md-lg {
     padding-top: 1.5rem;
@@ -2670,8 +2670,8 @@ pre code {
     padding-bottom: 3rem;
   }
   .ax-px-md-xl {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 3rem;
   }
   .ax-py-md-xl {
     padding-top: 3rem;
@@ -2687,8 +2687,8 @@ pre code {
     padding-bottom: 4rem;
   }
   .ax-px-md-2xl {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
   }
   .ax-py-md-2xl {
     padding-top: 4rem;
@@ -2704,8 +2704,8 @@ pre code {
     padding-bottom: 6rem;
   }
   .ax-px-md-3xl {
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
+    padding-inline-end: 6rem;
   }
   .ax-py-md-3xl {
     padding-top: 6rem;
@@ -2721,8 +2721,8 @@ pre code {
     padding-bottom: 1rem;
   }
   .ax-px-md-4 {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
   .ax-py-md-4 {
     padding-top: 1rem;
@@ -2738,8 +2738,8 @@ pre code {
     padding-bottom: 2rem;
   }
   .ax-px-md-8 {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
   }
   .ax-py-md-8 {
     padding-top: 2rem;
@@ -2755,8 +2755,8 @@ pre code {
     padding-bottom: 3rem;
   }
   .ax-px-md-12 {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 3rem;
   }
   .ax-py-md-12 {
     padding-top: 3rem;
@@ -2772,8 +2772,8 @@ pre code {
     padding-bottom: 4rem;
   }
   .ax-px-md-16 {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
   }
   .ax-py-md-16 {
     padding-top: 4rem;
@@ -2789,8 +2789,8 @@ pre code {
     padding-bottom: 5rem;
   }
   .ax-px-md-20 {
-    padding-right: 5rem;
-    padding-left: 5rem;
+    padding-inline-start: 5rem;
+    padding-inline-end: 5rem;
   }
   .ax-py-md-20 {
     padding-top: 5rem;
@@ -2806,8 +2806,8 @@ pre code {
     padding-bottom: 6rem;
   }
   .ax-px-md-24 {
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
+    padding-inline-end: 6rem;
   }
   .ax-py-md-24 {
     padding-top: 6rem;
@@ -2825,8 +2825,8 @@ pre code {
     padding-bottom: 0;
   }
   .ax-px-lg-0 {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
   .ax-py-lg-0 {
     padding-top: 0;
@@ -2842,8 +2842,8 @@ pre code {
     padding-bottom: 0.25rem;
   }
   .ax-px-lg-xs {
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
   }
   .ax-py-lg-xs {
     padding-top: 0.25rem;
@@ -2859,8 +2859,8 @@ pre code {
     padding-bottom: 0.5rem;
   }
   .ax-px-lg-sm {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
   }
   .ax-py-lg-sm {
     padding-top: 0.5rem;
@@ -2876,8 +2876,8 @@ pre code {
     padding-bottom: 1rem;
   }
   .ax-px-lg-md {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
   .ax-py-lg-md {
     padding-top: 1rem;
@@ -2893,8 +2893,8 @@ pre code {
     padding-bottom: 1.5rem;
   }
   .ax-px-lg-lg {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
   }
   .ax-py-lg-lg {
     padding-top: 1.5rem;
@@ -2910,8 +2910,8 @@ pre code {
     padding-bottom: 3rem;
   }
   .ax-px-lg-xl {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 3rem;
   }
   .ax-py-lg-xl {
     padding-top: 3rem;
@@ -2927,8 +2927,8 @@ pre code {
     padding-bottom: 4rem;
   }
   .ax-px-lg-2xl {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
   }
   .ax-py-lg-2xl {
     padding-top: 4rem;
@@ -2944,8 +2944,8 @@ pre code {
     padding-bottom: 6rem;
   }
   .ax-px-lg-3xl {
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
+    padding-inline-end: 6rem;
   }
   .ax-py-lg-3xl {
     padding-top: 6rem;
@@ -2961,8 +2961,8 @@ pre code {
     padding-bottom: 1rem;
   }
   .ax-px-lg-4 {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
   .ax-py-lg-4 {
     padding-top: 1rem;
@@ -2978,8 +2978,8 @@ pre code {
     padding-bottom: 2rem;
   }
   .ax-px-lg-8 {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
   }
   .ax-py-lg-8 {
     padding-top: 2rem;
@@ -2995,8 +2995,8 @@ pre code {
     padding-bottom: 3rem;
   }
   .ax-px-lg-12 {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 3rem;
   }
   .ax-py-lg-12 {
     padding-top: 3rem;
@@ -3012,8 +3012,8 @@ pre code {
     padding-bottom: 4rem;
   }
   .ax-px-lg-16 {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
   }
   .ax-py-lg-16 {
     padding-top: 4rem;
@@ -3029,8 +3029,8 @@ pre code {
     padding-bottom: 5rem;
   }
   .ax-px-lg-20 {
-    padding-right: 5rem;
-    padding-left: 5rem;
+    padding-inline-start: 5rem;
+    padding-inline-end: 5rem;
   }
   .ax-py-lg-20 {
     padding-top: 5rem;
@@ -3046,8 +3046,8 @@ pre code {
     padding-bottom: 6rem;
   }
   .ax-px-lg-24 {
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
+    padding-inline-end: 6rem;
   }
   .ax-py-lg-24 {
     padding-top: 6rem;
@@ -3065,8 +3065,8 @@ pre code {
     padding-bottom: 0;
   }
   .ax-px-xl-0 {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
   .ax-py-xl-0 {
     padding-top: 0;
@@ -3082,8 +3082,8 @@ pre code {
     padding-bottom: 0.25rem;
   }
   .ax-px-xl-xs {
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
   }
   .ax-py-xl-xs {
     padding-top: 0.25rem;
@@ -3099,8 +3099,8 @@ pre code {
     padding-bottom: 0.5rem;
   }
   .ax-px-xl-sm {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
   }
   .ax-py-xl-sm {
     padding-top: 0.5rem;
@@ -3116,8 +3116,8 @@ pre code {
     padding-bottom: 1rem;
   }
   .ax-px-xl-md {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
   .ax-py-xl-md {
     padding-top: 1rem;
@@ -3133,8 +3133,8 @@ pre code {
     padding-bottom: 1.5rem;
   }
   .ax-px-xl-lg {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
   }
   .ax-py-xl-lg {
     padding-top: 1.5rem;
@@ -3150,8 +3150,8 @@ pre code {
     padding-bottom: 3rem;
   }
   .ax-px-xl-xl {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 3rem;
   }
   .ax-py-xl-xl {
     padding-top: 3rem;
@@ -3167,8 +3167,8 @@ pre code {
     padding-bottom: 4rem;
   }
   .ax-px-xl-2xl {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
   }
   .ax-py-xl-2xl {
     padding-top: 4rem;
@@ -3184,8 +3184,8 @@ pre code {
     padding-bottom: 6rem;
   }
   .ax-px-xl-3xl {
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
+    padding-inline-end: 6rem;
   }
   .ax-py-xl-3xl {
     padding-top: 6rem;
@@ -3201,8 +3201,8 @@ pre code {
     padding-bottom: 1rem;
   }
   .ax-px-xl-4 {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
   .ax-py-xl-4 {
     padding-top: 1rem;
@@ -3218,8 +3218,8 @@ pre code {
     padding-bottom: 2rem;
   }
   .ax-px-xl-8 {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
   }
   .ax-py-xl-8 {
     padding-top: 2rem;
@@ -3235,8 +3235,8 @@ pre code {
     padding-bottom: 3rem;
   }
   .ax-px-xl-12 {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 3rem;
   }
   .ax-py-xl-12 {
     padding-top: 3rem;
@@ -3252,8 +3252,8 @@ pre code {
     padding-bottom: 4rem;
   }
   .ax-px-xl-16 {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
   }
   .ax-py-xl-16 {
     padding-top: 4rem;
@@ -3269,8 +3269,8 @@ pre code {
     padding-bottom: 5rem;
   }
   .ax-px-xl-20 {
-    padding-right: 5rem;
-    padding-left: 5rem;
+    padding-inline-start: 5rem;
+    padding-inline-end: 5rem;
   }
   .ax-py-xl-20 {
     padding-top: 5rem;
@@ -3286,8 +3286,8 @@ pre code {
     padding-bottom: 6rem;
   }
   .ax-px-xl-24 {
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
+    padding-inline-end: 6rem;
   }
   .ax-py-xl-24 {
     padding-top: 6rem;
@@ -3305,8 +3305,8 @@ pre code {
     padding-bottom: 0;
   }
   .ax-px-xxl-0 {
-    padding-right: 0;
-    padding-left: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
   .ax-py-xxl-0 {
     padding-top: 0;
@@ -3322,8 +3322,8 @@ pre code {
     padding-bottom: 0.25rem;
   }
   .ax-px-xxl-xs {
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
+    padding-inline-start: 0.25rem;
+    padding-inline-end: 0.25rem;
   }
   .ax-py-xxl-xs {
     padding-top: 0.25rem;
@@ -3339,8 +3339,8 @@ pre code {
     padding-bottom: 0.5rem;
   }
   .ax-px-xxl-sm {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
   }
   .ax-py-xxl-sm {
     padding-top: 0.5rem;
@@ -3356,8 +3356,8 @@ pre code {
     padding-bottom: 1rem;
   }
   .ax-px-xxl-md {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
   .ax-py-xxl-md {
     padding-top: 1rem;
@@ -3373,8 +3373,8 @@ pre code {
     padding-bottom: 1.5rem;
   }
   .ax-px-xxl-lg {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
   }
   .ax-py-xxl-lg {
     padding-top: 1.5rem;
@@ -3390,8 +3390,8 @@ pre code {
     padding-bottom: 3rem;
   }
   .ax-px-xxl-xl {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 3rem;
   }
   .ax-py-xxl-xl {
     padding-top: 3rem;
@@ -3407,8 +3407,8 @@ pre code {
     padding-bottom: 4rem;
   }
   .ax-px-xxl-2xl {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
   }
   .ax-py-xxl-2xl {
     padding-top: 4rem;
@@ -3424,8 +3424,8 @@ pre code {
     padding-bottom: 6rem;
   }
   .ax-px-xxl-3xl {
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
+    padding-inline-end: 6rem;
   }
   .ax-py-xxl-3xl {
     padding-top: 6rem;
@@ -3441,8 +3441,8 @@ pre code {
     padding-bottom: 1rem;
   }
   .ax-px-xxl-4 {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
   .ax-py-xxl-4 {
     padding-top: 1rem;
@@ -3458,8 +3458,8 @@ pre code {
     padding-bottom: 2rem;
   }
   .ax-px-xxl-8 {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
   }
   .ax-py-xxl-8 {
     padding-top: 2rem;
@@ -3475,8 +3475,8 @@ pre code {
     padding-bottom: 3rem;
   }
   .ax-px-xxl-12 {
-    padding-right: 3rem;
-    padding-left: 3rem;
+    padding-inline-start: 3rem;
+    padding-inline-end: 3rem;
   }
   .ax-py-xxl-12 {
     padding-top: 3rem;
@@ -3492,8 +3492,8 @@ pre code {
     padding-bottom: 4rem;
   }
   .ax-px-xxl-16 {
-    padding-right: 4rem;
-    padding-left: 4rem;
+    padding-inline-start: 4rem;
+    padding-inline-end: 4rem;
   }
   .ax-py-xxl-16 {
     padding-top: 4rem;
@@ -3509,8 +3509,8 @@ pre code {
     padding-bottom: 5rem;
   }
   .ax-px-xxl-20 {
-    padding-right: 5rem;
-    padding-left: 5rem;
+    padding-inline-start: 5rem;
+    padding-inline-end: 5rem;
   }
   .ax-py-xxl-20 {
     padding-top: 5rem;
@@ -3526,8 +3526,8 @@ pre code {
     padding-bottom: 6rem;
   }
   .ax-px-xxl-24 {
-    padding-right: 6rem;
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
+    padding-inline-end: 6rem;
   }
   .ax-py-xxl-24 {
     padding-top: 6rem;
@@ -3545,8 +3545,8 @@ pre code {
     margin-bottom: 0;
   }
   .ax-mx-sm-0 {
-    margin-right: 0;
-    margin-left: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
   }
   .ax-my-sm-0 {
     margin-top: 0;
@@ -3562,8 +3562,8 @@ pre code {
     margin-bottom: 0.25rem;
   }
   .ax-mx-sm-xs {
-    margin-right: 0.25rem;
-    margin-left: 0.25rem;
+    margin-inline-start: 0.25rem;
+    margin-inline-end: 0.25rem;
   }
   .ax-my-sm-xs {
     margin-top: 0.25rem;
@@ -3579,8 +3579,8 @@ pre code {
     margin-bottom: 0.5rem;
   }
   .ax-mx-sm-sm {
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
+    margin-inline-end: 0.5rem;
   }
   .ax-my-sm-sm {
     margin-top: 0.5rem;
@@ -3596,8 +3596,8 @@ pre code {
     margin-bottom: 1rem;
   }
   .ax-mx-sm-md {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
   }
   .ax-my-sm-md {
     margin-top: 1rem;
@@ -3613,8 +3613,8 @@ pre code {
     margin-bottom: 1.5rem;
   }
   .ax-mx-sm-lg {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
+    margin-inline-start: 1.5rem;
+    margin-inline-end: 1.5rem;
   }
   .ax-my-sm-lg {
     margin-top: 1.5rem;
@@ -3630,8 +3630,8 @@ pre code {
     margin-bottom: 3rem;
   }
   .ax-mx-sm-xl {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-inline-start: 3rem;
+    margin-inline-end: 3rem;
   }
   .ax-my-sm-xl {
     margin-top: 3rem;
@@ -3647,8 +3647,8 @@ pre code {
     margin-bottom: 4rem;
   }
   .ax-mx-sm-2xl {
-    margin-right: 4rem;
-    margin-left: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
   }
   .ax-my-sm-2xl {
     margin-top: 4rem;
@@ -3664,8 +3664,8 @@ pre code {
     margin-bottom: 6rem;
   }
   .ax-mx-sm-3xl {
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
+    margin-inline-end: 6rem;
   }
   .ax-my-sm-3xl {
     margin-top: 6rem;
@@ -3681,8 +3681,8 @@ pre code {
     margin-bottom: 1rem;
   }
   .ax-mx-sm-4 {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
   }
   .ax-my-sm-4 {
     margin-top: 1rem;
@@ -3698,8 +3698,8 @@ pre code {
     margin-bottom: 2rem;
   }
   .ax-mx-sm-8 {
-    margin-right: 2rem;
-    margin-left: 2rem;
+    margin-inline-start: 2rem;
+    margin-inline-end: 2rem;
   }
   .ax-my-sm-8 {
     margin-top: 2rem;
@@ -3715,8 +3715,8 @@ pre code {
     margin-bottom: 3rem;
   }
   .ax-mx-sm-12 {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-inline-start: 3rem;
+    margin-inline-end: 3rem;
   }
   .ax-my-sm-12 {
     margin-top: 3rem;
@@ -3732,8 +3732,8 @@ pre code {
     margin-bottom: 4rem;
   }
   .ax-mx-sm-16 {
-    margin-right: 4rem;
-    margin-left: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
   }
   .ax-my-sm-16 {
     margin-top: 4rem;
@@ -3749,8 +3749,8 @@ pre code {
     margin-bottom: 5rem;
   }
   .ax-mx-sm-20 {
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-inline-start: 5rem;
+    margin-inline-end: 5rem;
   }
   .ax-my-sm-20 {
     margin-top: 5rem;
@@ -3766,8 +3766,8 @@ pre code {
     margin-bottom: 6rem;
   }
   .ax-mx-sm-24 {
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
+    margin-inline-end: 6rem;
   }
   .ax-my-sm-24 {
     margin-top: 6rem;
@@ -3785,8 +3785,8 @@ pre code {
     margin-bottom: 0;
   }
   .ax-mx-md-0 {
-    margin-right: 0;
-    margin-left: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
   }
   .ax-my-md-0 {
     margin-top: 0;
@@ -3802,8 +3802,8 @@ pre code {
     margin-bottom: 0.25rem;
   }
   .ax-mx-md-xs {
-    margin-right: 0.25rem;
-    margin-left: 0.25rem;
+    margin-inline-start: 0.25rem;
+    margin-inline-end: 0.25rem;
   }
   .ax-my-md-xs {
     margin-top: 0.25rem;
@@ -3819,8 +3819,8 @@ pre code {
     margin-bottom: 0.5rem;
   }
   .ax-mx-md-sm {
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
+    margin-inline-end: 0.5rem;
   }
   .ax-my-md-sm {
     margin-top: 0.5rem;
@@ -3836,8 +3836,8 @@ pre code {
     margin-bottom: 1rem;
   }
   .ax-mx-md-md {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
   }
   .ax-my-md-md {
     margin-top: 1rem;
@@ -3853,8 +3853,8 @@ pre code {
     margin-bottom: 1.5rem;
   }
   .ax-mx-md-lg {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
+    margin-inline-start: 1.5rem;
+    margin-inline-end: 1.5rem;
   }
   .ax-my-md-lg {
     margin-top: 1.5rem;
@@ -3870,8 +3870,8 @@ pre code {
     margin-bottom: 3rem;
   }
   .ax-mx-md-xl {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-inline-start: 3rem;
+    margin-inline-end: 3rem;
   }
   .ax-my-md-xl {
     margin-top: 3rem;
@@ -3887,8 +3887,8 @@ pre code {
     margin-bottom: 4rem;
   }
   .ax-mx-md-2xl {
-    margin-right: 4rem;
-    margin-left: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
   }
   .ax-my-md-2xl {
     margin-top: 4rem;
@@ -3904,8 +3904,8 @@ pre code {
     margin-bottom: 6rem;
   }
   .ax-mx-md-3xl {
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
+    margin-inline-end: 6rem;
   }
   .ax-my-md-3xl {
     margin-top: 6rem;
@@ -3921,8 +3921,8 @@ pre code {
     margin-bottom: 1rem;
   }
   .ax-mx-md-4 {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
   }
   .ax-my-md-4 {
     margin-top: 1rem;
@@ -3938,8 +3938,8 @@ pre code {
     margin-bottom: 2rem;
   }
   .ax-mx-md-8 {
-    margin-right: 2rem;
-    margin-left: 2rem;
+    margin-inline-start: 2rem;
+    margin-inline-end: 2rem;
   }
   .ax-my-md-8 {
     margin-top: 2rem;
@@ -3955,8 +3955,8 @@ pre code {
     margin-bottom: 3rem;
   }
   .ax-mx-md-12 {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-inline-start: 3rem;
+    margin-inline-end: 3rem;
   }
   .ax-my-md-12 {
     margin-top: 3rem;
@@ -3972,8 +3972,8 @@ pre code {
     margin-bottom: 4rem;
   }
   .ax-mx-md-16 {
-    margin-right: 4rem;
-    margin-left: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
   }
   .ax-my-md-16 {
     margin-top: 4rem;
@@ -3989,8 +3989,8 @@ pre code {
     margin-bottom: 5rem;
   }
   .ax-mx-md-20 {
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-inline-start: 5rem;
+    margin-inline-end: 5rem;
   }
   .ax-my-md-20 {
     margin-top: 5rem;
@@ -4006,8 +4006,8 @@ pre code {
     margin-bottom: 6rem;
   }
   .ax-mx-md-24 {
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
+    margin-inline-end: 6rem;
   }
   .ax-my-md-24 {
     margin-top: 6rem;
@@ -4025,8 +4025,8 @@ pre code {
     margin-bottom: 0;
   }
   .ax-mx-lg-0 {
-    margin-right: 0;
-    margin-left: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
   }
   .ax-my-lg-0 {
     margin-top: 0;
@@ -4042,8 +4042,8 @@ pre code {
     margin-bottom: 0.25rem;
   }
   .ax-mx-lg-xs {
-    margin-right: 0.25rem;
-    margin-left: 0.25rem;
+    margin-inline-start: 0.25rem;
+    margin-inline-end: 0.25rem;
   }
   .ax-my-lg-xs {
     margin-top: 0.25rem;
@@ -4059,8 +4059,8 @@ pre code {
     margin-bottom: 0.5rem;
   }
   .ax-mx-lg-sm {
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
+    margin-inline-end: 0.5rem;
   }
   .ax-my-lg-sm {
     margin-top: 0.5rem;
@@ -4076,8 +4076,8 @@ pre code {
     margin-bottom: 1rem;
   }
   .ax-mx-lg-md {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
   }
   .ax-my-lg-md {
     margin-top: 1rem;
@@ -4093,8 +4093,8 @@ pre code {
     margin-bottom: 1.5rem;
   }
   .ax-mx-lg-lg {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
+    margin-inline-start: 1.5rem;
+    margin-inline-end: 1.5rem;
   }
   .ax-my-lg-lg {
     margin-top: 1.5rem;
@@ -4110,8 +4110,8 @@ pre code {
     margin-bottom: 3rem;
   }
   .ax-mx-lg-xl {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-inline-start: 3rem;
+    margin-inline-end: 3rem;
   }
   .ax-my-lg-xl {
     margin-top: 3rem;
@@ -4127,8 +4127,8 @@ pre code {
     margin-bottom: 4rem;
   }
   .ax-mx-lg-2xl {
-    margin-right: 4rem;
-    margin-left: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
   }
   .ax-my-lg-2xl {
     margin-top: 4rem;
@@ -4144,8 +4144,8 @@ pre code {
     margin-bottom: 6rem;
   }
   .ax-mx-lg-3xl {
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
+    margin-inline-end: 6rem;
   }
   .ax-my-lg-3xl {
     margin-top: 6rem;
@@ -4161,8 +4161,8 @@ pre code {
     margin-bottom: 1rem;
   }
   .ax-mx-lg-4 {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
   }
   .ax-my-lg-4 {
     margin-top: 1rem;
@@ -4178,8 +4178,8 @@ pre code {
     margin-bottom: 2rem;
   }
   .ax-mx-lg-8 {
-    margin-right: 2rem;
-    margin-left: 2rem;
+    margin-inline-start: 2rem;
+    margin-inline-end: 2rem;
   }
   .ax-my-lg-8 {
     margin-top: 2rem;
@@ -4195,8 +4195,8 @@ pre code {
     margin-bottom: 3rem;
   }
   .ax-mx-lg-12 {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-inline-start: 3rem;
+    margin-inline-end: 3rem;
   }
   .ax-my-lg-12 {
     margin-top: 3rem;
@@ -4212,8 +4212,8 @@ pre code {
     margin-bottom: 4rem;
   }
   .ax-mx-lg-16 {
-    margin-right: 4rem;
-    margin-left: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
   }
   .ax-my-lg-16 {
     margin-top: 4rem;
@@ -4229,8 +4229,8 @@ pre code {
     margin-bottom: 5rem;
   }
   .ax-mx-lg-20 {
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-inline-start: 5rem;
+    margin-inline-end: 5rem;
   }
   .ax-my-lg-20 {
     margin-top: 5rem;
@@ -4246,8 +4246,8 @@ pre code {
     margin-bottom: 6rem;
   }
   .ax-mx-lg-24 {
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
+    margin-inline-end: 6rem;
   }
   .ax-my-lg-24 {
     margin-top: 6rem;
@@ -4265,8 +4265,8 @@ pre code {
     margin-bottom: 0;
   }
   .ax-mx-xl-0 {
-    margin-right: 0;
-    margin-left: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
   }
   .ax-my-xl-0 {
     margin-top: 0;
@@ -4282,8 +4282,8 @@ pre code {
     margin-bottom: 0.25rem;
   }
   .ax-mx-xl-xs {
-    margin-right: 0.25rem;
-    margin-left: 0.25rem;
+    margin-inline-start: 0.25rem;
+    margin-inline-end: 0.25rem;
   }
   .ax-my-xl-xs {
     margin-top: 0.25rem;
@@ -4299,8 +4299,8 @@ pre code {
     margin-bottom: 0.5rem;
   }
   .ax-mx-xl-sm {
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
+    margin-inline-end: 0.5rem;
   }
   .ax-my-xl-sm {
     margin-top: 0.5rem;
@@ -4316,8 +4316,8 @@ pre code {
     margin-bottom: 1rem;
   }
   .ax-mx-xl-md {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
   }
   .ax-my-xl-md {
     margin-top: 1rem;
@@ -4333,8 +4333,8 @@ pre code {
     margin-bottom: 1.5rem;
   }
   .ax-mx-xl-lg {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
+    margin-inline-start: 1.5rem;
+    margin-inline-end: 1.5rem;
   }
   .ax-my-xl-lg {
     margin-top: 1.5rem;
@@ -4350,8 +4350,8 @@ pre code {
     margin-bottom: 3rem;
   }
   .ax-mx-xl-xl {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-inline-start: 3rem;
+    margin-inline-end: 3rem;
   }
   .ax-my-xl-xl {
     margin-top: 3rem;
@@ -4367,8 +4367,8 @@ pre code {
     margin-bottom: 4rem;
   }
   .ax-mx-xl-2xl {
-    margin-right: 4rem;
-    margin-left: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
   }
   .ax-my-xl-2xl {
     margin-top: 4rem;
@@ -4384,8 +4384,8 @@ pre code {
     margin-bottom: 6rem;
   }
   .ax-mx-xl-3xl {
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
+    margin-inline-end: 6rem;
   }
   .ax-my-xl-3xl {
     margin-top: 6rem;
@@ -4401,8 +4401,8 @@ pre code {
     margin-bottom: 1rem;
   }
   .ax-mx-xl-4 {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
   }
   .ax-my-xl-4 {
     margin-top: 1rem;
@@ -4418,8 +4418,8 @@ pre code {
     margin-bottom: 2rem;
   }
   .ax-mx-xl-8 {
-    margin-right: 2rem;
-    margin-left: 2rem;
+    margin-inline-start: 2rem;
+    margin-inline-end: 2rem;
   }
   .ax-my-xl-8 {
     margin-top: 2rem;
@@ -4435,8 +4435,8 @@ pre code {
     margin-bottom: 3rem;
   }
   .ax-mx-xl-12 {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-inline-start: 3rem;
+    margin-inline-end: 3rem;
   }
   .ax-my-xl-12 {
     margin-top: 3rem;
@@ -4452,8 +4452,8 @@ pre code {
     margin-bottom: 4rem;
   }
   .ax-mx-xl-16 {
-    margin-right: 4rem;
-    margin-left: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
   }
   .ax-my-xl-16 {
     margin-top: 4rem;
@@ -4469,8 +4469,8 @@ pre code {
     margin-bottom: 5rem;
   }
   .ax-mx-xl-20 {
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-inline-start: 5rem;
+    margin-inline-end: 5rem;
   }
   .ax-my-xl-20 {
     margin-top: 5rem;
@@ -4486,8 +4486,8 @@ pre code {
     margin-bottom: 6rem;
   }
   .ax-mx-xl-24 {
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
+    margin-inline-end: 6rem;
   }
   .ax-my-xl-24 {
     margin-top: 6rem;
@@ -4505,8 +4505,8 @@ pre code {
     margin-bottom: 0;
   }
   .ax-mx-xxl-0 {
-    margin-right: 0;
-    margin-left: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
   }
   .ax-my-xxl-0 {
     margin-top: 0;
@@ -4522,8 +4522,8 @@ pre code {
     margin-bottom: 0.25rem;
   }
   .ax-mx-xxl-xs {
-    margin-right: 0.25rem;
-    margin-left: 0.25rem;
+    margin-inline-start: 0.25rem;
+    margin-inline-end: 0.25rem;
   }
   .ax-my-xxl-xs {
     margin-top: 0.25rem;
@@ -4539,8 +4539,8 @@ pre code {
     margin-bottom: 0.5rem;
   }
   .ax-mx-xxl-sm {
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
+    margin-inline-end: 0.5rem;
   }
   .ax-my-xxl-sm {
     margin-top: 0.5rem;
@@ -4556,8 +4556,8 @@ pre code {
     margin-bottom: 1rem;
   }
   .ax-mx-xxl-md {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
   }
   .ax-my-xxl-md {
     margin-top: 1rem;
@@ -4573,8 +4573,8 @@ pre code {
     margin-bottom: 1.5rem;
   }
   .ax-mx-xxl-lg {
-    margin-right: 1.5rem;
-    margin-left: 1.5rem;
+    margin-inline-start: 1.5rem;
+    margin-inline-end: 1.5rem;
   }
   .ax-my-xxl-lg {
     margin-top: 1.5rem;
@@ -4590,8 +4590,8 @@ pre code {
     margin-bottom: 3rem;
   }
   .ax-mx-xxl-xl {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-inline-start: 3rem;
+    margin-inline-end: 3rem;
   }
   .ax-my-xxl-xl {
     margin-top: 3rem;
@@ -4607,8 +4607,8 @@ pre code {
     margin-bottom: 4rem;
   }
   .ax-mx-xxl-2xl {
-    margin-right: 4rem;
-    margin-left: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
   }
   .ax-my-xxl-2xl {
     margin-top: 4rem;
@@ -4624,8 +4624,8 @@ pre code {
     margin-bottom: 6rem;
   }
   .ax-mx-xxl-3xl {
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
+    margin-inline-end: 6rem;
   }
   .ax-my-xxl-3xl {
     margin-top: 6rem;
@@ -4641,8 +4641,8 @@ pre code {
     margin-bottom: 1rem;
   }
   .ax-mx-xxl-4 {
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
   }
   .ax-my-xxl-4 {
     margin-top: 1rem;
@@ -4658,8 +4658,8 @@ pre code {
     margin-bottom: 2rem;
   }
   .ax-mx-xxl-8 {
-    margin-right: 2rem;
-    margin-left: 2rem;
+    margin-inline-start: 2rem;
+    margin-inline-end: 2rem;
   }
   .ax-my-xxl-8 {
     margin-top: 2rem;
@@ -4675,8 +4675,8 @@ pre code {
     margin-bottom: 3rem;
   }
   .ax-mx-xxl-12 {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-inline-start: 3rem;
+    margin-inline-end: 3rem;
   }
   .ax-my-xxl-12 {
     margin-top: 3rem;
@@ -4692,8 +4692,8 @@ pre code {
     margin-bottom: 4rem;
   }
   .ax-mx-xxl-16 {
-    margin-right: 4rem;
-    margin-left: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
   }
   .ax-my-xxl-16 {
     margin-top: 4rem;
@@ -4709,8 +4709,8 @@ pre code {
     margin-bottom: 5rem;
   }
   .ax-mx-xxl-20 {
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-inline-start: 5rem;
+    margin-inline-end: 5rem;
   }
   .ax-my-xxl-20 {
     margin-top: 5rem;
@@ -4726,8 +4726,8 @@ pre code {
     margin-bottom: 6rem;
   }
   .ax-mx-xxl-24 {
-    margin-right: 6rem;
-    margin-left: 6rem;
+    margin-inline-start: 6rem;
+    margin-inline-end: 6rem;
   }
   .ax-my-xxl-24 {
     margin-top: 6rem;
@@ -6568,6 +6568,8 @@ pre code {
   right: auto;
   bottom: 100%;
   left: 50%;
+  inset-inline-start: 50%;
+  inset-inline-end: auto;
   margin-top: 0;
   margin-bottom: 8px;
   transform: translateX(-50%);
@@ -6578,6 +6580,8 @@ pre code {
   right: auto;
   bottom: 100%;
   left: 50%;
+  inset-inline-start: 50%;
+  inset-inline-end: auto;
   transform: translateX(-50%);
   border-top-color: var(--ax-gray-900, #111827);
   border-bottom-color: transparent;
@@ -6590,6 +6594,8 @@ pre code {
   right: auto;
   bottom: auto;
   left: 50%;
+  inset-inline-start: 50%;
+  inset-inline-end: auto;
   margin-top: 8px;
   margin-bottom: 0;
   transform: translateX(-50%);
@@ -6599,6 +6605,8 @@ pre code {
   right: auto;
   bottom: auto;
   left: 50%;
+  inset-inline-start: 50%;
+  inset-inline-end: auto;
   transform: translateX(-50%);
   border-bottom-color: var(--ax-gray-900, #111827);
   border-top-color: transparent;
@@ -6611,8 +6619,10 @@ pre code {
   right: 100%;
   bottom: auto;
   left: auto;
-  margin-right: 8px;
-  margin-left: 0;
+  inset-inline-start: auto;
+  inset-inline-end: 100%;
+  margin-inline-start: 0;
+  margin-inline-end: 8px;
   transform: translateY(-50%);
 }
 [data-ax-tooltip-position=left]::before {
@@ -6620,6 +6630,8 @@ pre code {
   right: 100%;
   bottom: auto;
   left: auto;
+  inset-inline-start: auto;
+  inset-inline-end: 100%;
   transform: translateY(-50%);
   border-left-color: var(--ax-gray-900, #111827);
   border-top-color: transparent;
@@ -6632,8 +6644,10 @@ pre code {
   right: auto;
   bottom: auto;
   left: 100%;
-  margin-right: 0;
-  margin-left: 8px;
+  inset-inline-start: 100%;
+  inset-inline-end: auto;
+  margin-inline-start: 8px;
+  margin-inline-end: 0;
   transform: translateY(-50%);
 }
 [data-ax-tooltip-position=right]::before {
@@ -6641,6 +6655,8 @@ pre code {
   right: auto;
   bottom: auto;
   left: 100%;
+  inset-inline-start: 100%;
+  inset-inline-end: auto;
   transform: translateY(-50%);
   border-right-color: var(--ax-gray-900, #111827);
   border-top-color: transparent;
@@ -6664,7 +6680,7 @@ pre code {
 .ax-table th,
 .ax-table td {
   padding: 0.5rem 1rem;
-  text-align: left;
+  text-align: start;
   border-bottom: 1px solid var(--ax-border-color, #d1d5db);
 }
 .ax-table thead th {
@@ -6726,8 +6742,8 @@ pre code {
   }
   .ax-table--responsive td {
     position: relative;
-    padding-left: 50%;
-    text-align: right;
+    padding-inline-start: 50%;
+    text-align: end;
     border-bottom: 1px solid var(--ax-border-color, #d1d5db);
   }
   .ax-table--responsive td:last-child {
@@ -6737,8 +6753,9 @@ pre code {
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
+    inset-inline-start: 0.5rem;
     font-weight: 600;
-    text-align: left;
+    text-align: start;
     content: attr(data-label);
   }
 }

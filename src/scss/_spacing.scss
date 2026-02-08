@@ -29,16 +29,16 @@
   }
 
   .pl-#{$name} {
-    padding-left: $value;
+    padding-inline-start: $value;
   }
 
   .pr-#{$name} {
-    padding-right: $value;
+    padding-inline-end: $value;
   }
 
   .px-#{$name} {
-    padding-right: $value;
-    padding-left: $value;
+    padding-inline-start: $value;
+    padding-inline-end: $value;
   }
 
   .py-#{$name} {
@@ -70,16 +70,16 @@
   }
 
   .ml-#{$name} {
-    margin-left: $value;
+    margin-inline-start: $value;
   }
 
   .mr-#{$name} {
-    margin-right: $value;
+    margin-inline-end: $value;
   }
 
   .mx-#{$name} {
-    margin-right: $value;
-    margin-left: $value;
+    margin-inline-start: $value;
+    margin-inline-end: $value;
   }
 
   .my-#{$name} {
@@ -90,8 +90,8 @@
 
 // Auto Margin Utilities
 .mx-auto {
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }
 
 .my-auto {
@@ -112,20 +112,18 @@
 }
 
 .ml-auto {
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 .mr-auto {
-  margin-right: auto;
+  margin-inline-end: auto;
 }
 
 // Responsive Padding Utilities (optimized for common values only)
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint != 'xs' {
+  @if $breakpoint !='xs' {
     @include respond-to($breakpoint) {
-      @each $name
-        in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24')
-      {
+      @each $name in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24') {
         @if map.has-key($spacing-map, $name) {
           $value: map.get($spacing-map, $name);
 
@@ -142,8 +140,8 @@
           }
 
           .px-#{$breakpoint}-#{$name} {
-            padding-right: $value;
-            padding-left: $value;
+            padding-inline-start: $value;
+            padding-inline-end: $value;
           }
 
           .py-#{$breakpoint}-#{$name} {
@@ -158,11 +156,9 @@
 
 // Responsive Margin Utilities (optimized for common values only)
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint != 'xs' {
+  @if $breakpoint !='xs' {
     @include respond-to($breakpoint) {
-      @each $name
-        in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24')
-      {
+      @each $name in ('0', 'xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4', '8', '12', '16', '20', '24') {
         @if map.has-key($spacing-map, $name) {
           $value: map.get($spacing-map, $name);
 
@@ -179,8 +175,8 @@
           }
 
           .mx-#{$breakpoint}-#{$name} {
-            margin-right: $value;
-            margin-left: $value;
+            margin-inline-start: $value;
+            margin-inline-end: $value;
           }
 
           .my-#{$breakpoint}-#{$name} {
@@ -214,7 +210,7 @@
 
 // Responsive Gap Utilities
 @each $breakpoint, $breakpoint-value in $grid-breakpoints {
-  @if $breakpoint != 'xs' {
+  @if $breakpoint !='xs' {
     @include respond-to($breakpoint) {
       @each $name, $value in $spacing-map {
         .gap-#{$breakpoint}-#{$name} {

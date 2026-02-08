@@ -18,7 +18,7 @@
   th,
   td {
     padding: $spacer-sm $spacer-md;
-    text-align: left;
+    text-align: start;
     border-bottom: 1px solid var(--ax-border-color, $border-color);
   }
 
@@ -105,8 +105,8 @@
 
     td {
       position: relative;
-      padding-left: 50%;
-      text-align: right;
+      padding-inline-start: 50%;
+      text-align: end;
       border-bottom: 1px solid var(--ax-border-color, $border-color);
 
       &:last-child {
@@ -118,8 +118,9 @@
         position: absolute;
         top: $spacer-sm;
         left: $spacer-sm;
+        inset-inline-start: $spacer-sm;
         font-weight: $font-weight-semibold;
-        text-align: left;
+        text-align: start;
         content: attr(data-label);
       }
     }

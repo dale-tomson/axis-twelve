@@ -60,6 +60,8 @@
     right: auto;
     bottom: 100%;
     left: 50%;
+    inset-inline-start: 50%;
+    inset-inline-end: auto;
     margin-top: 0;
     margin-bottom: 8px;
     transform: translateX(-50%);
@@ -70,6 +72,8 @@
     right: auto;
     bottom: 100%;
     left: 50%;
+    inset-inline-start: 50%;
+    inset-inline-end: auto;
     transform: translateX(-50%);
     border-top-color: var(--ax-gray-900, $gray-900);
     border-bottom-color: transparent;
@@ -85,6 +89,8 @@
     right: auto;
     bottom: auto;
     left: 50%;
+    inset-inline-start: 50%;
+    inset-inline-end: auto;
     margin-top: 8px;
     margin-bottom: 0;
     transform: translateX(-50%);
@@ -95,6 +101,8 @@
     right: auto;
     bottom: auto;
     left: 50%;
+    inset-inline-start: 50%;
+    inset-inline-end: auto;
     transform: translateX(-50%);
     border-bottom-color: var(--ax-gray-900, $gray-900);
     border-top-color: transparent;
@@ -110,8 +118,10 @@
     right: 100%;
     bottom: auto;
     left: auto;
-    margin-right: 8px;
-    margin-left: 0;
+    inset-inline-start: auto;
+    inset-inline-end: 100%;
+    margin-inline-start: 0;
+    margin-inline-end: 8px;
     transform: translateY(-50%);
   }
 
@@ -120,6 +130,8 @@
     right: 100%;
     bottom: auto;
     left: auto;
+    inset-inline-start: auto;
+    inset-inline-end: 100%;
     transform: translateY(-50%);
     border-left-color: var(--ax-gray-900, $gray-900);
     border-top-color: transparent;
@@ -135,8 +147,10 @@
     right: auto;
     bottom: auto;
     left: 100%;
-    margin-right: 0;
-    margin-left: 8px;
+    inset-inline-start: 100%;
+    inset-inline-end: auto;
+    margin-inline-start: 8px;
+    margin-inline-end: 0;
     transform: translateY(-50%);
   }
 
@@ -145,6 +159,8 @@
     right: auto;
     bottom: auto;
     left: 100%;
+    inset-inline-start: 100%;
+    inset-inline-end: auto;
     transform: translateY(-50%);
     border-right-color: var(--ax-gray-900, $gray-900);
     border-top-color: transparent;
