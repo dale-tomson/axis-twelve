@@ -11,37 +11,72 @@
         {
             "name": "layout",
             "path": "layout.json",
-            "description": "Grid system and flexbox utilities"
+            "description": "Grid system and flexbox utilities",
+            "stats": {
+                "standard": "85KB",
+                "minified": "62KB",
+                "gzipped": "8.2KB"
+            }
         },
         {
             "name": "buttons",
             "path": "buttons.json",
-            "description": "Customizable button styles"
+            "description": "Customizable button styles",
+            "stats": {
+                "standard": "6.5KB",
+                "minified": "5.6KB",
+                "gzipped": "1.6KB"
+            }
         },
         {
             "name": "forms",
             "path": "forms.json",
-            "description": "Accessible form controls"
+            "description": "Accessible form controls",
+            "stats": {
+                "standard": "9.6KB",
+                "minified": "8.7KB",
+                "gzipped": "2.0KB"
+            }
         },
         {
             "name": "cards",
             "path": "cards.json",
-            "description": "Versatile content containers"
+            "description": "Versatile content containers",
+            "stats": {
+                "standard": "3.4KB",
+                "minified": "2.9KB",
+                "gzipped": "1.1KB"
+            }
         },
         {
             "name": "tables",
             "path": "tables.json",
-            "description": "Responsive table styles"
+            "description": "Responsive table styles",
+            "stats": {
+                "standard": "3.2KB",
+                "minified": "2.8KB",
+                "gzipped": "1.1KB"
+            }
         },
         {
             "name": "modals",
             "path": "modals.json",
-            "description": "CSS-only dialog system"
+            "description": "CSS-only dialog system",
+            "stats": {
+                "standard": "3.4KB",
+                "minified": "3.0KB",
+                "gzipped": "1.2KB"
+            }
         },
         {
             "name": "tooltips",
             "path": "tooltips.json",
-            "description": "Data-driven tooltip system"
+            "description": "Data-driven tooltip system",
+            "stats": {
+                "standard": "4.5KB",
+                "minified": "4.0KB",
+                "gzipped": "1.1KB"
+            }
         }
     ],
     "assets": {
