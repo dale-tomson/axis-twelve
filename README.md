@@ -9,7 +9,7 @@
 
 **Build faster, center easier. Modular CSS framework.**
 
-[Interactive Documentation](https://dale-tomson.github.io/axis-twelve-docs)
+[Interactive Documentation](https://dale-tomson.github.io/axis-twelve-docs) | [Comprehensive Example](docs/v2/comprehensive-example.html)
 
 </div>
 
@@ -288,6 +288,7 @@ MIT © Dale Tomson
 - [GitHub Repository](https://github.com/dale-tomson/axis-twelve)
 - [npm Package](https://www.npmjs.com/package/axis-twelve)
 - [Interactive Documentation](https://dale-tomson.github.io/axis-twelve-docs)
+- [Comprehensive Example](docs/v2/comprehensive-example.html)
 - [Component Documentation](docs/v2/)
 
 - [Changelog History](CHANGELOG.md)

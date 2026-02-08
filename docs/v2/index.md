@@ -31,6 +31,9 @@ npm install axis-twelve
 
 Explore the documentation by choosing a module from the sidebar or following the links below.
 
+> [!TIP]
+> **Check out the [Comprehensive Example](comprehensive-example.html)** to see all components in one place with a LTR/RTL toggle.
+
 ### Core Foundation
 - **[Layout](layout.md)**: The grid system, flexbox utilities, and spacing constants that form the backbone of your UI.
 

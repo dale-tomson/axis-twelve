@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axis Twelve - Comprehensive Example</title>
+    <!-- Framework Styles -->
+    <link rel="stylesheet" href="../../dist/axis-twelve.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ax-font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            color: #1f2937;
+            padding-bottom: 5rem;
+        }
+
+        .demo-header {
+            background: #fff;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-section {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-section-title {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f3f4f6;
+            font-weight: 700;
+        }
+
+        .sticky-toolbar {
+            position: fixed;
+            bottom: 2rem;
+            inset-inline-end: 2rem;
+            z-index: 1000;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .rtl-toggle {
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            border: 2px solid #3b82f6;
+            background: transparent;
+            color: #3b82f6;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .rtl-toggle:hover {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        [dir="rtl"] .rtl-toggle {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="demo-header">
+        <div class="ax-container">
+            <h1 class="ax-m-0">Axis Twelve Kitchen Sink</h1>
+            <p class="ax-text-muted">A comprehensive demonstration of all framework features.</p>
+        </div>
+    </header>
+
+    <main class="ax-container">
+
+        <!-- 1. Layout & Grid -->
+        <section class="demo-section">
+            <h2 class="demo-section-title">1. Layout & Grid</h2>
+
+            <h4 class="ax-mb-sm">Basic 12-Column Grid</h4>
+            <div class="ax-grid ax-gap-md ax-mb-lg">
+                <div class="ax-col-4 ax-p-md ax-bg-primary ax-text-white ax-items-center ax-justify-center ax-flex"
+                    style="border-radius: 8px;">Col 4</div>
+                <div class="ax-col-8 ax-p-md ax-bg-secondary ax-text-white ax-items-center ax-justify-center ax-flex"
+                    style="border-radius: 8px;">Col 8</div>
+            </div>
+
+            <h4 class="ax-mb-sm">Responsive Grid (Stack on mobile, 3-cols on desktop)</h4>
+            <div class="ax-grid ax-gap-md ax-mb-lg">
+                <div class="ax-col-12 ax-col-md-4 ax-p-md ax-bg-info ax-text-white ax-flex ax-justify-center"
+                    style="border-radius: 8px;">Responsive A</div>
+                <div class="ax-col-12 ax-col-md-4 ax-p-md ax-bg-info ax-text-white ax-flex ax-justify-center"
+                    style="border-radius: 8px;">Responsive B</div>
+                <div class="ax-col-12 ax-col-md-4 ax-p-md ax-bg-info ax-text-white ax-flex ax-justify-center"
+                    style="border-radius: 8px;">Responsive C</div>
+            </div>
+
+            <h4 class="ax-mb-sm">Flexbox Utilities & Gaps</h4>
+            <div class="ax-flex ax-justify-between ax-items-center ax-p-md ax-bg-white ax-border ax-mb-md"
+                style="border-radius: 8px;">
+                <span>Flex Start Content</span>
+                <div class="ax-flex ax-gap-sm">
+                    <span class="ax-badge ax-bg-success ax-text-white">Badge 1</span>
+                    <span class="ax-badge ax-bg-warning ax-text-white">Badge 2</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Buttons -->
+        <section class="demo-section">
+            <h2 class="demo-section-title">2. Buttons</h2>
+
+            <div class="ax-flex ax-flex-wrap ax-gap-md ax-mb-lg">
+                <button class="ax-btn ax-btn--primary">Primary Action</button>
+                <button class="ax-btn ax-btn--secondary">Secondary</button>
+                <button class="ax-btn ax-btn--success">Success</button>
+                <button class="ax-btn ax-btn--danger">Danger</button>
+                <button class="ax-btn ax-btn--warning">Warning</button>
+                <button class="ax-btn ax-btn--info">Info</button>
+            </div>
+
+            <h4 class="ax-mb-sm">Outlines & Ghost</h4>
+            <div class="ax-flex ax-flex-wrap ax-gap-md ax-mb-lg">
+                <button class="ax-btn ax-btn--outline-primary">Outline Primary</button>
+                <button class="ax-btn ax-btn--outline-success">Outline Success</button>
+                <button class="ax-btn ax-btn--ghost">Ghost Button</button>
+            </div>
+
+            <h4 class="ax-mb-sm">Sizes & Groups</h4>
+            <div class="ax-flex ax-items-center ax-gap-lg">
+                <div class="ax-flex ax-gap-md">
+                    <button class="ax-btn ax-btn--primary ax-btn--sm">Small</button>
+                    <button class="ax-btn ax-btn--primary ax-btn--lg">Large</button>
+                </div>
+                <div class="ax-btn-group">
+                    <button class="ax-btn ax-btn--secondary">Option 1</button>
+                    <button class="ax-btn ax-btn--secondary">Option 2</button>
+                    <button class="ax-btn ax-btn--secondary">Option 3</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Forms -->
+        <section class="demo-section">
+            <h2 class="demo-section-title">3. Forms</h2>
+
+            <div class="ax-grid ax-gap-lg">
+                <div class="ax-col-12 ax-col-md-6">
+                    <div class="ax-form-group">
+                        <label class="ax-label" for="ex-name">Full Name</label>
+                        <input type="text" class="ax-input" id="ex-name" placeholder="John Doe">
+                        <p class="ax-form-text">We'll never share your data.</p>
+                    </div>
+                    <div class="ax-form-group">
+                        <label class="ax-label" for="ex-email">Email Address</label>
+                        <input type="email" class="ax-input ax-input--invalid" id="ex-email" value="error@email">
+                        <p class="ax-form-error">Please provide a valid email.</p>
+                    </div>
+                </div>
+                <div class="ax-col-12 ax-col-md-6">
+                    <div class="ax-input-group">
+                        <input type="text" class="ax-input" placeholder=" " id="floating-input">
+                        <label class="ax-label" for="floating-input">Floating Label Input</label>
+                    </div>
+                    <div class="ax-form-group ax-mt-md">
+                        <label class="ax-label">Subject</label>
+                        <select class="ax-select">
+                            <option>Support Request</option>
+                            <option>General Inquiry</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="ax-mt-lg ax-mb-sm">Selection Controls</h4>
+            <div class="ax-flex ax-gap-xl">
+                <label class="ax-checkbox">
+                    <input type="checkbox" checked>
+                    <span class="ax-checkbox__label">Check this box</span>
+                </label>
+                <div class="ax-flex ax-gap-md">
+                    <label class="ax-radio">
+                        <input type="radio" name="demo-radio" checked>
+                        <span class="ax-radio__label">Radio One</span>
+                    </label>
+                    <label class="ax-radio">
+                        <input type="radio" name="demo-radio">
+                        <span class="ax-radio__label">Radio Two</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Cards -->
+        <section class="demo-section">
+            <h2 class="demo-section-title">4. Cards</h2>
+            <div class="ax-grid ax-gap-lg">
+                <div class="ax-col-12 ax-col-md-4">
+                    <div class="ax-card">
+                        <div class="ax-card__header">Standard Card</div>
+                        <div class="ax-card__body">
+                            <h3 class="ax-card__title">Simple Card</h3>
+                            <p class="ax-card__text">This is a standard card demonstrating the base structure.</p>
+                        </div>
+                        <div class="ax-card__footer">
+                            <button class="ax-btn ax-btn--ghost ax-btn--sm">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ax-col-12 ax-col-md-4">
+                    <div class="ax-card ax-card--shadow">
+                        <div class="ax-card__header">Shadow Card</div>
+                        <div class="ax-card__body">
+                            <h3 class="ax-card__title">Elevation Effect</h3>
+                            <p class="ax-card__text">The shadow variant adds depth and makes the card stand out.</p>
+                        </div>
+                        <div class="ax-card__footer">
+                            <button class="ax-btn ax-btn--primary ax-btn--sm ax-btn--block">Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ax-col-12 ax-col-md-4">
+                    <div class="ax-card">
+                        <div
+                            style="height: 150px; background: #3b82f6; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700;">
+                            IMAGE PLACEHOLDER
+                        </div>
+                        <div class="ax-card__body">
+                            <h3 class="ax-card__title">Media Card</h3>
+                            <p class="ax-card__text">Cards can contain media elements like images or placeholders.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Tables -->
+        <section class="demo-section">
+            <h2 class="demo-section-title">5. Tables</h2>
+            <table class="ax-table ax-table--striped ax-table--hover ax-table--responsive">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Project Name</th>
+                        <th>Owner</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="#">1</td>
+                        <td data-label="Project">Axis Twelve</td>
+                        <td data-label="Owner">Dale</td>
+                        <td data-label="Status"><span class="ax-badge ax-bg-success ax-text-white">Active</span></td>
+                        <td data-label="Priority">High</td>
+                    </tr>
+                    <tr>
+                        <td data-label="#">2</td>
+                        <td data-label="Project">Admin Panel</td>
+                        <td data-label="Owner">Admin</td>
+                        <td data-label="Status"><span class="ax-badge ax-bg-warning ax-text-white">Pending</span></td>
+                        <td data-label="Priority">Medium</td>
+                    </tr>
+                    <tr>
+                        <td data-label="#">3</td>
+                        <td data-label="Project">Legacy Docs</td>
+                        <td data-label="Owner">System</td>
+                        <td data-label="Status"><span class="ax-badge ax-bg-danger ax-text-white">Archived</span></td>
+                        <td data-label="Priority">Low</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 6. Interactive Modules -->
+        <section class="demo-section">
+            <h2 class="demo-section-title">6. Interactive (CSS-Only)</h2>
+            <div class="ax-grid ax-gap-lg">
+                <div class="ax-col-12 ax-col-md-6">
+                    <h4 class="ax-mb-sm">Tooltips (Hover Me)</h4>
+                    <div class="ax-flex ax-flex-wrap ax-gap-md">
+                        <button class="ax-btn ax-btn--outline-primary" data-ax-tooltip="Top Tooltip">Top</button>
+                        <button class="ax-btn ax-btn--outline-primary" data-ax-tooltip="Bottom Tooltip"
+                            data-ax-tooltip-position="bottom">Bottom</button>
+                        <button class="ax-btn ax-btn--outline-primary" data-ax-tooltip="Left Tooltip"
+                            data-ax-tooltip-position="left">Left</button>
+                        <button class="ax-btn ax-btn--outline-primary" data-ax-tooltip="Right Tooltip"
+                            data-ax-tooltip-position="right">Right</button>
+                    </div>
+                </div>
+                <div class="ax-col-12 ax-col-md-6">
+                    <h4 class="ax-mb-sm">Modals</h4>
+                    <button class="ax-btn ax-btn--primary"
+                        onclick="document.getElementById('demoModal').setAttribute('data-open', 'true')">Open Modal
+                        Demo</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Demo -->
+    <div class="ax-modal" id="demoModal" data-open="false">
+        <div class="ax-modal__backdrop"
+            onclick="document.getElementById('demoModal').setAttribute('data-open', 'false')"></div>
+        <div class="ax-modal__dialog">
+            <div class="ax-modal__header">
+                <h5 class="ax-modal__title">Kitchen Sink Modal</h5>
+                <button class="ax-modal__close"
+                    onclick="document.getElementById('demoModal').setAttribute('data-open', 'false')">&times;</button>
+            </div>
+            <div class="ax-modal__body">
+                This is a CSS-only modal. No JavaScript is required for the layout or transitions, only simple attribute
+                toggling.
+            </div>
+            <div class="ax-modal__footer">
+                <button class="ax-btn ax-btn--secondary"
+                    onclick="document.getElementById('demoModal').setAttribute('data-open', 'false')">Close</button>
+                <button class="ax-btn ax-btn--primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Toolbar -->
+    <div class="sticky-toolbar">
+        <span class="ax-text-sm ax-font-bold">Layout Test:</span>
+        <button class="rtl-toggle" id="toggleDir">Switch to RTL</button>
+    </div>
+
+    <script>
+        const btn = document.getElementById('toggleDir');
+        btn.addEventListener('click', () => {
+            const isRTL = document.documentElement.dir === 'rtl';
+            document.documentElement.dir = isRTL ? 'ltr' : 'rtl';
+            btn.textContent = isRTL ? 'Switch to RTL' : 'Switch to LTR';
+        });
+    </script>
+</body>
+
+</html>
