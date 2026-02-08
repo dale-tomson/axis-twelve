@@ -1,0 +1,114 @@
+{
+    "module": "axis-buttons",
+    "version": "2.0.2",
+    "description": "A set of highly customizable button styles, including variants for colors, outlines, sizes, and groups.",
+    "installation": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-buttons.min.css"
+    },
+    "classes": [
+        {
+            "name": ".ax-btn",
+            "description": "Base button class. Reset styles and sets basic layout.",
+            "type": "Base"
+        },
+        {
+            "name": ".ax-btn--primary",
+            "description": "Primary action button color.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--secondary",
+            "description": "Secondary action button color.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--success",
+            "description": "Success/Positive action color.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--danger",
+            "description": "Danger/Negative action color.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--warning",
+            "description": "Warning/Caution action color.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--info",
+            "description": "Informational action color.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--outline-*",
+            "description": "Outline version of any color variant.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--sm",
+            "description": "Small button size.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--lg",
+            "description": "Large button size.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--block",
+            "description": "Makes button span full width of parent.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--ghost",
+            "description": "Transparent background without border.",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-btn--icon",
+            "description": "Optimized padding for icon-only buttons.",
+            "type": "Modifier"
+        }
+    ],
+    "examples": [
+        {
+            "title": "Solid Buttons",
+            "code": "<button class=\"ax-btn ax-btn--primary\">Primary</button>\n<button class=\"ax-btn ax-btn--secondary\">Secondary</button>",
+            "description": "Classic filled buttons."
+        },
+        {
+            "title": "Button Groups",
+            "code": "<div class=\"ax-btn-group\">\n  <button class=\"ax-btn ax-btn--primary\">Left</button>\n  <button class=\"ax-btn ax-btn--primary\">Middle</button>\n  <button class=\"ax-btn ax-btn--primary\">Right</button>\n</div>",
+            "description": "Combine buttons visually."
+        }
+    ],
+    "customization": {
+        "variables": [
+            {
+                "name": "--ax-color-primary",
+                "default": "#3b82f6",
+                "description": "Primary brand color"
+            },
+            {
+                "name": "--ax-spacing-sm",
+                "default": "0.5rem",
+                "description": "Small padding base"
+            }
+        ]
+    },
+    "accessibility": [
+        "Use <button> for actions and <a> for navigation",
+        "Use aria-label for icon-only buttons",
+        "Focus and disabled states handled automatically"
+    ],
+    "evolution": [
+        {
+            "version": "v2.0.1",
+            "type": "Internal",
+            "description": "Refactored padding and margins to use logical properties."
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "module": "axis-forms",
+    "version": "2.0.2",
+    "description": "Comprehensive suite of accessible, mobile-friendly, and beautiful form controls including floating labels and custom inputs.",
+    "installation": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-forms.min.css"
+    },
+    "classes": [
+        {
+            "name": ".ax-input",
+            "description": "Base class for <input> elements.",
+            "type": "Base"
+        },
+        {
+            "name": ".ax-select",
+            "description": "Base class for <select> elements.",
+            "type": "Base"
+        },
+        {
+            "name": ".ax-textarea",
+            "description": "Base class for <textarea> elements.",
+            "type": "Base"
+        },
+        {
+            "name": ".ax-label",
+            "description": "Styled label for form controls.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-form-group",
+            "description": "Container for a label and input pair.",
+            "type": "Layout"
+        },
+        {
+            "name": ".ax-input-group",
+            "description": "Container for floating labels.",
+            "type": "Layout"
+        },
+        {
+            "name": ".ax-input--valid",
+            "description": "Green border for valid state.",
+            "type": "State"
+        },
+        {
+            "name": ".ax-input--invalid",
+            "description": "Red border for invalid state.",
+            "type": "State"
+        },
+        {
+            "name": ".ax-checkbox",
+            "description": "Custom checkbox container.",
+            "type": "Component"
+        },
+        {
+            "name": ".ax-radio",
+            "description": "Custom radio container.",
+            "type": "Component"
+        }
+    ],
+    "examples": [
+        {
+            "title": "Floating Label",
+            "code": "<div class=\"ax-input-group\">\n  <input type=\"text\" class=\"ax-input\" placeholder=\" \" id=\"f-name\">\n  <label class=\"ax-label\" for=\"f-name\">Full Name</label>\n</div>",
+            "description": "Modern floating label effect."
+        }
+    ],
+    "customization": {
+        "variables": [
+            {
+                "name": "--ax-border-color",
+                "default": "#d1d5db",
+                "description": "Default border color"
+            },
+            {
+                "name": "--ax-bg-surface",
+                "default": "#f9fafb",
+                "description": "Disabled state background"
+            }
+        ]
+    },
+    "accessibility": [
+        "Always use for/id matching for labels",
+        "Use aria-describedby for helper/error text",
+        "High-contrast focus rings for keyboard users"
+    ],
+    "evolution": [
+        {
+            "version": "v2.0.1",
+            "type": "Internal",
+            "description": "Refactored input spacing and alignment to use logical properties."
+        }
+    ]
+}

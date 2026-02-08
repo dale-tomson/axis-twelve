@@ -1,0 +1,121 @@
+{
+    "module": "axis-layout",
+    "version": "2.0.2",
+    "description": "The foundation of the Axis Twelve framework, providing a robust 12-column grid system, flexible flexbox utilities, and spacing/typography defaults.",
+    "installation": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-layout.min.css"
+    },
+    "breakpoints": [
+        {
+            "prefix": "sm",
+            "minWidth": "576px"
+        },
+        {
+            "prefix": "md",
+            "minWidth": "768px"
+        },
+        {
+            "prefix": "lg",
+            "minWidth": "992px"
+        },
+        {
+            "prefix": "xl",
+            "minWidth": "1200px"
+        },
+        {
+            "prefix": "xxl",
+            "minWidth": "1400px"
+        }
+    ],
+    "classes": [
+        {
+            "name": ".ax-grid",
+            "description": "The main grid container. Sets display: grid and a default gap.",
+            "type": "Layout"
+        },
+        {
+            "name": ".ax-subgrid",
+            "description": "Enables subgrid support. Inherits parent grid tracks (with 12-col fallback).",
+            "type": "Layout"
+        },
+        {
+            "name": ".ax-col-{1-12}",
+            "description": "Column span for all screen sizes.",
+            "type": "Layout"
+        },
+        {
+            "name": ".ax-col-{breakpoint}-{1-12}",
+            "description": "Responsive column span (e.g., .ax-col-md-6).",
+            "type": "Layout"
+        },
+        {
+            "name": ".ax-offset-{0-12}",
+            "description": "Starts a column at a specific position.",
+            "type": "Layout"
+        },
+        {
+            "name": ".ax-container",
+            "description": "Centers content with a responsive max-width.",
+            "type": "Layout"
+        },
+        {
+            "name": ".ax-flex",
+            "description": "Base flex container.",
+            "type": "Flexbox"
+        },
+        {
+            "name": ".ax-justify-center",
+            "description": "Centers items along the main axis.",
+            "type": "Flexbox"
+        },
+        {
+            "name": ".ax-items-center",
+            "description": "Centers items along the cross axis.",
+            "type": "Flexbox"
+        },
+        {
+            "name": ".ax-flex-column",
+            "description": "Sets direction to column.",
+            "type": "Flexbox"
+        }
+    ],
+    "examples": [
+        {
+            "title": "Basic 12-Column Grid",
+            "code": "<div class=\"ax-grid\">\n  <div class=\"ax-col-4\">Column 1 (4/12)</div>\n  <div class=\"ax-col-8\">Column 2 (8/12)</div>\n</div>",
+            "description": "A simple two-column layout."
+        }
+    ],
+    "customization": {
+        "variables": [
+            {
+                "name": "--ax-spacing-xs",
+                "default": "0.25rem",
+                "description": "Extra small spacing"
+            },
+            {
+                "name": "--ax-spacing-md",
+                "default": "1rem",
+                "description": "Medium spacing (default gap)"
+            }
+        ]
+    },
+    "features": [
+        "Mobile-First approach",
+        "CSS Logical Properties support (LTR/RTL)",
+        "Subgrid utility with fallback"
+    ],
+    "evolution": [
+        {
+            "version": "v2.0.2",
+            "type": "Added Utility",
+            "description": "Added .ax-subgrid for nested elements to inherit parent grid tracks."
+        },
+        {
+            "version": "v2.0.1",
+            "type": "Internal",
+            "description": "Refactored spacing and alignment to use Logical Properties."
+        }
+    ]
+}

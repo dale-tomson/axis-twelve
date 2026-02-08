@@ -1,0 +1,70 @@
+{
+    "module": "axis-modals",
+    "version": "2.0.2",
+    "description": "Powerful, CSS-only dialog system using data-attributes and transitions.",
+    "installation": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-modals.min.css"
+    },
+    "classes": [
+        {
+            "name": ".ax-modal",
+            "description": "Main container. Controlled by data-open.",
+            "type": "Base"
+        },
+        {
+            "name": ".ax-modal__backdrop",
+            "description": "The semi-transparent overlay.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-modal__dialog",
+            "description": "The actual modal box.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-modal__header",
+            "description": "Header with close button.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-modal__body",
+            "description": "Main content area.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-modal__footer",
+            "description": "Footer for action buttons.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-modal__dialog--sm",
+            "description": "Small modal width (300px).",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-modal__dialog--lg",
+            "description": "Large modal width (800px).",
+            "type": "Modifier"
+        }
+    ],
+    "examples": [
+        {
+            "title": "Basic Modal",
+            "code": "<div class=\"ax-modal\" data-open=\"false\">\n  <div class=\"ax-modal__backdrop\"></div>\n  <div class=\"ax-modal__dialog\">...</div>\n</div>",
+            "description": "Toggle data-open attribute to show/hide."
+        }
+    ],
+    "accessibility": [
+        "Add role=\"dialog\" and aria-modal=\"true\"",
+        "Use aria-labelledby for the title",
+        "Focus trap recommended via minimal JS"
+    ],
+    "evolution": [
+        {
+            "version": "v2.0.1",
+            "type": "Internal",
+            "description": "Refactored modal pacing and alignment to use logical properties."
+        }
+    ]
+}
