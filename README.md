@@ -51,6 +51,7 @@ pnpm install axis-twelve
 <link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-buttons.min.css">
 ```
 
+[Interactive Documentation](https://dale-tomson.github.io/axis-twelve-docs)
 ### Usage
 
 #### Option 1: Full Framework
@@ -304,7 +305,7 @@ MIT © Dale Tomson
 
 - [GitHub Repository](https://github.com/dale-tomson/axis-twelve)
 - [npm Package](https://www.npmjs.com/package/axis-twelve)
-- [Interactive Documentation](docs/v2.0.0/)
+- [Interactive Documentation](https://dale-tomson.github.io/axis-twelve-docs)
 - [Component Examples](docs/examples/)
 
 - [Changelog History](CHANGELOG.md)
