@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload - Axis Twelve Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-file-upload.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-buttons.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #f9fafb;
+      }
+      .demo-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .demo-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>File Upload</h1>
+    <p>Drag-and-drop file upload components with preview.</p>
+
+    <!-- Basic File Upload -->
+    <div class="demo-section">
+      <h2>Basic File Upload</h2>
+      <div class="ax-file-upload">
+        <input type="file" multiple id="file-upload-basic" />
+        <div class="ax-file-upload__icon">📁</div>
+        <h3 class="ax-file-upload__title">Upload Files</h3>
+        <p class="ax-file-upload__description">Drag and drop files here or click to browse</p>
+        <p class="ax-file-upload__hint">Supports: JPG, PNG, PDF (Max 10MB)</p>
+      </div>
+    </div>
+
+    <!-- Size Variants -->
+    <div class="demo-section">
+      <h2>Size Variants</h2>
+      <div class="demo-grid">
+        <div>
+          <h3>Small</h3>
+          <div class="ax-file-upload ax-file-upload--sm">
+            <input type="file" />
+            <div class="ax-file-upload__icon">📁</div>
+            <h3 class="ax-file-upload__title">Upload</h3>
+            <p class="ax-file-upload__description">Drop files here</p>
+          </div>
+        </div>
+        <div>
+          <h3>Large</h3>
+          <div class="ax-file-upload ax-file-upload--lg">
+            <input type="file" multiple />
+            <div class="ax-file-upload__icon">☁️</div>
+            <h3 class="ax-file-upload__title">Upload Your Files</h3>
+            <p class="ax-file-upload__description">
+              Drag and drop your files here or click to browse from your computer
+            </p>
+            <p class="ax-file-upload__hint">Maximum file size: 10MB per file</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- File Preview -->
+    <div class="demo-section">
+      <h2>File Preview</h2>
+      <div class="ax-file-upload">
+        <input type="file" id="file-upload-preview" />
+        <div class="ax-file-upload__icon">📁</div>
+        <h3 class="ax-file-upload__title">Upload Files</h3>
+        <p class="ax-file-upload__description">Drag and drop files here</p>
+      </div>
+
+      <div id="preview-container" style="margin-top: 1rem"></div>
+    </div>
+
+    <!-- Multiple Files with Progress -->
+    <div class="demo-section">
+      <h2>Multiple Files with Progress</h2>
+      <div class="ax-file-upload__list">
+        <!-- File Item 1 -->
+        <div class="ax-file-upload__item">
+          <div class="ax-file-upload__item-icon">📄</div>
+          <div class="ax-file-upload__item-info">
+            <div class="ax-file-upload__item-name">document.pdf</div>
+            <div class="ax-file-upload__item-size">2.4 MB</div>
+          </div>
+          <div class="ax-file-upload__item-progress">
+            <div class="ax-file-upload__item-bar" style="width: 75%"></div>
+          </div>
+          <button class="ax-file-upload__item-remove">×</button>
+        </div>
+
+        <!-- File Item 2 -->
+        <div class="ax-file-upload__item">
+          <div class="ax-file-upload__item-icon">🖼️</div>
+          <div class="ax-file-upload__item-info">
+            <div class="ax-file-upload__item-name">image.jpg</div>
+            <div class="ax-file-upload__item-size">1.2 MB</div>
+          </div>
+          <div class="ax-file-upload__item-progress">
+            <div class="ax-file-upload__item-bar" style="width: 100%"></div>
+          </div>
+          <button class="ax-file-upload__item-remove">×</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- States -->
+    <div class="demo-section">
+      <h2>States</h2>
+      <div class="demo-grid">
+        <div>
+          <h3>Dragging State</h3>
+          <div class="ax-file-upload ax-file-upload--dragging">
+            <input type="file" />
+            <div class="ax-file-upload__icon">📁</div>
+            <h3 class="ax-file-upload__title">Drop to Upload</h3>
+            <p class="ax-file-upload__description">Release to upload your files</p>
+          </div>
+        </div>
+        <div>
+          <h3>Error State</h3>
+          <div class="ax-file-upload ax-file-upload--has-error">
+            <input type="file" />
+            <div class="ax-file-upload__icon">⚠️</div>
+            <h3 class="ax-file-upload__title">Upload Error</h3>
+            <p class="ax-file-upload__description">File type not supported</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Preview functionality
+      const fileUpload = document.getElementById('file-upload-preview');
+      const previewContainer = document.getElementById('preview-container');
+
+      fileUpload.addEventListener('change', (e) => {
+        const files = e.target.files;
+        previewContainer.innerHTML = '';
+
+        if (files.length > 0) {
+          Array.from(files).forEach((file) => {
+            const preview = document.createElement('div');
+            preview.className = 'ax-file-upload__preview';
+            preview.innerHTML = `
+        <div class="ax-file-upload__preview-icon">📄</div>
+        <div class="ax-file-upload__preview-info">
+          <div class="ax-file-upload__preview-name">${file.name}</div>
+          <div class="ax-file-upload__preview-size">${(file.size / 1024).toFixed(1)} KB</div>
+        </div>
+        <button class="ax-file-upload__preview-remove">×</button>
+      `;
+            previewContainer.appendChild(preview);
+          });
+        }
+      });
+
+      // Remove button handler
+      previewContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('ax-file-upload__preview-remove')) {
+          e.target.parentElement.remove();
+        }
+      });
+    </script>
+
+    <p><a href="README.md">← Back to Examples</a></p>
+  </body>
+</html>
