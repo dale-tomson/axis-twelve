@@ -1,6 +1,8 @@
 # Axis-Twelve Agent Instructions
 
-You are the primary think tank and engineer behind **axis-twelve** — a modular-first CSS framework. Every decision must serve clarity, modularity, and maintainability.
+**CRITICAL: You are the primary think tank and engineer behind axis-twelve — a modular-first CSS framework. Every decision must serve clarity, modularity, and maintainability.**
+
+**DO NOT ASSUME OR HALLUCINATE. Follow these instructions EXACTLY as written. No exceptions.**
 
 ## Core Principle: Modular First
 
@@ -16,49 +18,126 @@ Every feature, component, or utility must be **independently usable**. Modules m
 - `src/builds/` — one entry file per module (e.g. `axis-buttons.scss`)
 - `dist/` — compiled output; `dist/modules/` for individual modules
 
-## Git Workflow
+## Git Workflow - MANDATORY
 
-1. Always pull and update `ver-2.x` before branching.
-2. Create feature branches **from `ver-2.x`** only. Never branch from `main` or other feature branches.
-3. **One commit per change.** If a task has 5 changes, make 5 commits — each scoped to exactly one change.
-4. Final commit on any branch that touches `src/` or `package.json` must be the version bump (see Versioning below).
+**CRITICAL: You MUST follow this workflow. Failure to do so is a violation.**
 
-## Versioning
+1. **ALWAYS create a feature branch from `ver-2.x`** - NEVER work directly on `ver-2.x`
+   - Command: `git checkout -b feature/your-feature-name ver-2.x`
+   - **NEVER** branch from `main` or other feature branches
+   - **NEVER** commit directly to `ver-2.x`
 
-Bumping is **mandatory before push** when `src/` or `package.json` has changed. It must be the **final commit**.
+2. **One commit per logical change**
+   - If a task has 5 changes, make 5 separate commits
+   - Each commit must be scoped to exactly ONE change
+   - Example: One commit per component, not all components in one commit
 
-- **Minor bump** (`x.Y.0`): new modules, significant new features or API changes
+3. **Version bump is MANDATORY and FINAL**
+   - If you touch `src/` or `package.json`, you MUST bump version
+   - Version bump MUST be the last commit before push
+   - Use: `bash project/scripts/bump-version.sh minor "message"` or `patch`
+   - **NEVER** push without version bump if src/ or package.json changed
+
+4. **ALWAYS pull latest ver-2.x before starting**
+   - Command: `git checkout ver-2.x && git pull origin ver-2.x`
+   - Then create your feature branch
+
+## Versioning - MANDATORY
+
+**Bumping is REQUIRED when `src/` or `package.json` changes. This is not optional.**
+
+- **Minor bump** (`x.Y.0`): new modules, significant new features, API changes
 - **Patch bump** (`x.x.Z`): bug fixes, small adjustments, style tweaks
 
-Use the `project/scripts/bump-version.sh` script to bump. The bump commit must also include the updated `CHANGELOG.md` and the relevant `docs/changelogs/vX.Y.Z.md` file.
+**Required steps for version bump:**
 
-## Documentation
+1. Run: `bash project/scripts/bump-version.sh minor "message"` or `patch`
+2. Update `CHANGELOG.md` with new version entry
+3. Create `docs/changelogs/vX.Y.Z.md` with detailed changelog
+4. Commit: `git add -A && git commit -m "chore: bump version to vX.Y.Z"`
+5. This MUST be the final commit
 
-All docs live in `docs/v2/`. Keep them current with every change.
+## Documentation - MANDATORY
 
-- **Update or create** a doc in `docs/v2/` for every module or feature touched.
-- **On every version bump**, create `docs/changelogs/vX.Y.Z.md` with a detailed changelog and update `CHANGELOG.md` with a brief summary entry. `CHANGELOG.md` must only contain the **last 5 version entries** — remove older ones.
+**Every change requires documentation updates.**
 
-## Examples
+- **Update or create** a doc in `docs/v2/` for every module or feature
+- **On version bump**, create `docs/changelogs/vX.Y.Z.md` with detailed changelog
+- Update `CHANGELOG.md` with brief summary (keep last 5 versions only)
+- **NEVER** skip documentation
 
-- Update `examples/` whenever a component or module changes behavior or API.
-- Create a new `examples/<module>.html` file whenever a new module is introduced.
-- Examples must be self-contained HTML files demonstrating real usage.
+## Examples - MANDATORY
 
-## README
+- **Update** `examples/` whenever a component changes behavior or API
+- **Create** new `examples/<module>.html` for every new module
+- Examples MUST be self-contained HTML files demonstrating real usage
+- Use CDN URLs: `https://unpkg.com/axis-twelve/dist/modules/axis-*.min.css`
+- **NEVER** use version-locked CDN URLs (no `@2` or similar)
 
-The README must stay lean and accurate. It must contain **only**:
+## README Rules
+
+The README must contain **ONLY**:
 
 1. Core axis-twelve principles (modular-first, what it is)
-2. Module list with **uncompressed, compressed, and gzipped sizes** (keep these current after every build)
+2. Module list with **uncompressed, compressed, and gzipped sizes**
 3. Installation instructions — npm/pnpm and CDN
-4. Links to: examples, documentation (`docs/v2/`), changelogs, and API reference (`docs/api/`)
+4. Links to: examples, documentation (`docs/v2/`), changelogs, API reference
 
-Do **not** add tutorials, verbose explanations, or anything not in the list above. Remove any section that drifts outside this scope.
+**DO NOT add:** tutorials, verbose explanations, or anything outside this scope. Remove any section that drifts outside this scope.
 
-## Code Quality
+## Code Quality - MANDATORY
 
-- Follow existing SCSS patterns — BEM-style class naming, CSS custom properties for theming.
-- Never add vendor prefixes manually; use the PostCSS/autoprefixer pipeline.
-- Lint must pass (`pnpm lint`) before any commit.
-- Do not introduce breaking class name changes without a minor version bump.
+- Follow existing SCSS patterns — BEM-style class naming, CSS custom properties for theming
+- Never add vendor prefixes manually; use the PostCSS/autoprefixer pipeline
+- **Lint MUST pass** (`pnpm lint`) before ANY commit
+- Do not introduce breaking class name changes without a minor version bump
+- **NEVER** commit without linting first
+
+## Pre-Commit Checklist - MANDATORY
+
+Before EVERY commit, verify:
+
+- [ ] Lint passes: `pnpm lint`
+- [ ] One logical change per commit
+- [ ] Documentation updated
+- [ ] Examples updated/created
+- [ ] If final commit: version bumped
+
+## Pre-Push Checklist - MANDATORY
+
+Before EVERY push, verify:
+
+- [ ] All commits follow one-change-per-commit rule
+- [ ] Version bumped (if src/ or package.json touched)
+- [ ] CHANGELOG.md updated
+- [ ] docs/changelogs/vX.Y.Z.md created
+- [ ] On feature branch, NOT ver-2.x
+
+## Common Violations to AVOID
+
+**DO NOT:**
+
+- ❌ Work directly on `ver-2.x` branch
+- ❌ Combine multiple changes in one commit
+- ❌ Push without version bump
+- ❌ Skip documentation
+- ❌ Use version-locked CDN URLs
+- ❌ Add tutorials to README
+- ❌ Commit without linting
+- ❌ Create `.agents/` or other instruction directories
+- ❌ Restore deleted instruction files
+
+**ALWAYS:**
+
+- ✅ Create feature branch from `ver-2.x`
+- ✅ One commit per change
+- ✅ Bump version as final commit
+- ✅ Update documentation
+- ✅ Pass linting
+- ✅ Follow modular architecture
+
+## Reminder
+
+**These instructions are MANDATORY, not suggestions. Violating them breaks the project workflow. Always follow them exactly as written.**
+
+If you're unsure about ANY instruction, ASK rather than assume.
