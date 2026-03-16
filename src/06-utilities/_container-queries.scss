@@ -1,0 +1,264 @@
+// Container Queries Utilities
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Container Parent Utilities
+.ax-container {
+  container-type: inline-size;
+  container-name: ax-container;
+}
+
+.ax-container--inline {
+  display: inline-block;
+  container-type: inline-size;
+  container-name: ax-container;
+}
+
+.ax-container--style {
+  container-type: size;
+  container-name: ax-container;
+}
+
+.ax-container--normal {
+  container: none;
+}
+
+// Named Containers
+.ax-container--sidebar {
+  container-type: inline-size;
+  container-name: ax-sidebar;
+}
+
+.ax-container--card {
+  container-type: inline-size;
+  container-name: ax-card;
+}
+
+.ax-container--panel {
+  container-type: inline-size;
+  container-name: ax-panel;
+}
+
+// Container Query Responsive Utilities
+
+// Font Size based on container width
+@container ax-container (min-width: 640px) {
+  .ax-cq\:text-sm {
+    font-size: map.get($type-scale, 'sm');
+  }
+
+  .ax-cq\:text-base {
+    font-size: map.get($type-scale, 'base');
+  }
+
+  .ax-cq\:text-lg {
+    font-size: map.get($type-scale, 'lg');
+  }
+
+  .ax-cq\:text-xl {
+    font-size: map.get($type-scale, 'xl');
+  }
+}
+
+@container ax-container (min-width: 320px) {
+  .ax-cq\:text-xs-sm {
+    font-size: map.get($type-scale, 'sm');
+  }
+}
+
+@container ax-card (min-width: 300px) {
+  .ax-cq-card\:stack-horizontal {
+    flex-direction: row;
+  }
+
+  .ax-cq-card\:show-sidebar {
+    display: block;
+  }
+}
+
+// Display utilities
+@container ax-container (min-width: 768px) {
+  .ax-cq\:block-md {
+    display: block;
+  }
+
+  .ax-cq\:flex-md {
+    display: flex;
+  }
+
+  .ax-cq\:grid-md {
+    display: grid;
+  }
+}
+
+@container ax-container (min-width: 640px) {
+  .ax-cq\:block-sm {
+    display: block;
+  }
+
+  .ax-cq\:flex-sm {
+    display: flex;
+  }
+}
+
+// Padding utilities
+@container ax-container (min-width: 640px) {
+  .ax-cq\:p-md {
+    padding: $spacer-md;
+  }
+
+  .ax-cq\:p-lg {
+    padding: $spacer-lg;
+  }
+}
+
+@container ax-container (min-width: 320px) {
+  .ax-cq\:p-sm {
+    padding: $spacer-sm;
+  }
+}
+
+// Gap utilities
+@container ax-container (min-width: 640px) {
+  .ax-cq\:gap-md {
+    gap: $spacer-md;
+  }
+
+  .ax-cq\:gap-lg {
+    gap: $spacer-lg;
+  }
+}
+
+// Grid utilities
+@container ax-container (min-width: 768px) {
+  .ax-cq\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ax-cq\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@container ax-container (min-width: 1024px) {
+  .ax-cq\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+// Flex direction
+@container ax-container (min-width: 640px) {
+  .ax-cq\:flex-row {
+    flex-direction: row;
+  }
+}
+
+@container ax-container (max-width: 639px) {
+  .ax-cq\:flex-col-sm {
+    flex-direction: column;
+  }
+}
+
+// Visibility
+@container ax-container (min-width: 640px) {
+  .ax-cq\:hidden-sm {
+    display: none;
+  }
+
+  .ax-cq\:block-sm {
+    display: block;
+  }
+}
+
+@container ax-container (max-width: 639px) {
+  .ax-cq\:hidden-sm-up {
+    display: none;
+  }
+}
+
+// Card-specific container queries
+@container ax-card (min-width: 400px) {
+  .ax-cq-card\:text-lg {
+    font-size: map.get($type-scale, 'lg');
+  }
+
+  .ax-cq-card\:show-actions {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@container ax-card (max-width: 399px) {
+  .ax-cq-card\:text-sm {
+    font-size: map.get($type-scale, 'sm');
+  }
+
+  .ax-cq-card\:hide-actions {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+// Sidebar-specific container queries
+@container ax-sidebar (min-width: 240px) {
+  .ax-cq-sidebar\:expanded {
+    width: 100%;
+  }
+
+  .ax-cq-sidebar\:show-label {
+    display: inline;
+  }
+}
+
+@container ax-sidebar (max-width: 239px) {
+  .ax-cq-sidebar\:collapsed {
+    width: auto;
+  }
+
+  .ax-cq-sidebar\:hide-label {
+    display: none;
+  }
+}
+
+// Panel-specific container queries
+@container ax-panel (min-width: 500px) {
+  .ax-cq-panel\:two-col {
+    display: grid;
+    gap: $spacer-md;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container ax-panel (min-width: 800px) {
+  .ax-cq-panel\:three-col {
+    display: grid;
+    gap: $spacer-md;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Style container queries
+@container ax-container style(--active: true) {
+  .ax-cq-if-active {
+    display: block;
+  }
+}
+
+@container ax-container style(--highlighted: true) {
+  .ax-cq-if-highlighted {
+    background-color: var(--ax-yellow-100, #fef3c7);
+  }
+}
+
+// Aspect ratio based on container
+@container ax-container (min-aspect-ratio: 1) {
+  .ax-cq\:landscape\:h-full {
+    height: 100%;
+  }
+}
+
+@container ax-container (max-aspect-ratio: 1) {
+  .ax-cq\:portrait\:w-full {
+    width: 100%;
+  }
+}
