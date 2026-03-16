@@ -67,7 +67,6 @@ jobs:
   release-npm:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ secrets.NPM_TOKEN != '' }}
     environment: npm-release
     steps:
       - name: Checkout for Metadata
