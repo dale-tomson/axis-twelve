@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Container Queries - Axis Twelve Example</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/axis-twelve/dist/modules/axis-container-queries.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-cards.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-buttons.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #f9fafb;
+      }
+      .demo-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .demo-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+      .container-demo {
+        border: 2px dashed #e5e7eb;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        resize: horizontal;
+        overflow: auto;
+        min-width: 200px;
+        max-width: 100%;
+      }
+      .container-demo::before {
+        content: 'Resize this container ↹';
+        display: block;
+        font-size: 0.75rem;
+        color: #9ca3af;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Container Queries</h1>
+    <p>
+      Component-level responsive design. <strong>Resize the containers</strong> to see the magic!
+    </p>
+
+    <!-- Basic Container Query -->
+    <div class="demo-section">
+      <h2>Basic Container Query</h2>
+      <p>Text size adapts based on container width</p>
+      <div class="container-demo" style="max-width: 400px">
+        <div class="ax-container">
+          <p class="ax-cq:text-base" style="color: #3b82f6; font-weight: bold">
+            This text adapts to container size! Resize the container to see different font sizes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid Layout -->
+    <div class="demo-section">
+      <h2>Responsive Grid</h2>
+      <p>Grid columns adapt based on container width</p>
+      <div class="container-demo" style="max-width: 600px">
+        <div class="ax-container">
+          <div class="ax-cq:grid-cols-2" style="display: grid; gap: 1rem">
+            <div style="background: #3b82f6; color: white; padding: 1rem; border-radius: 0.5rem">
+              Column 1
+            </div>
+            <div style="background: #10b981; color: white; padding: 1rem; border-radius: 0.5rem">
+              Column 2
+            </div>
+            <div style="background: #f59e0b; color: white; padding: 1rem; border-radius: 0.5rem">
+              Column 3
+            </div>
+            <div style="background: #ef4444; color: white; padding: 1rem; border-radius: 0.5rem">
+              Column 4
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Component -->
+    <div class="demo-section">
+      <h2>Responsive Card</h2>
+      <div class="container-demo" style="max-width: 500px">
+        <div class="ax-container--card">
+          <div class="ax-card">
+            <div class="ax-card__media" style="height: 150px; background: #e5e7eb">
+              <img
+                src="https://via.placeholder.com/400x200"
+                alt="Card image"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
+            </div>
+            <div class="ax-card__body">
+              <h3 class="ax-card__title">Responsive Card</h3>
+              <p class="ax-card__text">
+                This card adapts its layout based on its container size, not the viewport!
+              </p>
+              <div class="ax-cq-card:show-actions">
+                <button class="ax-btn ax-btn--primary">Action</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flex Direction -->
+    <div class="demo-section">
+      <h2>Flex Direction</h2>
+      <p>Changes from column to row based on container width</p>
+      <div class="container-demo" style="max-width: 400px">
+        <div class="ax-container">
+          <div class="ax-cq:flex-col-sm" style="display: flex; gap: 1rem; align-items: center">
+            <div
+              style="width: 80px; height: 80px; background: #3b82f6; border-radius: 0.5rem"
+            ></div>
+            <div style="flex: 1">
+              <h3 style="margin: 0">Content Here</h3>
+              <p style="margin: 0.25rem 0 0; color: #6b7280">
+                This layout adapts from column to row.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visibility Control -->
+    <div class="demo-section">
+      <h2>Visibility Control</h2>
+      <p>Show/hide content based on container width</p>
+      <div class="container-demo" style="max-width: 400px">
+        <div class="ax-container">
+          <div style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem">
+            <div class="ax-cq:hidden-sm">
+              <strong>Visible on larger containers</strong>
+              <p>This content only shows when container is wide enough.</p>
+            </div>
+            <div class="ax-cq:block-sm" style="display: none">
+              <strong>Visible on smaller containers</strong>
+              <p>This content shows on narrow containers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Named Container - Sidebar -->
+    <div class="demo-section">
+      <h2>Sidebar Navigation</h2>
+      <p>Named container for component-specific queries</p>
+      <div class="container-demo" style="max-width: 300px">
+        <aside
+          class="ax-container--sidebar"
+          style="background: #1f2937; padding: 1rem; border-radius: 0.5rem"
+        >
+          <nav style="display: flex; flex-direction: column; gap: 0.5rem">
+            <a
+              href="#"
+              class="ax-cq-sidebar:show-label"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                color: #fff;
+                text-decoration: none;
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+                background: rgba(255, 255, 255, 0.1);
+              "
+            >
+              <span>🏠</span>
+              <span class="ax-cq-sidebar:hide-label">Home</span>
+            </a>
+            <a
+              href="#"
+              class="ax-cq-sidebar:show-label"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                color: #fff;
+                text-decoration: none;
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+              "
+            >
+              <span>📊</span>
+              <span class="ax-cq-sidebar:hide-label">Dashboard</span>
+            </a>
+            <a
+              href="#"
+              class="ax-cq-sidebar:show-label"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                color: #fff;
+                text-decoration: none;
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+              "
+            >
+              <span>⚙️</span>
+              <span class="ax-cq-sidebar:hide-label">Settings</span>
+            </a>
+          </nav>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Panel Layout -->
+    <div class="demo-section">
+      <h2>Panel Layout</h2>
+      <p>Multi-column layout based on container width</p>
+      <div class="container-demo" style="max-width: 600px">
+        <div class="ax-container--panel">
+          <div class="ax-cq-panel:two-col" style="display: grid; gap: 1rem">
+            <div style="background: #dbeafe; padding: 1.5rem; border-radius: 0.5rem">
+              <h3 style="margin: 0 0 0.5rem">Panel 1</h3>
+              <p style="margin: 0; color: #1e40af">Two column layout</p>
+            </div>
+            <div style="background: #dcfce7; padding: 1.5rem; border-radius: 0.5rem">
+              <h3 style="margin: 0 0 0.5rem">Panel 2</h3>
+              <p style="margin: 0; color: #166534">Activates at 500px+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top: 2rem"><a href="README.md">← Back to Examples</a></p>
+  </body>
+</html>
