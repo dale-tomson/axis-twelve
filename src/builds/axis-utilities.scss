@@ -1,0 +1,22 @@
+/*!
+ * Axis Utilities v2.1.0
+ * Utilities Module - Borders, shadows, backgrounds, sizing, positioning
+ * https://github.com/dale-tomson/axis-twelve
+ *
+ * Copyright (c) Dale Tomson
+ * Released under the MIT License
+ */
+
+// Abstracts
+@use '../abstracts' as *;
+
+// Base
+@use '../base/root';
+@use '../base/reset';
+
+// Utility modules
+@use '../06-utilities/borders';
+@use '../06-utilities/shadows';
+@use '../06-utilities/backgrounds';
+@use '../06-utilities/sizing';
+@use '../06-utilities/positioning';

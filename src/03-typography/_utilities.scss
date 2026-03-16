@@ -1,0 +1,508 @@
+// ===========================
+// Typography Utilities
+// ===========================
+// Utility classes for font sizing, weights, alignment, and text manipulation
+// Mobile-first responsive approach
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// ===== Font Size Utilities =====
+
+.ax-text-xs {
+  font-size: map.get($type-scale, 'xs');
+}
+
+.ax-text-sm {
+  font-size: map.get($type-scale, 'sm');
+}
+
+.ax-text-base {
+  font-size: map.get($type-scale, 'base');
+}
+
+.ax-text-lg {
+  font-size: map.get($type-scale, 'lg');
+}
+
+.ax-text-xl {
+  font-size: map.get($type-scale, 'xl');
+}
+
+.ax-text-2xl {
+  font-size: map.get($type-scale, '2xl');
+}
+
+.ax-text-3xl {
+  font-size: map.get($type-scale, '3xl');
+}
+
+.ax-text-4xl {
+  font-size: map.get($type-scale, '4xl');
+}
+
+.ax-text-5xl {
+  font-size: map.get($type-scale, '5xl');
+}
+
+// ===== Font Weight Utilities =====
+
+.ax-font-light {
+  font-weight: $font-weight-light;
+}
+
+.ax-font-normal {
+  font-weight: $font-weight-normal;
+}
+
+.ax-font-medium {
+  font-weight: $font-weight-medium;
+}
+
+.ax-font-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.ax-font-bold {
+  font-weight: $font-weight-bold;
+}
+
+.ax-font-extrabold {
+  font-weight: $font-weight-extrabold;
+}
+
+// ===== Line Height (Leading) Utilities =====
+
+.ax-leading-none {
+  line-height: $leading-none;
+}
+
+.ax-leading-tight {
+  line-height: $leading-tight;
+}
+
+.ax-leading-snug {
+  line-height: $leading-snug;
+}
+
+.ax-leading-normal {
+  line-height: $leading-normal;
+}
+
+.ax-leading-relaxed {
+  line-height: $leading-relaxed;
+}
+
+.ax-leading-loose {
+  line-height: $leading-loose;
+}
+
+// ===== Letter Spacing (Tracking) Utilities =====
+
+.ax-tracking-tighter {
+  letter-spacing: $tracking-tighter;
+}
+
+.ax-tracking-tight {
+  letter-spacing: $tracking-tight;
+}
+
+.ax-tracking-normal {
+  letter-spacing: $tracking-normal;
+}
+
+.ax-tracking-wide {
+  letter-spacing: $tracking-wide;
+}
+
+.ax-tracking-wider {
+  letter-spacing: $tracking-wider;
+}
+
+.ax-tracking-widest {
+  letter-spacing: $tracking-widest;
+}
+
+// ===== Text Alignment =====
+
+.ax-text-left {
+  text-align: left;
+}
+
+.ax-text-center {
+  text-align: center;
+}
+
+.ax-text-right {
+  text-align: right;
+}
+
+.ax-text-justify {
+  text-align: justify;
+}
+
+// ===== Text Transform =====
+
+.ax-uppercase {
+  text-transform: uppercase;
+}
+
+.ax-lowercase {
+  text-transform: lowercase;
+}
+
+.ax-capitalize {
+  text-transform: capitalize;
+}
+
+.ax-normal-case {
+  text-transform: none;
+}
+
+// ===== Text Decoration =====
+
+.ax-underline {
+  text-decoration: underline;
+}
+
+.ax-line-through {
+  text-decoration: line-through;
+}
+
+.ax-no-underline {
+  text-decoration: none;
+}
+
+// ===== Text Color (from theme colors) =====
+
+.ax-text-primary {
+  color: var(--ax-color-primary, $primary);
+}
+
+.ax-text-secondary {
+  color: var(--ax-color-secondary, $secondary);
+}
+
+.ax-text-success {
+  color: var(--ax-color-success, $success);
+}
+
+.ax-text-danger {
+  color: var(--ax-color-danger, $danger);
+}
+
+.ax-text-warning {
+  color: var(--ax-color-warning, $warning);
+}
+
+.ax-text-info {
+  color: var(--ax-color-info, $info);
+}
+
+.ax-text-light {
+  color: var(--ax-color-light, $light);
+}
+
+.ax-text-dark {
+  color: var(--ax-color-dark, $dark);
+}
+
+.ax-text-white {
+  color: #fff;
+}
+
+.ax-text-black {
+  color: #000;
+}
+
+// Gray scale text colors
+.ax-text-gray-50 {
+  color: var(--ax-gray-50, $gray-50);
+}
+
+.ax-text-gray-100 {
+  color: var(--ax-gray-100, $gray-100);
+}
+
+.ax-text-gray-200 {
+  color: var(--ax-gray-200, $gray-200);
+}
+
+.ax-text-gray-300 {
+  color: var(--ax-gray-300, $gray-300);
+}
+
+.ax-text-gray-400 {
+  color: var(--ax-gray-400, $gray-400);
+}
+
+.ax-text-gray-500 {
+  color: var(--ax-gray-500, $gray-500);
+}
+
+.ax-text-gray-600 {
+  color: var(--ax-gray-600, $gray-600);
+}
+
+.ax-text-gray-700 {
+  color: var(--ax-gray-700, $gray-700);
+}
+
+.ax-text-gray-800 {
+  color: var(--ax-gray-800, $gray-800);
+}
+
+.ax-text-gray-900 {
+  color: var(--ax-gray-900, $gray-900);
+}
+
+// ===== Text Truncation =====
+
+.ax-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Line clamp for multi-line truncation
+.ax-line-clamp-1 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.ax-line-clamp-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.ax-line-clamp-3 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.ax-line-clamp-4 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.ax-line-clamp-none {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: none;
+  -webkit-box-orient: initial;
+}
+
+// ===== Whitespace Control =====
+
+.ax-whitespace-normal {
+  white-space: normal;
+}
+
+.ax-whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.ax-whitespace-pre {
+  white-space: pre;
+}
+
+.ax-whitespace-pre-line {
+  white-space: pre-line;
+}
+
+.ax-whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+// ===== Word Break =====
+
+.ax-break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.ax-break-words {
+  overflow-wrap: break-word;
+}
+
+.ax-break-all {
+  word-break: break-all;
+}
+
+// ===== Responsive Typography Utilities =====
+
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      // Font sizes
+      .ax-#{$breakpoint}\:text-xs {
+        font-size: map.get($type-scale, 'xs');
+      }
+
+      .ax-#{$breakpoint}\:text-sm {
+        font-size: map.get($type-scale, 'sm');
+      }
+
+      .ax-#{$breakpoint}\:text-base {
+        font-size: map.get($type-scale, 'base');
+      }
+
+      .ax-#{$breakpoint}\:text-lg {
+        font-size: map.get($type-scale, 'lg');
+      }
+
+      .ax-#{$breakpoint}\:text-xl {
+        font-size: map.get($type-scale, 'xl');
+      }
+
+      .ax-#{$breakpoint}\:text-2xl {
+        font-size: map.get($type-scale, '2xl');
+      }
+
+      .ax-#{$breakpoint}\:text-3xl {
+        font-size: map.get($type-scale, '3xl');
+      }
+
+      .ax-#{$breakpoint}\:text-4xl {
+        font-size: map.get($type-scale, '4xl');
+      }
+
+      .ax-#{$breakpoint}\:text-5xl {
+        font-size: map.get($type-scale, '5xl');
+      }
+
+      // Text alignment
+      .ax-#{$breakpoint}\:text-left {
+        text-align: left;
+      }
+
+      .ax-#{$breakpoint}\:text-center {
+        text-align: center;
+      }
+
+      .ax-#{$breakpoint}\:text-right {
+        text-align: right;
+      }
+
+      .ax-#{$breakpoint}\:text-justify {
+        text-align: justify;
+      }
+
+      // Font weight
+      .ax-#{$breakpoint}\:font-light {
+        font-weight: $font-weight-light;
+      }
+
+      .ax-#{$breakpoint}\:font-normal {
+        font-weight: $font-weight-normal;
+      }
+
+      .ax-#{$breakpoint}\:font-medium {
+        font-weight: $font-weight-medium;
+      }
+
+      .ax-#{$breakpoint}\:font-semibold {
+        font-weight: $font-weight-semibold;
+      }
+
+      .ax-#{$breakpoint}\:font-bold {
+        font-weight: $font-weight-bold;
+      }
+
+      .ax-#{$breakpoint}\:font-extrabold {
+        font-weight: $font-weight-extrabold;
+      }
+
+      // Line height
+      .ax-#{$breakpoint}\:leading-none {
+        line-height: $leading-none;
+      }
+
+      .ax-#{$breakpoint}\:leading-tight {
+        line-height: $leading-tight;
+      }
+
+      .ax-#{$breakpoint}\:leading-snug {
+        line-height: $leading-snug;
+      }
+
+      .ax-#{$breakpoint}\:leading-normal {
+        line-height: $leading-normal;
+      }
+
+      .ax-#{$breakpoint}\:leading-relaxed {
+        line-height: $leading-relaxed;
+      }
+
+      .ax-#{$breakpoint}\:leading-loose {
+        line-height: $leading-loose;
+      }
+
+      // Text transform
+      .ax-#{$breakpoint}\:uppercase {
+        text-transform: uppercase;
+      }
+
+      .ax-#{$breakpoint}\:lowercase {
+        text-transform: lowercase;
+      }
+
+      .ax-#{$breakpoint}\:capitalize {
+        text-transform: capitalize;
+      }
+
+      .ax-#{$breakpoint}\:normal-case {
+        text-transform: none;
+      }
+
+      // Text decoration
+      .ax-#{$breakpoint}\:underline {
+        text-decoration: underline;
+      }
+
+      .ax-#{$breakpoint}\:line-through {
+        text-decoration: line-through;
+      }
+
+      .ax-#{$breakpoint}\:no-underline {
+        text-decoration: none;
+      }
+
+      // Truncate
+      .ax-#{$breakpoint}\:truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      // Whitespace
+      .ax-#{$breakpoint}\:whitespace-normal {
+        white-space: normal;
+      }
+
+      .ax-#{$breakpoint}\:whitespace-nowrap {
+        white-space: nowrap;
+      }
+
+      .ax-#{$breakpoint}\:whitespace-pre {
+        white-space: pre;
+      }
+
+      .ax-#{$breakpoint}\:whitespace-pre-line {
+        white-space: pre-line;
+      }
+
+      .ax-#{$breakpoint}\:whitespace-pre-wrap {
+        white-space: pre-wrap;
+      }
+    }
+  }
+}

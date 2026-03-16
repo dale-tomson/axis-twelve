@@ -1,0 +1,115 @@
+// ===========================
+// Aspect Ratio Utilities
+// ===========================
+// CSS aspect-ratio property for maintaining proportional dimensions
+// Browser support: 2020+ (Safari 14.1+, Chrome 89+, Firefox 89+)
+
+@use '../abstracts' as *;
+
+// ===== Base Aspect Ratios =====
+
+.ax-aspect-auto {
+  aspect-ratio: auto;
+}
+
+.ax-aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.ax-aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.ax-aspect-widescreen {
+  aspect-ratio: 21 / 9;
+}
+
+.ax-aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.ax-aspect-classic {
+  aspect-ratio: 4 / 3;
+}
+
+.ax-aspect-golden {
+  aspect-ratio: 1.618 / 1;
+}
+
+// ===== Aspect Ratio Container (Fallback Support) =====
+// For older browsers, use padding-top hack
+
+.ax-aspect-container {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    display: block;
+    content: '';
+    padding-top: 100%; // 1:1 square by default
+  }
+
+  > * {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+// Aspect ratio variants
+.ax-aspect-container--video {
+  &::before {
+    padding-top: 56.25%; // 16:9
+  }
+}
+
+.ax-aspect-container--widescreen {
+  &::before {
+    padding-top: 42.86%; // 21:9
+  }
+}
+
+.ax-aspect-container--portrait {
+  &::before {
+    padding-top: 133.33%; // 3:4
+  }
+}
+
+.ax-aspect-container--classic {
+  &::before {
+    padding-top: 75%; // 4:3
+  }
+}
+
+.ax-aspect-container--golden {
+  &::before {
+    padding-top: 61.73%; // 1.618:1
+  }
+}
+
+// ===== Responsive Aspect Ratios =====
+
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      .ax-#{$breakpoint}\:aspect-square {
+        aspect-ratio: 1 / 1;
+      }
+
+      .ax-#{$breakpoint}\:aspect-video {
+        aspect-ratio: 16 / 9;
+      }
+
+      .ax-#{$breakpoint}\:aspect-portrait {
+        aspect-ratio: 3 / 4;
+      }
+
+      .ax-#{$breakpoint}\:aspect-classic {
+        aspect-ratio: 4 / 3;
+      }
+
+      .ax-#{$breakpoint}\:aspect-auto {
+        aspect-ratio: auto;
+      }
+    }
+  }
+}

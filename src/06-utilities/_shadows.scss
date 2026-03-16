@@ -1,0 +1,148 @@
+// ===========================
+// Shadow Utilities
+// ===========================
+// Box shadow utilities for depth and elevation
+// Uses CSS custom properties for runtime theming
+
+@use '../abstracts' as *;
+
+// ===== Box Shadow Sizes =====
+
+.ax-shadow-sm {
+  box-shadow: var(--ax-shadow-sm, $shadow-sm);
+}
+
+.ax-shadow {
+  box-shadow: var(--ax-shadow, $shadow);
+}
+
+.ax-shadow-md {
+  box-shadow: var(--ax-shadow-md, $shadow-md);
+}
+
+.ax-shadow-lg {
+  box-shadow: var(--ax-shadow-lg, $shadow-lg);
+}
+
+.ax-shadow-xl {
+  box-shadow: var(--ax-shadow-xl, $shadow-xl);
+}
+
+.ax-shadow-2xl {
+  box-shadow: var(--ax-shadow-2xl, $shadow-2xl);
+}
+
+// ===== Shadow States =====
+
+.ax-shadow-inner {
+  box-shadow: var(--ax-shadow-inner, $shadow-inner);
+}
+
+.ax-shadow-none {
+  box-shadow: var(--ax-shadow-none, $shadow-none);
+}
+
+// ===== Colored Shadows (Theme Colors) =====
+// Subtle colored shadows for semantic meaning
+
+.ax-shadow-primary {
+  box-shadow: 0 4px 14px 0 rgba($primary, 0.4);
+}
+
+.ax-shadow-secondary {
+  box-shadow: 0 4px 14px 0 rgba($secondary, 0.4);
+}
+
+.ax-shadow-success {
+  box-shadow: 0 4px 14px 0 rgba($success, 0.4);
+}
+
+.ax-shadow-danger {
+  box-shadow: 0 4px 14px 0 rgba($danger, 0.4);
+}
+
+.ax-shadow-warning {
+  box-shadow: 0 4px 14px 0 rgba($warning, 0.4);
+}
+
+.ax-shadow-info {
+  box-shadow: 0 4px 14px 0 rgba($info, 0.4);
+}
+
+// ===== Hover Shadow States =====
+// Add shadow on hover for interactive elements
+
+.ax-shadow-hover-sm:hover {
+  box-shadow: var(--ax-shadow-sm, $shadow-sm);
+}
+
+.ax-shadow-hover-md:hover {
+  box-shadow: var(--ax-shadow-md, $shadow-md);
+}
+
+.ax-shadow-hover-lg:hover {
+  box-shadow: var(--ax-shadow-lg, $shadow-lg);
+}
+
+.ax-shadow-hover-xl:hover {
+  box-shadow: var(--ax-shadow-xl, $shadow-xl);
+}
+
+// ===== Focus Shadow States =====
+// Custom focus shadows for interactive elements
+
+.ax-shadow-focus-primary:focus {
+  box-shadow: 0 0 0 3px rgba($primary, 0.4);
+}
+
+.ax-shadow-focus-secondary:focus {
+  box-shadow: 0 0 0 3px rgba($secondary, 0.4);
+}
+
+.ax-shadow-focus-success:focus {
+  box-shadow: 0 0 0 3px rgba($success, 0.4);
+}
+
+.ax-shadow-focus-danger:focus {
+  box-shadow: 0 0 0 3px rgba($danger, 0.4);
+}
+
+// ===== Responsive Shadow Utilities =====
+
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      .ax-#{$breakpoint}\:shadow-sm {
+        box-shadow: var(--ax-shadow-sm, $shadow-sm);
+      }
+
+      .ax-#{$breakpoint}\:shadow {
+        box-shadow: var(--ax-shadow, $shadow);
+      }
+
+      .ax-#{$breakpoint}\:shadow-md {
+        box-shadow: var(--ax-shadow-md, $shadow-md);
+      }
+
+      .ax-#{$breakpoint}\:shadow-lg {
+        box-shadow: var(--ax-shadow-lg, $shadow-lg);
+      }
+
+      .ax-#{$breakpoint}\:shadow-xl {
+        box-shadow: var(--ax-shadow-xl, $shadow-xl);
+      }
+
+      .ax-#{$breakpoint}\:shadow-2xl {
+        box-shadow: var(--ax-shadow-2xl, $shadow-2xl);
+      }
+
+      .ax-#{$breakpoint}\:shadow-inner {
+        box-shadow: var(--ax-shadow-inner, $shadow-inner);
+      }
+
+      .ax-#{$breakpoint}\:shadow-none {
+        box-shadow: var(--ax-shadow-none, $shadow-none);
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+// ===========================
+// Container Utilities
+// ===========================
+// Container wrappers for constraining content width
+// Uses logical properties for LTR/RTL support
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// ===== Base Container =====
+// Centers content and applies max-width at each breakpoint
+
+.ax-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: $spacer-md;
+
+  @include respond-to('sm', $grid-breakpoints) {
+    max-width: map.get($container-widths, 'sm');
+  }
+
+  @include respond-to('md', $grid-breakpoints) {
+    max-width: map.get($container-widths, 'md');
+  }
+
+  @include respond-to('lg', $grid-breakpoints) {
+    max-width: map.get($container-widths, 'lg');
+  }
+
+  @include respond-to('xl', $grid-breakpoints) {
+    max-width: map.get($container-widths, 'xl');
+  }
+
+  @include respond-to('xxl', $grid-breakpoints) {
+    max-width: map.get($container-widths, 'xxl');
+  }
+}
+
+// ===== Fluid Container =====
+// Full width container with no max-width constraint
+
+.ax-container--fluid {
+  width: 100%;
+  margin-inline: 0;
+  padding-inline: $spacer-md;
+  max-width: 100%;
+}
+
+// ===== Narrow Container =====
+// Constrained width for optimal reading (prose, articles)
+
+.ax-container--narrow {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: $spacer-md;
+  max-width: $measure-base; // 65ch - optimal reading width
+}
+
+.ax-container--narrow-sm {
+  max-width: $measure-narrow; // 45ch - shorter content
+}
+
+.ax-container--narrow-lg {
+  max-width: $measure-wide; // 80ch - wider content
+}
+
+// ===== Container Padding Variants =====
+
+.ax-container--sm {
+  padding-inline: $spacer-sm;
+}
+
+.ax-container--md {
+  padding-inline: $spacer-md;
+}
+
+.ax-container--lg {
+  padding-inline: $spacer-lg;
+}
+
+.ax-container--xl {
+  padding-inline: $spacer-xl;
+}
+
+// ===== Responsive Container Visibility =====
+// Show/hide containers at breakpoints
+
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      .ax-container-#{$breakpoint} {
+        width: 100%;
+        margin-inline: auto;
+        padding-inline: $spacer-md;
+        max-width: map.get($container-widths, $breakpoint);
+      }
+    }
+  }
+}

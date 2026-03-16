@@ -1,0 +1,198 @@
+// ===========================
+// Display Utilities
+// ===========================
+// Single-purpose display classes for controlling element visibility and layout
+// Mobile-first responsive approach with breakpoints: xs, sm, md, lg, xl, xxl
+
+@use '../abstracts' as *;
+
+// ===== Base Display Classes =====
+
+.ax-block {
+  display: block;
+}
+
+.ax-inline {
+  display: inline;
+}
+
+.ax-inline-block {
+  display: inline-block;
+}
+
+.ax-flex {
+  display: flex;
+}
+
+.ax-inline-flex {
+  display: inline-flex;
+}
+
+.ax-grid {
+  display: grid;
+}
+
+.ax-inline-grid {
+  display: inline-grid;
+}
+
+.ax-hidden {
+  display: none;
+}
+
+.ax-contents {
+  display: contents;
+}
+
+// ===== Table Display =====
+
+.ax-table {
+  display: table;
+}
+
+.ax-table-row {
+  display: table-row;
+}
+
+.ax-table-cell {
+  display: table-cell;
+}
+
+// ===== Screen Reader Only (Visually Hidden) =====
+// Accessible hide - content remains available to assistive technologies
+
+.ax-sr-only {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+// Focusable sr-only (for skip links, etc.)
+.ax-sr-only-focusable {
+  &:not(:focus, :focus-within) {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border-width: 0;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}
+
+// ===== Responsive Display Utilities =====
+// Mobile-first: applies from breakpoint and up
+
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      .ax-#{$breakpoint}\:block {
+        display: block;
+      }
+
+      .ax-#{$breakpoint}\:inline {
+        display: inline;
+      }
+
+      .ax-#{$breakpoint}\:inline-block {
+        display: inline-block;
+      }
+
+      .ax-#{$breakpoint}\:flex {
+        display: flex;
+      }
+
+      .ax-#{$breakpoint}\:inline-flex {
+        display: inline-flex;
+      }
+
+      .ax-#{$breakpoint}\:grid {
+        display: grid;
+      }
+
+      .ax-#{$breakpoint}\:inline-grid {
+        display: inline-grid;
+      }
+
+      .ax-#{$breakpoint}\:hidden {
+        display: none;
+      }
+
+      .ax-#{$breakpoint}\:table {
+        display: table;
+      }
+
+      .ax-#{$breakpoint}\:table-row {
+        display: table-row;
+      }
+
+      .ax-#{$breakpoint}\:table-cell {
+        display: table-cell;
+      }
+
+      .ax-#{$breakpoint}\:contents {
+        display: contents;
+      }
+
+      .ax-#{$breakpoint}\:sr-only {
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border-width: 0;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+// ===== Print Utilities =====
+
+@media print {
+  .ax-print\:block {
+    display: block;
+  }
+
+  .ax-print\:inline {
+    display: inline;
+  }
+
+  .ax-print\:inline-block {
+    display: inline-block;
+  }
+
+  .ax-print\:flex {
+    display: flex;
+  }
+
+  .ax-print\:grid {
+    display: grid;
+  }
+
+  .ax-print\:hidden {
+    display: none;
+  }
+
+  .ax-print\:sr-only {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border-width: 0;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}

@@ -62,4 +62,26 @@
   --ax-z-modal: #{$z-index-modal};
   --ax-z-popover: #{$z-index-popover};
   --ax-z-tooltip: #{$z-index-tooltip};
+
+  // ===== Box Shadows =====
+
+  --ax-shadow-sm: #{$shadow-sm};
+  --ax-shadow: #{$shadow};
+  --ax-shadow-md: #{$shadow-md};
+  --ax-shadow-lg: #{$shadow-lg};
+  --ax-shadow-xl: #{$shadow-xl};
+  --ax-shadow-2xl: #{$shadow-2xl};
+  --ax-shadow-inner: #{$shadow-inner};
+  --ax-shadow-none: #{$shadow-none};
+
+  // ===== Border Radius =====
+
+  --ax-radius-sm: 0.125rem;
+  --ax-radius: 0.25rem;
+  --ax-radius-md: 0.375rem;
+  --ax-radius-lg: 0.5rem;
+  --ax-radius-xl: 0.75rem;
+  --ax-radius-2xl: 1rem;
+  --ax-radius-3xl: 1.5rem;
+  --ax-radius-full: 9999px;
 }

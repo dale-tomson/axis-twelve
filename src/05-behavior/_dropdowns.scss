@@ -1,0 +1,184 @@
+// ===========================
+// Dropdown Component
+// ===========================
+// CSS-only dropdown using :focus-within (browsers 2020+)
+// No JavaScript required
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Dropdown Container
+.ax-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+// Dropdown Trigger (button or link)
+.ax-dropdown__trigger {
+  display: inline-flex;
+  padding: $spacer-sm $spacer-md;
+  border: 1px solid var(--ax-border-color, $border-color);
+  border-radius: 0.375rem;
+  background-color: #fff;
+  color: var(--ax-color-dark, $dark);
+  font-family: inherit;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: $leading-normal;
+  text-align: start;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacer-sm;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--ax-gray-400, $gray-400);
+    background-color: var(--ax-gray-50, $gray-50);
+  }
+
+  &:focus {
+    outline: 2px solid var(--ax-color-primary, $primary);
+    outline-offset: 2px;
+  }
+
+  // Chevron icon
+  &::after {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    content: '';
+    border-right: 2px solid currentcolor;
+    border-bottom: 2px solid currentcolor;
+  }
+
+  // Rotate chevron when open
+  .ax-dropdown:focus-within &::after {
+    transform: rotate(-135deg);
+  }
+}
+
+// Dropdown Menu
+.ax-dropdown__menu {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: var(--ax-z-dropdown, $z-index-dropdown);
+  padding: $spacer-sm 0;
+  border: 1px solid var(--ax-border-color, $border-color);
+  border-radius: 0.5rem;
+  background-color: #fff;
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  transition: all 0.2s ease;
+  box-shadow: var(--ax-shadow-lg, $shadow-lg);
+  min-width: 12rem;
+  margin-top: $spacer-xs;
+
+  // Show menu on focus-within (native CSS approach)
+  .ax-dropdown:focus-within & {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Dropdown Menu Items
+.ax-dropdown__item {
+  display: block;
+  width: 100%;
+  padding: $spacer-sm $spacer-md;
+  border: none;
+  background-color: transparent;
+  color: var(--ax-color-dark, $dark);
+  font-family: inherit;
+  font-size: $font-size-base;
+  text-align: start;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--ax-gray-50, $gray-50);
+    color: var(--ax-color-primary, $primary);
+  }
+
+  &:focus {
+    outline: 2px solid var(--ax-color-primary, $primary);
+    outline-offset: -2px;
+  }
+
+  &:active {
+    background-color: var(--ax-gray-100, $gray-100);
+  }
+
+  // Disabled state
+  &[aria-disabled='true'],
+  &[disabled] {
+    color: var(--ax-gray-400, $gray-400);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Divider
+  &--divider {
+    height: 1px;
+    margin: $spacer-xs 0;
+    background-color: var(--ax-border-color, $border-color);
+    pointer-events: none;
+  }
+}
+
+// Dropdown Position Variants
+
+// Right aligned
+.ax-dropdown__menu--right {
+  right: 0;
+  left: auto;
+}
+
+// Top positioned (opens upward)
+.ax-dropdown__menu--top {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: $spacer-xs;
+}
+
+// Dropdown Size Variants
+.ax-dropdown__menu--sm {
+  min-width: 10rem;
+}
+
+.ax-dropdown__menu--lg {
+  min-width: 16rem;
+}
+
+.ax-dropdown__menu--xl {
+  min-width: 20rem;
+}
+
+// Dropdown with Arrow
+.ax-dropdown--arrow {
+  .ax-dropdown__menu {
+    &::before {
+      position: absolute;
+      top: -0.375rem;
+      left: $spacer-md;
+      width: 0.75rem;
+      height: 0.75rem;
+      background-color: #fff;
+      transform: rotate(45deg);
+      border-right: 1px solid var(--ax-border-color, $border-color);
+      border-top: 1px solid var(--ax-border-color, $border-color);
+      content: '';
+    }
+  }
+}

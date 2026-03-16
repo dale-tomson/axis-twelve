@@ -1,0 +1,372 @@
+// ===========================
+// Navigation Components
+// ===========================
+// Navbar, nav, tabs, breadcrumb, pagination
+
+@use '../../abstracts' as *;
+@use 'sass:map';
+
+// ===== Navbar (Top Navigation Bar) =====
+
+.ax-navbar {
+  display: flex;
+  padding: $spacer-md $spacer-lg;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacer-md;
+  border-bottom: 1px solid var(--ax-border-color, $border-color);
+
+  // Brand/Logo area
+  &__brand {
+    display: flex;
+    font-size: map.get($type-scale, 'lg');
+    font-weight: $font-weight-bold;
+    align-items: center;
+    gap: $spacer-md;
+  }
+
+  // Navigation links container
+  &__nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    gap: $spacer-md;
+    list-style: none;
+  }
+
+  // Mobile menu button
+  &__toggle {
+    display: none;
+    padding: $spacer-sm;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include respond-to('md', $grid-breakpoints) {
+      display: none;
+    }
+  }
+}
+
+// Navbar Variants
+
+.ax-navbar--dark {
+  background-color: var(--ax-color-dark, $dark);
+  color: #fff;
+  border-bottom-color: var(--ax-gray-700, $gray-700);
+
+  .ax-navbar__nav a {
+    color: rgba(#fff, 0.9);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.ax-navbar--sticky {
+  position: sticky;
+  top: 0;
+  z-index: var(--ax-z-sticky, $z-index-sticky);
+}
+
+.ax-navbar--fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--ax-z-fixed, $z-index-fixed);
+}
+
+// ===== Navigation List =====
+
+.ax-nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  gap: $spacer-xs;
+  list-style: none;
+
+  // Navigation item
+  &__item {
+    margin: 0;
+  }
+
+  // Navigation link
+  &__link {
+    display: flex;
+    padding: $spacer-sm $spacer-md;
+    border-radius: 0.375rem;
+    color: var(--ax-color-dark, $dark);
+    align-items: center;
+    gap: $spacer-sm;
+    transition: all 0.15s ease;
+    text-decoration: none;
+
+    &:hover {
+      background-color: var(--ax-gray-100, $gray-100);
+      color: var(--ax-color-primary, $primary);
+    }
+
+    &:focus {
+      outline: 2px solid var(--ax-color-primary, $primary);
+      outline-offset: -2px;
+    }
+
+    // Active state
+    &[aria-current='page'],
+    &--active {
+      background-color: var(--ax-color-primary, $primary);
+      color: #fff;
+    }
+  }
+}
+
+// Navigation Orientation
+
+.ax-nav--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .ax-nav__link {
+    padding: $spacer-sm $spacer-md;
+  }
+}
+
+.ax-nav--vertical {
+  flex-direction: column;
+}
+
+// Navigation Variants
+
+.ax-nav--pills {
+  .ax-nav__link {
+    border-radius: 9999px;
+  }
+}
+
+.ax-nav--underline {
+  .ax-nav__link {
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+
+    &[aria-current='page'],
+    &--active {
+      background-color: transparent;
+      border-bottom-color: var(--ax-color-primary, $primary);
+    }
+  }
+}
+
+// ===== Tabs =====
+
+.ax-tabs {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--ax-border-color, $border-color);
+  list-style: none;
+
+  // Tab item
+  &__item {
+    margin: 0;
+  }
+
+  // Tab button/link
+  &__link {
+    display: block;
+    padding: $spacer-md $spacer-lg;
+    background-color: transparent;
+    color: var(--ax-gray-600, $gray-600);
+    font-family: inherit;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    text-align: center;
+    transition: all 0.15s ease;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--ax-color-dark, $dark);
+    }
+
+    &:focus {
+      outline: 2px solid var(--ax-color-primary, $primary);
+      outline-offset: -2px;
+    }
+
+    // Active tab
+    &[aria-selected='true'],
+    &--active {
+      color: var(--ax-color-primary, $primary);
+      border-bottom-color: var(--ax-color-primary, $primary);
+    }
+  }
+}
+
+// Tabs Variants
+
+.ax-tabs--pills {
+  border-bottom: none;
+
+  .ax-tabs__link {
+    border: none;
+    border-radius: 9999px;
+    margin-bottom: $spacer-xs;
+
+    &[aria-selected='true'],
+    &--active {
+      background-color: var(--ax-color-primary, $primary);
+      color: #fff;
+    }
+  }
+}
+
+.ax-tabs--boxed {
+  border: 1px solid var(--ax-border-color, $border-color);
+  border-radius: 0.5rem;
+  background-color: var(--ax-gray-50, $gray-50);
+
+  .ax-tabs__link {
+    border: none;
+    border-radius: 0.375rem;
+
+    &[aria-selected='true'],
+    &--active {
+      background-color: #fff;
+      box-shadow: var(--ax-shadow-sm, $shadow-sm);
+    }
+  }
+}
+
+// ===== Breadcrumb =====
+
+.ax-breadcrumb {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-size: map.get($type-scale, 'sm');
+  align-items: center;
+  gap: $spacer-sm;
+  list-style: none;
+
+  // Breadcrumb item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacer-sm;
+
+    &:not(:last-child)::after {
+      color: var(--ax-gray-400, $gray-400);
+      content: '/';
+    }
+  }
+
+  // Breadcrumb link
+  &__link {
+    color: var(--ax-color-primary, $primary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Current item (not a link)
+  &__current {
+    color: var(--ax-gray-600, $gray-600);
+    font-weight: $font-weight-medium;
+  }
+}
+
+// ===== Pagination =====
+
+.ax-pagination {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: $spacer-xs;
+  list-style: none;
+
+  // Pagination item
+  &__item {
+    margin: 0;
+  }
+
+  // Pagination link/button
+  &__link {
+    display: inline-flex;
+    height: 2.5rem;
+    padding: 0 $spacer-sm;
+    border: 1px solid var(--ax-border-color, $border-color);
+    border-radius: 0.375rem;
+    background-color: #fff;
+    color: var(--ax-color-dark, $dark);
+    font-family: inherit;
+    font-size: $font-size-base;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.15s ease;
+    min-width: 2.5rem;
+    text-decoration: none;
+
+    &:hover {
+      border-color: var(--ax-color-primary, $primary);
+      background-color: var(--ax-color-primary, $primary);
+      color: #fff;
+    }
+
+    &:focus {
+      outline: 2px solid var(--ax-color-primary, $primary);
+      outline-offset: 2px;
+    }
+
+    // Active/current page
+    &[aria-current='page'],
+    &--active {
+      border-color: var(--ax-color-primary, $primary);
+      background-color: var(--ax-color-primary, $primary);
+      color: #fff;
+    }
+
+    // Disabled state
+    &[aria-disabled='true'],
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+}
+
+// Pagination Sizes
+
+.ax-pagination--sm {
+  .ax-pagination__link {
+    height: 2rem;
+    font-size: map.get($type-scale, 'sm');
+    min-width: 2rem;
+  }
+}
+
+.ax-pagination--lg {
+  .ax-pagination__link {
+    height: 3rem;
+    font-size: map.get($type-scale, 'lg');
+    min-width: 3rem;
+  }
+}
+
+// Pagination with ellipsis
+.ax-pagination__ellipsis {
+  display: inline-flex;
+  padding: 0 $spacer-xs;
+  color: var(--ax-gray-400, $gray-400);
+  justify-content: center;
+  align-items: center;
+}

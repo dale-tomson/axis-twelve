@@ -1,0 +1,16 @@
+/*!
+ * Axis Core v2.1.0
+ * Core & Reset Module - Base foundation for all builds
+ * https://github.com/dale-tomson/axis-twelve
+ *
+ * Copyright (c) Dale Tomson
+ * Released under the MIT License
+ */
+
+// Abstracts (configuration only, no CSS output)
+@use '../abstracts' as *;
+
+// Base styles
+@use '../base/root';
+@use '../base/reset';
+@use '../base/typography';
