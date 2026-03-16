@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltips - Axis Twelve Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve@2/dist/axis-twelve.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+      }
+      .demo-section {
+        margin-bottom: 2rem;
+      }
+      .tooltip-demo {
+        display: flex;
+        gap: 1rem;
+        padding: 2rem;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tooltips</h1>
+    <p>CSS-only tooltips with multiple positions.</p>
+
+    <div class="demo-section">
+      <h2>Tooltip Positions</h2>
+      <div class="tooltip-demo">
+        <button
+          class="ax-btn ax-btn--primary"
+          data-ax-tooltip="Top tooltip"
+          data-ax-tooltip-position="top"
+        >
+          Top
+        </button>
+        <button
+          class="ax-btn ax-btn--success"
+          data-ax-tooltip="Right tooltip"
+          data-ax-tooltip-position="right"
+        >
+          Right
+        </button>
+        <button
+          class="ax-btn ax-btn--warning"
+          data-ax-tooltip="Bottom tooltip"
+          data-ax-tooltip-position="bottom"
+        >
+          Bottom
+        </button>
+        <button
+          class="ax-btn ax-btn--danger"
+          data-ax-tooltip="Left tooltip"
+          data-ax-tooltip-position="left"
+        >
+          Left
+        </button>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>On Different Elements</h2>
+      <div class="ax-flex ax-gap-lg ax-items-center">
+        <span data-ax-tooltip="Tooltip on text" data-ax-tooltip-position="top">
+          Hover over this text
+        </span>
+        <a href="#" data-ax-tooltip="Tooltip on link" data-ax-tooltip-position="top">
+          Link with tooltip
+        </a>
+      </div>
+    </div>
+
+    <!-- Code Example -->
+    <div class="demo-section">
+      <h2>Code Example</h2>
+      <pre><code>&lt;!-- Basic Tooltip --&gt;
+&lt;button 
+  data-ax-tooltip="Tooltip text" 
+  data-ax-tooltip-position="top"&gt;
+  Hover me
+&lt;/button&gt;
+
+&lt;!-- Positions: top, right, bottom, left --&gt;
+&lt;button data-ax-tooltip="Top" data-ax-tooltip-position="top"&gt;Top&lt;/button&gt;
+&lt;button data-ax-tooltip="Right" data-ax-tooltip-position="right"&gt;Right&lt;/button&gt;
+&lt;button data-ax-tooltip="Bottom" data-ax-tooltip-position="bottom"&gt;Bottom&lt;/button&gt;
+&lt;button data-ax-tooltip="Left" data-ax-tooltip-position="left"&gt;Left&lt;/button&gt;</code></pre>
+    </div>
+
+    <p><a href="README.md">← Back to Examples</a></p>
+  </body>
+</html>

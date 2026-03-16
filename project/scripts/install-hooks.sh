@@ -2,6 +2,8 @@
 
 # Install git hooks for Axis Twelve development
 
+set -e
+
 HOOKS_DIR="project/hooks"
 GIT_HOOKS_DIR=".git/hooks"
 
@@ -20,7 +22,7 @@ echo "📦 Installing git hooks..."
 # Copy hooks
 for hook in $HOOKS_DIR/*; do
   hook_name=$(basename "$hook")
-  
+
   # Skip markdown files (documentation)
   if [[ "$hook_name" == *.md ]]; then
     continue

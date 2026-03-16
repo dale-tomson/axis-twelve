@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modals - Axis Twelve Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve@2/dist/axis-twelve.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+      }
+      .demo-section {
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Modals</h1>
+    <p>Modal dialogs with backdrop and scroll lock.</p>
+
+    <div class="demo-section">
+      <h2>Basic Modal</h2>
+      <button
+        class="ax-btn ax-btn--primary"
+        onclick="document.getElementById('modal1').setAttribute('data-open', 'true')"
+      >
+        Open Modal
+      </button>
+    </div>
+
+    <!-- Modal Structure -->
+    <div class="ax-modal" id="modal1" data-open="false">
+      <div
+        class="ax-modal__backdrop"
+        onclick="document.getElementById('modal1').setAttribute('data-open', 'false')"
+      ></div>
+      <div class="ax-modal__dialog">
+        <div class="ax-modal__header">
+          <h2 class="ax-modal__title">Modal Title</h2>
+          <button
+            class="ax-modal__close"
+            onclick="document.getElementById('modal1').setAttribute('data-open', 'false')"
+          >
+            ×
+          </button>
+        </div>
+        <div class="ax-modal__body">
+          <p>This is a basic modal dialog. Click the backdrop or the close button to dismiss.</p>
+        </div>
+        <div class="ax-modal__footer">
+          <button
+            class="ax-btn ax-btn--secondary"
+            onclick="document.getElementById('modal1').setAttribute('data-open', 'false')"
+          >
+            Cancel
+          </button>
+          <button class="ax-btn ax-btn--primary">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code Example -->
+    <div class="demo-section">
+      <h2>Code Example</h2>
+      <pre><code>&lt;!-- Modal Structure --&gt;
+&lt;div class="ax-modal" data-open="false"&gt;
+  &lt;div class="ax-modal__backdrop"&gt;&lt;/div&gt;
+  &lt;div class="ax-modal__dialog"&gt;
+    &lt;div class="ax-modal__header"&gt;
+      &lt;h2 class="ax-modal__title"&gt;Title&lt;/h2&gt;
+      &lt;button class="ax-modal__close"&gt;×&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="ax-modal__body"&gt;
+      &lt;p&gt;Content here&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="ax-modal__footer"&gt;
+      &lt;button class="ax-btn ax-btn--secondary"&gt;Cancel&lt;/button&gt;
+      &lt;button class="ax-btn ax-btn--primary"&gt;Confirm&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Toggle with data-open attribute --&gt;
+&lt;button onclick="modal.setAttribute('data-open', 'true')"&gt;
+  Open Modal
+&lt;/button&gt;</code></pre>
+    </div>
+
+    <p><a href="README.md">← Back to Examples</a></p>
+  </body>
+</html>

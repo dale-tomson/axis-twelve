@@ -5,14 +5,7 @@ package-lock.json
 yarn.lock
 
 # Build output
-# dist/ is committed - needed for GitHub Pages deployment
-*.css
-!dist/
-!dist/axis-twelve.css
-!dist/axis-twelve.min.css
-!dist/axis-twelve.css.map
-!dist/axis-twelve.min.css.map
-!examples/style.css
+dist/
 
 # Development
 .env
@@ -72,6 +65,5 @@ server.log
 
 # Compiled files
 *.min.js
-*.min.css
 npm-token
 .env

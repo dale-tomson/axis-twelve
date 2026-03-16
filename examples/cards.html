@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards - Axis Twelve Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve@2/dist/axis-twelve.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+      }
+      .demo-section {
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cards</h1>
+    <p>Flexible card components with media and content areas.</p>
+
+    <!-- Basic Card -->
+    <div class="demo-section">
+      <h2>Basic Card</h2>
+      <div class="ax-card" style="max-width: 400px">
+        <div class="ax-card__body">
+          <h3 class="ax-card__title">Card Title</h3>
+          <p class="ax-card__text">
+            This is a basic card with some text content. Cards are great for displaying information
+            in a contained format.
+          </p>
+          <button class="ax-btn ax-btn--primary">Action</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card with Image -->
+    <div class="demo-section">
+      <h2>Card with Image</h2>
+      <div class="ax-card" style="max-width: 400px">
+        <div class="ax-card__media">
+          <img
+            src="https://via.placeholder.com/400x200"
+            alt="Placeholder"
+            style="width: 100%; height: auto"
+          />
+        </div>
+        <div class="ax-card__body">
+          <h3 class="ax-card__title">Card with Image</h3>
+          <p class="ax-card__text">
+            Cards can include media elements like images at the top for visual appeal.
+          </p>
+          <button class="ax-btn ax-btn--secondary">Learn More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card with Footer -->
+    <div class="demo-section">
+      <h2>Card with Footer</h2>
+      <div class="ax-card" style="max-width: 400px">
+        <div class="ax-card__body">
+          <h3 class="ax-card__title">Card with Footer</h3>
+          <p class="ax-card__text">
+            This card has a footer section for actions or additional information.
+          </p>
+        </div>
+        <div class="ax-card__footer">
+          <button class="ax-btn ax-btn--secondary">Cancel</button>
+          <button class="ax-btn ax-btn--primary">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code Example -->
+    <div class="demo-section">
+      <h2>Code Example</h2>
+      <pre><code>&lt;!-- Basic Card --&gt;
+&lt;div class="ax-card"&gt;
+  &lt;div class="ax-card__body"&gt;
+    &lt;h3 class="ax-card__title"&gt;Title&lt;/h3&gt;
+    &lt;p class="ax-card__text"&gt;Content here&lt;/p&gt;
+    &lt;button class="ax-btn ax-btn--primary"&gt;Action&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Card with Media --&gt;
+&lt;div class="ax-card"&gt;
+  &lt;div class="ax-card__media"&gt;
+    &lt;img src="image.jpg" alt="Description"&gt;
+  &lt;/div&gt;
+  &lt;div class="ax-card__body"&gt;
+    &lt;!-- content --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Card with Footer --&gt;
+&lt;div class="ax-card"&gt;
+  &lt;div class="ax-card__body"&gt;
+    &lt;!-- content --&gt;
+  &lt;/div&gt;
+  &lt;div class="ax-card__footer"&gt;
+    &lt;button&gt;Action&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <p><a href="README.md">← Back to Examples</a></p>
+  </body>
+</html>
