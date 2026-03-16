@@ -14,17 +14,17 @@
   border: 1px solid transparent;
   border-color: var(--ax-gray-300, $gray-300);
   border-radius: 0.375rem;
+  background-color: var(--ax-gray-200, $gray-200);
+
+  // Default styling
+  color: var(--ax-color-dark, $dark);
   font-family: inherit;
   font-size: $font-size-base;
   font-weight: $font-weight-medium;
   line-height: $leading-normal;
   text-align: center;
-
-  // Default styling
-  color: var(--ax-color-dark, $dark);
   justify-content: center;
   align-items: center;
-  background-color: var(--ax-gray-200, $gray-200);
   transition: all 0.15s ease-in-out;
   text-decoration: none;
   white-space: nowrap;
@@ -63,8 +63,8 @@
 @each $name, $color in $theme-colors {
   .ax-btn--#{$name} {
     border-color: $color;
-    color: #fff;
     background-color: $color;
+    color: #fff;
 
     &:hover {
       border-color: shade($color, 15%);
@@ -81,13 +81,13 @@
 @each $name, $color in $theme-colors {
   .ax-btn--outline-#{$name} {
     border-color: $color;
-    color: $color;
     background-color: transparent;
+    color: $color;
 
     &:hover {
       border-color: $color;
-      color: #fff;
       background-color: $color;
+      color: #fff;
     }
 
     &:focus {

@@ -17,12 +17,12 @@
     z-index: var(--ax-z-tooltip, $z-index-tooltip);
     padding: $spacer-xs $spacer-sm;
     border-radius: 0.25rem;
+    background-color: var(--ax-gray-900, $gray-900);
+    color: #fff;
     font-size: map.get($type-scale, 'sm');
     font-weight: $font-weight-normal;
     line-height: $leading-normal;
     text-align: center;
-    color: #fff;
-    background-color: var(--ax-gray-900, $gray-900);
     opacity: 0;
     transition: opacity 0.2s ease;
     content: attr(data-ax-tooltip);
@@ -60,11 +60,11 @@
     right: auto;
     bottom: 100%;
     left: 50%;
+    transform: translateX(-50%);
     inset-inline-start: 50%;
     inset-inline-end: auto;
     margin-top: 0;
     margin-bottom: 8px;
-    transform: translateX(-50%);
   }
 
   &::before {
@@ -72,9 +72,9 @@
     right: auto;
     bottom: 100%;
     left: 50%;
+    transform: translateX(-50%);
     inset-inline-start: 50%;
     inset-inline-end: auto;
-    transform: translateX(-50%);
     border-top-color: var(--ax-gray-900, $gray-900);
     border-bottom-color: transparent;
     border-left-color: transparent;
@@ -89,11 +89,11 @@
     right: auto;
     bottom: auto;
     left: 50%;
+    transform: translateX(-50%);
     inset-inline-start: 50%;
     inset-inline-end: auto;
     margin-top: 8px;
     margin-bottom: 0;
-    transform: translateX(-50%);
   }
 
   &::before {
@@ -101,9 +101,9 @@
     right: auto;
     bottom: auto;
     left: 50%;
+    transform: translateX(-50%);
     inset-inline-start: 50%;
     inset-inline-end: auto;
-    transform: translateX(-50%);
     border-bottom-color: var(--ax-gray-900, $gray-900);
     border-top-color: transparent;
     border-left-color: transparent;
@@ -118,11 +118,11 @@
     right: 100%;
     bottom: auto;
     left: auto;
+    transform: translateY(-50%);
     inset-inline-start: auto;
     inset-inline-end: 100%;
     margin-inline-start: 0;
     margin-inline-end: 8px;
-    transform: translateY(-50%);
   }
 
   &::before {
@@ -130,9 +130,9 @@
     right: 100%;
     bottom: auto;
     left: auto;
+    transform: translateY(-50%);
     inset-inline-start: auto;
     inset-inline-end: 100%;
-    transform: translateY(-50%);
     border-left-color: var(--ax-gray-900, $gray-900);
     border-top-color: transparent;
     border-bottom-color: transparent;
@@ -147,11 +147,11 @@
     right: auto;
     bottom: auto;
     left: 100%;
+    transform: translateY(-50%);
     inset-inline-start: 100%;
     inset-inline-end: auto;
     margin-inline-start: 8px;
     margin-inline-end: 0;
-    transform: translateY(-50%);
   }
 
   &::before {
@@ -159,9 +159,9 @@
     right: auto;
     bottom: auto;
     left: 100%;
+    transform: translateY(-50%);
     inset-inline-start: 100%;
     inset-inline-end: auto;
-    transform: translateY(-50%);
     border-right-color: var(--ax-gray-900, $gray-900);
     border-top-color: transparent;
     border-bottom-color: transparent;
