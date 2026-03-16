@@ -4,12 +4,6 @@ on:
   push:
     tags:
       - 'v*'
-  workflow_dispatch:
-    inputs:
-      tag_name:
-        description: 'Tag name (e.g. v2.0.1)'
-        required: true
-        type: string
 
 jobs:
   build:
@@ -30,7 +24,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Test and Build
         run: pnpm check
@@ -39,7 +33,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-assets
-          path: dist/
+          path: |
+            dist/axis-twelve.css
+            dist/axis-twelve.min.css
+            dist/modules/
 
   release-github:
     needs: build
@@ -56,9 +53,10 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.event.inputs.tag_name || github.ref_name }}
+          tag_name: ${{ github.ref_name }}
           files: |
-            dist/*.css
+            dist/axis-twelve.css
+            dist/axis-twelve.min.css
             dist/modules/*.css
           generate_release_notes: true
 
