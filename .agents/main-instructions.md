@@ -1,44 +1,92 @@
-# Main Instructions for Axis Twelve Development
+# ⚠️ MANDATORY INSTRUCTIONS FOR AXIS TWELVE DEVELOPMENT
 
-## ⚠️ CRITICAL: Branching & CI/CD Rules
+**THESE INSTRUCTIONS ARE MANDATORY AND MUST BE FOLLOWED IN ALL CASES.**
+**FAILURE TO FOLLOW THESE INSTRUCTIONS WILL RESULT IN REJECTED COMMITS.**
 
-### 🚫 NEVER Do This:
+## 🚨 CRITICAL RULE #1: BRANCHING FOR CI/CD CHANGES
+
+### ⛔ ABSOLUTELY NEVER DO THIS:
+
 ```bash
-# WRONG - Direct push to ver-2.x for CI/CD changes
+# WRONG - This is FORBIDDEN
 git checkout ver-2.x
-# Edit .github/workflows/*.yml
-git commit -m "chore: update workflows"
+# Edit .github/workflows/*.yml or package.json
+git commit -m "chore: update something"
 git push origin ver-2.x
 ```
 
-### ✅ Always Do This:
+**IF YOU PUSH CI/CD CHANGES DIRECTLY TO ver-2.x, YOUR COMMIT WILL BE REJECTED.**
+
+### ✅ ALWAYS DO THIS INSTEAD:
+
 ```bash
-# CORRECT - Feature branch for CI/CD changes
+# CORRECT - This is REQUIRED
 git checkout ver-2.x
 git pull
-git checkout -b chore/update-workflows  # Create feature branch FIRST
+git checkout -b chore/descriptive-name  # STEP 1: CREATE FEATURE BRANCH
 
-# Make changes
-# Edit .github/workflows/*.yml
+# Make your changes
+# Edit files...
 
-git add .github/workflows/
-git commit -m "chore: Update workflows"
-git push origin chore/update-workflows
-
-# Then create PR on GitHub
+git add .
+git commit -m "chore: descriptive message"
+git push origin chore/descriptive-name  # STEP 2: PUSH TO FEATURE BRANCH
+# STEP 3: CREATE PULL REQUEST ON GITHUB
+# STEP 4: WAIT FOR REVIEW AND MERGE
+# STEP 5: DELETE BRANCH AFTER MERGE
 ```
 
-## Branching Strategy
+## 🚨 CRITICAL RULE #2: VERSION BUMPS REQUIRE DOCUMENTATION UPDATES
+
+**WHEN CHANGING VERSION IN package.json, YOU MUST:**
+
+1. **Update README.md with current module sizes:**
+
+   ```bash
+   pnpm build
+   ls -lh dist/modules/*.min.css
+   # Update the table in README.md with actual sizes
+   ```
+
+2. **Update CHANGELOG.md:**
+   - Add version section
+   - List all changes
+
+3. **Create commit with all three files:**
+   ```bash
+   git add package.json README.md CHANGELOG.md
+   git commit -m "chore: Bump version to X.Y.Z"
+   ```
+
+## 🚨 CRITICAL RULE #3: MODULE SIZE DOCUMENTATION
+
+**EVERY TIME YOU BUILD OR CHANGE MODULES, YOU MUST:**
+
+1. Get new sizes: `ls -lh dist/modules/*.min.css`
+2. Update README.md module table
+3. Update full bundle size in README
+
+**Example update:**
+
+```markdown
+| Module           | Size (min) | Description       |
+| ---------------- | ---------- | ----------------- |
+| **axis-buttons** | 6.2KB      | Button components |
+```
+
+## BRANCHING STRATEGY
 
 ### For CI/CD Changes (workflows, package.json, build config):
+
 1. **ALWAYS** create feature branch: `chore/<description>`
 2. Make changes on feature branch
-3. Commit and push
-4. Create PR
+3. Commit and push to feature branch
+4. Create Pull Request
 5. Wait for review and merge
 6. Delete branch after merge
 
 ### For Features:
+
 1. Create feature branch: `feature/<description>`
 2. Implement feature
 3. Test locally
@@ -46,77 +94,14 @@ git push origin chore/update-workflows
 5. Merge after review
 
 ### For Documentation:
+
 1. Create branch: `docs/<description>`
 2. Update docs
 3. Create PR
 4. Merge
 
-## Version Bump Protocol
+## COMMIT MESSAGE FORMAT
 
-When updating version in `package.json`:
-
-1. **Update package.json:**
-   - Change version (e.g., "2.1.0" → "2.2.0")
-
-2. **Update README.md:**
-   - Update version badge if applicable
-   - **Update module sizes** (rebuild and get new sizes)
-   - Verify all examples still work
-
-3. **Update CHANGELOG.md:**
-   - Add new version section
-   - List changes under version
-
-4. **Create commit:**
-   ```bash
-   git commit -m "chore: Bump version to 2.2.0"
-   ```
-
-5. **Push and PR:**
-   - Push to feature branch
-   - Create PR
-   - Merge to ver-2.x
-
-6. **Auto-release:**
-   - Auto-tag workflow will create git tag
-   - Release workflow will publish
-
-## README Update Requirements
-
-### MUST update README when:
-- ✅ Adding new CSS modules
-- ✅ Module sizes change (after rebuild)
-- ✅ New features added
-- ✅ Version is bumped
-- ✅ Breaking changes
-
-### How to Update Module Sizes:
-
-1. Build all modules:
-   ```bash
-   pnpm build
-   ```
-
-2. Get sizes:
-   ```bash
-   ls -lh dist/modules/*.min.css
-   ```
-
-3. Update table in README:
-   ```markdown
-   | Module | Size (min) | Description |
-   |--------|------------|-------------|
-   | **axis-buttons** | 6.2KB | Description |
-   ```
-
-4. Update full framework size:
-   ```markdown
-   **Full Framework Bundle:** 82KB minified
-   ```
-
-## Commit Message Guidelines
-
-### Format:
 ```
 <type>(<scope>): <description>
 
@@ -125,28 +110,29 @@ When updating version in `package.json`:
 [optional footer]
 ```
 
-### Types:
+**Types:**
+
 - `feat` - New feature
 - `fix` - Bug fix
-- `chore` - Maintenance (includes CI/CD, config)
-- `docs` - Documentation only
+- `chore` - Maintenance (CI/CD, config)
+- `docs` - Documentation
 - `refactor` - Code refactoring
 - `test` - Tests
 - `ci` - CI configuration
 - `build` - Build system
 
-### Examples:
+**Good examples:**
 
-✅ Good:
 ```
 chore: Update Node.js to v24
-chore(ci): Update workflows for better caching
+chore(ci): Update workflows for caching
 feat(components): Add carousel component
 docs(readme): Update module sizes for v2.1.0
-fix(buttons): Correct focus state outline color
+fix(buttons): Correct focus state color
 ```
 
-❌ Bad:
+**Bad examples (NEVER USE):**
+
 ```
 update stuff
 fix thing
@@ -154,107 +140,86 @@ changes
 wip
 ```
 
-## File Organization
+## PRE-COMMIT CHECKLIST
 
-### CI/CD Files (Require Feature Branch):
-- `.github/workflows/*.yml`
-- `package.json` (scripts, build config)
-- Build scripts (`project/scripts/`)
+Before ANY commit, verify:
 
-### Documentation Files:
-- `README.md`
-- `CHANGELOG.md`
-- `docs/`
-
-### Source Files:
-- `src/` - SCSS source
-- `dist/` - Built CSS (auto-generated)
-
-## Pre-Commit Checklist
-
-Before committing, verify:
-
-- [ ] Branch name follows convention
-- [ ] Changes are on correct branch
+- [ ] Branch name follows convention (`type/description`)
+- [ ] Changes are on correct branch (feature branch for CI/CD)
 - [ ] Linting passes: `pnpm lint`
 - [ ] Build passes: `pnpm build`
-- [ ] README updated (if applicable)
-- [ ] Module sizes updated (if changed)
-- [ ] Commit message follows convention
+- [ ] README updated with module sizes (if applicable)
+- [ ] CHANGELOG updated (if version bump)
+- [ ] Commit message follows format
 
-## Common Scenarios
+## WORKFLOW EXAMPLES
 
-### Scenario 1: Update Workflows
+### Updating Workflows (CI/CD):
+
 ```bash
-# 1. Create branch
 git checkout ver-2.x
-git checkout -b chore/update-workflows
+git pull
+git checkout -b chore/update-workflows  # ← STEP 1: FEATURE BRANCH
 
-# 2. Edit workflows
 # Edit .github/workflows/*.yml
 
-# 3. Commit
 git add .github/workflows/
 git commit -m "chore: Update workflows"
-
-# 4. Push and PR
-git push origin chore/update-workflows
-# Create PR on GitHub
+git push origin chore/update-workflows  # ← STEP 2: PUSH TO BRANCH
+# ← STEP 3: CREATE PR ON GITHUB
+# ← STEP 4: WAIT FOR MERGE
+# ← STEP 5: DELETE BRANCH
 ```
 
-### Scenario 2: Bump Version
+### Bumping Version:
+
 ```bash
-# 1. Create branch
 git checkout ver-2.x
-git checkout -b chore/bump-version-2-2-0
+git pull
+git checkout -b chore/bump-version-2-2-0  # ← STEP 1: FEATURE BRANCH
 
-# 2. Update package.json version to "2.2.0"
+# 1. Update package.json version to "2.2.0"
+# 2. Run: pnpm build
+# 3. Get sizes: ls -lh dist/modules/*.min.css
+# 4. Update README.md with new sizes
+# 5. Update CHANGELOG.md
 
-# 3. Update README (module sizes if changed)
-
-# 4. Update CHANGELOG.md
-
-# 5. Commit
 git add package.json README.md CHANGELOG.md
 git commit -m "chore: Bump version to 2.2.0"
-
-# 6. Push and PR
-git push origin chore/bump-version-2-2-0
+git push origin chore/bump-version-2-2-0  # ← STEP 2: PUSH TO BRANCH
+# ← STEP 3: CREATE PR
+# ← STEP 4: WAIT FOR MERGE
 ```
 
-### Scenario 3: Add New Module
-```bash
-# 1. Create branch
-git checkout ver-2.x
-git checkout -b feature/add-new-module
+## CONSEQUENCES OF NOT FOLLOWING INSTRUCTIONS
 
-# 2. Create module files
-# src/builds/axis-newmodule.scss
+If you don't follow these instructions:
 
-# 3. Update package.json exports
+1. Your commits will be rejected
+2. CI/CD pipeline will fail
+3. Releases will break
+4. You will need to redo the work properly
 
-# 4. Build and get size
-pnpm build:newmodule
-ls -lh dist/modules/axis-newmodule.min.css
+## REMINDER
 
-# 5. Update README with new module and size
+**BEFORE PUSHING ANY COMMIT, ASK YOURSELF:**
 
-# 6. Commit and PR
-git add .
-git commit -m "feat: Add new module"
-git push origin feature/add-new-module
-```
+1. ✅ Am I on a feature branch? (for CI/CD changes)
+2. ✅ Did I update README with module sizes? (for version bumps)
+3. ✅ Did I update CHANGELOG? (for version bumps)
+4. ✅ Is my commit message properly formatted?
+5. ✅ Did I create a PR? (for feature branches)
 
-## Questions?
+**IF THE ANSWER TO ANY OF THESE IS NO, DO NOT PUSH.**
 
-If unsure:
-1. Check `skills/branching.md`
-2. Look at recent commits for examples
-3. Ask maintainers
+## QUESTIONS?
 
-## Remember
+If you're unsure about anything:
 
-- **CI/CD changes ALWAYS require feature branch + PR**
-- **README must be updated with module sizes**
-- **Version bumps need README + CHANGELOG updates**
-- **Never push directly to ver-2.x for CI/CD**
+1. Check `.agents/skills/branching.md`
+2. Check `.agents/skills/versioning.md`
+3. Check `.agents/skills/documentation.md`
+4. Look at recent commits for examples
+5. Ask maintainers
+
+**REMEMBER: IT'S BETTER TO ASK THAN TO BREAK THE BUILD.**
