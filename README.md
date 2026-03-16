@@ -93,26 +93,28 @@ Import only the modules you need:
 
 ### Core Modules
 
-| Module              | Description                                                                    |
-| ------------------- | ------------------------------------------------------------------------------ |
-| **axis-core**       | Core & reset - base foundation for all builds                                  |
-| **axis-layout**     | Grid, flexbox, centering, spacing, display utilities, aspect ratio, containers |
-| **axis-typography** | Typography utilities - font sizing, weights, alignment, text manipulation      |
-| **axis-utilities**  | Utility classes - borders, shadows, backgrounds, sizing, positioning           |
-| **axis-behavior**   | CSS-only interactive components - dropdowns, accordions, carousels             |
-| **axis-indicators** | Status indicators - alerts, badges, progress bars, spinners                    |
-| **axis-navigation** | Navigation components - navbar, nav, tabs, breadcrumb, pagination              |
+| Module              | Size (min) | Description                                                                    |
+| ------------------- | ---------- | ------------------------------------------------------------------------------ |
+| **axis-core**       | 4.3KB      | Core & reset - base foundation for all builds                                  |
+| **axis-layout**     | 68KB       | Grid, flexbox, centering, spacing, display utilities, aspect ratio, containers |
+| **axis-typography** | 17KB       | Typography utilities - font sizing, weights, alignment, text manipulation      |
+| **axis-utilities**  | 36KB       | Utility classes - borders, shadows, backgrounds, sizing, positioning           |
+| **axis-behavior**   | 16KB       | CSS-only interactive components - dropdowns, accordions, carousels             |
+| **axis-indicators** | 12KB       | Status indicators - alerts, badges, progress bars, spinners                    |
+| **axis-navigation** | 7.7KB      | Navigation components - navbar, nav, tabs, breadcrumb, pagination              |
 
 ### Component Modules
 
-| Module            | Description                      |
-| ----------------- | -------------------------------- |
-| **axis-buttons**  | Button components with variants  |
-| **axis-forms**    | Form inputs, selects, checkboxes |
-| **axis-modals**   | Modal dialogs with backdrop      |
-| **axis-tooltips** | CSS-only tooltips                |
-| **axis-tables**   | Responsive tables                |
-| **axis-cards**    | Card components                  |
+| Module            | Size (min) | Description                      |
+| ----------------- | ---------- | -------------------------------- |
+| **axis-buttons**  | 6.2KB      | Button components with variants  |
+| **axis-forms**    | 9.2KB      | Form inputs, selects, checkboxes |
+| **axis-modals**   | 3.6KB      | Modal dialogs with backdrop      |
+| **axis-tooltips** | 4.6KB      | CSS-only tooltips                |
+| **axis-tables**   | 3.4KB      | Responsive tables                |
+| **axis-cards**    | 3.6KB      | Card components                  |
+
+**Full Framework Bundle:** 82KB minified (108KB uncompressed)
 
 ## 💡 Quick Examples
 
