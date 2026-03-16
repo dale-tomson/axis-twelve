@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g., v2.2.0). Leave empty to use latest tag'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -13,9 +19,36 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.get-tag.outputs.tag }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get tag name
+        id: get-tag
+        run: |
+          # Use input tag if provided, otherwise use the tag from push event
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+            # Add 'v' prefix if not present
+            if [[ ! $TAG == v* ]]; then
+              TAG="v$TAG"
+            fi
+          else
+            # Use the tag from the push event
+            TAG="${{ github.ref_name }}"
+          fi
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "Using tag: $TAG"
+
+      - name: Checkout tag
+        run: |
+          TAG="${{ steps.get-tag.outputs.tag }}"
+          git fetch origin tag "$TAG" --depth=1
+          git checkout "$TAG"
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
@@ -56,7 +89,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.ref_name }}
+          tag_name: ${{ needs.build.outputs.tag }}
           files: |
             dist/axis-twelve.css
             dist/axis-twelve.min.css
