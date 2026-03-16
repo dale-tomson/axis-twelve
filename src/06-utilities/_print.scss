@@ -1,0 +1,379 @@
+// Print Styles
+@use '../abstracts' as *;
+
+@media print {
+  // Hide interactive elements
+  .ax-btn,
+  .ax-btn--primary,
+  .ax-btn--secondary,
+  .ax-btn--success,
+  .ax-btn--danger,
+  .ax-btn--warning,
+  .ax-btn--info,
+  .ax-btn--outline,
+  button,
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset'],
+  input[type='file'],
+  .ax-file-upload,
+  .ax-toast,
+  .ax-toasts,
+  .ax-tooltip,
+  [data-ax-tooltip],
+  .ax-modal,
+  .ax-modal__overlay,
+  .ax-dropdown,
+  .ax-accordion,
+  .ax-carousel,
+  .ax-skeleton {
+    display: none !important;
+  }
+
+  // Hide navigation
+  .ax-navbar,
+  nav,
+  .ax-menu,
+  .ax-breadcrumb {
+    display: none !important;
+  }
+
+  // Hide layout elements not needed in print
+  .ax-sidebar,
+  .ax-footer--with-nav,
+  footer:not(.ax-footer--print) {
+    display: none !important;
+  }
+
+  // Hide utilities
+  .ax-hidden-print,
+  .print-hidden {
+    display: none !important;
+  }
+
+  // Show only print content
+  .ax-print-only,
+  .print-only {
+    display: block !important;
+  }
+
+  // Body and page setup
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  // Container adjustments
+  .ax-container,
+  .container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  // Typography optimizations
+  h1 {
+    font-size: 24pt;
+    margin-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 18pt;
+    margin-bottom: 0.5em;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin-bottom: 0.5em;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 12pt;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none;
+
+    &[href]::after {
+      font-size: 0.8em;
+      font-weight: normal;
+      content: ' (' attr(href) ')';
+    }
+
+    &[href^='#']::after,
+    &[href^='javascript']::after {
+      content: '';
+    }
+  }
+
+  // Images
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  // Tables
+  table {
+    width: 100% !important;
+    page-break-inside: avoid;
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr {
+      page-break-inside: avoid;
+    }
+  }
+
+  // Cards
+  .ax-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  // Forms
+  .ax-form {
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'],
+    textarea {
+      border-bottom: 1px solid #ccc;
+    }
+
+    input[type='checkbox'],
+    input[type='radio'] {
+      width: auto;
+      border: 1px solid #000;
+      appearance: none;
+    }
+
+    input[type='checkbox']:checked::before {
+      content: '✓';
+    }
+
+    input[type='radio']:checked::before {
+      content: '•';
+    }
+  }
+
+  // Progress indicators
+  .ax-progress,
+  progress {
+    border: 1px solid #000;
+
+    &::-webkit-progress-bar {
+      background-color: #f0f0f0;
+    }
+
+    &::-webkit-progress-value {
+      background-color: #000;
+    }
+
+    &::-moz-progress-bar {
+      background-color: #000;
+    }
+  }
+
+  // Badges and indicators
+  .ax-badge {
+    border: 1px solid #000;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  // Alerts
+  .ax-alert {
+    border: 1px solid #000;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  // Remove backgrounds and shadows
+  * {
+    background: transparent !important;
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  // Additional print optimizations
+
+  // Page breaks
+  .ax-page-break {
+    page-break-before: always;
+  }
+
+  .ax-page-break-after {
+    page-break-after: always;
+  }
+
+  .ax-no-break {
+    page-break-inside: avoid;
+  }
+
+  // Width utilities for print
+  .ax-print-w-full {
+    width: 100% !important;
+  }
+
+  .ax-print-w-auto {
+    width: auto !important;
+  }
+
+  // Hide expandable content
+  details[open] summary ~ * {
+    display: block;
+  }
+
+  // Tables
+  .ax-table {
+    width: 100%;
+    border: 1px solid #ccc;
+
+    th,
+    td {
+      padding: 0.5em;
+      border: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #f5f5f5 !important;
+      font-weight: bold;
+    }
+  }
+
+  // Code blocks
+  pre,
+  code {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    background: #f9f9f9 !important;
+    font-family: 'Courier New', monospace;
+    font-size: 10pt;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  // Blockquotes
+  blockquote {
+    border-left: 3px solid #ccc;
+    padding-left: 1em;
+    margin-left: 0;
+    font-style: italic;
+  }
+
+  // Lists
+  ul,
+  ol {
+    margin-left: 1.5em;
+  }
+
+  // Definition lists
+  dl {
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      margin-left: 1.5em;
+    }
+  }
+
+  // Figures
+  figure {
+    page-break-inside: avoid;
+
+    figcaption {
+      color: #666;
+      font-size: 10pt;
+    }
+  }
+
+  // Address
+  address {
+    font-style: normal;
+  }
+
+  // Mark
+  mark {
+    background: #ff0 !important;
+    color: #000 !important;
+  }
+
+  // Small
+  small {
+    font-size: 9pt;
+  }
+
+  // Abbreviations
+  abbr[title] {
+    border-bottom: 1px dotted #000;
+  }
+
+  // Horizontal rule
+  hr {
+    margin: 1em 0;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+
+  // Visibility utilities
+  .ax-visible-print {
+    display: block !important;
+  }
+
+  .ax-visible-print-inline {
+    display: inline !important;
+  }
+
+  .ax-visible-print-block {
+    display: block !important;
+  }
+
+  .ax-visible-print-inline-block {
+    display: inline-block !important;
+  }
+
+  // Hide screen-only content
+  .ax-screen-only {
+    display: none !important;
+  }
+}
+
+// Print-specific utility classes (always available)
+.ax-print-only {
+  display: none;
+}
+
+.ax-screen-only {
+  display: block;
+}
