@@ -5,6 +5,11 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+  packages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -41,8 +46,6 @@ jobs:
   release-github:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Download Build Artifacts
         uses: actions/download-artifact@v4
@@ -51,7 +54,7 @@ jobs:
           path: dist
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           files: |
@@ -59,14 +62,13 @@ jobs:
             dist/axis-twelve.min.css
             dist/modules/*.css
           generate_release_notes: true
+          make_latest: true
 
   release-npm:
     needs: build
     runs-on: ubuntu-latest
+    if: ${{ secrets.NPM_TOKEN != '' }}
     environment: npm-release
-    permissions:
-      contents: read
-      id-token: write
     steps:
       - name: Checkout for Metadata
         uses: actions/checkout@v4
@@ -89,7 +91,17 @@ jobs:
           name: dist-assets
           path: dist
 
+      - name: Configure npm for automation token
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
+          echo "registry=https://registry.npmjs.org/" >> .npmrc
+          cat .npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Publish to NPM
-        run: pnpm publish --no-git-checks --ignore-scripts
+        run: |
+          echo "Publishing to NPM..."
+          pnpm publish --access public --no-git-checks --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
