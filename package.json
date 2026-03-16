@@ -43,7 +43,17 @@
     "./toasts": "./dist/modules/axis-toasts.min.css",
     "./toasts.css": "./dist/modules/axis-toasts.css",
     "./skeletons": "./dist/modules/axis-skeletons.min.css",
-    "./skeletons.css": "./dist/modules/axis-skeletons.css"
+    "./skeletons.css": "./dist/modules/axis-skeletons.css",
+    "./empty-states": "./dist/modules/axis-empty-states.min.css",
+    "./empty-states.css": "./dist/modules/axis-empty-states.css",
+    "./range-slider": "./dist/modules/axis-range-slider.min.css",
+    "./range-slider.css": "./dist/modules/axis-range-slider.css",
+    "./file-upload": "./dist/modules/axis-file-upload.min.css",
+    "./file-upload.css": "./dist/modules/axis-file-upload.css",
+    "./container-queries": "./dist/modules/axis-container-queries.min.css",
+    "./container-queries.css": "./dist/modules/axis-container-queries.css",
+    "./print": "./dist/modules/axis-print.min.css",
+    "./print.css": "./dist/modules/axis-print.css"
   },
   "files": [
     "dist",
@@ -55,7 +65,7 @@
   "scripts": {
     "build": "pnpm run build:full && pnpm run build:modules",
     "build:full": "pnpm exec sass src/builds/axis-twelve.scss dist/axis-twelve.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-twelve.scss dist/axis-twelve.min.css --style=compressed",
-    "build:modules": "pnpm run build:layout && pnpm run build:typography && pnpm run build:utilities && pnpm run build:behavior && pnpm run build:indicators && pnpm run build:navigation && pnpm run build:dark-mode && pnpm run build:motion && pnpm run build:toasts && pnpm run build:skeletons && pnpm run build:buttons && pnpm run build:forms && pnpm run build:modals && pnpm run build:tooltips && pnpm run build:tables && pnpm run build:cards",
+    "build:modules": "pnpm run build:layout && pnpm run build:typography && pnpm run build:utilities && pnpm run build:behavior && pnpm run build:indicators && pnpm run build:navigation && pnpm run build:dark-mode && pnpm run build:motion && pnpm run build:toasts && pnpm run build:skeletons && pnpm run build:empty-states && pnpm run build:range-slider && pnpm run build:file-upload && pnpm run build:container-queries && pnpm run build:print && pnpm run build:buttons && pnpm run build:forms && pnpm run build:modals && pnpm run build:tooltips && pnpm run build:tables && pnpm run build:cards",
     "build:layout": "bash project/scripts/build-module.sh layout",
     "build:typography": "bash project/scripts/build-module.sh typography",
     "build:utilities": "bash project/scripts/build-module.sh utilities",
@@ -80,7 +90,12 @@
     "build:dark-mode": "bash project/scripts/build-module.sh dark-mode",
     "build:motion": "bash project/scripts/build-module.sh motion",
     "build:toasts": "bash project/scripts/build-module.sh toasts",
-    "build:skeletons": "bash project/scripts/build-module.sh skeletons"
+    "build:skeletons": "bash project/scripts/build-module.sh skeletons",
+    "build:empty-states": "bash project/scripts/build-module.sh empty-states",
+    "build:range-slider": "bash project/scripts/build-module.sh range-slider",
+    "build:file-upload": "bash project/scripts/build-module.sh file-upload",
+    "build:container-queries": "bash project/scripts/build-module.sh container-queries",
+    "build:print": "bash project/scripts/build-module.sh print"
   },
   "keywords": [
     "css",

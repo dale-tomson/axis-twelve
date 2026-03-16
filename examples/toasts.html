@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toasts - Axis Twelve Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-toasts.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #f9fafb;
+      }
+      .demo-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .demo-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+      .toast-btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-weight: 600;
+        margin: 0.5rem;
+      }
+      .toast-btn--success {
+        background: #10b981;
+        color: white;
+      }
+      .toast-btn--error {
+        background: #ef4444;
+        color: white;
+      }
+      .toast-btn--warning {
+        background: #f59e0b;
+        color: white;
+      }
+      .toast-btn--info {
+        background: #3b82f6;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Toast Notifications</h1>
+    <p>Toast notifications with auto-dismiss and progress indicator.</p>
+
+    <!-- Toast Container -->
+    <div class="ax-toasts ax-toasts--top-right" id="toast-container"></div>
+
+    <!-- Basic Toasts -->
+    <div class="demo-section">
+      <h2>Toast Variants</h2>
+      <div class="demo-grid">
+        <div>
+          <h3>Success</h3>
+          <div class="ax-toast ax-toast--success">
+            <div class="ax-toast__icon">✓</div>
+            <div class="ax-toast__content">
+              <div class="ax-toast__title">Success</div>
+              <div class="ax-toast__description">Action completed successfully</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Error</h3>
+          <div class="ax-toast ax-toast--error">
+            <div class="ax-toast__icon">✕</div>
+            <div class="ax-toast__content">
+              <div class="ax-toast__title">Error</div>
+              <div class="ax-toast__description">Something went wrong</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Warning</h3>
+          <div class="ax-toast ax-toast--warning">
+            <div class="ax-toast__icon">⚠</div>
+            <div class="ax-toast__content">
+              <div class="ax-toast__title">Warning</div>
+              <div class="ax-toast__description">Please review this item</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Info</h3>
+          <div class="ax-toast ax-toast--info">
+            <div class="ax-toast__icon">ℹ</div>
+            <div class="ax-toast__content">
+              <div class="ax-toast__title">Info</div>
+              <div class="ax-toast__description">Here's something you should know</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Demo -->
+    <div class="demo-section">
+      <h2>Interactive Demo</h2>
+      <p>Click buttons to show toasts:</p>
+      <button class="toast-btn toast-btn--success" onclick="showToast('success')">Success</button>
+      <button class="toast-btn toast-btn--error" onclick="showToast('error')">Error</button>
+      <button class="toast-btn toast-btn--warning" onclick="showToast('warning')">Warning</button>
+      <button class="toast-btn toast-btn--info" onclick="showToast('info')">Info</button>
+    </div>
+
+    <!-- Positions -->
+    <div class="demo-section">
+      <h2>Positions</h2>
+      <div class="demo-grid">
+        <div>
+          <h3>Top Right</h3>
+          <div class="ax-toast ax-toast--info" style="position: relative">
+            <div class="ax-toast__icon">ℹ</div>
+            <div class="ax-toast__content">
+              <div class="ax-toast__title">Top Right</div>
+              <div class="ax-toast__description">Default position</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- With Progress Bar -->
+    <div class="demo-section">
+      <h2>With Progress Bar</h2>
+      <p>Auto-dismiss with visual progress indicator</p>
+      <div class="ax-toast ax-toast--info" style="position: relative; max-width: 400px">
+        <div class="ax-toast__icon">ℹ</div>
+        <div class="ax-toast__content">
+          <div class="ax-toast__title">Auto-dismiss</div>
+          <div class="ax-toast__description">This will dismiss in 5 seconds</div>
+        </div>
+        <div class="ax-toast__progress">
+          <div class="ax-toast__progress-bar" style="animation-duration: 5s"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const toastMessages = {
+        success: { title: 'Success!', description: 'Your action was successful' },
+        error: { title: 'Error!', description: 'Something went wrong' },
+        warning: { title: 'Warning', description: 'Please review this item' },
+        info: { title: 'Info', description: 'Here is some information' },
+      };
+
+      const toastIcons = {
+        success: '✓',
+        error: '✕',
+        warning: '⚠',
+        info: 'ℹ',
+      };
+
+      function showToast(type) {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = `ax-toast ax-toast--${type}`;
+
+        const message = toastMessages[type];
+        const icon = toastIcons[type];
+
+        toast.innerHTML = `
+    <div class="ax-toast__icon">${icon}</div>
+    <div class="ax-toast__content">
+      <div class="ax-toast__title">${message.title}</div>
+      <div class="ax-toast__description">${message.description}</div>
+    </div>
+    <button class="ax-toast__close">×</button>
+  `;
+
+        container.appendChild(toast);
+
+        // Close button handler
+        const closeBtn = toast.querySelector('.ax-toast__close');
+        closeBtn.addEventListener('click', () => {
+          toast.style.animation = 'ax-toast-slide-out 0.3s ease-out';
+          setTimeout(() => toast.remove(), 300);
+        });
+
+        // Auto dismiss after 5 seconds
+        setTimeout(() => {
+          if (toast.parentElement) {
+            toast.style.animation = 'ax-toast-slide-out 0.3s ease-out';
+            setTimeout(() => toast.remove(), 300);
+          }
+        }, 5000);
+      }
+    </script>
+
+    <p><a href="README.md">← Back to Examples</a></p>
+  </body>
+</html>
