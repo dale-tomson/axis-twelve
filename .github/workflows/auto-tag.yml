@@ -43,6 +43,8 @@ jobs:
 
       - name: Create tag if it doesn't exist
         if: steps.check-tag.outputs.tag_exists == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           TAG=${{ steps.version.outputs.tag }}
           echo "Creating tag $TAG"
