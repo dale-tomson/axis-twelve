@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empty States - Axis Twelve Example</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/axis-twelve/dist/modules/axis-empty-states.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-buttons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-cards.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #f9fafb;
+      }
+      .demo-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Empty States</h1>
+    <p>Empty state components for when content is unavailable.</p>
+
+    <!-- Basic Empty State -->
+    <div class="demo-grid">
+      <div class="ax-empty-state" style="background: white; border-radius: 0.5rem">
+        <div class="ax-empty-state__icon">📦</div>
+        <h3 class="ax-empty-state__title">No Items Found</h3>
+        <p class="ax-empty-state__description">
+          There are no items to display. Try adjusting your filters or add a new item.
+        </p>
+        <div class="ax-empty-state__actions">
+          <button class="ax-btn ax-btn--primary">Add Item</button>
+          <button class="ax-btn ax-btn--secondary">Clear Filters</button>
+        </div>
+      </div>
+
+      <!-- Simple Variant -->
+      <div
+        class="ax-empty-state ax-empty-state--simple"
+        style="background: white; border-radius: 0.5rem"
+      >
+        <div class="ax-empty-state__icon">📭</div>
+        <h3 class="ax-empty-state__title">No Messages</h3>
+        <p class="ax-empty-state__description">Your inbox is empty</p>
+      </div>
+
+      <!-- Minimal Variant -->
+      <div
+        class="ax-empty-state ax-empty-state--minimal"
+        style="background: white; border-radius: 0.5rem"
+      >
+        <h3 class="ax-empty-state__title">No Results</h3>
+        <p class="ax-empty-state__description">Try a different search term</p>
+      </div>
+    </div>
+
+    <h2>Search Results Empty State</h2>
+    <div class="ax-empty-state" style="background: white; border-radius: 0.5rem; margin: 2rem 0">
+      <div class="ax-empty-state__icon">🔍</div>
+      <h3 class="ax-empty-state__title">No Search Results</h3>
+      <p class="ax-empty-state__description">
+        We couldn't find anything matching "[search term]". Try different keywords or filters.
+      </p>
+      <div class="ax-empty-state__actions">
+        <button class="ax-btn ax-btn--secondary">Clear Search</button>
+        <button class="ax-btn ax-btn--secondary">Clear Filters</button>
+      </div>
+    </div>
+
+    <h2>Error State</h2>
+    <div class="ax-empty-state" style="background: white; border-radius: 0.5rem; margin: 2rem 0">
+      <div class="ax-empty-state__icon">⚠️</div>
+      <h3 class="ax-empty-state__title">Unable to Load</h3>
+      <p class="ax-empty-state__description">
+        We're having trouble loading this content. Please try again.
+      </p>
+      <div class="ax-empty-state__actions">
+        <button class="ax-btn ax-btn--primary">Retry</button>
+      </div>
+    </div>
+
+    <h2>Permission Denied</h2>
+    <div class="ax-empty-state" style="background: white; border-radius: 0.5rem; margin: 2rem 0">
+      <div class="ax-empty-state__icon">🔒</div>
+      <h3 class="ax-empty-state__title">Access Denied</h3>
+      <p class="ax-empty-state__description">
+        You don't have permission to view this content. Contact your administrator for access.
+      </p>
+      <div class="ax-empty-state__actions">
+        <button class="ax-btn ax-btn--primary">Request Access</button>
+      </div>
+    </div>
+
+    <p><a href="README.md">← Back to Examples</a></p>
+  </body>
+</html>

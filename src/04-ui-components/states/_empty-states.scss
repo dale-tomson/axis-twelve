@@ -1,0 +1,96 @@
+// Empty States
+@use '../../abstracts' as *;
+@use 'sass:map';
+
+.ax-empty-state {
+  display: flex;
+  padding: $spacer-xl * 2;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+
+  &__icon {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--ax-gray-100, $gray-100);
+    color: var(--ax-gray-500, $gray-500);
+    font-size: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $spacer-lg;
+  }
+
+  &__title {
+    color: var(--ax-gray-900, $gray-900);
+    font-size: map.get($type-scale, 'xl');
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacer-sm;
+  }
+
+  &__description {
+    color: var(--ax-gray-600, $gray-600);
+    font-size: map.get($type-scale, 'md');
+    line-height: $leading-relaxed;
+    max-width: 500px;
+    margin-bottom: $spacer-lg;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacer-md;
+  }
+}
+
+.ax-empty-state--simple {
+  padding: $spacer-lg;
+  min-height: auto;
+
+  .ax-empty-state__icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    margin-bottom: $spacer-md;
+  }
+
+  .ax-empty-state__title {
+    font-size: map.get($type-scale, 'lg');
+  }
+
+  .ax-empty-state__description {
+    font-size: map.get($type-scale, 'sm');
+  }
+}
+
+.ax-empty-state--minimal {
+  padding: $spacer-md;
+  min-height: auto;
+
+  .ax-empty-state__icon {
+    display: none;
+  }
+
+  .ax-empty-state__title {
+    font-size: map.get($type-scale, 'md');
+    margin-bottom: $spacer-xs;
+  }
+
+  .ax-empty-state__description {
+    font-size: map.get($type-scale, 'xs');
+    margin-bottom: $spacer-md;
+  }
+}
+
+.ax-empty-state--sm {
+  padding: $spacer-lg;
+  min-height: 200px;
+}
+
+.ax-empty-state--lg {
+  padding: $spacer-xl * 3;
+  min-height: 400px;
+}
