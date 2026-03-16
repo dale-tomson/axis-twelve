@@ -1,0 +1,48 @@
+// Toast Notifications
+@use '../../abstracts' as *;
+
+.ax-toasts {
+  display: flex;
+  position: fixed;
+  z-index: var(--ax-z-tooltip, $z-index-tooltip);
+  padding: $spacer-md;
+  flex-direction: column;
+  gap: $spacer-sm;
+
+  &--top-right {
+    top: 0;
+    right: 0;
+  }
+
+  &--bottom-right {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.ax-toast {
+  display: flex;
+  padding: $spacer-md;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  align-items: flex-start;
+  gap: $spacer-md;
+  box-shadow: var(--ax-shadow-lg, $shadow-lg);
+  min-width: 300px;
+
+  &--success {
+    border-left: 4px solid var(--ax-color-success, $success);
+  }
+
+  &--error {
+    border-left: 4px solid var(--ax-color-danger, $danger);
+  }
+
+  &--warning {
+    border-left: 4px solid var(--ax-color-warning, $warning);
+  }
+
+  &--info {
+    border-left: 4px solid var(--ax-color-info, $info);
+  }
+}

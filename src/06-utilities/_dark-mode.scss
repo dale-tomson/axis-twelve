@@ -1,0 +1,17 @@
+// Dark Mode Support
+@use '../abstracts' as *;
+@use 'sass:map';
+
+$dark-mode-colors: (
+  'bg-body': #111827,
+  'bg-surface': #1f2937,
+  'text-primary': #f9fafb,
+  'border': #374151,
+);
+
+.ax-dark {
+  --ax-bg-body: #{map.get($dark-mode-colors, 'bg-body')};
+  --ax-bg-surface: #{map.get($dark-mode-colors, 'bg-surface')};
+  --ax-color-dark: #{map.get($dark-mode-colors, 'text-primary')};
+  --ax-border-color: #{map.get($dark-mode-colors, 'border')};
+}

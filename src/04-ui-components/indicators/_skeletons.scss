@@ -1,0 +1,38 @@
+// Skeleton Loaders
+@use '../../abstracts' as *;
+
+.ax-skeleton {
+  display: block;
+  width: 100%;
+  border-radius: 0.25rem;
+  background: linear-gradient(
+    90deg,
+    var(--ax-gray-200, $gray-200) 0%,
+    var(--ax-gray-100, $gray-100) 50%,
+    var(--ax-gray-200, $gray-200) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.ax-skeleton--text {
+  height: 1rem;
+}
+
+.ax-skeleton--circle {
+  border-radius: 9999px;
+}
+
+.ax-skeleton--rect {
+  height: 8rem;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
