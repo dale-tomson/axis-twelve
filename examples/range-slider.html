@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Range Slider - Axis Twelve Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-range-slider.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: #f9fafb;
+      }
+      .demo-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .demo-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Range Slider</h1>
+    <p>Custom-styled range input controls.</p>
+
+    <!-- Basic Range -->
+    <div class="demo-section">
+      <h2>Basic Range Slider</h2>
+      <div class="ax-range">
+        <input type="range" min="0" max="100" value="50" />
+      </div>
+    </div>
+
+    <!-- Sizes -->
+    <div class="demo-section">
+      <h2>Sizes</h2>
+      <div class="demo-grid">
+        <div>
+          <h3>Small</h3>
+          <div class="ax-range ax-range--sm">
+            <input type="range" min="0" max="100" value="25" />
+          </div>
+        </div>
+        <div>
+          <h3>Medium (Default)</h3>
+          <div class="ax-range ax-range--md">
+            <input type="range" min="0" max="100" value="50" />
+          </div>
+        </div>
+        <div>
+          <h3>Large</h3>
+          <div class="ax-range ax-range--lg">
+            <input type="range" min="0" max="100" value="75" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color Variants -->
+    <div class="demo-section">
+      <h2>Color Variants</h2>
+      <div class="demo-grid">
+        <div>
+          <h3>Primary</h3>
+          <div class="ax-range ax-range--primary">
+            <input type="range" min="0" max="100" value="50" />
+          </div>
+        </div>
+        <div>
+          <h3>Success</h3>
+          <div class="ax-range ax-range--success">
+            <input type="range" min="0" max="100" value="50" />
+          </div>
+        </div>
+        <div>
+          <h3>Danger</h3>
+          <div class="ax-range ax-range--danger">
+            <input type="range" min="0" max="100" value="50" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- With Label and Value -->
+    <div class="demo-section">
+      <h2>With Label and Value Display</h2>
+      <div class="ax-range__wrapper">
+        <label class="ax-range__label">
+          <span>Volume</span>
+          <span class="ax-range__value" id="volume-value">50%</span>
+        </label>
+        <div class="ax-range ax-range--primary">
+          <input type="range" min="0" max="100" value="50" id="volume-slider" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Price Range Example -->
+    <div class="demo-section">
+      <h2>Price Range Example</h2>
+      <div class="ax-range__wrapper">
+        <label class="ax-range__label">
+          <span>Price Range</span>
+          <span class="ax-range__value" id="price-value">$500</span>
+        </label>
+        <div class="ax-range ax-range--primary ax-range--md">
+          <input type="range" min="0" max="1000" value="500" step="10" id="price-slider" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Disabled State -->
+    <div class="demo-section">
+      <h2>Disabled State</h2>
+      <div class="ax-range ax-range--disabled">
+        <input type="range" min="0" max="100" value="50" disabled />
+      </div>
+    </div>
+
+    <script>
+      // Volume slider
+      const volumeSlider = document.getElementById('volume-slider');
+      const volumeValue = document.getElementById('volume-value');
+
+      volumeSlider.addEventListener('input', (e) => {
+        volumeValue.textContent = `${e.target.value}%`;
+      });
+
+      // Price slider
+      const priceSlider = document.getElementById('price-slider');
+      const priceValue = document.getElementById('price-value');
+
+      priceSlider.addEventListener('input', (e) => {
+        priceValue.textContent = `$${e.target.value}`;
+      });
+    </script>
+
+    <p><a href="README.md">← Back to Examples</a></p>
+  </body>
+</html>

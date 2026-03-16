@@ -1,0 +1,281 @@
+// Range Slider
+@use '../../abstracts' as *;
+@use 'sass:map';
+
+.ax-range {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+
+  input[type='range'] {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--ax-gray-200, $gray-200);
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--ax-gray-400, $gray-400);
+      border-radius: 50%;
+      background: #fff;
+      transition: all 0.2s ease;
+      box-shadow: var(--ax-shadow-sm, $shadow-sm);
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+    }
+
+    &::-webkit-slider-thumb:hover {
+      width: 24px;
+      height: 24px;
+      border-color: var(--ax-gray-600, $gray-600);
+    }
+
+    &::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--ax-gray-400, $gray-400);
+      border-radius: 50%;
+      background: #fff;
+      transition: all 0.2s ease;
+      box-shadow: var(--ax-shadow-sm, $shadow-sm);
+      cursor: pointer;
+    }
+
+    &::-moz-range-thumb:hover {
+      width: 24px;
+      height: 24px;
+      border-color: var(--ax-gray-600, $gray-600);
+    }
+
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(
+        to right,
+        var(--ax-gray-600, $gray-600) 0%,
+        var(--ax-gray-600, $gray-600) 0%,
+        var(--ax-gray-200, $gray-200) 0%,
+        var(--ax-gray-200, $gray-200) 100%
+      );
+    }
+
+    &::-moz-range-track {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--ax-gray-200, $gray-200);
+    }
+
+    &::-moz-range-progress {
+      height: 8px;
+      border-radius: 4px;
+      background: var(--ax-gray-600, $gray-600);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus::-webkit-slider-thumb {
+      border-color: var(--ax-gray-600, $gray-600);
+      box-shadow: 0 0 0 3px var(--ax-gray-200, $gray-200);
+    }
+
+    &:focus::-moz-range-thumb {
+      border-color: var(--ax-gray-600, $gray-600);
+      box-shadow: 0 0 0 3px var(--ax-gray-200, $gray-200);
+    }
+  }
+
+  &--sm {
+    input[type='range'] {
+      height: 6px;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      width: 16px;
+      height: 16px;
+    }
+
+    input[type='range']::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--md {
+    input[type='range'] {
+      height: 8px;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      width: 20px;
+      height: 20px;
+    }
+
+    input[type='range']::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &--lg {
+    input[type='range'] {
+      height: 10px;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      width: 24px;
+      height: 24px;
+    }
+
+    input[type='range']::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &--primary {
+    input[type='range']::-webkit-slider-runnable-track {
+      background: linear-gradient(
+        to right,
+        var(--ax-color-primary, #3b82f6) 0%,
+        var(--ax-color-primary, #3b82f6) var(--range-progress, 0%),
+        var(--ax-gray-200, $gray-200) var(--range-progress, 0%),
+        var(--ax-gray-200, $gray-200) 100%
+      );
+    }
+
+    input[type='range']::-moz-range-progress {
+      background: var(--ax-color-primary, #3b82f6);
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      border-color: var(--ax-color-primary, #3b82f6);
+    }
+
+    input[type='range']:focus::-webkit-slider-thumb {
+      box-shadow: 0 0 0 3px rgb(59 130 246 / 30%);
+    }
+
+    input[type='range']:focus::-moz-range-thumb {
+      box-shadow: 0 0 0 3px rgb(59 130 246 / 30%);
+    }
+  }
+
+  &--success {
+    input[type='range']::-webkit-slider-runnable-track {
+      background: linear-gradient(
+        to right,
+        var(--ax-color-success, #10b981) 0%,
+        var(--ax-color-success, #10b981) var(--range-progress, 0%),
+        var(--ax-gray-200, $gray-200) var(--range-progress, 0%),
+        var(--ax-gray-200, $gray-200) 100%
+      );
+    }
+
+    input[type='range']::-moz-range-progress {
+      background: var(--ax-color-success, #10b981);
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      border-color: var(--ax-color-success, #10b981);
+    }
+  }
+
+  &--danger {
+    input[type='range']::-webkit-slider-runnable-track {
+      background: linear-gradient(
+        to right,
+        var(--ax-color-danger, #ef4444) 0%,
+        var(--ax-color-danger, #ef4444) var(--range-progress, 0%),
+        var(--ax-gray-200, $gray-200) var(--range-progress, 0%),
+        var(--ax-gray-200, $gray-200) 100%
+      );
+    }
+
+    input[type='range']::-moz-range-progress {
+      background: var(--ax-color-danger, #ef4444);
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      border-color: var(--ax-color-danger, #ef4444);
+    }
+  }
+
+  &--disabled,
+  &.is-disabled {
+    input[type='range'] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      cursor: not-allowed;
+    }
+
+    input[type='range']::-moz-range-thumb {
+      cursor: not-allowed;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__label {
+    display: flex;
+    color: var(--ax-gray-700, $gray-700);
+    font-size: map.get($type-scale, 'sm');
+    font-weight: $font-weight-medium;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacer-sm;
+  }
+
+  &__value {
+    display: inline-block;
+    padding: $spacer-xs $spacer-sm;
+    border-radius: 0.25rem;
+    background-color: var(--ax-gray-100, $gray-100);
+    color: var(--ax-gray-900, $gray-900);
+    font-size: map.get($type-scale, 'sm');
+    font-weight: $font-weight-medium;
+    text-align: center;
+    min-width: 3rem;
+  }
+
+  &__markers {
+    display: flex;
+    padding: 0 $spacer-xs;
+    justify-content: space-between;
+    margin-top: $spacer-xs;
+  }
+
+  &__marker {
+    width: 2px;
+    height: 6px;
+    background-color: var(--ax-gray-300, $gray-300);
+  }
+}
+
+input[type='range']:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  cursor: pointer;
+}
