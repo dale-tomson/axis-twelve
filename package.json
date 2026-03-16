@@ -15,9 +15,7 @@
     "./typography": "./dist/modules/axis-typography.min.css",
     "./typography.css": "./dist/modules/axis-typography.css",
     "./utilities": "./dist/modules/axis-utilities.min.css",
-    ""./utilities.css": "./dist/modules/axis-utilities.css",
-    "./phase2": "./dist/axis-phase2.min.css",
-    "./phase2.css": "./dist/axis-phase2.css",
+    "./utilities.css": "./dist/modules/axis-utilities.css",
     "./behavior": "./dist/modules/axis-behavior.min.css",
     "./behavior.css": "./dist/modules/axis-behavior.css",
     "./indicators": "./dist/modules/axis-indicators.min.css",
@@ -37,7 +35,15 @@
     "./cards": "./dist/modules/axis-cards.min.css",
     "./cards.css": "./dist/modules/axis-cards.css",
     "./src": "./src/abstracts/_index.scss",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./dark-mode": "./dist/modules/axis-dark-mode.min.css",
+    "./dark-mode.css": "./dist/modules/axis-dark-mode.css",
+    "./motion": "./dist/modules/axis-motion.min.css",
+    "./motion.css": "./dist/modules/axis-motion.css",
+    "./toasts": "./dist/modules/axis-toasts.min.css",
+    "./toasts.css": "./dist/modules/axis-toasts.css",
+    "./skeletons": "./dist/modules/axis-skeletons.min.css",
+    "./skeletons.css": "./dist/modules/axis-skeletons.css"
   },
   "files": [
     "dist",
@@ -49,7 +55,7 @@
   "scripts": {
     "build": "pnpm run build:full && pnpm run build:modules",
     "build:full": "pnpm exec sass src/builds/axis-twelve.scss dist/axis-twelve.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-twelve.scss dist/axis-twelve.min.css --style=compressed",
-    "build:modules": "pnpm run build:layout && pnpm run build:typography && pnpm run build:utilities && pnpm run build:behavior && pnpm run build:indicators && pnpm run build:navigation && pnpm run build:buttons && pnpm run build:forms && pnpm run build:modals && pnpm run build:tooltips && pnpm run build:tables && pnpm run build:cards",
+    "build:modules": "pnpm run build:layout && pnpm run build:typography && pnpm run build:utilities && pnpm run build:behavior && pnpm run build:indicators && pnpm run build:navigation && pnpm run build:dark-mode && pnpm run build:motion && pnpm run build:toasts && pnpm run build:skeletons && pnpm run build:buttons && pnpm run build:forms && pnpm run build:modals && pnpm run build:tooltips && pnpm run build:tables && pnpm run build:cards",
     "build:layout": "bash project/scripts/build-module.sh layout",
     "build:typography": "bash project/scripts/build-module.sh typography",
     "build:utilities": "bash project/scripts/build-module.sh utilities",
@@ -70,7 +76,11 @@
     "check": "pnpm lint && pnpm build",
     "postinstall": "bash project/scripts/install-hooks.sh",
     "test": "pnpm check",
-    "prepublishOnly": "pnpm check"
+    "prepublishOnly": "pnpm check",
+    "build:dark-mode": "bash project/scripts/build-module.sh dark-mode",
+    "build:motion": "bash project/scripts/build-module.sh motion",
+    "build:toasts": "bash project/scripts/build-module.sh toasts",
+    "build:skeletons": "bash project/scripts/build-module.sh skeletons"
   },
   "keywords": [
     "css",
