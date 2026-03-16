@@ -256,7 +256,6 @@ If unsure:
 
 ## Remember
 
-- **CI/CD changes ALWAYS require feature branch + PR**
 - **README must be updated with module sizes**
 - **Version bumps need README + CHANGELOG updates**
-- **Never push directly to ver-2.x for CI/CD**
+- **Never push directly to ver-2.x**
