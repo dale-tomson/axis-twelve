@@ -1,223 +1,60 @@
-# Branching Strategy for Axis Twelve
+# Branching Strategy
 
-## Overview
+**⚠️ IMPORTANT: Complete branching strategy is in `.agents/skills/branching.md`**
 
-This repository follows a strict branching and release strategy to ensure stability and proper CI/CD workflows.
+## Quick Reference
 
-## Branch Structure
+### Branch Naming
 
-### Main Branches
+```
+<type>/<description>
+```
 
-- `main` - Production-ready code (if applicable)
-- `ver-2.x` - Current development branch for v2.x releases
+### Types
 
-### Feature Branches
+- `feature` - New features
+- `fix` - Bug fixes
+- `chore` - Maintenance, CI/CD
+- `docs` - Documentation
+- `refactor` - Code refactoring
+- `test` - Tests
 
-Format: `<type>/<description>`
-
-Examples:
-- `feature/phase-1-utilities-components`
-- `fix/modal-scroll-issue`
-- `chore/update-node-version`
-- `docs/update-readme`
-
-### Branch Naming Conventions
-
-| Type     | Purpose                          | Example                           |
-| -------- | -------------------------------- | --------------------------------- |
-| `feature` | New features or major additions  | `feature/dark-mode`               |
-| `fix`    | Bug fixes                        | `fix/button-focus-state`          |
-| `chore`  | Maintenance, config, dependencies | `chore/update-workflows`          |
-| `docs`   | Documentation only               | `docs/add-examples`               |
-| `refactor` | Code refactoring (no features) | `refactor/grid-system`            |
-| `test`   | Adding or updating tests         | `test/add-utility-tests`          |
-
-## CI/CD Workflow
-
-### Automated Workflows
-
-1. **PR Checks** (`pr-checks.yml`)
-   - Triggers: Pull requests to `ver-2.x`
-   - Runs: Linting, building, tests
-   - Node: v24
-
-2. **Release** (`release.yml`)
-   - Triggers: Tag push (v*)
-   - Runs: Build, GitHub Release, NPM publish
-   - Node: v24
-
-3. **Auto-Tag** (`auto-tag.yml`)
-   - Triggers: package.json version change on `ver-2.x`
-   - Creates git tag if doesn't exist
-
-### Branching Rules
-
-**⚠️ IMPORTANT: CI/CD files MUST go through feature branch + PR**
-
-**NEVER push CI/CD changes directly to `ver-2.x`!**
-
-#### Correct Workflow:
+### Examples
 
 ```bash
-# 1. Create feature branch from ver-2.x
+feature/add-carousel-component
+fix/modal-z-index-issue
+chore/update-node-to-24
+docs/add-branching-guide
+```
+
+## Critical Rules
+
+1. **CI/CD changes MUST use feature branches**
+2. **NEVER push workflow changes directly to `ver-2.x`**
+3. **Always create PR for review**
+4. **Update README with module sizes on version bump**
+
+## Correct Workflow
+
+```bash
+# 1. Create feature branch
 git checkout ver-2.x
-git pull origin ver-2.x
-git checkout -b chore/update-node-version
+git checkout -b chore/update-workflows
 
 # 2. Make changes
-# Edit .github/workflows/*.yml
-git add .github/workflows/
-git commit -m "chore: Update Node.js to v24"
+# Edit files...
 
-# 3. Push and create PR
-git push origin chore/update-node-version
-# Then create PR on GitHub
-
-# 4. After PR review and merge, delete branch
-```
-
-#### Incorrect Workflow:
-
-```bash
-# ❌ DON'T DO THIS:
-git checkout ver-2.x
-# Edit workflows directly
+# 3. Commit and push
+git add .
 git commit -m "chore: Update workflows"
-git push origin ver-2.x
+git push origin chore/update-workflows
+
+# 4. Create PR on GitHub
+# 5. Wait for review and merge
+# 6. Delete branch
 ```
 
-## Release Process
+## Full Documentation
 
-### Version Bumping
-
-1. Update `package.json` version:
-   - Patch (2.0.x → 2.0.y): Bug fixes
-   - Minor (2.x.0 → 2.y.0): New features (backward compatible)
-   - Major (x.0.0 → y.0.0): Breaking changes
-
-2. Update `CHANGELOG.md` with new version
-
-3. Update README module sizes if applicable
-
-4. Create PR for version bump
-
-5. Merge PR to `ver-2.x`
-
-6. Auto-tag workflow creates git tag
-
-7. Release workflow publishes to GitHub & NPM
-
-### Release Checklist
-
-- [ ] Version updated in `package.json`
-- [ ] README updated with new module sizes
-- [ ] CHANGELOG.md updated
-- [ ] All tests passing
-- [ ] PR reviewed and merged
-- [ ] Git tag created (automatic or manual)
-- [ ] GitHub Release created (automatic)
-- [ ] NPM package published (automatic)
-
-## File Change Guidelines
-
-### What Requires a Feature Branch?
-
-**ALWAYS use feature branch for:**
-- ✅ CI/CD workflow changes (`.github/workflows/`)
-- ✅ Build configuration changes
-- ✅ Package.json changes
-- ✅ Any change affecting releases
-- ✅ New features or components
-- ✅ Breaking changes
-
-**CAN be direct commit (if you have permissions):**
-- Documentation fixes (typo corrections)
-- Emergency hotfixes (with immediate PR follow-up)
-
-### README Updates
-
-**MUST update README when:**
-- Adding new modules (update module table with sizes)
-- Changing module sizes (rebuild and update sizes)
-- Adding/changing features
-- Version bumps (update version badge)
-
-**Module size format in README:**
-```markdown
-| Module | Size (min) | Description |
-|--------|------------|-------------|
-| **axis-buttons** | 6.2KB | Button components |
-```
-
-## Commit Message Format
-
-Follow conventional commits:
-
-```
-<type>(<scope>): <subject>
-
-<body>
-
-<footer>
-```
-
-Types:
-- `feat`: New feature
-- `fix`: Bug fix
-- `chore`: Maintenance
-- `docs`: Documentation
-- `refactor`: Code refactoring
-- `test`: Tests
-- `ci`: CI/CD changes
-- `build`: Build system changes
-
-Examples:
-```
-feat(components): Add accordion component
-fix(buttons): Fix focus state outline
-chore(ci): Update Node.js to v24
-docs(readme): Update module sizes for v2.1.0
-```
-
-## Common Mistakes to Avoid
-
-❌ **DON'T:**
-- Push CI/CD changes directly to `ver-2.x`
-- Skip PR review for workflow changes
-- Forget to update README module sizes
-- Bump version without CHANGELOG update
-- Push tags without going through release process
-
-✅ **DO:**
-- Always create feature branch for CI/CD changes
-- Use descriptive branch names
-- Update documentation with code changes
-- Run tests before pushing
-- Follow commit message conventions
-
-## Questions?
-
-If unsure about branching strategy:
-1. Check this guide
-2. Look at recent PRs for examples
-3. Ask maintainers
-
-## Examples
-
-### Good Branch Names:
-- `feature/add-carousel-component`
-- `fix/modal-z-index-issue`
-- `chore/update-to-node-24`
-- `docs/add-branching-guide`
-
-### Bad Branch Names:
-- `patch-1`
-- `update-stuff`
-- `fix-thing`
-- `test`
-
-## Resources
-
-- [GitHub Flow](https://guides.github.com/introduction/flow/)
-- [Conventional Commits](https://www.conventionalcommits.org/)
-- [Semantic Versioning](https://semver.org/)
+See `.agents/skills/branching.md` for complete strategy.
