@@ -12,8 +12,8 @@
   overflow: hidden;
   border: 1px solid var(--ax-border-color, $border-color);
   border-radius: 0.5rem;
-  flex-direction: column;
   background-color: #fff;
+  flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
   background-clip: border-box;
@@ -47,26 +47,26 @@
 
 // Card Title
 .ax-card__title {
-  margin-top: 0;
-  margin-bottom: $spacer-sm;
+  color: var(--ax-gray-900, $gray-900);
   font-size: map.get($type-scale, 'xl');
   font-weight: $font-weight-bold;
   line-height: $leading-tight;
-  color: var(--ax-gray-900, $gray-900);
+  margin-top: 0;
+  margin-bottom: $spacer-sm;
 }
 
 // Card Subtitle
 .ax-card__subtitle {
+  color: var(--ax-gray-600, $gray-600);
+  font-size: map.get($type-scale, 'sm');
   margin-top: -$spacer-xs;
   margin-bottom: $spacer-sm;
-  font-size: map.get($type-scale, 'sm');
-  color: var(--ax-gray-600, $gray-600);
 }
 
 // Card Text
 .ax-card__text {
-  margin-bottom: $spacer-md;
   color: var(--ax-gray-700, $gray-700);
+  margin-bottom: $spacer-md;
 
   &:last-child {
     margin-bottom: 0;
@@ -75,9 +75,9 @@
 
 // Card Footer (action area)
 .ax-card__footer {
-  margin-top: auto; // Push to bottom
   padding: $spacer-md;
   background-color: var(--ax-gray-50, $gray-50);
+  margin-top: auto; // Push to bottom
   border-top: 1px solid var(--ax-border-color, $border-color);
 }
 

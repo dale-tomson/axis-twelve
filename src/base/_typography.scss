@@ -8,11 +8,11 @@
 
 // Body Typography
 body {
+  background-color: var(--ax-bg-body, $bg-body);
+  color: var(--ax-color-dark, $dark);
   font-family: var(--ax-font-sans, $font-family-sans);
   font-size: var(--ax-font-size-base, $font-size-base);
   line-height: var(--ax-line-height-base, $leading-normal);
-  color: var(--ax-color-dark, $dark);
-  background-color: var(--ax-bg-body, $bg-body);
 }
 
 // Headings
@@ -22,11 +22,11 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
-  margin-bottom: $spacer-md;
+  color: inherit;
   font-weight: $font-weight-bold;
   line-height: $leading-tight;
-  color: inherit;
+  margin-top: 0;
+  margin-bottom: $spacer-md;
 }
 
 h1 {

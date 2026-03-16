@@ -61,19 +61,19 @@
 // Modal Header
 .ax-modal__header {
   display: flex;
-  padding-bottom: $spacer-md;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: $spacer-md;
   border-bottom: 1px solid var(--ax-border-color, $border-color);
 }
 
 // Modal Title
 .ax-modal__title {
   margin: 0;
+  color: var(--ax-color-dark, $dark);
   font-size: map.get($type-scale, 'xl');
   font-weight: $font-weight-bold;
   line-height: $leading-tight;
-  color: var(--ax-color-dark, $dark);
 }
 
 // Modal Close Button
@@ -105,10 +105,10 @@
 // Modal Footer
 .ax-modal__footer {
   display: flex;
-  padding-top: $spacer-md;
   justify-content: flex-end;
   align-items: center;
   gap: $spacer-sm;
+  padding-top: $spacer-md;
   border-top: 1px solid var(--ax-border-color, $border-color);
 }
 

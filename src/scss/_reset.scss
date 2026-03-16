@@ -5,9 +5,9 @@
 @use 'variables' as *;
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html,
@@ -17,11 +17,11 @@ body {
 }
 
 body {
+  background-color: #fff;
+  color: $dark;
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
-  color: $dark;
-  background-color: #fff;
 }
 
 h1,
@@ -30,9 +30,9 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-weight: 600;
 }
 
 p {
@@ -47,8 +47,8 @@ ol {
 }
 
 a {
-  color: $primary;
   background-color: transparent;
+  color: $primary;
   text-decoration: none;
 
   &:hover {
