@@ -1,5 +1,6 @@
 // Toast Notifications
 @use '../../abstracts' as *;
+@use 'sass:map';
 
 .ax-toasts {
   display: flex;
