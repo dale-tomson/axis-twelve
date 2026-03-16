@@ -1,0 +1,19 @@
+/*!
+ * Axis Typography v2.1.0
+ * Typography Module - Font sizing, weights, alignment, and text utilities
+ * https://github.com/dale-tomson/axis-twelve
+ *
+ * Copyright (c) Dale Tomson
+ * Released under the MIT License
+ */
+
+// Abstracts
+@use '../abstracts' as *;
+
+// Base
+@use '../base/root';
+@use '../base/reset';
+@use '../base/typography';
+
+// Typography utilities
+@use '../03-typography/utilities';

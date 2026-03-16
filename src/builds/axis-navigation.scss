@@ -1,0 +1,18 @@
+/*!
+ * Axis Navigation v2.1.0
+ * Navigation Module - Navbar, nav, tabs, breadcrumb, pagination
+ * https://github.com/dale-tomson/axis-twelve
+ *
+ * Copyright (c) Dale Tomson
+ * Released under the MIT License
+ */
+
+// Abstracts
+@use '../abstracts' as *;
+
+// Base
+@use '../base/root';
+@use '../base/reset';
+
+// Navigation components
+@use '../04-ui-components/navigation/navbar';

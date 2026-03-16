@@ -1,0 +1,200 @@
+// ===========================
+// Alert Component
+// ===========================
+// Alert banners for success, danger, warning, and info states
+
+@use '../../abstracts' as *;
+@use 'sass:map';
+
+// Base Alert
+.ax-alert {
+  display: flex;
+  padding: $spacer-md;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background-color: var(--ax-bg-surface, $bg-surface);
+  color: var(--ax-color-dark, $dark);
+  align-items: flex-start;
+  gap: $spacer-md;
+
+  // Icon
+  &__icon {
+    display: inline-flex;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  // Content wrapper
+  &__content {
+    flex: 1;
+  }
+
+  // Title
+  &__title {
+    font-weight: $font-weight-semibold;
+    line-height: $leading-tight;
+    margin-bottom: $spacer-xs;
+  }
+
+  // Description
+  &__description {
+    color: var(--ax-gray-600, $gray-600);
+    font-size: $font-size-base;
+    line-height: $leading-normal;
+  }
+
+  // Close button
+  &__close {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: (-$spacer-xs) (-$spacer-xs) (-$spacer-xs) 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: currentcolor;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    transition: opacity 0.15s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:focus {
+      opacity: 1;
+      outline: 2px solid currentcolor;
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Alert Variants
+
+// Primary
+.ax-alert--primary {
+  border-color: var(--ax-color-primary, $primary);
+  background-color: rgba($primary, 0.1);
+  color: var(--ax-color-primary, $primary);
+
+  .ax-alert__description {
+    color: rgba($primary, 0.9);
+  }
+}
+
+// Secondary
+.ax-alert--secondary {
+  border-color: var(--ax-color-secondary, $secondary);
+  background-color: rgba($secondary, 0.1);
+  color: var(--ax-color-secondary, $secondary);
+
+  .ax-alert__description {
+    color: rgba($secondary, 0.9);
+  }
+}
+
+// Success
+.ax-alert--success {
+  border-color: var(--ax-color-success, $success);
+  background-color: rgba($success, 0.1);
+  color: var(--ax-color-success, $success);
+
+  .ax-alert__description {
+    color: rgba($success, 0.9);
+  }
+}
+
+// Danger
+.ax-alert--danger {
+  border-color: var(--ax-color-danger, $danger);
+  background-color: rgba($danger, 0.1);
+  color: var(--ax-color-danger, $danger);
+
+  .ax-alert__description {
+    color: rgba($danger, 0.9);
+  }
+}
+
+// Warning
+.ax-alert--warning {
+  border-color: var(--ax-color-warning, $warning);
+  background-color: rgba($warning, 0.1);
+  color: var(--ax-color-warning, $warning);
+
+  .ax-alert__description {
+    color: rgba($warning, 0.9);
+  }
+}
+
+// Info
+.ax-alert--info {
+  border-color: var(--ax-color-info, $info);
+  background-color: rgba($info, 0.1);
+  color: var(--ax-color-info, $info);
+
+  .ax-alert__description {
+    color: rgba($info, 0.9);
+  }
+}
+
+// Alert Sizes
+
+.ax-alert--sm {
+  padding: $spacer-sm;
+  font-size: map.get($type-scale, 'sm');
+}
+
+.ax-alert--lg {
+  padding: $spacer-lg;
+  font-size: map.get($type-scale, 'lg');
+}
+
+// Solid variant (darker background)
+.ax-alert--solid {
+  &.ax-alert--primary {
+    background-color: var(--ax-color-primary, $primary);
+    color: #fff;
+
+    .ax-alert__description {
+      color: rgba(#fff, 0.9);
+    }
+
+    .ax-alert__close:hover {
+      color: #fff;
+    }
+  }
+
+  &.ax-alert--success {
+    background-color: var(--ax-color-success, $success);
+    color: #fff;
+
+    .ax-alert__description {
+      color: rgba(#fff, 0.9);
+    }
+  }
+
+  &.ax-alert--danger {
+    background-color: var(--ax-color-danger, $danger);
+    color: #fff;
+
+    .ax-alert__description {
+      color: rgba(#fff, 0.9);
+    }
+  }
+
+  &.ax-alert--warning {
+    background-color: var(--ax-color-warning, $warning);
+    color: #fff;
+
+    .ax-alert__description {
+      color: rgba(#fff, 0.9);
+    }
+  }
+}

@@ -1,0 +1,575 @@
+// ===========================
+// Positioning Utilities
+// ===========================
+// Position and inset utilities for element placement
+// Mobile-first responsive approach
+
+@use '../abstracts' as *;
+
+// ===== Position Values =====
+
+.ax-static {
+  position: static;
+}
+
+.ax-fixed {
+  position: fixed;
+}
+
+.ax-absolute {
+  position: absolute;
+}
+
+.ax-relative {
+  position: relative;
+}
+
+.ax-sticky {
+  position: sticky;
+}
+
+// ===== Inset (All sides) =====
+
+.ax-inset-0 {
+  inset: 0;
+}
+
+.ax-inset-px {
+  inset: 1px;
+}
+
+.ax-inset-1 {
+  inset: 0.25rem;
+}
+
+.ax-inset-2 {
+  inset: 0.5rem;
+}
+
+.ax-inset-3 {
+  inset: 0.75rem;
+}
+
+.ax-inset-4 {
+  inset: 1rem;
+}
+
+.ax-inset-5 {
+  inset: 1.25rem;
+}
+
+.ax-inset-6 {
+  inset: 1.5rem;
+}
+
+.ax-inset-8 {
+  inset: 2rem;
+}
+
+.ax-inset-10 {
+  inset: 2.5rem;
+}
+
+.ax-inset-12 {
+  inset: 3rem;
+}
+
+.ax-inset-16 {
+  inset: 4rem;
+}
+
+.ax-inset-20 {
+  inset: 5rem;
+}
+
+.ax-inset-24 {
+  inset: 6rem;
+}
+
+.ax-inset-auto {
+  inset: auto;
+}
+
+// ===== Top =====
+
+.ax-top-0 {
+  top: 0;
+}
+
+.ax-top-px {
+  top: 1px;
+}
+
+.ax-top-1 {
+  top: 0.25rem;
+}
+
+.ax-top-2 {
+  top: 0.5rem;
+}
+
+.ax-top-3 {
+  top: 0.75rem;
+}
+
+.ax-top-4 {
+  top: 1rem;
+}
+
+.ax-top-5 {
+  top: 1.25rem;
+}
+
+.ax-top-6 {
+  top: 1.5rem;
+}
+
+.ax-top-8 {
+  top: 2rem;
+}
+
+.ax-top-10 {
+  top: 2.5rem;
+}
+
+.ax-top-12 {
+  top: 3rem;
+}
+
+.ax-top-16 {
+  top: 4rem;
+}
+
+.ax-top-20 {
+  top: 5rem;
+}
+
+.ax-top-24 {
+  top: 6rem;
+}
+
+.ax-top-auto {
+  top: auto;
+}
+
+// ===== Right =====
+
+.ax-right-0 {
+  right: 0;
+}
+
+.ax-right-px {
+  right: 1px;
+}
+
+.ax-right-1 {
+  right: 0.25rem;
+}
+
+.ax-right-2 {
+  right: 0.5rem;
+}
+
+.ax-right-3 {
+  right: 0.75rem;
+}
+
+.ax-right-4 {
+  right: 1rem;
+}
+
+.ax-right-5 {
+  right: 1.25rem;
+}
+
+.ax-right-6 {
+  right: 1.5rem;
+}
+
+.ax-right-8 {
+  right: 2rem;
+}
+
+.ax-right-10 {
+  right: 2.5rem;
+}
+
+.ax-right-12 {
+  right: 3rem;
+}
+
+.ax-right-16 {
+  right: 4rem;
+}
+
+.ax-right-20 {
+  right: 5rem;
+}
+
+.ax-right-24 {
+  right: 6rem;
+}
+
+.ax-right-auto {
+  right: auto;
+}
+
+// ===== Bottom =====
+
+.ax-bottom-0 {
+  bottom: 0;
+}
+
+.ax-bottom-px {
+  bottom: 1px;
+}
+
+.ax-bottom-1 {
+  bottom: 0.25rem;
+}
+
+.ax-bottom-2 {
+  bottom: 0.5rem;
+}
+
+.ax-bottom-3 {
+  bottom: 0.75rem;
+}
+
+.ax-bottom-4 {
+  bottom: 1rem;
+}
+
+.ax-bottom-5 {
+  bottom: 1.25rem;
+}
+
+.ax-bottom-6 {
+  bottom: 1.5rem;
+}
+
+.ax-bottom-8 {
+  bottom: 2rem;
+}
+
+.ax-bottom-10 {
+  bottom: 2.5rem;
+}
+
+.ax-bottom-12 {
+  bottom: 3rem;
+}
+
+.ax-bottom-16 {
+  bottom: 4rem;
+}
+
+.ax-bottom-20 {
+  bottom: 5rem;
+}
+
+.ax-bottom-24 {
+  bottom: 6rem;
+}
+
+.ax-bottom-auto {
+  bottom: auto;
+}
+
+// ===== Left =====
+
+.ax-left-0 {
+  left: 0;
+}
+
+.ax-left-px {
+  left: 1px;
+}
+
+.ax-left-1 {
+  left: 0.25rem;
+}
+
+.ax-left-2 {
+  left: 0.5rem;
+}
+
+.ax-left-3 {
+  left: 0.75rem;
+}
+
+.ax-left-4 {
+  left: 1rem;
+}
+
+.ax-left-5 {
+  left: 1.25rem;
+}
+
+.ax-left-6 {
+  left: 1.5rem;
+}
+
+.ax-left-8 {
+  left: 2rem;
+}
+
+.ax-left-10 {
+  left: 2.5rem;
+}
+
+.ax-left-12 {
+  left: 3rem;
+}
+
+.ax-left-16 {
+  left: 4rem;
+}
+
+.ax-left-20 {
+  left: 5rem;
+}
+
+.ax-left-24 {
+  left: 6rem;
+}
+
+.ax-left-auto {
+  left: auto;
+}
+
+// ===== Z-Index =====
+
+.ax-z-0 {
+  z-index: 0;
+}
+
+.ax-z-10 {
+  z-index: 10;
+}
+
+.ax-z-20 {
+  z-index: 20;
+}
+
+.ax-z-30 {
+  z-index: 30;
+}
+
+.ax-z-40 {
+  z-index: 40;
+}
+
+.ax-z-50 {
+  z-index: 50;
+}
+
+.ax-z-auto {
+  z-index: auto;
+}
+
+// Named z-index values (from abstracts)
+.ax-z-dropdown {
+  z-index: var(--ax-z-dropdown, $z-index-dropdown);
+}
+
+.ax-z-sticky {
+  z-index: var(--ax-z-sticky, $z-index-sticky);
+}
+
+.ax-z-fixed {
+  z-index: var(--ax-z-fixed, $z-index-fixed);
+}
+
+.ax-z-modal-backdrop {
+  z-index: var(--ax-z-modal-backdrop, $z-index-modal-backdrop);
+}
+
+.ax-z-modal {
+  z-index: var(--ax-z-modal, $z-index-modal);
+}
+
+.ax-z-popover {
+  z-index: var(--ax-z-popover, $z-index-popover);
+}
+
+.ax-z-tooltip {
+  z-index: var(--ax-z-tooltip, $z-index-tooltip);
+}
+
+// ===== Overflow Utilities =====
+
+.ax-overflow-auto {
+  overflow: auto;
+}
+
+.ax-overflow-hidden {
+  overflow: hidden;
+}
+
+.ax-overflow-visible {
+  overflow: visible;
+}
+
+.ax-overflow-scroll {
+  overflow: scroll;
+}
+
+// Individual axes
+.ax-overflow-x-auto {
+  overflow-x: auto;
+}
+
+.ax-overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.ax-overflow-x-visible {
+  overflow-x: visible;
+}
+
+.ax-overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.ax-overflow-y-auto {
+  overflow-y: auto;
+}
+
+.ax-overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.ax-overflow-y-visible {
+  overflow-y: visible;
+}
+
+.ax-overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+// ===== Cursor Utilities =====
+
+.ax-cursor-auto {
+  cursor: auto;
+}
+
+.ax-cursor-default {
+  cursor: default;
+}
+
+.ax-cursor-pointer {
+  cursor: pointer;
+}
+
+.ax-cursor-wait {
+  cursor: wait;
+}
+
+.ax-cursor-text {
+  cursor: text;
+}
+
+.ax-cursor-move {
+  cursor: move;
+}
+
+.ax-cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.ax-cursor-zoom-in {
+  cursor: zoom-in;
+}
+
+.ax-cursor-zoom-out {
+  cursor: zoom-out;
+}
+
+// ===== Responsive Positioning =====
+
+@each $breakpoint, $breakpoint-value in $grid-breakpoints {
+  @if $breakpoint != 'xs' {
+    @include respond-to($breakpoint, $grid-breakpoints) {
+      .ax-#{$breakpoint}\:static {
+        position: static;
+      }
+
+      .ax-#{$breakpoint}\:fixed {
+        position: fixed;
+      }
+
+      .ax-#{$breakpoint}\:absolute {
+        position: absolute;
+      }
+
+      .ax-#{$breakpoint}\:relative {
+        position: relative;
+      }
+
+      .ax-#{$breakpoint}\:sticky {
+        position: sticky;
+      }
+
+      .ax-#{$breakpoint}\:inset-0 {
+        inset: 0;
+      }
+
+      .ax-#{$breakpoint}\:top-0 {
+        top: 0;
+      }
+
+      .ax-#{$breakpoint}\:right-0 {
+        right: 0;
+      }
+
+      .ax-#{$breakpoint}\:bottom-0 {
+        bottom: 0;
+      }
+
+      .ax-#{$breakpoint}\:left-0 {
+        left: 0;
+      }
+
+      .ax-#{$breakpoint}\:z-0 {
+        z-index: 0;
+      }
+
+      .ax-#{$breakpoint}\:z-10 {
+        z-index: 10;
+      }
+
+      .ax-#{$breakpoint}\:z-20 {
+        z-index: 20;
+      }
+
+      .ax-#{$breakpoint}\:z-30 {
+        z-index: 30;
+      }
+
+      .ax-#{$breakpoint}\:z-40 {
+        z-index: 40;
+      }
+
+      .ax-#{$breakpoint}\:z-50 {
+        z-index: 50;
+      }
+
+      .ax-#{$breakpoint}\:overflow-auto {
+        overflow: auto;
+      }
+
+      .ax-#{$breakpoint}\:overflow-hidden {
+        overflow: hidden;
+      }
+
+      .ax-#{$breakpoint}\:overflow-visible {
+        overflow: visible;
+      }
+
+      .ax-#{$breakpoint}\:overflow-scroll {
+        overflow: scroll;
+      }
+    }
+  }
+}

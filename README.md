@@ -15,7 +15,6 @@
 
 Axis Twelve is a professional, modular CSS framework featuring a powerful 12-column grid system, comprehensive flexbox utilities, powerful centering components, and a suite of UI components.
 
-
 ## ✨ Key Features
 
 - **🎯 Modular Architecture** - Import only what you need with separate builds
@@ -36,22 +35,25 @@ Axis Twelve is a professional, modular CSS framework featuring a powerful 12-col
 ### Installation
 
 **Via npm:**
+
 ```bash
 npm install axis-twelve
 ```
 
 **Via pnpm:**
+
 ```bash
 pnpm install axis-twelve
 ```
 
 **Via CDN:**
+
 ```html
 <!-- Full framework -->
-<link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/axis-twelve.min.css">
+<link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/axis-twelve.min.css" />
 
 <!-- Or individual modules -->
-<link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-buttons.min.css">
+<link rel="stylesheet" href="https://unpkg.com/axis-twelve/dist/modules/axis-buttons.min.css" />
 ```
 
 ### Usage
@@ -59,7 +61,7 @@ pnpm install axis-twelve
 #### Option 1: Full Framework
 
 ```html
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/axis-twelve.min.css">
+<link rel="stylesheet" href="node_modules/axis-twelve/dist/axis-twelve.min.css" />
 ```
 
 #### Option 2: Modular Imports (Recommended)
@@ -68,11 +70,11 @@ Import only the modules you need:
 
 ```html
 <!-- Layout utilities -->
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/modules/axis-layout.min.css">
+<link rel="stylesheet" href="node_modules/axis-twelve/dist/modules/axis-layout.min.css" />
 
 <!-- UI Components -->
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/modules/axis-buttons.min.css">
-<link rel="stylesheet" href="node_modules/axis-twelve/dist/modules/axis-forms.min.css">
+<link rel="stylesheet" href="node_modules/axis-twelve/dist/modules/axis-buttons.min.css" />
+<link rel="stylesheet" href="node_modules/axis-twelve/dist/modules/axis-forms.min.css" />
 ```
 
 #### Option 3: SCSS Imports
@@ -89,16 +91,28 @@ Import only the modules you need:
 
 ## 📦 Available Modules
 
-| Module | Size (min) | Description |
-|--------|-----------|-------------|
-| **axis-twelve** | 82KB | Full framework bundle |
-| **axis-layout** | 61KB | Grid, flexbox, centering, spacing |
-| **axis-buttons** | 5.5KB | Button components with variants |
-| **axis-forms** | 8.6KB | Form inputs, selects, checkboxes |
-| **axis-modals** | 2.9KB | Modal dialogs with backdrop |
-| **axis-tooltips** | 3.0KB | CSS-only tooltips |
-| **axis-tables** | 2.7KB | Responsive tables |
-| **axis-cards** | 2.8KB | Card components |
+### Core Modules
+
+| Module              | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| **axis-core**       | Core & reset - base foundation for all builds                                  |
+| **axis-layout**     | Grid, flexbox, centering, spacing, display utilities, aspect ratio, containers |
+| **axis-typography** | Typography utilities - font sizing, weights, alignment, text manipulation      |
+| **axis-utilities**  | Utility classes - borders, shadows, backgrounds, sizing, positioning           |
+| **axis-behavior**   | CSS-only interactive components - dropdowns, accordions, carousels             |
+| **axis-indicators** | Status indicators - alerts, badges, progress bars, spinners                    |
+| **axis-navigation** | Navigation components - navbar, nav, tabs, breadcrumb, pagination              |
+
+### Component Modules
+
+| Module            | Description                      |
+| ----------------- | -------------------------------- |
+| **axis-buttons**  | Button components with variants  |
+| **axis-forms**    | Form inputs, selects, checkboxes |
+| **axis-modals**   | Modal dialogs with backdrop      |
+| **axis-tooltips** | CSS-only tooltips                |
+| **axis-tables**   | Responsive tables                |
+| **axis-cards**    | Card components                  |
 
 ## 💡 Quick Examples
 
@@ -152,7 +166,7 @@ Import only the modules you need:
 ```html
 <div class="ax-form-group">
   <label class="ax-label" for="email">Email</label>
-  <input type="email" class="ax-input" id="email" placeholder="Enter email">
+  <input type="email" class="ax-input" id="email" placeholder="Enter email" />
 </div>
 
 <div class="ax-form-group">
@@ -189,7 +203,7 @@ Import only the modules you need:
 ```html
 <div class="ax-card">
   <div class="ax-card__media">
-    <img src="image.jpg" alt="Card image">
+    <img src="image.jpg" alt="Card image" />
   </div>
   <div class="ax-card__body">
     <h3 class="ax-card__title">Card Title</h3>
@@ -204,9 +218,7 @@ Import only the modules you need:
 ### Tooltips
 
 ```html
-<button data-ax-tooltip="This is a tooltip" data-ax-tooltip-position="top">
-  Hover me
-</button>
+<button data-ax-tooltip="This is a tooltip" data-ax-tooltip-position="top">Hover me</button>
 ```
 
 ## 📱 Responsive Breakpoints
@@ -244,6 +256,135 @@ Use responsive classes: `ax-col-md-6`, `ax-col-lg-4`, `ax-flex-md-row`, etc.
 }
 ```
 
+## 🆕 New Utility Classes (v2.1)
+
+### Display Utilities
+
+```html
+<div class="ax-block">Block</div>
+<div class="ax-flex">Flex</div>
+<div class="ax-grid">Grid</div>
+<div class="ax-hidden">Hidden</div>
+<div class="ax-sr-only">Screen reader only</div>
+
+<!-- Responsive display -->
+<div class="ax-hidden md:ax-flex">Hidden on mobile, flex on md+</div>
+```
+
+### Typography Utilities
+
+```html
+<!-- Font sizes -->
+<p class="ax-text-sm">Small</p>
+<p class="ax-text-base">Base</p>
+<p class="ax-text-lg">Large</p>
+<p class="ax-text-xl">Extra large</p>
+
+<!-- Font weights -->
+<p class="ax-font-light">Light</p>
+<p class="ax-font-normal">Normal</p>
+<p class="ax-font-bold">Bold</p>
+
+<!-- Text alignment -->
+<p class="ax-text-center">Centered</p>
+<p class="ax-text-right">Right aligned</p>
+
+<!-- Line height -->
+<p class="ax-leading-tight">Tight</p>
+<p class="ax-leading-normal">Normal</p>
+<p class="ax-leading-loose">Loose</p>
+```
+
+### Border Utilities
+
+```html
+<!-- Border width -->
+<div class="ax-border">1px border</div>
+<div class="ax-border-2">2px border</div>
+<div class="ax-border-0">No border</div>
+
+<!-- Border radius -->
+<div class="ax-rounded">Default</div>
+<div class="ax-rounded-md">Medium</div>
+<div class="ax-rounded-lg">Large</div>
+<div class="ax-rounded-full">Full (pill)</div>
+
+<!-- Border colors -->
+<div class="ax-border-primary">Primary</div>
+<div class="ax-border-success">Success</div>
+<div class="ax-border-danger">Danger</div>
+```
+
+### Shadow Utilities
+
+```html
+<div class="ax-shadow-sm">Small shadow</div>
+<div class="ax-shadow-md">Medium shadow</div>
+<div class="ax-shadow-lg">Large shadow</div>
+<div class="ax-shadow-xl">Extra large shadow</div>
+<div class="ax-shadow-none">No shadow</div>
+```
+
+### Background Utilities
+
+```html
+<!-- Background colors -->
+<div class="ax-bg-primary">Primary</div>
+<div class="ax-bg-success">Success</div>
+<div class="ax-bg-gray-100">Gray 100</div>
+<div class="ax-bg-transparent">Transparent</div>
+
+<!-- Gradients -->
+<div class="ax-bg-gradient-primary">Gradient primary</div>
+<div class="ax-bg-gradient-rainbow">Rainbow gradient</div>
+```
+
+### Sizing Utilities
+
+```html
+<!-- Width -->
+<div class="ax-w-full">Full width</div>
+<div class="ax-w-screen">Screen width</div>
+<div class="ax-w-auto">Auto width</div>
+
+<!-- Height -->
+<div class="ax-h-full">Full height</div>
+<div class="ax-h-screen">Screen height</div>
+
+<!-- Max width -->
+<div class="ax-max-w-full">Full</div>
+<div class="ax-max-w-screen">Screen</div>
+```
+
+### Position Utilities
+
+```html
+<!-- Position -->
+<div class="ax-relative">Relative</div>
+<div class="ax-absolute">Absolute</div>
+<div class="ax-fixed">Fixed</div>
+<div class="ax-sticky">Sticky</div>
+
+<!-- Z-index -->
+<div class="ax-z-10">Z-index 10</div>
+<div class="ax-z-50">Z-index 50</div>
+
+<!-- Overflow -->
+<div class="ax-overflow-hidden">Hidden</div>
+<div class="ax-overflow-auto">Auto</div>
+<div class="ax-overflow-scroll">Scroll</div>
+```
+
+### Aspect Ratio Utilities
+
+```html
+<!-- Aspect ratios -->
+<div class="ax-aspect-square">1:1 square</div>
+<div class="ax-aspect-video">16:9 video</div>
+<div class="ax-aspect-portrait">3:4 portrait</div>
+<div class="ax-aspect-classic">4:3 classic</div>
+```
+
 ## 🔧 Development
 
 ### Build Commands
@@ -272,11 +413,35 @@ pnpm run lint:fix
 
 ```
 src/
-├── abstracts/        # Configuration (colors, typography, spacing, etc.)
-├── base/             # Global resets and root styles
-├── layout/           # Grid, flexbox, centering, spacing
-├── components/       # UI components (buttons, forms, modals, etc.)
-└── builds/           # Build entry points
+├── abstracts/              # Configuration (colors, typography, spacing, etc.)
+├── base/                   # Global resets and root styles
+├── 02-layout-grid/        # Grid, containers, display utilities, aspect ratio
+├── 03-typography/         # Typography utilities
+├── 04-ui-components/      # UI components (navigation, indicators)
+│   ├── navigation/        # Navbar, nav, tabs, breadcrumb, pagination
+│   └── indicators/        # Alerts, badges, progress, spinners
+├── 05-behavior/           # CSS-only interactive components
+│   ├── dropdowns.scss    # Dropdown menus
+│   ├── accordions.scss   # Accordion components
+│   └── carousels.scss    # Carousel sliders
+├── 06-utilities/          # Utility classes
+│   ├── borders.scss      # Border utilities
+│   ├── shadows.scss      # Shadow utilities
+│   ├── backgrounds.scss  # Background utilities
+│   ├── sizing.scss       # Width/height utilities
+│   └── positioning.scss  # Position & z-index utilities
+├── layout/                # Legacy layout modules (deprecated)
+├── components/            # Component modules (buttons, forms, modals, etc.)
+└── builds/                # Build entry points
+```
+
+src/
+├── abstracts/ # Configuration (colors, typography, spacing, etc.)
+├── base/ # Global resets and root styles
+├── layout/ # Grid, flexbox, centering, spacing
+├── components/ # UI components (buttons, forms, modals, etc.)
+└── builds/ # Build entry points
+
 ```
 
 ## 📄 License
@@ -302,3 +467,4 @@ MIT © Dale Tomson
 **Made with ❤️ by Dale Tomson**
 
 </div>
+```

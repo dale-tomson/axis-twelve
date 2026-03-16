@@ -1,0 +1,229 @@
+// ===========================
+// Accordion Component
+// ===========================
+// CSS-only accordion using native <details> and <summary>
+// No JavaScript required - uses native HTML5 disclosure widget
+
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Base Accordion
+.ax-accordion {
+  overflow: hidden;
+  border: 1px solid var(--ax-border-color, $border-color);
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+
+// Accordion Item (wraps each section)
+.ax-accordion__item {
+  border-bottom: 1px solid var(--ax-border-color, $border-color);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// Accordion Trigger (native <summary>)
+.ax-accordion__trigger {
+  display: flex;
+  width: 100%;
+  padding: $spacer-md;
+  border: none;
+  background-color: transparent;
+  color: var(--ax-color-dark, $dark);
+  font-family: inherit;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  text-align: start;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacer-md;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  list-style: none; // Hide default marker
+
+  // Hide default marker in all browsers
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    background-color: var(--ax-gray-50, $gray-50);
+  }
+
+  &:focus {
+    outline: 2px solid var(--ax-color-primary, $primary);
+    outline-offset: -2px;
+  }
+
+  // Chevron icon
+  &::after {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    border-right: 2px solid currentcolor;
+    border-bottom: 2px solid currentcolor;
+    content: '';
+  }
+
+  // Rotate chevron when open
+  details[open] > &::after {
+    transform: rotate(135deg);
+  }
+}
+
+// Accordion Content
+.ax-accordion__content {
+  padding: 0 $spacer-md $spacer-md;
+  color: var(--ax-gray-700, $gray-700);
+  font-size: $font-size-base;
+  line-height: $leading-normal;
+}
+
+// Accordion Variants
+
+// Flush (no outer border)
+.ax-accordion--flush {
+  border: none;
+  border-radius: 0;
+
+  .ax-accordion__item {
+    border-bottom: 1px solid var(--ax-border-color, $border-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// Bordered (each item has border)
+.ax-accordion--bordered {
+  .ax-accordion__item {
+    border: 1px solid var(--ax-border-color, $border-color);
+    border-radius: 0.5rem;
+    margin-bottom: $spacer-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .ax-accordion__trigger {
+      padding: $spacer-md;
+    }
+
+    .ax-accordion__content {
+      padding: 0 $spacer-md $spacer-md;
+    }
+  }
+}
+
+// Icon Position (left)
+.ax-accordion--icon-left {
+  .ax-accordion__trigger {
+    flex-direction: row-reverse;
+
+    &::after {
+      margin-right: auto;
+    }
+  }
+}
+
+// Always open (multiple items can be open)
+.ax-accordion--multiple {
+  // Default behavior - no change needed
+}
+
+// Single open (only one item open at a time)
+// Note: Requires JavaScript for true single-open behavior
+// This is a CSS-only framework, so we use native details behavior
+
+// Animation (smooth open/close)
+.ax-accordion--animated {
+  .ax-accordion__content {
+    overflow: hidden;
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease;
+    padding-top: 0;
+    max-height: 0;
+  }
+
+  details[open] .ax-accordion__content {
+    max-height: 1000px; // Fallback for content height
+    padding-top: $spacer-md;
+  }
+}
+
+// Icon Variants
+
+// Plus icon
+.ax-accordion--icon-plus {
+  .ax-accordion__trigger {
+    &::after {
+      width: 0.75rem;
+      height: 0.75rem;
+      border: none;
+      transform: rotate(0deg);
+      border-bottom: 2px solid currentcolor;
+
+      &::before {
+        position: absolute;
+        width: 2px;
+        height: 0.75rem;
+        background-color: currentcolor;
+        transform: translateX(-50%);
+        content: '';
+      }
+
+      &::after {
+        position: absolute;
+        width: 0.75rem;
+        height: 2px;
+        background-color: currentcolor;
+        transform: translateY(-50%);
+        content: '';
+      }
+    }
+
+    details[open] &::after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// Chevron (default)
+.ax-accordion--icon-chevron {
+  .ax-accordion__trigger {
+    &::after {
+      transform: rotate(-45deg);
+      border-right: 2px solid currentcolor;
+      border-bottom: 2px solid currentcolor;
+    }
+
+    details[open] &::after {
+      transform: rotate(135deg);
+    }
+  }
+}
+
+// Arrow (simple triangle)
+.ax-accordion--icon-arrow {
+  .ax-accordion__trigger {
+    &::after {
+      width: 0;
+      height: 0;
+      transform: rotate(0deg);
+      border-right: 0.5rem solid transparent;
+      border-bottom: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+    }
+
+    details[open] &::after {
+      transform: rotate(180deg);
+    }
+  }
+}

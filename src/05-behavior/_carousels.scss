@@ -1,0 +1,218 @@
+// ===========================
+// Carousel Component
+// ===========================
+// CSS-only carousel using scroll-snap
+// No JavaScript required - uses native CSS scroll-snap
+
+@use '../abstracts' as *;
+
+// Base Carousel
+.ax-carousel {
+  display: flex;
+  position: relative;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; // iOS smooth scrolling
+
+  // Hide scrollbar (optional - can be removed for visible scrollbar)
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE/Edge
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome/Safari
+  }
+}
+
+// Carousel Slide
+.ax-carousel__slide {
+  position: relative;
+  width: 100%;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+
+  > img,
+  > picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Carousel Track (wrapper for slides)
+.ax-carousel__track {
+  display: flex;
+  width: 100%;
+}
+
+// Partial Width Slides (for multi-item carousels)
+.ax-carousel--partial {
+  .ax-carousel__slide {
+    flex: 0 0 50%;
+
+    @include respond-to('md', $grid-breakpoints) {
+      flex: 0 0 33.333%;
+    }
+
+    @include respond-to('lg', $grid-breakpoints) {
+      flex: 0 0 25%;
+    }
+  }
+}
+
+// Carousel Indicators (dots)
+.ax-carousel__indicators {
+  display: flex;
+  position: absolute;
+  bottom: $spacer-md;
+  left: 50%;
+  gap: $spacer-sm;
+  transform: translateX(-50%);
+}
+
+.ax-carousel__indicator {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: none;
+  border-radius: 9999px;
+  background-color: rgb(255 255 255 / 50%);
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &[aria-current='true'],
+  &:hover {
+    background-color: #fff;
+    transform: scale(1.2);
+  }
+}
+
+// Carousel Controls (prev/next buttons)
+.ax-carousel__controls {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  padding: 0 $spacer-md;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.ax-carousel__control {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px solid #fff;
+  border-radius: 9999px;
+  background-color: rgb(0 0 0 / 50%);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  pointer-events: auto;
+
+  &:hover {
+    background-color: rgb(0 0 0 / 70%);
+  }
+
+  &:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  // Previous button
+  &--prev {
+    margin-right: auto;
+  }
+
+  // Next button
+  &--next {
+    margin-left: auto;
+  }
+}
+
+// Carousel Variants
+
+// Fade transition (requires JavaScript for auto-play)
+.ax-carousel--fade {
+  .ax-carousel__slide {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    scroll-snap-align: none;
+
+    &[aria-hidden='false'] {
+      opacity: 1;
+    }
+  }
+}
+
+// Center aligned slides
+.ax-carousel--center {
+  .ax-carousel__slide {
+    scroll-snap-align: center;
+  }
+}
+
+// End aligned slides
+.ax-carousel--end {
+  .ax-carousel__slide {
+    scroll-snap-align: end;
+  }
+}
+
+// With scrollbar
+.ax-carousel--scrollbar {
+  scrollbar-width: thin; // Firefox
+  scrollbar-color: var(--ax-gray-400, $gray-400) transparent;
+
+  &::-webkit-scrollbar {
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background-color: var(--ax-gray-400, $gray-400);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+// Vertical Carousel
+.ax-carousel--vertical {
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+
+  .ax-carousel__slide {
+    height: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+// Auto-play animation (CSS-only with animation)
+@keyframes carousel-scroll {
+  0% {
+    scroll-snap-align: start;
+  }
+
+  100% {
+    scroll-snap-align: start;
+  }
+}
+
+.ax-carousel--auto {
+  // Note: True auto-play requires JavaScript
+  // This is a placeholder for CSS-only implementations
+  // Consider using CSS animations with scroll-behavior
+}

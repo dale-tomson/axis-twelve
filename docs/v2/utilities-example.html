@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axis Twelve - Utilities Example</title>
+    <link rel="stylesheet" href="../../dist/axis-twelve.css" />
+    <style>
+      .demo-section {
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid var(--ax-gray-200);
+        border-radius: 0.5rem;
+      }
+
+      .demo-title {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--ax-color-dark);
+      }
+
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .demo-box {
+        padding: 1rem;
+        text-align: center;
+        border-radius: 0.375rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ax-container">
+      <h1 class="ax-text-3xl ax-font-bold ax-my-xl">Axis Twelve - New Utilities Demo</h1>
+
+      <!-- Display Utilities -->
+      <section class="demo-section">
+        <h2 class="demo-title">Display Utilities</h2>
+        <div class="demo-grid">
+          <div class="ax-bg-primary ax-text-white">
+            <code class="ax-block">ax-block</code>
+          </div>
+          <div class="ax-bg-secondary ax-text-white">
+            <code class="ax-inline-block">ax-inline-block</code>
+          </div>
+          <div class="ax-bg-success ax-text-white">
+            <code class="ax-flex ax-justify-center">ax-flex</code>
+          </div>
+          <div class="ax-bg-danger ax-text-white">
+            <code class="ax-hidden">ax-hidden (not visible)</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography Utilities -->
+      <section class="demo-section">
+        <h2 class="demo-title">Typography Utilities</h2>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md">Font Sizes</h3>
+        <div class="demo-grid">
+          <p class="ax-text-xs">ax-text-xs</p>
+          <p class="ax-text-sm">ax-text-sm</p>
+          <p class="ax-text-base">ax-text-base</p>
+          <p class="ax-text-lg">ax-text-lg</p>
+          <p class="ax-text-xl">ax-text-xl</p>
+          <p class="ax-text-2xl">ax-text-2xl</p>
+        </div>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md ax-mt-lg">Font Weights</h3>
+        <div class="demo-grid">
+          <p class="ax-font-light">ax-font-light</p>
+          <p class="ax-font-normal">ax-font-normal</p>
+          <p class="ax-font-medium">ax-font-medium</p>
+          <p class="ax-font-semibold">ax-font-semibold</p>
+          <p class="ax-font-bold">ax-font-bold</p>
+        </div>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md ax-mt-lg">Text Colors</h3>
+        <div class="demo-grid">
+          <p class="ax-text-primary">ax-text-primary</p>
+          <p class="ax-text-secondary">ax-text-secondary</p>
+          <p class="ax-text-success">ax-text-success</p>
+          <p class="ax-text-danger">ax-text-danger</p>
+          <p class="ax-text-warning">ax-text-warning</p>
+          <p class="ax-text-info">ax-text-info</p>
+        </div>
+      </section>
+
+      <!-- Border Utilities -->
+      <section class="demo-section">
+        <h2 class="demo-title">Border Utilities</h2>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md">Border Radius</h3>
+        <div class="demo-grid">
+          <div class="ax-border ax-rounded-none ax-p-md">
+            <code>ax-rounded-none</code>
+          </div>
+          <div class="ax-border ax-rounded ax-p-md">
+            <code>ax-rounded</code>
+          </div>
+          <div class="ax-border ax-rounded-md ax-p-md">
+            <code>ax-rounded-md</code>
+          </div>
+          <div class="ax-border ax-rounded-lg ax-p-md">
+            <code>ax-rounded-lg</code>
+          </div>
+          <div class="ax-border ax-rounded-xl ax-p-md">
+            <code>ax-rounded-xl</code>
+          </div>
+          <div class="ax-border ax-rounded-full ax-p-md">
+            <code>ax-rounded-full</code>
+          </div>
+        </div>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md ax-mt-lg">Border Colors</h3>
+        <div class="demo-grid">
+          <div class="ax-border-2 ax-border-primary ax-rounded ax-p-md">
+            <code>ax-border-primary</code>
+          </div>
+          <div class="ax-border-2 ax-border-success ax-rounded ax-p-md">
+            <code>ax-border-success</code>
+          </div>
+          <div class="ax-border-2 ax-border-danger ax-rounded ax-p-md">
+            <code>ax-border-danger</code>
+          </div>
+          <div class="ax-border-2 ax-border-warning ax-rounded ax-p-md">
+            <code>ax-border-warning</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shadow Utilities -->
+      <section class="demo-section">
+        <h2 class="demo-title">Shadow Utilities</h2>
+        <div class="demo-grid">
+          <div class="ax-bg-white ax-p-lg ax-shadow-sm ax-rounded">
+            <code>ax-shadow-sm</code>
+          </div>
+          <div class="ax-bg-white ax-p-lg ax-shadow ax-rounded">
+            <code>ax-shadow</code>
+          </div>
+          <div class="ax-bg-white ax-p-lg ax-shadow-md ax-rounded">
+            <code>ax-shadow-md</code>
+          </div>
+          <div class="ax-bg-white ax-p-lg ax-shadow-lg ax-rounded">
+            <code>ax-shadow-lg</code>
+          </div>
+          <div class="ax-bg-white ax-p-lg ax-shadow-xl ax-rounded">
+            <code>ax-shadow-xl</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- Background Utilities -->
+      <section class="demo-section">
+        <h2 class="demo-title">Background Utilities</h2>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md">Theme Colors</h3>
+        <div class="demo-grid">
+          <div class="ax-bg-primary ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-primary</code>
+          </div>
+          <div class="ax-bg-secondary ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-secondary</code>
+          </div>
+          <div class="ax-bg-success ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-success</code>
+          </div>
+          <div class="ax-bg-danger ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-danger</code>
+          </div>
+          <div class="ax-bg-warning ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-warning</code>
+          </div>
+          <div class="ax-bg-info ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-info</code>
+          </div>
+        </div>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md ax-mt-lg">Gray Scale</h3>
+        <div class="demo-grid">
+          <div class="ax-bg-gray-100 ax-p-lg ax-rounded">
+            <code>ax-bg-gray-100</code>
+          </div>
+          <div class="ax-bg-gray-200 ax-p-lg ax-rounded">
+            <code>ax-bg-gray-200</code>
+          </div>
+          <div class="ax-bg-gray-300 ax-p-lg ax-rounded">
+            <code>ax-bg-gray-300</code>
+          </div>
+          <div class="ax-bg-gray-400 ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-gray-400</code>
+          </div>
+          <div class="ax-bg-gray-500 ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-gray-500</code>
+          </div>
+          <div class="ax-bg-gray-600 ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-gray-600</code>
+          </div>
+        </div>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md ax-mt-lg">Gradients</h3>
+        <div class="demo-grid">
+          <div class="ax-bg-gradient-primary ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-gradient-primary</code>
+          </div>
+          <div class="ax-bg-gradient-success ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-gradient-success</code>
+          </div>
+          <div class="ax-bg-gradient-rainbow ax-text-white ax-p-lg ax-rounded">
+            <code>ax-bg-gradient-rainbow</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sizing Utilities -->
+      <section class="demo-section">
+        <h2 class="demo-title">Sizing Utilities</h2>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md">Width</h3>
+        <div class="ax-mb-md">
+          <div class="ax-w-full ax-bg-primary ax-text-white ax-p-md ax-rounded ax-mb-sm">
+            <code>ax-w-full</code> (100%)
+          </div>
+          <div class="ax-w-3/4 ax-bg-secondary ax-text-white ax-p-md ax-rounded ax-mb-sm">
+            <code>ax-w-3/4</code> (75%)
+          </div>
+          <div class="ax-w-1/2 ax-bg-success ax-text-white ax-p-md ax-rounded ax-mb-sm">
+            <code>ax-w-1/2</code> (50%)
+          </div>
+          <div class="ax-w-1/4 ax-bg-danger ax-text-white ax-p-md ax-rounded">
+            <code>ax-w-1/4</code> (25%)
+          </div>
+        </div>
+      </section>
+
+      <!-- Position Utilities -->
+      <section class="demo-section">
+        <h2 class="demo-title">Position & Z-Index</h2>
+        <div class="demo-grid">
+          <div class="ax-relative ax-h-32 ax-bg-gray-100 ax-rounded">
+            <code>ax-relative</code>
+          </div>
+          <div class="ax-sticky ax-h-32 ax-bg-gray-100 ax-rounded">
+            <code>ax-sticky</code>
+          </div>
+          <div class="ax-z-10 ax-h-32 ax-bg-gray-100 ax-rounded">
+            <code>ax-z-10</code>
+          </div>
+          <div class="ax-z-50 ax-h-32 ax-bg-gray-100 ax-rounded">
+            <code>ax-z-50</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aspect Ratio Utilities -->
+      <section class="demo-section">
+        <h2 class="demo-title">Aspect Ratio</h2>
+        <div class="demo-grid">
+          <div
+            class="ax-aspect-square ax-bg-primary ax-text-white ax-flex ax-items-center ax-justify-center ax-rounded"
+          >
+            <code>ax-aspect-square</code>
+          </div>
+          <div
+            class="ax-aspect-video ax-bg-secondary ax-text-white ax-flex ax-items-center ax-justify-center ax-rounded"
+          >
+            <code>ax-aspect-video</code>
+          </div>
+          <div
+            class="ax-aspect-portrait ax-bg-success ax-text-white ax-flex ax-items-center ax-justify-center ax-rounded"
+          >
+            <code>ax-aspect-portrait</code>
+          </div>
+          <div
+            class="ax-aspect-classic ax-bg-danger ax-text-white ax-flex ax-items-center ax-justify-center ax-rounded"
+          >
+            <code>ax-aspect-classic</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- Indicators Examples -->
+      <section class="demo-section">
+        <h2 class="demo-title">Indicators (New Components)</h2>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md">Alerts</h3>
+        <div class="ax-mb-md">
+          <div class="ax-alert ax-alert--success ax-mb-md">
+            <span class="ax-alert__icon">✓</span>
+            <div class="ax-alert__content">
+              <p class="ax-alert__title">Success!</p>
+              <p class="ax-alert__description">Your action was completed successfully.</p>
+            </div>
+          </div>
+
+          <div class="ax-alert ax-alert--danger ax-mb-md">
+            <span class="ax-alert__icon">!</span>
+            <div class="ax-alert__content">
+              <p class="ax-alert__title">Error</p>
+              <p class="ax-alert__description">Something went wrong. Please try again.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md">Badges</h3>
+        <div class="ax-flex ax-gap-md ax-flex-wrap">
+          <span class="ax-badge ax-badge--primary">Primary</span>
+          <span class="ax-badge ax-badge--success">Success</span>
+          <span class="ax-badge ax-badge--danger">Danger</span>
+          <span class="ax-badge ax-badge--warning">Warning</span>
+          <span class="ax-badge ax-badge--info">Info</span>
+          <span class="ax-badge ax-badge--secondary">Secondary</span>
+        </div>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md ax-mt-lg">Progress</h3>
+        <div class="ax-mb-md">
+          <div class="ax-progress ax-mb-md">
+            <div class="ax-progress__indicator" style="width: 25%"></div>
+          </div>
+          <div class="ax-progress ax-progress--success ax-mb-md">
+            <div class="ax-progress__indicator" style="width: 50%"></div>
+          </div>
+          <div class="ax-progress ax-progress--danger ax-mb-md">
+            <div class="ax-progress__indicator" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md">Spinners</h3>
+        <div class="ax-flex ax-gap-lg ax-items-center">
+          <div class="ax-spinner"></div>
+          <div class="ax-spinner ax-spinner--sm"></div>
+          <div class="ax-spinner ax-spinner--lg"></div>
+          <div class="ax-spinner ax-spinner--success"></div>
+        </div>
+      </section>
+
+      <!-- Navigation Examples -->
+      <section class="demo-section">
+        <h2 class="demo-title">Navigation (New Components)</h2>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md">Tabs</h3>
+        <div class="ax-mb-md">
+          <ul class="ax-tabs">
+            <li class="ax-tabs__item">
+              <a href="#" class="ax-tabs__link ax-tabs__link--active" aria-selected="true">Tab 1</a>
+            </li>
+            <li class="ax-tabs__item">
+              <a href="#" class="ax-tabs__link">Tab 2</a>
+            </li>
+            <li class="ax-tabs__item">
+              <a href="#" class="ax-tabs__link">Tab 3</a>
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md">Breadcrumb</h3>
+        <div class="ax-mb-md">
+          <nav class="ax-breadcrumb">
+            <div class="ax-breadcrumb__item">
+              <a href="#" class="ax-breadcrumb__link">Home</a>
+            </div>
+            <div class="ax-breadcrumb__item">
+              <a href="#" class="ax-breadcrumb__link">Library</a>
+            </div>
+            <div class="ax-breadcrumb__item">
+              <span class="ax-breadcrumb__current">Data</span>
+            </div>
+          </nav>
+        </div>
+
+        <h3 class="ax-text-lg ax-font-semibold ax-mb-md">Pagination</h3>
+        <div>
+          <ul class="ax-pagination">
+            <li class="ax-pagination__item">
+              <a href="#" class="ax-pagination__link">&laquo;</a>
+            </li>
+            <li class="ax-pagination__item">
+              <a
+                href="#"
+                class="ax-pagination__link ax-pagination__link--active"
+                aria-current="page"
+                >1</a
+              >
+            </li>
+            <li class="ax-pagination__item">
+              <a href="#" class="ax-pagination__link">2</a>
+            </li>
+            <li class="ax-pagination__item">
+              <a href="#" class="ax-pagination__link">3</a>
+            </li>
+            <li class="ax-pagination__item">
+              <a href="#" class="ax-pagination__link">&raquo;</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

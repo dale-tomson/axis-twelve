@@ -1,0 +1,22 @@
+/*!
+ * Axis Behavior v2.1.0
+ * Behavior Module - CSS-only interactive components
+ * https://github.com/dale-tomson/axis-twelve
+ *
+ * Copyright (c) Dale Tomson
+ * Released under the MIT License
+ */
+
+// Abstracts
+@use '../abstracts' as *;
+
+// Base
+@use '../base/root';
+@use '../base/reset';
+
+// Behavior modules (CSS-only with native HTML)
+@use '../components/modals';
+@use '../components/tooltips';
+@use '../05-behavior/dropdowns';
+@use '../05-behavior/accordions';
+@use '../05-behavior/carousels';
