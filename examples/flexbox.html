@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox - Axis Twelve Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve@2/dist/axis-twelve.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+      }
+      .demo-box {
+        background: var(--ax-color-primary);
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 4px;
+        min-width: 80px;
+      }
+      .demo-container {
+        background: var(--ax-gray-100);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flexbox Utilities</h1>
+    <p>Flexbox layout utilities for flexible arrangements.</p>
+
+    <!-- Basic Flex -->
+    <h2>Basic Flex (Row)</h2>
+    <div class="demo-container">
+      <div class="ax-flex ax-gap-md">
+        <div class="demo-box">Item 1</div>
+        <div class="demo-box">Item 2</div>
+        <div class="demo-box">Item 3</div>
+      </div>
+    </div>
+
+    <!-- Flex Column -->
+    <h2>Flex Column</h2>
+    <div class="demo-container">
+      <div class="ax-flex ax-flex-column ax-gap-md">
+        <div class="demo-box">Item 1</div>
+        <div class="demo-box">Item 2</div>
+        <div class="demo-box">Item 3</div>
+      </div>
+    </div>
+
+    <!-- Justify Content -->
+    <h2>Justify Content</h2>
+    <div class="demo-container">
+      <div class="ax-flex ax-justify-start ax-gap-md ax-mb-md">
+        <div class="demo-box">Start</div>
+        <div class="demo-box">Items</div>
+      </div>
+      <div class="ax-flex ax-justify-center ax-gap-md ax-mb-md">
+        <div class="demo-box">Center</div>
+        <div class="demo-box">Items</div>
+      </div>
+      <div class="ax-flex ax-justify-end ax-gap-md ax-mb-md">
+        <div class="demo-box">End</div>
+        <div class="demo-box">Items</div>
+      </div>
+      <div class="ax-flex ax-justify-between ax-gap-md">
+        <div class="demo-box">Between</div>
+        <div class="demo-box">Items</div>
+      </div>
+    </div>
+
+    <!-- Align Items -->
+    <h2>Align Items</h2>
+    <div class="demo-container" style="height: 120px">
+      <div class="ax-flex ax-items-start ax-gap-md ax-mb-md">
+        <div class="demo-box">Start</div>
+        <div class="demo-box" style="height: 60px">Tall Item</div>
+      </div>
+    </div>
+    <div class="demo-container" style="height: 120px">
+      <div class="ax-flex ax-items-center ax-gap-md ax-mb-md">
+        <div class="demo-box">Center</div>
+        <div class="demo-box" style="height: 60px">Tall Item</div>
+      </div>
+    </div>
+    <div class="demo-container" style="height: 120px">
+      <div class="ax-flex ax-items-end ax-gap-md">
+        <div class="demo-box">End</div>
+        <div class="demo-box" style="height: 60px">Tall Item</div>
+      </div>
+    </div>
+
+    <!-- Code Example -->
+    <h2>Code Example</h2>
+    <pre><code>&lt;!-- Basic Flex Row --&gt;
+&lt;div class="ax-flex ax-gap-md"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Flex Column --&gt;
+&lt;div class="ax-flex ax-flex-column ax-gap-md"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div&gt;Item 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Centered Content --&gt;
+&lt;div class="ax-flex ax-justify-center ax-items-center"&gt;
+  &lt;div&gt;Centered&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <p><a href="README.md">← Back to Examples</a></p>
+  </body>
+</html>

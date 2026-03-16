@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms - Axis Twelve Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve@2/dist/axis-twelve.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .demo-section {
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Forms</h1>
+    <p>Form inputs, selects, and validation states.</p>
+
+    <!-- Basic Inputs -->
+    <div class="demo-section">
+      <h2>Basic Inputs</h2>
+      <div class="ax-form-group ax-mb-md">
+        <label class="ax-label" for="text">Text Input</label>
+        <input type="text" class="ax-input" id="text" placeholder="Enter text" />
+      </div>
+      <div class="ax-form-group ax-mb-md">
+        <label class="ax-label" for="email">Email</label>
+        <input type="email" class="ax-input" id="email" placeholder="email@example.com" />
+      </div>
+      <div class="ax-form-group ax-mb-md">
+        <label class="ax-label" for="password">Password</label>
+        <input type="password" class="ax-input" id="password" placeholder="Enter password" />
+      </div>
+    </div>
+
+    <!-- Select -->
+    <div class="demo-section">
+      <h2>Select</h2>
+      <div class="ax-form-group ax-mb-md">
+        <label class="ax-label" for="select">Choose Option</label>
+        <select class="ax-select" id="select">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="demo-section">
+      <h2>Textarea</h2>
+      <div class="ax-form-group ax-mb-md">
+        <label class="ax-label" for="textarea">Message</label>
+        <textarea
+          class="ax-textarea"
+          id="textarea"
+          rows="4"
+          placeholder="Enter your message"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Checkboxes & Radios -->
+    <div class="demo-section">
+      <h2>Checkboxes & Radios</h2>
+      <div class="ax-form-group ax-mb-md">
+        <label class="ax-checkbox">
+          <input type="checkbox" />
+          <span>Checkbox Option 1</span>
+        </label>
+        <label class="ax-checkbox">
+          <input type="checkbox" />
+          <span>Checkbox Option 2</span>
+        </label>
+      </div>
+      <div class="ax-form-group ax-mb-md">
+        <label class="ax-radio">
+          <input type="radio" name="radio" checked />
+          <span>Radio Option 1</span>
+        </label>
+        <label class="ax-radio">
+          <input type="radio" name="radio" />
+          <span>Radio Option 2</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Validation States -->
+    <div class="demo-section">
+      <h2>Validation States</h2>
+      <div class="ax-form-group ax-mb-md">
+        <label class="ax-label" for="valid">Valid Input</label>
+        <input type="text" class="ax-input ax-input--success" id="valid" value="Valid value" />
+        <small class="ax-form-text ax-text-success">This field is valid</small>
+      </div>
+      <div class="ax-form-group ax-mb-md">
+        <label class="ax-label" for="invalid">Invalid Input</label>
+        <input type="text" class="ax-input ax-input--error" id="invalid" value="Invalid value" />
+        <small class="ax-form-text ax-text-danger">This field has an error</small>
+      </div>
+    </div>
+
+    <!-- Code Example -->
+    <div class="demo-section">
+      <h2>Code Example</h2>
+      <pre><code>&lt;!-- Text Input --&gt;
+&lt;div class="ax-form-group"&gt;
+  &lt;label class="ax-label" for="email"&gt;Email&lt;/label&gt;
+  &lt;input type="email" class="ax-input" id="email" placeholder="email@example.com"&gt;
+&lt;/div&gt;
+
+&lt;!-- Select --&gt;
+&lt;div class="ax-form-group"&gt;
+  &lt;label class="ax-label"&gt;Choose&lt;/label&gt;
+  &lt;select class="ax-select"&gt;
+    &lt;option&gt;Option 1&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;!-- Checkbox --&gt;
+&lt;label class="ax-checkbox"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span&gt;Option&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+    </div>
+
+    <p><a href="README.md">← Back to Examples</a></p>
+  </body>
+</html>
