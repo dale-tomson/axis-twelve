@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axis Twelve - Comprehensive Example</title>
+    <link rel="stylesheet" href="https://unpkg.com/axis-twelve@2/dist/axis-twelve.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .demo-section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        border: 1px solid var(--ax-gray-200);
+        border-radius: 8px;
+      }
+      .example-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="ax-mb-3xl">
+      <h1 class="ax-mb-md">Axis Twelve - Comprehensive Example</h1>
+      <p class="ax-text-secondary">
+        This page demonstrates all components and utilities working together.
+      </p>
+      <nav class="ax-flex ax-gap-md ax-mt-lg">
+        <a href="#grid" class="ax-btn ax-btn--outline-primary">Grid</a>
+        <a href="#flexbox" class="ax-btn ax-btn--outline-primary">Flexbox</a>
+        <a href="#buttons" class="ax-btn ax-btn--outline-primary">Buttons</a>
+        <a href="#forms" class="ax-btn ax-btn--outline-primary">Forms</a>
+        <a href="#modals" class="ax-btn ax-btn--outline-primary">Modals</a>
+        <a href="#tooltips" class="ax-btn ax-btn--outline-primary">Tooltips</a>
+        <a href="#cards" class="ax-btn ax-btn--outline-primary">Cards</a>
+        <a href="#tables" class="ax-btn ax-btn--outline-primary">Tables</a>
+      </nav>
+    </header>
+
+    <!-- Grid System -->
+    <section id="grid" class="demo-section">
+      <h2>Grid System</h2>
+      <p>The responsive 12-column grid system</p>
+
+      <div class="ax-grid ax-gap-md ax-mb-md">
+        <div class="ax-col-12">
+          <div class="ax-bg-primary ax-text-white ax-p-md ax-text-center">
+            12 columns (full width)
+          </div>
+        </div>
+      </div>
+
+      <div class="ax-grid ax-gap-md ax-mb-md">
+        <div class="ax-col-6">
+          <div class="ax-bg-primary ax-text-white ax-p-md ax-text-center">6 columns (1/2)</div>
+        </div>
+        <div class="ax-col-6">
+          <div class="ax-bg-primary ax-text-white ax-p-md ax-text-center">6 columns (1/2)</div>
+        </div>
+      </div>
+
+      <div class="ax-grid ax-gap-md">
+        <div class="ax-col-4 ax-col-md-3">
+          <div class="ax-bg-success ax-text-white ax-p-md ax-text-center">Responsive</div>
+        </div>
+        <div class="ax-col-8 ax-col-md-9">
+          <div class="ax-bg-success ax-text-white ax-p-md ax-text-center">Responsive</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flexbox -->
+    <section id="flexbox" class="demo-section">
+      <h2>Flexbox Utilities</h2>
+      <p>Flexible layout utilities</p>
+
+      <div class="ax-flex ax-justify-between ax-items-center ax-mb-md">
+        <span>Start</span>
+        <span>Middle</span>
+        <span>End</span>
+      </div>
+
+      <div class="ax-flex ax-justify-center ax-items-center ax-gap-md ax-mb-md">
+        <div class="ax-bg-info ax-text-white ax-p-md">Centered</div>
+        <div class="ax-bg-info ax-text-white ax-p-md">Items</div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section id="buttons" class="demo-section">
+      <h2>Buttons</h2>
+      <p>Semantic button variants</p>
+
+      <div class="ax-flex ax-gap-md ax-flex-wrap ax-mb-md">
+        <button class="ax-btn ax-btn--primary">Primary</button>
+        <button class="ax-btn ax-btn--secondary">Secondary</button>
+        <button class="ax-btn ax-btn--success">Success</button>
+        <button class="ax-btn ax-btn--danger">Danger</button>
+        <button class="ax-btn ax-btn--warning">Warning</button>
+        <button class="ax-btn ax-btn--info">Info</button>
+      </div>
+
+      <div class="ax-flex ax-gap-md ax-flex-wrap">
+        <button class="ax-btn ax-btn--outline-primary">Outline Primary</button>
+        <button class="ax-btn ax-btn--outline-secondary">Outline Secondary</button>
+        <button class="ax-btn ax-btn--outline-success">Outline Success</button>
+        <button class="ax-btn ax-btn--outline-danger">Outline Danger</button>
+      </div>
+    </section>
+
+    <!-- Forms -->
+    <section id="forms" class="demo-section">
+      <h2>Forms</h2>
+      <p>Form inputs and controls</p>
+
+      <div class="ax-grid ax-gap-md">
+        <div class="ax-col-6">
+          <div class="ax-form-group ax-mb-md">
+            <label class="ax-label" for="name">Name</label>
+            <input type="text" class="ax-input" id="name" placeholder="Enter name" />
+          </div>
+        </div>
+        <div class="ax-col-6">
+          <div class="ax-form-group ax-mb-md">
+            <label class="ax-label" for="email">Email</label>
+            <input type="email" class="ax-input" id="email" placeholder="email@example.com" />
+          </div>
+        </div>
+      </div>
+
+      <div class="ax-form-group ax-mb-md">
+        <label class="ax-label" for="message">Message</label>
+        <textarea class="ax-textarea" id="message" rows="4" placeholder="Enter message"></textarea>
+      </div>
+
+      <div class="ax-form-group">
+        <label class="ax-checkbox">
+          <input type="checkbox" />
+          <span>Accept terms and conditions</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section id="cards" class="demo-section">
+      <h2>Cards</h2>
+      <p>Card components with media and content</p>
+
+      <div class="example-grid">
+        <div class="ax-card">
+          <div class="ax-card__media">
+            <img
+              src="https://via.placeholder.com/400x200"
+              alt="Placeholder"
+              style="width: 100%; height: auto"
+            />
+          </div>
+          <div class="ax-card__body">
+            <h3 class="ax-card__title">Card Title</h3>
+            <p class="ax-card__text">
+              This is a card with media content. Cards are versatile containers.
+            </p>
+            <button class="ax-btn ax-btn--primary ax-mt-md">Action</button>
+          </div>
+        </div>
+
+        <div class="ax-card">
+          <div class="ax-card__body">
+            <h3 class="ax-card__title">Simple Card</h3>
+            <p class="ax-card__text">A basic card without media.</p>
+          </div>
+          <div class="ax-card__footer">
+            <button class="ax-btn ax-btn--secondary">Cancel</button>
+            <button class="ax-btn ax-btn--primary">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tables -->
+    <section id="tables" class="demo-section">
+      <h2>Tables</h2>
+      <p>Responsive data tables</p>
+
+      <table class="ax-table ax-table--striped">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Widget A</td>
+            <td>$10.00</td>
+            <td>100</td>
+            <td><span class="ax-text-success">In Stock</span></td>
+          </tr>
+          <tr>
+            <td>Widget B</td>
+            <td>$20.00</td>
+            <td>50</td>
+            <td><span class="ax-text-warning">Low Stock</span></td>
+          </tr>
+          <tr>
+            <td>Widget C</td>
+            <td>$30.00</td>
+            <td>0</td>
+            <td><span class="ax-text-danger">Out of Stock</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Tooltips -->
+    <section id="tooltips" class="demo-section">
+      <h2>Tooltips</h2>
+      <p>CSS-only tooltips with multiple positions</p>
+
+      <div class="ax-flex ax-gap-lg">
+        <button
+          class="ax-btn ax-btn--primary"
+          data-ax-tooltip="Top tooltip"
+          data-ax-tooltip-position="top"
+        >
+          Top
+        </button>
+        <button
+          class="ax-btn ax-btn--success"
+          data-ax-tooltip="Right tooltip"
+          data-ax-tooltip-position="right"
+        >
+          Right
+        </button>
+        <button
+          class="ax-btn ax-btn--warning"
+          data-ax-tooltip="Bottom tooltip"
+          data-ax-tooltip-position="bottom"
+        >
+          Bottom
+        </button>
+        <button
+          class="ax-btn ax-btn--danger"
+          data-ax-tooltip="Left tooltip"
+          data-ax-tooltip-position="left"
+        >
+          Left
+        </button>
+      </div>
+    </section>
+
+    <!-- Modals -->
+    <section id="modals" class="demo-section">
+      <h2>Modals</h2>
+      <p>Modal dialogs with backdrop</p>
+
+      <button
+        class="ax-btn ax-btn--primary"
+        onclick="document.getElementById('demo-modal').setAttribute('data-open', 'true')"
+      >
+        Open Modal
+      </button>
+
+      <div class="ax-modal" id="demo-modal" data-open="false">
+        <div
+          class="ax-modal__backdrop"
+          onclick="document.getElementById('demo-modal').setAttribute('data-open', 'false')"
+        ></div>
+        <div class="ax-modal__dialog">
+          <div class="ax-modal__header">
+            <h2 class="ax-modal__title">Modal Title</h2>
+            <button
+              class="ax-modal__close"
+              onclick="document.getElementById('demo-modal').setAttribute('data-open', 'false')"
+            >
+              ×
+            </button>
+          </div>
+          <div class="ax-modal__body">
+            <p>This is a modal dialog. Click the backdrop or close button to dismiss.</p>
+          </div>
+          <div class="ax-modal__footer">
+            <button
+              class="ax-btn ax-btn--secondary"
+              onclick="document.getElementById('demo-modal').setAttribute('data-open', 'false')"
+            >
+              Cancel
+            </button>
+            <button class="ax-btn ax-btn--primary">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ax-mt-3xl ax-p-md ax-bg-surface ax-text-center">
+      <p>For more examples, see the <a href="README.md">examples directory</a></p>
+      <p class="ax-text-secondary">
+        Powered by <a href="https://github.com/dale-tomson/axis-twelve">Axis Twelve</a>
+      </p>
+    </footer>
+  </body>
+</html>

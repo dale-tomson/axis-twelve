@@ -50,8 +50,7 @@
     "check": "pnpm lint && pnpm build",
     "postinstall": "bash project/scripts/install-hooks.sh",
     "test": "pnpm check",
-    "prepublishOnly": "pnpm check",
-    "version": "2.0.2"
+    "prepublishOnly": "pnpm check"
   },
   "keywords": [
     "css",
