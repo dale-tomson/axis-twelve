@@ -24,6 +24,10 @@ This directory contains standalone HTML examples demonstrating Axis Twelve compo
 - [Tables](tables.html) - Responsive tables
 - [Cards](cards.html) - Card components
 
+### Complete Demo
+
+- [Comprehensive Example](comprehensive.html) - All components working together in one page
+
 ## Usage
 
 ### CDN Import
