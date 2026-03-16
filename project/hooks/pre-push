@@ -4,6 +4,29 @@
 # This checks if package.json version differs from last pushed version
 # and verifies that CHANGELOG.md or version-specific files have been updated
 
+# Get current branch name
+CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
+
+# Prevent direct pushes to protected branches
+if [[ "$CURRENT_BRANCH" == "ver-1.x" || "$CURRENT_BRANCH" == "ver-2.x" ]]; then
+  echo ""
+  echo "❌ Error: Direct pushes to '$CURRENT_BRANCH' are not allowed!"
+  echo ""
+  echo "Please follow these steps:"
+  echo "  1. Create a feature branch: git checkout -b feature/your-feature"
+  echo "  2. Make your changes and commit them"
+  echo "  3. Push your feature branch: git push origin feature/your-feature"
+  echo "  4. Create a Pull Request on GitHub to merge into '$CURRENT_BRANCH'"
+  echo ""
+  echo "Example:"
+  echo "  git checkout -b feature/my-feature"
+  echo "  git add <files>"
+  echo "  git commit -m 'feat: add new feature'"
+  echo "  git push origin feature/my-feature"
+  echo ""
+  exit 1
+fi
+
 # Get list of commits to be pushed
 COMMITS_TO_PUSH=$(git rev-list @{u}..HEAD 2>/dev/null | wc -l)
 
