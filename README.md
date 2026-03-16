@@ -470,3 +470,54 @@ MIT © Dale Tomson
 
 </div>
 ```
+
+## 🆕 Phase 2 Features (v2.2.0)
+
+### Dark Mode Support
+```html
+<!-- Toggle dark mode -->
+<button onclick="document.body.classList.toggle('ax-dark')">
+  Toggle Dark Mode
+</button>
+
+<!-- Dark mode container -->
+<div class="ax-dark">
+  <div class="ax-card">Dark mode card</div>
+</div>
+```
+
+### Motion Preferences
+```html
+<!-- Respects user motion settings -->
+<div class="ax-motion-safe">Animated content</div>
+
+<!-- Animation utilities -->
+<div class="ax-animate-spin">Spinning</div>
+<div class="ax-animate-pulse">Pulsing</div>
+```
+
+### Toast Notifications
+```html
+<div class="ax-toasts ax-toasts--top-right">
+  <div class="ax-toast ax-toast--success">
+    <div class="ax-toast__content">
+      <div class="ax-toast__title">Success!</div>
+      <div class="ax-toast__description">Action completed</div>
+    </div>
+  </div>
+</div>
+```
+
+### Skeleton Loaders
+```html
+<!-- Text skeleton -->
+<div class="ax-skeleton ax-skeleton--text ax-skeleton--w-3/4"></div>
+
+<!-- Avatar skeleton -->
+<div class="ax-skeleton ax-skeleton--circle ax-skeleton--md"></div>
+
+<!-- Card skeleton -->
+<div class="ax-skeleton ax-skeleton--rect"></div>
+```
+
+**Phase 2 Module:** Available as `axis-phase2` build
