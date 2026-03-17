@@ -53,11 +53,15 @@
     "./container-queries": "./dist/modules/axis-container-queries.min.css",
     "./container-queries.css": "./dist/modules/axis-container-queries.css",
     "./print": "./dist/modules/axis-print.min.css",
-    "./print.css": "./dist/modules/axis-print.css"
+    "./print.css": "./dist/modules/axis-print.css",
+    "./toggle-switch": "./dist/modules/axis-toggle-switch.min.css",
+    "./toggle-switch.css": "./dist/modules/axis-toggle-switch.css",
+    "./rating": "./dist/modules/axis-rating.min.css",
+    "./rating.css": "./dist/modules/axis-rating.css"
   },
   "files": [
     "dist",
-    "src/scss",
+    "src",
     "LICENSE",
     "README.md",
     "CHANGELOG.md"
@@ -65,7 +69,7 @@
   "scripts": {
     "build": "pnpm run build:full && pnpm run build:modules",
     "build:full": "pnpm exec sass src/builds/axis-twelve.scss dist/axis-twelve.css --style=expanded --no-source-map && pnpm exec sass src/builds/axis-twelve.scss dist/axis-twelve.min.css --style=compressed",
-    "build:modules": "pnpm run build:layout && pnpm run build:typography && pnpm run build:utilities && pnpm run build:behavior && pnpm run build:indicators && pnpm run build:navigation && pnpm run build:dark-mode && pnpm run build:motion && pnpm run build:toasts && pnpm run build:skeletons && pnpm run build:empty-states && pnpm run build:range-slider && pnpm run build:file-upload && pnpm run build:container-queries && pnpm run build:print && pnpm run build:buttons && pnpm run build:forms && pnpm run build:modals && pnpm run build:tooltips && pnpm run build:tables && pnpm run build:cards",
+    "build:modules": "pnpm run build:layout && pnpm run build:typography && pnpm run build:utilities && pnpm run build:behavior && pnpm run build:indicators && pnpm run build:navigation && pnpm run build:dark-mode && pnpm run build:motion && pnpm run build:toasts && pnpm run build:skeletons && pnpm run build:empty-states && pnpm run build:range-slider && pnpm run build:file-upload && pnpm run build:container-queries && pnpm run build:print && pnpm run build:buttons && pnpm run build:forms && pnpm run build:modals && pnpm run build:tooltips && pnpm run build:tables && pnpm run build:cards && pnpm run build:toggle-switch && pnpm run build:rating",
     "build:layout": "bash project/scripts/build-module.sh layout",
     "build:typography": "bash project/scripts/build-module.sh typography",
     "build:utilities": "bash project/scripts/build-module.sh utilities",
@@ -95,7 +99,9 @@
     "build:range-slider": "bash project/scripts/build-module.sh range-slider",
     "build:file-upload": "bash project/scripts/build-module.sh file-upload",
     "build:container-queries": "bash project/scripts/build-module.sh container-queries",
-    "build:print": "bash project/scripts/build-module.sh print"
+    "build:print": "bash project/scripts/build-module.sh print",
+    "build:toggle-switch": "bash project/scripts/build-module.sh toggle-switch",
+    "build:rating": "bash project/scripts/build-module.sh rating"
   },
   "keywords": [
     "css",
