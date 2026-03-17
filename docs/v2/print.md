@@ -335,3 +335,212 @@ Print styles improve accessibility by:
 - Optimizing text size for reading
 - Ensuring sufficient contrast
 - Maintaining logical reading order
+
+## ♿ Print Accessibility
+
+### Print-Specific Considerations
+
+- **High Contrast**: Print styles maintain sufficient contrast for readability
+- **Logical Reading Order**: Content prints in DOM order for screen readers
+- **Link Clarity**: URLs are shown for non-anchor links
+- **Focus Indicators**: Interactive elements are hidden, avoiding confusion
+- **Text Scaling**: Font sizes use absolute units (pt) for consistent printing
+
+### Screen Reader Support
+
+- **Hidden Content**: Non-essential interactive elements are hidden from screen readers
+- **Page Navigation**: Print-specific content (headers/footers) are properly labeled
+- **Document Structure**: Semantic HTML elements maintain their structure
+- **Alternative Text**: Images retain their alt text when printed
+
+### User Control
+
+- **Print Preview**: Users can review what will print before printing
+- **Selective Printing**: Browser print dialogs allow selecting specific content
+- **Page Range**: Users can choose which pages to print
+- **Layout Options**: Portrait/landscape orientation and scaling options
+
+## ⚙️ Customization
+
+### CSS Custom Properties for Print
+
+```css
+/* Print-specific custom properties */
+@media print {
+  :root {
+    /* Typography */
+    --ax-print-font-size: 12pt;
+    --ax-print-line-height: 1.5;
+    --ax-print-font-family: 'Georgia', 'Times New Roman', serif;
+
+    /* Colors */
+    --ax-print-color: #000;
+    --ax-print-bg: #fff;
+    --ax-print-border-color: #ccc;
+
+    /* Spacing */
+    --ax-print-margin: 0.5in;
+    --ax-print-padding: 0.25in;
+
+    /* Page layout */
+    --ax-print-page-width: 8.5in;
+    --ax-print-page-height: 11in;
+  }
+
+  /* Component-specific print customization */
+  .ax-card {
+    --ax-card-print-border: 1px solid var(--ax-print-border-color);
+    --ax-card-print-padding: var(--ax-print-padding);
+    --ax-card-print-margin: 0 0 0.5in 0;
+  }
+
+  .ax-table {
+    --ax-table-print-border: 1px solid var(--ax-print-border-color);
+    --ax-table-print-cell-padding: 0.125in;
+    --ax-table-print-header-bg: #f0f0f0;
+  }
+
+  .ax-code-block {
+    --ax-code-print-font-family: 'Courier New', monospace;
+    --ax-code-print-font-size: 10pt;
+    --ax-code-print-bg: #f8f8f8;
+    --ax-code-print-border: 1px solid var(--ax-print-border-color);
+  }
+}
+
+/* Custom print styles */
+@media print {
+  /* Hide navigation and interactive elements */
+  .ax-navbar,
+  .ax-btn,
+  .ax-form,
+  .ax-toasts,
+  .ax-modals,
+  .ax-tooltips {
+    display: none !important;
+  }
+
+  /* Show URLs for links */
+  a[href]:not([href^='#']):not([href^='javascript:'])::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.875em;
+    font-weight: normal;
+  }
+
+  /* Page break control */
+  .ax-no-break {
+    page-break-inside: avoid;
+  }
+
+  .ax-page-break {
+    page-break-before: always;
+  }
+
+  .ax-page-break-after {
+    page-break-after: always;
+  }
+
+  /* Print headers and footers */
+  @page {
+    margin: var(--ax-print-margin);
+
+    @top-left {
+      content: element(header);
+    }
+
+    @bottom-center {
+      content: 'Page ' counter(page) ' of ' counter(pages);
+      font-size: 0.75em;
+      color: #666;
+    }
+  }
+
+  /* Table headers on each page */
+  thead {
+    display: table-header-group;
+  }
+
+  /* Keep rows together */
+  tr {
+    page-break-inside: avoid;
+  }
+}
+```
+
+### JavaScript Print Enhancement
+
+```javascript
+// Add page numbers dynamically
+function addPageNumbers() {
+  const totalPages = Math.ceil(document.body.scrollHeight / window.innerHeight);
+  const pageNumbers = document.querySelectorAll('.page-number');
+  const totalPagesElements = document.querySelectorAll('.total-pages');
+
+  pageNumbers.forEach((el) => {
+    el.textContent = currentPage;
+  });
+
+  totalPagesElements.forEach((el) => {
+    el.textContent = totalPages;
+  });
+}
+
+// Add print date
+function addPrintDate() {
+  const dateElements = document.querySelectorAll('.print-date');
+  const now = new Date();
+  const formattedDate = now.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
+  dateElements.forEach((el) => {
+    el.textContent = formattedDate;
+  });
+}
+
+// Print button handler
+document.getElementById('print-button').addEventListener('click', () => {
+  // Add print-only content
+  addPageNumbers();
+  addPrintDate();
+
+  // Trigger print dialog
+  window.print();
+});
+
+// Before print event
+window.addEventListener('beforeprint', () => {
+  // Hide interactive elements
+  document.querySelectorAll('.ax-hidden-print').forEach((el) => {
+    el.style.display = 'none';
+  });
+
+  // Show print-only content
+  document.querySelectorAll('.ax-print-only').forEach((el) => {
+    el.style.display = 'block';
+  });
+});
+
+// After print event
+window.addEventListener('afterprint', () => {
+  // Restore normal display
+  document.querySelectorAll('.ax-hidden-print').forEach((el) => {
+    el.style.display = '';
+  });
+
+  document.querySelectorAll('.ax-print-only').forEach((el) => {
+    el.style.display = 'none';
+  });
+});
+```
+
+## 📜 API Evolution
+
+| Version    | Change Type   | Description                                                    |
+| ---------- | ------------- | -------------------------------------------------------------- |
+| **v2.1.0** | Added Feature | Enhanced print styles with page break controls and URL display |
+| **v2.0.2** | Internal      | Improved typography optimization and contrast for print        |
+| **v2.0.1** | Internal      | Added CSS custom properties for print customization            |
+| **v2.0.0** | Major         | Initial print styles with basic element hiding and typography  |

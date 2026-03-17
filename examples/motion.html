@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motion - Axis Twelve Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/axis-twelve.min.css"
+    />
+    <style>
+      body {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .demo-section {
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--ax-border-color);
+        background-color: var(--ax-bg-surface);
+      }
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .demo-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        background-color: var(--ax-bg-surface);
+        border: 1px solid var(--ax-border-color);
+        text-align: center;
+      }
+      .controls {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .motion-indicator {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: var(--ax-color-primary);
+      }
+      .motion-indicator.reduced {
+        opacity: 0.5;
+      }
+      .scroll-trigger {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+      }
+      .scroll-trigger.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .animation-container {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        border: 1px dashed var(--ax-border-color);
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+      .animation-target {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: var(--ax-color-primary);
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <div class="motion-indicator" id="motion-indicator"></div>
+      <button class="ax-btn ax-btn--primary" id="motion-toggle">Reduce Motion</button>
+      <select class="ax-select" id="motion-select">
+        <option value="auto">Auto (Respect Preference)</option>
+        <option value="reduce">Reduced Motion</option>
+        <option value="normal">Normal Motion</option>
+      </select>
+    </div>
+
+    <h1>Motion & Animation Examples</h1>
+    <p>Demonstrating animation utilities and motion preference management.</p>
+
+    <!-- Loading Animations -->
+    <div class="demo-section">
+      <h2>Loading Animations</h2>
+      <p class="ax-text-muted">Useful for indicating progress or loading states.</p>
+
+      <div class="demo-grid">
+        <div class="demo-item">
+          <div
+            class="ax-animate-spin ax-w-8 ax-h-8 ax-border-4 ax-border-gray-300 ax-border-t-primary ax-rounded-full"
+          ></div>
+          <div class="ax-mt-4">Spin Animation</div>
+          <code class="ax-text-sm ax-text-muted">.ax-animate-spin</code>
+        </div>
+
+        <div class="demo-item">
+          <div class="ax-animate-pulse">
+            <div class="ax-bg-gray-200 ax-h-4 ax-rounded ax-w-3/4 ax-mb-2"></div>
+            <div class="ax-bg-gray-200 ax-h-4 ax-rounded ax-w-1/2"></div>
+          </div>
+          <div class="ax-mt-4">Pulse Animation</div>
+          <code class="ax-text-sm ax-text-muted">.ax-animate-pulse</code>
+        </div>
+
+        <div class="demo-item">
+          <div class="ax-flex ax-gap-2">
+            <div class="ax-animate-bounce ax-w-3 ax-h-3 ax-bg-primary ax-rounded-full"></div>
+            <div
+              class="ax-animate-bounce ax-w-3 ax-h-3 ax-bg-primary ax-rounded-full ax-animation-delay-150"
+            ></div>
+            <div
+              class="ax-animate-bounce ax-w-3 ax-h-3 ax-bg-primary ax-rounded-full ax-animation-delay-300"
+            ></div>
+          </div>
+          <div class="ax-mt-4">Bounce Animation</div>
+          <code class="ax-text-sm ax-text-muted">.ax-animate-bounce</code>
+        </div>
+
+        <div class="demo-item">
+          <div class="ax-relative">
+            <div class="ax-w-4 ax-h-4 ax-bg-danger ax-rounded-full"></div>
+            <div
+              class="ax-absolute ax-inset-0 ax-animate-ping ax-w-4 ax-h-4 ax-bg-danger ax-rounded-full ax-opacity-75"
+            ></div>
+          </div>
+          <div class="ax-mt-4">Ping Animation</div>
+          <code class="ax-text-sm ax-text-muted">.ax-animate-ping</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Entry Animations -->
+    <div class="demo-section">
+      <h2>Entry Animations</h2>
+      <p class="ax-text-muted">Animations for content appearing on screen.</p>
+
+      <div class="demo-grid">
+        <div class="demo-item ax-animate-fade-in ax-duration-500">
+          <div
+            class="ax-w-16 ax-h-16 ax-bg-primary ax-rounded-lg ax-flex ax-items-center ax-justify-center"
+          >
+            <span class="ax-text-white">Fade</span>
+          </div>
+          <div class="ax-mt-4">Fade In</div>
+          <code class="ax-text-sm ax-text-muted">.ax-animate-fade-in</code>
+        </div>
+
+        <div class="demo-item ax-animate-slide-in ax-duration-300 ax-ease-out">
+          <div
+            class="ax-w-16 ax-h-16 ax-bg-success ax-rounded-lg ax-flex ax-items-center ax-justify-center"
+          >
+            <span class="ax-text-white">Slide</span>
+          </div>
+          <div class="ax-mt-4">Slide In</div>
+          <code class="ax-text-sm ax-text-muted">.ax-animate-slide-in</code>
+        </div>
+
+        <div class="demo-item ax-animate-zoom-in ax-duration-300 ax-ease-out">
+          <div
+            class="ax-w-16 ax-h-16 ax-bg-warning ax-rounded-lg ax-flex ax-items-center ax-justify-center"
+          >
+            <span class="ax-text-white">Zoom</span>
+          </div>
+          <div class="ax-mt-4">Zoom In</div>
+          <code class="ax-text-sm ax-text-muted">.ax-animate-zoom-in</code>
+        </div>
+
+        <div
+          class="demo-item ax-animate-float ax-duration-2000 ax-ease-in-out ax-iteration-infinite"
+        >
+          <div
+            class="ax-w-16 ax-h-16 ax-bg-info ax-rounded-lg ax-flex ax-items-center ax-justify-center"
+          >
+            <span class="ax-text-white">Float</span>
+          </div>
+          <div class="ax-mt-4">Float Animation</div>
+          <code class="ax-text-sm ax-text-muted">.ax-animate-float</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Animations -->
+    <div class="demo-section">
+      <h2>Interactive Animations</h2>
+      <p class="ax-text-muted">Animations triggered by user interaction.</p>
+
+      <div class="demo-grid">
+        <div class="demo-item">
+          <button
+            class="ax-btn ax-btn--primary ax-transition-transform ax-duration-200 hover:ax-scale-105 active:ax-scale-95"
+          >
+            Hover & Click Me
+          </button>
+          <div class="ax-mt-4">Scale on Hover</div>
+          <code class="ax-text-sm ax-text-muted">.hover:ax-scale-105</code>
+        </div>
+
+        <div class="demo-item">
+          <div class="ax-group">
+            <div
+              class="ax-transition-transform ax-duration-300 group-hover:ax-translate-x-4 ax-p-4 ax-bg-primary ax-text-white ax-rounded"
+            >
+              Hover Group
+            </div>
+          </div>
+          <div class="ax-mt-4">Group Hover</div>
+          <code class="ax-text-sm ax-text-muted">.group-hover:ax-translate-x-4</code>
+        </div>
+
+        <div class="demo-item">
+          <input
+            class="ax-input ax-transition-all ax-duration-200 focus:ax-ring-2 focus:ax-ring-primary focus:ax-border-primary"
+            placeholder="Focus me"
+          />
+          <div class="ax-mt-4">Focus Animation</div>
+          <code class="ax-text-sm ax-text-muted">.focus:ax-ring-2</code>
+        </div>
+
+        <div class="demo-item">
+          <div
+            class="ax-animate-shake ax-trigger-shake ax-p-4 ax-bg-danger ax-text-white ax-rounded"
+          >
+            <button class="ax-btn ax-btn--light" onclick="shakeElement()">Shake Me</button>
+          </div>
+          <div class="ax-mt-4">Shake Animation</div>
+          <code class="ax-text-sm ax-text-muted">.ax-animate-shake</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transition Controls -->
+    <div class="demo-section">
+      <h2>Transition Controls</h2>
+      <p class="ax-text-muted">Fine-grained control over animation timing.</p>
+
+      <div class="demo-grid">
+        <div class="demo-item">
+          <div
+            class="ax-transition-all ax-duration-100 hover:ax-bg-primary hover:ax-text-white ax-p-4 ax-rounded ax-border ax-cursor-pointer"
+          >
+            Duration: 100ms
+          </div>
+          <code class="ax-text-sm ax-text-muted">.ax-duration-100</code>
+        </div>
+
+        <div class="demo-item">
+          <div
+            class="ax-transition-all ax-duration-500 hover:ax-bg-success hover:ax-text-white ax-p-4 ax-rounded ax-border ax-cursor-pointer"
+          >
+            Duration: 500ms
+          </div>
+          <code class="ax-text-sm ax-text-muted">.ax-duration-500</code>
+        </div>
+
+        <div class="demo-item">
+          <div
+            class="ax-transition-all ax-duration-300 ax-delay-200 hover:ax-bg-warning hover:ax-text-white ax-p-4 ax-rounded ax-border ax-cursor-pointer"
+          >
+            Delay: 200ms
+          </div>
+          <code class="ax-text-sm ax-text-muted">.ax-delay-200</code>
+        </div>
+
+        <div class="demo-item">
+          <div
+            class="ax-transition-all ax-duration-300 ax-ease-in-out hover:ax-bg-info hover:ax-text-white ax-p-4 ax-rounded ax-border ax-cursor-pointer"
+          >
+            Ease In Out
+          </div>
+          <code class="ax-text-sm ax-text-muted">.ax-ease-in-out</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Triggered Animations -->
+    <div class="demo-section">
+      <h2>Scroll Triggered Animations</h2>
+      <p class="ax-text-muted">Animations that trigger when elements enter viewport.</p>
+
+      <div class="animation-container">
+        <div class="animation-target ax-animate-on-scroll" id="scroll-animation">Scroll</div>
+      </div>
+
+      <div class="ax-mt-4">
+        <div class="scroll-trigger" id="scroll-trigger-1">
+          <div class="ax-card">
+            <div class="ax-card__body">
+              <h3>Scroll Triggered Content</h3>
+              <p>This content fades in as you scroll down the page.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-trigger" id="scroll-trigger-2" style="margin-top: 100vh">
+          <div class="ax-card">
+            <div class="ax-card__body">
+              <h3>More Scroll Content</h3>
+              <p>This appears further down the page when scrolled into view.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-trigger" id="scroll-trigger-3" style="margin-top: 100vh">
+          <div class="ax-card">
+            <div class="ax-card__body">
+              <h3>Final Scroll Content</h3>
+              <p>The last piece of scroll-triggered content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Motion Preference Management -->
+    <div class="demo-section">
+      <h2>Motion Preference Management</h2>
+      <p class="ax-text-muted">Respecting user accessibility preferences.</p>
+
+      <div class="demo-grid">
+        <div class="demo-item ax-motion-safe">
+          <div
+            class="ax-animate-spin ax-w-8 ax-h-8 ax-border-4 ax-border-gray-300 ax-border-t-primary ax-rounded-full"
+          ></div>
+          <div class="ax-mt-4">Motion Safe</div>
+          <p class="ax-text-sm ax-text-muted">Respects user preference</p>
+          <code class="ax-text-sm ax-text-muted">.ax-motion-safe</code>
+        </div>
+
+        <div class="demo-item ax-motion-reduce">
+          <div
+            class="ax-animate-spin ax-w-8 ax-h-8 ax-border-4 ax-border-gray-300 ax-border-t-primary ax-rounded-full"
+          ></div>
+          <div class="ax-mt-4">Motion Reduce</div>
+          <p class="ax-text-sm ax-text-muted">Never animates</p>
+          <code class="ax-text-sm ax-text-muted">.ax-motion-reduce</code>
+        </div>
+
+        <div class="demo-item">
+          <div class="ax-animate-pulse ax-motion-reduce:ax-animate-none">
+            <div class="ax-bg-gray-200 ax-h-4 ax-rounded ax-w-full"></div>
+          </div>
+          <div class="ax-mt-4">Conditional Animation</div>
+          <p class="ax-text-sm ax-text-muted">Only pulses if motion not reduced</p>
+          <code class="ax-text-sm ax-text-muted">.ax-motion-reduce:ax-animate-none</code>
+        </div>
+
+        <div class="demo-item">
+          <div
+            id="motion-demo"
+            class="ax-transition-all ax-duration-300 hover:ax-bg-primary hover:ax-text-white ax-p-4 ax-rounded ax-border ax-cursor-pointer"
+          >
+            Interactive Demo
+          </div>
+          <div class="ax-mt-4">Current Setting:</div>
+          <div id="motion-status" class="ax-text-sm ax-font-semibold"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Performance Optimized Animations -->
+    <div class="demo-section">
+      <h2>Performance Optimized</h2>
+      <p class="ax-text-muted">GPU-accelerated and optimized animations.</p>
+
+      <div class="demo-grid">
+        <div class="demo-item ax-transform-gpu">
+          <div
+            class="ax-transition-transform ax-duration-300 hover:ax-scale-110 ax-w-16 ax-h-16 ax-bg-primary ax-rounded-lg ax-flex ax-items-center ax-justify-center"
+          >
+            <span class="ax-text-white">GPU</span>
+          </div>
+          <div class="ax-mt-4">GPU Accelerated</div>
+          <code class="ax-text-sm ax-text-muted">.ax-transform-gpu</code>
+        </div>
+
+        <div class="demo-item ax-will-change-transform">
+          <div
+            class="ax-transition-transform ax-duration-300 hover:ax-rotate-12 ax-w-16 ax-h-16 ax-bg-success ax-rounded-lg ax-flex ax-items-center ax-justify-center"
+          >
+            <span class="ax-text-white">Will Change</span>
+          </div>
+          <div class="ax-mt-4">Will Change Hint</div>
+          <code class="ax-text-sm ax-text-muted">.ax-will-change-transform</code>
+        </div>
+
+        <div class="demo-item ax-contain-paint">
+          <div
+            class="ax-transition-all ax-duration-300 hover:ax-bg-warning hover:ax-text-white ax-p-4 ax-rounded"
+          >
+            Paint Containment
+          </div>
+          <div class="ax-mt-4">Paint Containment</div>
+          <code class="ax-text-sm ax-text-muted">.ax-contain-paint</code>
+        </div>
+
+        <div class="demo-item">
+          <div
+            class="ax-transition-opacity ax-duration-300 hover:ax-opacity-50 ax-w-16 ax-h-16 ax-bg-info ax-rounded-lg ax-flex ax-items-center ax-justify-center"
+          >
+            <span class="ax-text-white">Opacity</span>
+          </div>
+          <div class="ax-mt-4">Opacity Only</div>
+          <code class="ax-text-sm ax-text-muted">.ax-transition-opacity</code>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Motion preference management
+      const motionToggle = document.getElementById('motion-toggle');
+      const motionSelect = document.getElementById('motion-select');
+      const motionIndicator = document.getElementById('motion-indicator');
+      const motionStatus = document.getElementById('motion-status');
+      const motionDemo = document.getElementById('motion-demo');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      // Load saved preference or use system preference
+      let motionPreference = localStorage.getItem('motion-preference') || 'auto';
+      motionSelect.value = motionPreference;
+
+      function applyMotionPreference(preference) {
+        // Remove all motion classes
+        document.documentElement.classList.remove('ax-motion-reduce', 'ax-motion-safe');
+
+        // Apply preference
+        if (preference === 'reduce') {
+          document.documentElement.classList.add('ax-motion-reduce');
+          motionIndicator.classList.add('reduced');
+          motionStatus.textContent = 'Reduced Motion';
+          motionToggle.textContent = 'Enable Motion';
+        } else if (preference === 'normal') {
+          document.documentElement.classList.add('ax-motion-safe');
+          motionIndicator.classList.remove('reduced');
+          motionStatus.textContent = 'Normal Motion';
+          motionToggle.textContent = 'Reduce Motion';
+        } else {
+          // auto
+          if (prefersReducedMotion.matches) {
+            document.documentElement.classList.add('ax-motion-reduce');
+            motionIndicator.classList.add('reduced');
+            motionStatus.textContent = 'Reduced Motion (System)';
+            motionToggle.textContent = 'Enable Motion';
+          } else {
+            document.documentElement.classList.add('ax-motion-safe');
+            motionIndicator.classList.remove('reduced');
+            motionStatus.textContent = 'Normal Motion (System)';
+            motionToggle.textContent = 'Reduce Motion';
+          }
+        }
+
+        // Save preference
+        localStorage.setItem('motion-preference', preference);
+        motionPreference = preference;
+      }
+
+      // Initialize motion preference
+      applyMotionPreference(motionPreference);
+
+      // Toggle button
+      motionToggle.addEventListener('click', () => {
+        if (motionPreference === 'auto') {
+          applyMotionPreference(prefersReducedMotion.matches ? 'normal' : 'reduce');
+        } else if (motionPreference === 'reduce') {
+          applyMotionPreference('normal');
+        } else {
+          applyMotionPreference('reduce');
+        }
+
+        // Update select to match
+        if (motionPreference === 'auto') {
+          motionSelect.value = 'auto';
+        } else {
+          motionSelect.value = motionPreference;
+        }
+      });
+
+      // Select change
+      motionSelect.addEventListener('change', (e) => {
+        applyMotionPreference(e.target.value);
+      });
+
+      // System preference change
+      prefersReducedMotion.addEventListener('change', (e) => {
+        if (motionPreference === 'auto') {
+          applyMotionPreference('auto');
+        }
+      });
+
+      // Shake animation function
+      function shakeElement() {
+        const element = document.querySelector('.ax-trigger-shake');
+        element.classList.remove('ax-animate-shake');
+        void element.offsetWidth; // Trigger reflow
+        element.classList.add('ax-animate-shake');
+
+        // Remove animation class after it completes
+        setTimeout(() => {
+          element.classList.remove('ax-animate-shake');
+        }, 500);
+      }
+
+      // Scroll triggered animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+
+              // Special handling for the animation target
+              if (entry.target.id === 'scroll-animation') {
+                entry.target.classList.add('ax-animate-fade-in');
+              }
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      // Observe scroll triggers
+      document.querySelectorAll('.scroll-trigger, .ax-animate-on-scroll').forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Interactive demo hover effect
+      motionDemo.addEventListener('mouseenter', () => {
+        if (!document.documentElement.classList.contains('ax-motion-reduce')) {
+          motionDemo.style.transform = 'translateY(-5px)';
+          motionDemo.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1)';
+        }
+      });
+
+      motionDemo.addEventListener('mouseleave', () => {
+        motionDemo.style.transform = '';
+        motionDemo.style.boxShadow = '';
+      });
+    </script>
+  </body>
+</html>

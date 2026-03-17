@@ -276,3 +276,96 @@ For older browsers, the styles gracefully degrade to the base styles.
 - Use named containers for component-specific styling
 - Avoid deeply nested container queries
 - Test performance on lower-powered devices
+
+## ♿ Accessibility
+
+### Container Query Accessibility
+
+- **Focus Management**: Components maintain focus order when layout changes
+- **Screen Readers**: Layout changes are announced appropriately
+- **Zoom Support**: Containers respect user zoom preferences
+- **Reduced Motion**: Avoid excessive layout changes for users with motion sensitivity
+
+### Best Practices
+
+- **Maintain Reading Order**: Ensure content flows logically in all container sizes
+- **Consistent Navigation**: Keep interactive elements accessible regardless of layout
+- **Text Scaling**: Ensure text remains readable at all container sizes
+- **Focus Indicators**: Maintain visible focus indicators during layout changes
+
+## ⚙️ Customization
+
+### CSS Custom Properties
+
+```css
+/* Container query breakpoints */
+:root {
+  --ax-cq-sm: 640px;
+  --ax-cq-md: 768px;
+  --ax-cq-lg: 1024px;
+  --ax-cq-xl: 1280px;
+  --ax-cq-2xl: 1536px;
+}
+
+/* Named container configuration */
+.ax-container--card {
+  container-type: inline-size;
+  container-name: card;
+}
+
+.ax-container--sidebar {
+  container-type: inline-size;
+  container-name: sidebar;
+}
+
+/* Custom container queries */
+@container (min-width: var(--ax-cq-md)) {
+  .ax-cq:flex-row {
+    flex-direction: row;
+  }
+}
+```
+
+### Component-Specific Container Queries
+
+```css
+/* Card-specific container queries */
+@container card (min-width: 400px) {
+  .ax-card {
+    --ax-card-padding: var(--ax-spacing-lg);
+    --ax-card-gap: var(--ax-spacing-md);
+  }
+
+  .ax-card__title {
+    font-size: var(--ax-font-size-xl);
+  }
+}
+
+/* Sidebar-specific container queries */
+@container sidebar (min-width: 300px) {
+  .ax-sidebar {
+    --ax-sidebar-width: 16rem;
+  }
+
+  .ax-sidebar__item {
+    padding: var(--ax-spacing-md);
+  }
+}
+
+/* Panel-specific container queries */
+@container panel (min-width: 600px) {
+  .ax-panel {
+    --ax-panel-columns: 2;
+    grid-template-columns: repeat(var(--ax-panel-columns), 1fr);
+  }
+}
+```
+
+## 📜 API Evolution
+
+| Version    | Change Type   | Description                                                               |
+| ---------- | ------------- | ------------------------------------------------------------------------- |
+| **v2.1.0** | Added Feature | Initial container query support with named containers and utility classes |
+| **v2.0.2** | Internal      | Improved browser fallback strategies for older browsers                   |
+| **v2.0.1** | Internal      | Added aspect ratio and style-based container queries                      |
+| **v2.0.0** | Major         | Basic container query utilities for component-level responsive design     |
