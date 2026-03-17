@@ -17,6 +17,6 @@
 // Behavior modules (CSS-only with native HTML)
 @use '../components/modals';
 @use '../components/tooltips';
-@use '../05-behavior/dropdowns';
-@use '../05-behavior/accordions';
-@use '../05-behavior/carousels';
+@use '../behavior/dropdowns';
+@use '../behavior/accordions';
+@use '../behavior/carousels';

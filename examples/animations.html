@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation Utilities - Axis Twelve Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/axis-twelve.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/modules/axis-motion.min.css"
+    />
+    <style>
+      body {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+      .demo-section {
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--ax-border-color, #e5e7eb);
+        background-color: var(--ax-bg-surface, #fff);
+      }
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .demo-item {
+        padding: 1.5rem;
+        border: 1px solid var(--ax-border-color, #e5e7eb);
+        border-radius: 0.5rem;
+        background-color: var(--ax-bg-surface, #f9fafb);
+        text-align: center;
+        cursor: pointer;
+      }
+      .demo-item:hover {
+        background-color: var(--ax-bg-surface-2, #f3f4f6);
+      }
+      .controls {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .ax-card {
+        background-color: var(--ax-bg-surface, #fff);
+        border: 1px solid var(--ax-border-color, #e5e7eb);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: var(--ax-color-dark, #1f2937);
+      }
+      .animation-target {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <button id="replayBtn" class="ax-btn ax-btn--primary">Replay All</button>
+      <button id="themeToggle" class="ax-btn ax-btn--secondary">Toggle Dark Mode</button>
+    </div>
+
+    <h1>Animation Utilities</h1>
+    <p>Interactive demonstration of Axis Twelve animation presets and timing controls.</p>
+
+    <!-- Fade Animations -->
+    <section class="demo-section">
+      <h2>Fade Animations</h2>
+      <p>Click any card to replay the animation.</p>
+      <div class="demo-grid">
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-fade-in')">
+          <div class="animation-target ax-fade-in">Fade In</div>
+          <code class="ax-fade-in">.ax-fade-in</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-fade-in-up')">
+          <div class="animation-target ax-fade-in-up">Fade In Up</div>
+          <code class="ax-fade-in-up">.ax-fade-in-up</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-fade-in-down')">
+          <div class="animation-target ax-fade-in-down">Fade In Down</div>
+          <code class="ax-fade-in-down">.ax-fade-in-down</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-fade-in-left')">
+          <div class="animation-target ax-fade-in-left">Fade In Left</div>
+          <code class="ax-fade-in-left">.ax-fade-in-left</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-fade-in-right')">
+          <div class="animation-target ax-fade-in-right">Fade In Right</div>
+          <code class="ax-fade-in-right">.ax-fade-in-right</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide Animations -->
+    <section class="demo-section">
+      <h2>Slide Animations</h2>
+      <div class="demo-grid">
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-slide-up')">
+          <div class="animation-target ax-slide-up">Slide Up</div>
+          <code class="ax-slide-up">.ax-slide-up</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-slide-down')">
+          <div class="animation-target ax-slide-down">Slide Down</div>
+          <code class="ax-slide-down">.ax-slide-down</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-slide-left')">
+          <div class="animation-target ax-slide-left">Slide Left</div>
+          <code class="ax-slide-left">.ax-slide-left</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-slide-right')">
+          <div class="animation-target ax-slide-right">Slide Right</div>
+          <code class="ax-slide-right">.ax-slide-right</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Attention Seekers -->
+    <section class="demo-section">
+      <h2>Attention Seekers</h2>
+      <div class="demo-grid">
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-pulse')">
+          <div class="animation-target ax-pulse">Pulse</div>
+          <code class="ax-pulse">.ax-pulse</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-bounce')">
+          <div class="animation-target ax-bounce">Bounce</div>
+          <code class="ax-bounce">.ax-bounce</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-shake')">
+          <div class="animation-target ax-shake">Shake</div>
+          <code class="ax-shake">.ax-shake</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-swing')">
+          <div class="animation-target ax-swing">Swing</div>
+          <code class="ax-swing">.ax-swing</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-wobble')">
+          <div class="animation-target ax-wobble">Wobble</div>
+          <code class="ax-wobble">.ax-wobble</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-heartbeat')">
+          <div class="animation-target ax-heartbeat">Heartbeat</div>
+          <code class="ax-heartbeat">.ax-heartbeat</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Duration Controls -->
+    <section class="demo-section">
+      <h2>Duration Controls</h2>
+      <p>Same animation with different durations.</p>
+      <div class="demo-grid">
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-fade-in')">
+          <div class="animation-target ax-fade-in ax-duration-75">75ms</div>
+          <code>ax-duration-75</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-fade-in')">
+          <div class="animation-target ax-fade-in ax-duration-150">150ms</div>
+          <code>ax-duration-150</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-fade-in')">
+          <div class="animation-target ax-fade-in ax-duration-300">300ms</div>
+          <code>ax-duration-300</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-fade-in')">
+          <div class="animation-target ax-fade-in ax-duration-500">500ms</div>
+          <code>ax-duration-500</code>
+        </div>
+        <div class="demo-item" onclick="replayAnimation(this, 'ax-fade-in')">
+          <div class="animation-target ax-fade-in ax-duration-1000">1000ms</div>
+          <code>ax-duration-1000</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Staggered Animation -->
+    <section class="demo-section">
+      <h2>Staggered Animation</h2>
+      <p>Click "Replay All" to see staggered animation effect.</p>
+      <div id="staggerContainer" style="margin-top: 1rem">
+        <div
+          class="ax-fade-in ax-stagger-1"
+          style="
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 1rem;
+            background: #667eea;
+            color: white;
+            border-radius: 0.5rem;
+          "
+        >
+          Item 1
+        </div>
+        <div
+          class="ax-fade-in ax-stagger-2"
+          style="
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 1rem;
+            background: #764ba2;
+            color: white;
+            border-radius: 0.5rem;
+          "
+        >
+          Item 2
+        </div>
+        <div
+          class="ax-fade-in ax-stagger-3"
+          style="
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 1rem;
+            background: #667eea;
+            color: white;
+            border-radius: 0.5rem;
+          "
+        >
+          Item 3
+        </div>
+        <div
+          class="ax-fade-in ax-stagger-4"
+          style="
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 1rem;
+            background: #764ba2;
+            color: white;
+            border-radius: 0.5rem;
+          "
+        >
+          Item 4
+        </div>
+        <div
+          class="ax-fade-in ax-stagger-5"
+          style="
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 1rem;
+            background: #667eea;
+            color: white;
+            border-radius: 0.5rem;
+          "
+        >
+          Item 5
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Dark mode toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+
+      themeToggle.addEventListener('click', () => {
+        html.classList.toggle('ax-dark');
+        themeToggle.textContent = html.classList.contains('ax-dark') ? 'Light Mode' : 'Dark Mode';
+      });
+
+      // Replay animation helper
+      function replayAnimation(element, animationClass) {
+        const target = element.querySelector('.animation-target');
+        target.style.opacity = '0';
+        target.classList.remove(animationClass);
+
+        setTimeout(() => {
+          target.style.opacity = '1';
+          target.classList.add(animationClass);
+        }, 100);
+      }
+
+      // Replay all button
+      document.getElementById('replayBtn').addEventListener('click', () => {
+        // Replay staggered animation
+        const items = document.querySelectorAll('#staggerContainer > div');
+        items.forEach((item) => {
+          item.style.opacity = '0';
+          setTimeout(() => {
+            item.style.opacity = '1';
+          }, 100);
+        });
+      });
+    </script>
+  </body>
+</html>

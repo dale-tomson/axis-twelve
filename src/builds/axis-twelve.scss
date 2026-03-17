@@ -1,7 +1,7 @@
-/*! 
- * Axis Twelve v2.0.0
+/*!
+ * Axis Twelve v2.2.0
  * https://github.com/dale-tomson/axis-twelve
- * 
+ *
  * Copyright (c) Dale Tomson
  * Released under the MIT License
  */
@@ -27,3 +27,42 @@
 @use '../components/tooltips';
 @use '../components/tables';
 @use '../components/cards';
+
+// Forms sub-components
+@use '../components/forms/toggle-switch';
+@use '../components/forms/rating';
+@use '../components/forms/range-slider';
+@use '../components/forms/file-upload';
+
+// Component states and indicators
+@use '../components/indicators/alerts';
+@use '../components/indicators/badges';
+@use '../components/indicators/progress';
+@use '../components/indicators/skeletons';
+@use '../components/indicators/toasts';
+@use '../components/states/empty-states';
+
+// Dark mode overrides
+@use '../components/dark-overrides';
+
+// Navigation
+@use '../components/navigation/navbar';
+
+// Behavior
+@use '../behavior/dropdowns';
+@use '../behavior/accordions';
+@use '../behavior/carousels';
+
+// Utilities
+@use '../utilities/dark-mode';
+@use '../utilities/motion';
+@use '../utilities/keyframes';
+@use '../utilities/animations';
+@use '../utilities/timing';
+@use '../utilities/borders';
+@use '../utilities/shadows';
+@use '../utilities/backgrounds';
+@use '../utilities/sizing';
+@use '../utilities/positioning';
+@use '../utilities/container-queries';
+@use '../utilities/print';

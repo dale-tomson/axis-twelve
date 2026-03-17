@@ -19,12 +19,14 @@ Axis Twelve is a professional, modular CSS framework featuring a powerful 12-col
 
 - **Modular Architecture** - Import only what you need with separate builds
 - **12-Column Grid System** - Responsive, flexible, and easy to use
-- **Complete UI Components** - Buttons, forms, modals, tooltips, tables, cards
+- **Complete UI Components** - Buttons, forms, modals, tooltips, tables, cards, toggle switches, star ratings
+- **Enhanced Dark Mode** - System preference detection, 25+ CSS custom properties, component-specific overrides
+- **Animation Utilities** - 20+ preset animations, timing controls, state management
 - **CSS-Only** - No JavaScript required for core functionality
-- **Accessibility First** - WCAG 2.1 compliant, keyboard navigation support
+- **Accessibility First** - WCAG 2.1 compliant, keyboard navigation support, reduced motion support
 - **LTR & RTL Support** - Native support for all text directions via CSS Logical Properties
 - **Responsive Breakpoints** - xs, sm, md, lg, xl, xxl
-- **Ultra-Lightweight** - Modular builds from 3KB to 84KB minified
+- **Ultra-Lightweight** - Modular builds from 1KB to 18KB minified
 
 ## 🚀 Quick Start
 
@@ -86,8 +88,10 @@ All sizes are approximate and measured from the actual compiled CSS files.
 | **axis-tooltips**          | 5 KB         | 5 KB     | 1 KB    |
 | **axis-tables**            | 4 KB         | 3 KB     | 1 KB    |
 | **axis-skeletons**         | 4 KB         | 3 KB     | 1 KB    |
-| **axis-motion**            | 3 KB         | 3 KB     | 1 KB    |
-| **axis-dark-mode**         | 3 KB         | 2 KB     | 1 KB    |
+| **axis-motion**            | 16 KB        | 13 KB    | 3 KB    |
+| **axis-dark-mode**         | 13 KB        | 12 KB    | 2 KB    |
+| **axis-toggle-switch**     | 6 KB         | 5.5 KB   | 1 KB    |
+| **axis-rating**            | 6 KB         | 5 KB     | 1 KB    |
 
 ## 🔗 Links
 

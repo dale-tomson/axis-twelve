@@ -1,0 +1,292 @@
+// Animation Preset Classes
+// Ready-to-use animation utility classes
+@use '../abstracts' as *;
+
+// ===== Fade Animations =====
+.ax-fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+.ax-fade-out {
+  animation: fadeOut 0.3s ease;
+}
+
+.ax-fade-in-up {
+  animation: fadeInUp 0.4s ease;
+}
+
+.ax-fade-in-down {
+  animation: fadeInDown 0.4s ease;
+}
+
+.ax-fade-in-left {
+  animation: fadeInLeft 0.4s ease;
+}
+
+.ax-fade-in-right {
+  animation: fadeInRight 0.4s ease;
+}
+
+.ax-fade-out-up {
+  animation: fadeOutUp 0.4s ease;
+}
+
+.ax-fade-out-down {
+  animation: fadeOutDown 0.4s ease;
+}
+
+.ax-fade-out-left {
+  animation: fadeOutLeft 0.4s ease;
+}
+
+.ax-fade-out-right {
+  animation: fadeOutRight 0.4s ease;
+}
+
+// ===== Slide Animations =====
+.ax-slide-up {
+  animation: slideInUp 0.3s ease;
+}
+
+.ax-slide-down {
+  animation: slideInDown 0.3s ease;
+}
+
+.ax-slide-left {
+  animation: slideInLeft 0.3s ease;
+}
+
+.ax-slide-right {
+  animation: slideInRight 0.3s ease;
+}
+
+.ax-slide-out-up {
+  animation: slideOutUp 0.3s ease;
+}
+
+.ax-slide-out-down {
+  animation: slideOutDown 0.3s ease;
+}
+
+.ax-slide-out-left {
+  animation: slideOutLeft 0.3s ease;
+}
+
+.ax-slide-out-right {
+  animation: slideOutRight 0.3s ease;
+}
+
+// ===== Scale Animations =====
+.ax-scale-up {
+  animation: scaleUp 0.2s ease;
+}
+
+.ax-scale-down {
+  animation: scaleDown 0.2s ease;
+}
+
+// ===== Rotate Animations =====
+.ax-spin {
+  animation: spin 1s linear infinite;
+}
+
+.ax-spin-reverse {
+  animation: spinReverse 1s linear infinite;
+}
+
+.ax-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+// ===== Pulse & Ping =====
+.ax-pulse {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.ax-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+// ===== Bounce =====
+.ax-bounce {
+  animation: bounce 1s ease infinite;
+}
+
+// ===== Attention Seekers =====
+.ax-shake {
+  animation: shake 0.5s ease;
+}
+
+.ax-swing {
+  animation: swing 0.5s ease;
+}
+
+.ax-wobble {
+  animation: wobble 0.5s ease;
+}
+
+.ax-heartbeat {
+  animation: heartbeat 1s ease-in-out infinite;
+}
+
+.ax-flash {
+  animation: flash 1s ease;
+}
+
+.ax-rubber-band {
+  animation: rubberBand 0.75s ease;
+}
+
+.ax-jello {
+  animation: jello 0.75s ease;
+}
+
+// ===== Special Animations =====
+.ax-roll-in {
+  animation: rollIn 0.6s ease;
+}
+
+.ax-roll-out {
+  animation: rollOut 0.6s ease;
+}
+
+.ax-zoom-in {
+  animation: zoomIn 0.3s ease;
+}
+
+.ax-zoom-out {
+  animation: zoomOut 0.3s ease;
+}
+
+// ===== Enter/Exit State Classes =====
+// For JS-managed state transitions
+.ax-enter {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.ax-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.ax-enter-done {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ax-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ax-exit-active {
+  opacity: 0;
+  transform: scale(0.98);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.ax-exit-done {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+// ===== Animation Iteration =====
+.ax-infinite {
+  animation-iteration-count: infinite;
+}
+
+.ax-animation-once {
+  animation-iteration-count: 1;
+}
+
+.ax-animation-2 {
+  animation-iteration-count: 2;
+}
+
+.ax-animation-3 {
+  animation-iteration-count: 3;
+}
+
+.ax-animation-4 {
+  animation-iteration-count: 4;
+}
+
+// ===== Animation Fill Modes =====
+.ax-fill-both {
+  animation-fill-mode: both;
+}
+
+.ax-fill-forwards {
+  animation-fill-mode: forwards;
+}
+
+.ax-fill-backwards {
+  animation-fill-mode: backwards;
+}
+
+.ax-fill-none {
+  animation-fill-mode: none;
+}
+
+// ===== Animation Direction =====
+.ax-direction-normal {
+  animation-direction: normal;
+}
+
+.ax-direction-reverse {
+  animation-direction: reverse;
+}
+
+.ax-direction-alternate {
+  animation-direction: alternate;
+}
+
+.ax-direction-alternate-reverse {
+  animation-direction: alternate-reverse;
+}
+
+// ===== Animation Play State =====
+.ax-paused {
+  animation-play-state: paused;
+}
+
+.ax-running {
+  animation-play-state: running;
+}
+
+// ===== Visibility Helpers =====
+.ax-hidden {
+  visibility: hidden;
+}
+
+.ax-visible {
+  visibility: visible;
+}
+
+.ax-invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+// ===== Display Helpers =====
+.ax-block {
+  display: block;
+}
+
+.ax-inline-block {
+  display: inline-block;
+}
+
+.ax-flex {
+  display: flex;
+}
+
+.ax-hidden-display {
+  display: none;
+}

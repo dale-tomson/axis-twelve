@@ -15,6 +15,6 @@
 @use '../base/reset';
 
 // Indicator components
-@use '../04-ui-components/indicators/alerts';
-@use '../04-ui-components/indicators/badges';
-@use '../04-ui-components/indicators/progress';
+@use '../components/indicators/alerts';
+@use '../components/indicators/badges';
+@use '../components/indicators/progress';

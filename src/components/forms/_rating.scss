@@ -1,0 +1,212 @@
+// Rating Component
+// Star rating with SVG icons, size variants, and interactive states
+@use '../../abstracts' as *;
+@use 'sass:map';
+
+// Star SVG icon (inline for no dependencies)
+@mixin star-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3e%3cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3e%3c/svg%3e");
+}
+
+.ax-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+
+  // Base star
+  &__star {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+    color: var(--ax-gray-300, $gray-300);
+    transition:
+      color 0.15s ease,
+      transform 0.15s ease;
+    cursor: pointer;
+
+    // SVG icon
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentcolor;
+    }
+  }
+
+  // Filled star
+  &__star--filled,
+  &__star--active {
+    color: var(--ax-rating-color, var(--ax-color-warning, #f59e0b));
+  }
+
+  // Half star (uses clip-path)
+  &__star--half {
+    position: relative;
+
+    &::before {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      color: var(--ax-rating-color, var(--ax-color-warning, #f59e0b));
+      content: '';
+    }
+  }
+
+  // Size Variants
+  &--sm {
+    .ax-rating__star {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--md {
+    .ax-rating__star {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &--lg {
+    .ax-rating__star {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  // Color Variants
+  &--primary {
+    --ax-rating-color: var(--ax-color-primary, #3b82f6);
+  }
+
+  &--success {
+    --ax-rating-color: var(--ax-color-success, #10b981);
+  }
+
+  &--warning {
+    --ax-rating-color: var(--ax-color-warning, #f59e0b);
+  }
+
+  &--danger {
+    --ax-rating-color: var(--ax-color-danger, #ef4444);
+  }
+
+  &--info {
+    --ax-rating-color: var(--ax-color-info, #06b6d4);
+  }
+
+  // Interactive mode (hover states)
+  &--interactive {
+    .ax-rating__star {
+      // Default state - all stars gray
+      color: var(--ax-gray-300, $gray-300);
+
+      // Hover state - highlight up to hovered star
+      &:hover,
+      &:hover ~ .ax-rating__star {
+        color: var(--ax-rating-color, var(--ax-color-warning, #f59e0b));
+      }
+
+      // Filled stars stay colored
+      &.ax-rating__star--filled {
+        color: var(--ax-rating-color, var(--ax-color-warning, #f59e0b));
+      }
+    }
+
+    // Scale effect on hover
+    .ax-rating__star:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  // Read-only mode (no hover effects)
+  &--readonly {
+    .ax-rating__star {
+      cursor: default;
+
+      &:hover {
+        color: inherit;
+        transform: none;
+      }
+    }
+  }
+
+  // Disabled state
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    .ax-rating__star {
+      cursor: not-allowed;
+    }
+  }
+
+  // With text label
+  &__label {
+    color: var(--ax-color-dark, $dark);
+    font-size: map.get($type-scale, 'sm');
+    font-weight: $font-weight-medium;
+    margin-left: $spacer-sm;
+  }
+
+  // Rating value display
+  &__value {
+    color: var(--ax-text-secondary, $gray-600);
+    font-size: map.get($type-scale, 'sm');
+    margin-left: $spacer-sm;
+  }
+}
+
+// Dark mode support
+.ax-dark {
+  .ax-rating {
+    &__star {
+      color: var(--ax-gray-600, #4b5563);
+    }
+
+    &__star--filled,
+    &__star--active {
+      color: var(--ax-rating-color, var(--ax-color-warning, #fbbf24));
+    }
+
+    &--interactive {
+      .ax-rating__star {
+        &:hover,
+        &:hover ~ .ax-rating__star {
+          color: var(--ax-rating-color, var(--ax-color-warning, #fbbf24));
+        }
+
+        &.ax-rating__star--filled {
+          color: var(--ax-rating-color, var(--ax-color-warning, #fbbf24));
+        }
+      }
+    }
+
+    &__label {
+      color: var(--ax-text-primary, #f9fafb);
+    }
+
+    &__value {
+      color: var(--ax-text-secondary, #d1d5db);
+    }
+  }
+}
+
+// Rating group (for multiple rating sets)
+.ax-rating-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer-md;
+}
+
+// Rating with custom icons (hearts, thumbs, etc.)
+.ax-rating--custom {
+  .ax-rating__star {
+    svg {
+      // Custom icon can be injected via CSS or inline
+    }
+  }
+}

@@ -1,5 +1,9 @@
 // Axis Twelve - Motion Module
+// Animation keyframes, presets, timing utilities, and motion preferences
 @use '../abstracts' as *;
 @use '../base/root';
 @use '../base/reset';
-@use '../06-utilities/motion';
+@use '../utilities/motion';
+@use '../utilities/keyframes';
+@use '../utilities/animations';
+@use '../utilities/timing';

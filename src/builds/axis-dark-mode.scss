@@ -1,5 +1,7 @@
 // Axis Twelve - Dark Mode Module
+// System preference detection, manual controls, and component-specific overrides
 @use '../abstracts' as *;
 @use '../base/root';
 @use '../base/reset';
-@use '../06-utilities/dark-mode';
+@use '../utilities/dark-mode';
+@use '../components/dark-overrides';

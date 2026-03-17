@@ -1,0 +1,402 @@
+// Dark Mode Component Overrides
+// Component-specific dark mode styling for all UI components
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Apply dark mode styles when .ax-dark is present
+.ax-dark {
+  // ===== Forms Dark Mode =====
+  // Input fields
+  .ax-input,
+  .ax-select,
+  .ax-textarea {
+    border-color: var(--ax-border-primary, #374151);
+    background-color: var(--ax-bg-surface, #1f2937);
+    color: var(--ax-text-primary, #f9fafb);
+
+    &::placeholder {
+      color: var(--ax-text-tertiary, #9ca3af);
+    }
+
+    &:focus {
+      border-color: var(--ax-color-primary, #60a5fa);
+      background-color: var(--ax-bg-surface-2, #374151);
+      box-shadow: 0 0 0 3px rgb(96 165 250 / 20%);
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: var(--ax-bg-surface-3, #4b5563);
+      color: var(--ax-text-tertiary, #9ca3af);
+    }
+  }
+
+  // Select dropdown arrow (inverted for dark mode)
+  .ax-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+
+    &:focus {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2360a5fa' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    }
+  }
+
+  // Custom checkboxes and radios
+  .ax-checkbox,
+  .ax-radio {
+    input[type='checkbox'],
+    input[type='radio'] {
+      & + .ax-checkbox__label,
+      & + .ax-radio__label {
+        &::before {
+          border-color: var(--ax-border-primary, #374151);
+          background-color: var(--ax-bg-surface, #1f2937);
+        }
+      }
+
+      &:checked + .ax-checkbox__label::before,
+      &:checked + .ax-radio__label::before {
+        background-color: var(--ax-color-primary, #60a5fa);
+      }
+    }
+  }
+
+  // Form labels
+  .ax-label {
+    color: var(--ax-text-primary, #f9fafb);
+  }
+
+  // Form help text
+  .ax-form-text {
+    color: var(--ax-text-secondary, #d1d5db);
+  }
+
+  // Floating label pattern
+  .ax-input-group {
+    .ax-input,
+    .ax-textarea {
+      &:placeholder-shown + .ax-label {
+        color: var(--ax-text-tertiary, #9ca3af);
+      }
+
+      &:focus + .ax-label,
+      &:not(:placeholder-shown) + .ax-label {
+        color: var(--ax-text-primary, #f9fafb);
+      }
+    }
+  }
+
+  // ===== Cards Dark Mode =====
+  .ax-card {
+    border-color: var(--ax-border-primary, #374151);
+    background-color: var(--ax-bg-surface, #1f2937);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 30%);
+  }
+
+  // ===== Tables Dark Mode =====
+  .ax-table {
+    border-color: var(--ax-border-primary, #374151);
+    background-color: var(--ax-bg-surface, #1f2937);
+    color: var(--ax-text-primary, #f9fafb);
+
+    th {
+      border-color: var(--ax-border-primary, #374151);
+      background-color: var(--ax-bg-surface-2, #374151);
+      color: var(--ax-text-primary, #f9fafb);
+    }
+
+    td {
+      border-color: var(--ax-border-primary, #374151);
+    }
+
+    // Striped rows
+    tbody tr:nth-child(even) {
+      background-color: var(--ax-bg-surface-2, #374151);
+    }
+
+    // Hover state
+    tbody tr:hover {
+      background-color: var(--ax-bg-surface-3, #4b5563);
+    }
+  }
+
+  // ===== Navigation Dark Mode =====
+  .ax-navbar {
+    border-color: var(--ax-border-primary, #374151);
+    background-color: var(--ax-bg-surface, #1f2937);
+
+    a,
+    .ax-nav-link {
+      color: var(--ax-text-secondary, #d1d5db);
+
+      &:hover,
+      &:focus {
+        background-color: var(--ax-bg-surface-2, #374151);
+        color: var(--ax-text-primary, #f9fafb);
+      }
+
+      &.ax-active {
+        background-color: var(--ax-bg-surface-2, #374151);
+        color: var(--ax-text-primary, #f9fafb);
+      }
+    }
+  }
+
+  // ===== Modals Dark Mode =====
+  .ax-modal {
+    &__overlay {
+      background-color: rgb(0 0 0 / 75%);
+    }
+
+    &__content {
+      border-color: var(--ax-border-primary, #374151);
+      background-color: var(--ax-bg-surface, #1f2937);
+      box-shadow:
+        0 20px 25px -5px rgb(0 0 0 / 50%),
+        0 8px 10px -6px rgb(0 0 0 / 50%);
+    }
+
+    &__header {
+      border-color: var(--ax-border-primary, #374151);
+    }
+
+    &__title {
+      color: var(--ax-text-primary, #f9fafb);
+    }
+
+    &__close {
+      color: var(--ax-text-secondary, #d1d5db);
+
+      &:hover,
+      &:focus {
+        color: var(--ax-text-primary, #f9fafb);
+      }
+    }
+  }
+
+  // ===== Tooltips Dark Mode =====
+  .ax-tooltip {
+    &__content {
+      border-color: var(--ax-border-primary, #374151);
+      background-color: var(--ax-bg-surface-3, #4b5563);
+      color: var(--ax-text-primary, #f9fafb);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 50%);
+    }
+
+    &__arrow {
+      color: var(--ax-bg-surface-3, #4b5563);
+    }
+  }
+
+  // ===== Buttons Dark Mode =====
+  .ax-btn {
+    // Primary button
+    &--primary {
+      background-color: var(--ax-color-primary, #60a5fa);
+      color: #111827;
+
+      &:hover,
+      &:focus {
+        background-color: #93c5fd;
+      }
+
+      &:disabled,
+      &.is-disabled {
+        background-color: var(--ax-bg-surface-3, #4b5563);
+        color: var(--ax-text-tertiary, #9ca3af);
+      }
+    }
+
+    // Secondary button
+    &--secondary {
+      border-color: var(--ax-border-primary, #374151);
+      background-color: var(--ax-bg-surface-2, #374151);
+      color: var(--ax-text-primary, #f9fafb);
+
+      &:hover,
+      &:focus {
+        background-color: var(--ax-bg-surface-3, #4b5563);
+      }
+    }
+
+    // Outline buttons
+    &--outline {
+      border-color: var(--ax-border-primary, #374151);
+      background-color: transparent;
+      color: var(--ax-text-primary, #f9fafb);
+
+      &:hover,
+      &:focus {
+        background-color: var(--ax-bg-surface-2, #374151);
+      }
+    }
+
+    // Ghost button
+    &--ghost {
+      color: var(--ax-text-secondary, #d1d5db);
+
+      &:hover,
+      &:focus {
+        background-color: var(--ax-bg-surface-2, #374151);
+        color: var(--ax-text-primary, #f9fafb);
+      }
+    }
+  }
+
+  // ===== Badges & Alerts Dark Mode =====
+  .ax-badge {
+    &--primary {
+      background-color: var(--ax-bg-primary, rgb(96 165 250 / 10%));
+      color: var(--ax-color-primary, #60a5fa);
+    }
+
+    &--success {
+      background-color: var(--ax-bg-success, rgb(52 211 153 / 10%));
+      color: var(--ax-color-success, #34d399);
+    }
+
+    &--danger {
+      background-color: var(--ax-bg-danger, rgb(248 113 113 / 10%));
+      color: var(--ax-color-danger, #f87171);
+    }
+
+    &--warning {
+      background-color: var(--ax-bg-warning, rgb(251 191 36 / 10%));
+      color: var(--ax-color-warning, #fbbf24);
+    }
+  }
+
+  .ax-alert {
+    &--primary {
+      border-color: var(--ax-color-primary, #60a5fa);
+      background-color: var(--ax-bg-primary, rgb(96 165 250 / 10%));
+      color: var(--ax-color-primary, #60a5fa);
+    }
+
+    &--success {
+      border-color: var(--ax-color-success, #34d399);
+      background-color: var(--ax-bg-success, rgb(52 211 153 / 10%));
+      color: var(--ax-color-success, #34d399);
+    }
+
+    &--danger {
+      border-color: var(--ax-color-danger, #f87171);
+      background-color: var(--ax-bg-danger, rgb(248 113 113 / 10%));
+      color: var(--ax-color-danger, #f87171);
+    }
+
+    &--warning {
+      border-color: var(--ax-color-warning, #fbbf24);
+      background-color: var(--ax-bg-warning, rgb(251 191 36 / 10%));
+      color: var(--ax-color-warning, #fbbf24);
+    }
+  }
+
+  // ===== Progress Bars Dark Mode =====
+  .ax-progress {
+    background-color: var(--ax-bg-surface-2, #374151);
+
+    &__bar {
+      &--primary {
+        background-color: var(--ax-color-primary, #60a5fa);
+      }
+
+      &--success {
+        background-color: var(--ax-color-success, #34d399);
+      }
+
+      &--danger {
+        background-color: var(--ax-color-danger, #f87171);
+      }
+    }
+  }
+
+  // ===== Dropdowns Dark Mode =====
+  .ax-dropdown {
+    &__content {
+      border-color: var(--ax-border-primary, #374151);
+      background-color: var(--ax-bg-surface, #1f2937);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 50%);
+    }
+
+    a,
+    button {
+      color: var(--ax-text-secondary, #d1d5db);
+
+      &:hover,
+      &:focus {
+        background-color: var(--ax-bg-surface-2, #374151);
+        color: var(--ax-text-primary, #f9fafb);
+      }
+    }
+
+    &-divider {
+      border-color: var(--ax-border-primary, #374151);
+    }
+  }
+
+  // ===== Accordions Dark Mode =====
+  .ax-accordion {
+    &__item {
+      border-color: var(--ax-border-primary, #374151);
+    }
+
+    &__header {
+      background-color: var(--ax-bg-surface, #1f2937);
+      color: var(--ax-text-primary, #f9fafb);
+
+      &:hover {
+        background-color: var(--ax-bg-surface-2, #374151);
+      }
+    }
+
+    &__content {
+      background-color: var(--ax-bg-surface, #1f2937);
+      color: var(--ax-text-secondary, #d1d5db);
+    }
+  }
+
+  // ===== Skeletons Dark Mode =====
+  .ax-skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--ax-bg-surface-2, #374151) 25%,
+      var(--ax-bg-surface-3, #4b5563) 50%,
+      var(--ax-bg-surface-2, #374151) 75%
+    );
+  }
+
+  // ===== Toasts Dark Mode =====
+  .ax-toast {
+    border-color: var(--ax-border-primary, #374151);
+    background-color: var(--ax-bg-surface, #1f2937);
+    color: var(--ax-text-primary, #f9fafb);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 50%);
+
+    &--success {
+      border-color: var(--ax-color-success, #34d399);
+    }
+
+    &--error {
+      border-color: var(--ax-color-danger, #f87171);
+    }
+
+    &--warning {
+      border-color: var(--ax-color-warning, #fbbf24);
+    }
+  }
+
+  // ===== Empty States Dark Mode =====
+  .ax-empty-state {
+    &__icon {
+      color: var(--ax-text-tertiary, #9ca3af);
+    }
+
+    &__title {
+      color: var(--ax-text-primary, #f9fafb);
+    }
+
+    &__description {
+      color: var(--ax-text-secondary, #d1d5db);
+    }
+  }
+}

@@ -578,11 +578,47 @@ All utility classes support responsive breakpoint prefixes:
 }
 ```
 
+## 🎬 Animation Utilities (v2.3.0+)
+
+> **Note:** Starting in v2.3.0, comprehensive animation utilities are available.
+
+The Utilities module now includes:
+
+- **20+ Preset Animations**: fade, slide, scale, rotate, bounce, shake, etc.
+- **Timing Controls**: 11 durations, 9 delays, 9 easing variants
+- **State Classes**: Enter/exit states for JavaScript integration
+- **Staggered Animations**: Sequential animation delays
+
+### Basic Usage
+
+```html
+<!-- Preset animations -->
+<div class="ax-fade-in">Fade in</div>
+<div class="ax-slide-up">Slide up</div>
+
+<!-- With timing -->
+<div class="ax-fade-in ax-duration-500 ax-delay-100">Custom timing</div>
+
+<!-- Staggered list -->
+<div>
+  <div class="ax-fade-in ax-stagger-1">Item 1</div>
+  <div class="ax-fade-in ax-stagger-2">Item 2</div>
+  <div class="ax-fade-in ax-stagger-3">Item 3</div>
+</div>
+```
+
+**Full Documentation:** [Animation Utilities](animations.md)
+
+**Example:** [Animations Demo](../examples/animations.html)
+
+---
+
 ## 📜 API Evolution
 
-| Version    | Change Type   | Description                                                                |
-| ---------- | ------------- | -------------------------------------------------------------------------- |
-| **v2.1.0** | Added Feature | Initial release of Utilities module with comprehensive atomic classes      |
-| **v2.0.2** | Internal      | Added logical property utilities (`.ax-border-inline`, `.ax-border-block`) |
-| **v2.0.1** | Internal      | Transitioned to CSS logical properties for RTL support                     |
-| **v2.0.0** | Major         | Initial v2 release with physical property utilities                        |
+| Version    | Change Type   | Description                                                                 |
+| ---------- | ------------- | --------------------------------------------------------------------------- |
+| **v2.3.0** | Added Feature | Animation utilities with 20+ presets, timing controls, and state management |
+| **v2.1.0** | Added Feature | Initial release of Utilities module with comprehensive atomic classes       |
+| **v2.0.2** | Internal      | Added logical property utilities (`.ax-border-inline`, `.ax-border-block`)  |
+| **v2.0.1** | Internal      | Transitioned to CSS logical properties for RTL support                      |
+| **v2.0.0** | Major         | Initial v2 release with physical property utilities                         |
