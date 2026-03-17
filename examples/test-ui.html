@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Test - Gaps and Spacing</title>
+  <link rel="stylesheet" href="../dist/axis-twelve.css" />
+  <link rel="stylesheet" href="../dist/modules/axis-toasts.css" />
+  <link rel="stylesheet" href="../dist/modules/axis-skeletons.css" />
+  <style>
+    body {
+      padding: 2rem;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f9fafb;
+    }
+    .test-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>UI Components Test</h1>
+  
+  <!-- Toast Test -->
+  <div class="test-section">
+    <h2>Toasts (with gaps)</h2>
+    <div class="ax-toasts ax-toasts--top-right" style="position: relative; margin-bottom: 2rem;">
+      <div class="ax-toast ax-toast--success">
+        <div class="ax-toast__icon">✓</div>
+        <div class="ax-toast__content">
+          <div class="ax-toast__title">Success</div>
+          <div class="ax-toast__description">Action completed successfully</div>
+        </div>
+      </div>
+      <div class="ax-toast ax-toast--error">
+        <div class="ax-toast__icon">✕</div>
+        <div class="ax-toast__content">
+          <div class="ax-toast__title">Error</div>
+          <div class="ax-toast__description">Something went wrong</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skeleton Test -->
+  <div class="test-section">
+    <h2>Skeletons (with gaps)</h2>
+    <div class="ax-skeleton-container">
+      <div class="ax-skeleton ax-skeleton--text"></div>
+      <div class="ax-skeleton ax-skeleton--text"></div>
+      <div class="ax-skeleton ax-skeleton--text ax-skeleton--w-2/3"></div>
+    </div>
+  </div>
+
+  <!-- Flexbox Gap Test -->
+  <div class="test-section">
+    <h2>Flexbox with Gap</h2>
+    <div class="ax-flex ax-gap-md" style="margin-bottom: 1rem;">
+      <div class="ax-bg-blue-500 ax-p-4 ax-rounded" style="background: #3b82f6; color: white; padding: 1rem; border-radius: 0.5rem;">Item 1</div>
+      <div class="ax-bg-green-500 ax-p-4 ax-rounded" style="background: #10b981; color: white; padding: 1rem; border-radius: 0.5rem;">Item 2</div>
+      <div class="ax-bg-purple-500 ax-p-4 ax-rounded" style="background: #8b5cf6; color: white; padding: 1rem; border-radius: 0.5rem;">Item 3</div>
+    </div>
+  </div>
+
+  <!-- Grid Gap Test -->
+  <div class="test-section">
+    <h2>Grid with Gap</h2>
+    <div class="ax-grid ax-gap-lg" style="margin-bottom: 1rem;">
+      <div class="ax-bg-red-500 ax-p-4 ax-rounded" style="background: #ef4444; color: white; padding: 1rem; border-radius: 0.5rem;">Grid 1</div>
+      <div class="ax-bg-yellow-500 ax-p-4 ax-rounded" style="background: #f59e0b; color: white; padding: 1rem; border-radius: 0.5rem;">Grid 2</div>
+      <div class="ax-bg-blue-500 ax-p-4 ax-rounded" style="background: #3b82f6; color: white; padding: 1rem; border-radius: 0.5rem;">Grid 3</div>
+      <div class="ax-bg-green-500 ax-p-4 ax-rounded" style="background: #10b981; color: white; padding: 1rem; border-radius: 0.5rem;">Grid 4</div>
+    </div>
+  </div>
+</body>
+</html>
