@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Rating - Axis Twelve Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/axis-twelve.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/modules/axis-rating.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/modules/axis-dark-mode.min.css"
+    />
+    <style>
+      body {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+      .demo-section {
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--ax-border-color, #e5e7eb);
+        background-color: var(--ax-bg-surface, #fff);
+      }
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .demo-item {
+        padding: 1rem;
+        border: 1px solid var(--ax-border-color, #e5e7eb);
+        border-radius: 0.5rem;
+        background-color: var(--ax-bg-surface, #f9fafb);
+      }
+      .controls {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .ax-card {
+        background-color: var(--ax-bg-surface, #fff);
+        border: 1px solid var(--ax-border-color, #e5e7eb);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: var(--ax-color-dark, #1f2937);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <button id="themeToggle" class="ax-btn ax-btn--primary">Toggle Dark Mode</button>
+    </div>
+
+    <h1>Star Rating Component</h1>
+    <p>Interactive demonstration of the Axis Twelve Star Rating component.</p>
+
+    <!-- Size Variants -->
+    <section class="demo-section">
+      <h2>Size Variants</h2>
+      <div class="demo-grid">
+        <div class="demo-item">
+          <h3>Small</h3>
+          <div class="ax-rating ax-rating--sm ax-rating--warning">
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p style="margin-top: 0.5rem; font-size: 0.875rem">3 out of 5 stars</p>
+        </div>
+        <div class="demo-item">
+          <h3>Medium (Default)</h3>
+          <div class="ax-rating ax-rating--md ax-rating--warning">
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p style="margin-top: 0.5rem">3 out of 5 stars</p>
+        </div>
+        <div class="demo-item">
+          <h3>Large</h3>
+          <div class="ax-rating ax-rating--lg ax-rating--warning">
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p style="margin-top: 0.5rem">3 out of 5 stars</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Variants -->
+    <section class="demo-section">
+      <h2>Color Variants</h2>
+      <div class="demo-grid">
+        <div class="demo-item">
+          <h3>Primary</h3>
+          <div class="ax-rating ax-rating--primary">
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p style="margin-top: 0.5rem">4 out of 5 stars</p>
+        </div>
+        <div class="demo-item">
+          <h3>Success</h3>
+          <div class="ax-rating ax-rating--success">
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p style="margin-top: 0.5rem">5 out of 5 stars</p>
+        </div>
+        <div class="demo-item">
+          <h3>Danger</h3>
+          <div class="ax-rating ax-rating--danger">
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p style="margin-top: 0.5rem">2 out of 5 stars</p>
+        </div>
+        <div class="demo-item">
+          <h3>Info</h3>
+          <div class="ax-rating ax-rating--info">
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p style="margin-top: 0.5rem">3 out of 5 stars</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="demo-section">
+      <h2>Interactive Demo</h2>
+      <p>Click on the stars to rate:</p>
+
+      <div
+        class="ax-rating ax-rating--interactive ax-rating--lg ax-rating--warning"
+        id="interactiveRating"
+        data-rating="0"
+      >
+        <svg class="ax-rating__star" data-value="1">
+          <path
+            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+          />
+        </svg>
+        <svg class="ax-rating__star" data-value="2">
+          <path
+            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+          />
+        </svg>
+        <svg class="ax-rating__star" data-value="3">
+          <path
+            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+          />
+        </svg>
+        <svg class="ax-rating__star" data-value="4">
+          <path
+            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+          />
+        </svg>
+        <svg class="ax-rating__star" data-value="5">
+          <path
+            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+          />
+        </svg>
+      </div>
+
+      <div
+        id="ratingResult"
+        style="
+          margin-top: 1rem;
+          padding: 1rem;
+          border-radius: 0.5rem;
+          background-color: var(--ax-bg-surface, #f3f4f6);
+        "
+      >
+        <strong>Your Rating:</strong> <span id="ratingValue">0</span>/5
+      </div>
+    </section>
+
+    <!-- Product Review Example -->
+    <section class="demo-section">
+      <h2>Product Review Example</h2>
+      <div class="ax-card">
+        <h3>Customer Reviews</h3>
+
+        <div style="margin-bottom: 1.5rem">
+          <div class="ax-rating ax-rating--md ax-rating--warning" style="margin-bottom: 0.5rem">
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star ax-rating__star--filled">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            <svg class="ax-rating__star">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p><strong>Product Rating:</strong> 4.0 out of 5 stars</p>
+          <p style="color: var(--ax-text-secondary, #6b7280); font-size: 0.875rem">
+            Based on 1,234 reviews
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Dark mode toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+
+      themeToggle.addEventListener('click', () => {
+        html.classList.toggle('ax-dark');
+        themeToggle.textContent = html.classList.contains('ax-dark') ? 'Light Mode' : 'Dark Mode';
+      });
+
+      // Interactive rating demo
+      const ratingContainer = document.getElementById('interactiveRating');
+      const stars = ratingContainer.querySelectorAll('.ax-rating__star');
+      const ratingValue = document.getElementById('ratingValue');
+
+      stars.forEach((star) => {
+        star.addEventListener('click', function () {
+          const value = parseInt(this.getAttribute('data-value'));
+          ratingContainer.setAttribute('data-rating', value);
+          ratingValue.textContent = value;
+
+          // Update filled stars
+          stars.forEach((s, index) => {
+            if (index < value) {
+              s.classList.add('ax-rating__star--filled');
+            } else {
+              s.classList.remove('ax-rating__star--filled');
+            }
+          });
+
+          // Add subtle animation
+          ratingResult.style.transition = 'background-color 0.3s ease';
+          ratingResult.style.backgroundColor =
+            value >= 4
+              ? 'var(--ax-bg-success, rgba(16, 185, 129, 0.1))'
+              : value >= 3
+                ? 'var(--ax-bg-warning, rgba(245, 158, 11, 0.1))'
+                : 'var(--ax-bg-surface, #f3f4f6)';
+        });
+      });
+    </script>
+  </body>
+</html>

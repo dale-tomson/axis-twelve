@@ -328,7 +328,7 @@ The `axis-dark-mode` module provides comprehensive dark mode support for Axis Tw
 
 ### Component-Specific Dark Mode Customization
 
-```css
+````css
 /* Custom dark mode for cards only */
 .ax-dark .ax-card {
   --ax-card-bg: var(--ax-bg-surface);
@@ -352,18 +352,123 @@ The `axis-dark-mode` module provides comprehensive dark mode support for Axis Tw
 }
 
 /* Custom dark mode for alerts */
-.ax-dark .ax-alert--success {
+.ax-alert--success {
   --ax-alert-success-bg: color-mix(in srgb, var(--ax-success) 10%, transparent);
   --ax-alert-success-border-color: var(--ax-success);
   --ax-alert-success-color: var(--ax-success);
 }
+
+## 🎨 Component Dark Mode Overrides (v2.3.0+)
+
+> **Note:** Starting in v2.3.0, all components include built-in dark mode support with automatic color adaptation.
+
+### Automatic Adaptation
+
+All components automatically adapt when `.ax-dark` is applied:
+
+```html
+<html class="ax-dark">
+  <!-- Forms adapt automatically -->
+  <input type="text" class="ax-input" placeholder="Dark mode input">
+
+  <!-- Cards adapt automatically -->
+  <div class="ax-card">
+    <h3>Dark card</h3>
+  </div>
+
+  <!-- Tables adapt automatically -->
+  <table class="ax-table">
+    <tr><td>Dark cell</td></tr>
+  </table>
+</html>
+````
+
+### Component Coverage
+
+The following components include dark mode overrides:
+
+**Forms:**
+
+- Inputs, selects, textareas
+- Checkboxes and radios
+- File uploads
+- Range sliders
+- Toggle switches (v2.3.0+)
+- Star ratings (v2.3.0+)
+
+**Layout:**
+
+- Cards
+- Tables
+- Navigation bars
+
+**Overlays:**
+
+- Modals
+- Tooltips
+- Toasts
+- Dropdowns
+
+**Interactive:**
+
+- Buttons (all variants)
+- Accordions
+- Dropdowns
+
+**Indicators:**
+
+- Badges (all variants)
+- Alerts (all variants)
+- Progress bars
+- Skeletons
+- Empty states
+
+### CSS Custom Properties
+
+Dark mode uses 25+ CSS custom properties for granular control:
+
+```scss
+// Backgrounds
+--ax-bg-body: #111827;
+--ax-bg-surface: #1f2937;
+--ax-bg-surface-2: #374151;
+--ax-bg-surface-3: #4b5563;
+
+// Text
+--ax-text-primary: #f9fafb;
+--ax-text-secondary: #d1d5db;
+--ax-text-tertiary: #9ca3af;
+
+// Borders
+--ax-border-primary: #374151;
+--ax-border-secondary: #4b5563;
+
+// Semantic colors
+--ax-color-primary: #60a5fa;
+--ax-color-success: #34d399;
+--ax-color-danger: #f87171;
+--ax-color-warning: #fbbf24;
+--ax-color-info: #22d3ee;
+```
+
+### Detailed Documentation
+
+For comprehensive information on component-specific dark mode behavior:
+
+- **[Dark Mode Component Overrides](dark-mode-overrides.md)** - Complete guide
+- [Forms Documentation](forms.md) - Form components dark mode
+- [Toggle Switch Documentation](toggle-switch.md) - Toggle dark mode
+- [Rating Documentation](rating.md) - Rating dark mode
+
 ```
 
 ## 📜 API Evolution
 
-| Version    | Change Type   | Description                                            |
-| ---------- | ------------- | ------------------------------------------------------ |
+| Version | Change Type | Description |
+| ------- | ----------- | ----------- |
+| **v2.3.0** | Added Feature | System preference detection, 25+ CSS custom properties, component-specific overrides for all components |
 | **v2.1.0** | Added Feature | Enhanced dark mode with high contrast and dim variants |
-| **v2.0.2** | Internal      | Improved color contrast ratios for accessibility       |
-| **v2.0.1** | Internal      | Transitioned to CSS custom properties for theming      |
-| **v2.0.0** | Major         | Initial dark mode support with basic color switching   |
+| **v2.0.2** | Internal | Improved color contrast ratios for accessibility |
+| **v2.0.1** | Internal | Transitioned to CSS custom properties for theming |
+| **v2.0.0** | Major | Initial dark mode support with basic color switching |
+```

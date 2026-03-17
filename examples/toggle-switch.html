@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Switch - Axis Twelve Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/axis-twelve.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/modules/axis-toggle-switch.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/modules/axis-dark-mode.min.css"
+    />
+    <style>
+      body {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+      .demo-section {
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--ax-border-color, #e5e7eb);
+        background-color: var(--ax-bg-surface, #fff);
+      }
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .demo-item {
+        padding: 1rem;
+        border: 1px solid var(--ax-border-color, #e5e7eb);
+        border-radius: 0.5rem;
+        background-color: var(--ax-bg-surface, #f9fafb);
+      }
+      .controls {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .ax-card {
+        background-color: var(--ax-bg-surface, #fff);
+        border: 1px solid var(--ax-border-color, #e5e7eb);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: var(--ax-color-dark, #1f2937);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <button id="themeToggle" class="ax-btn ax-btn--primary">Toggle Dark Mode</button>
+    </div>
+
+    <h1>Toggle Switch Component</h1>
+    <p>Interactive demonstration of the Axis Twelve Toggle Switch component.</p>
+
+    <!-- Size Variants -->
+    <section class="demo-section">
+      <h2>Size Variants</h2>
+      <div class="demo-grid">
+        <div class="demo-item">
+          <h3>Small</h3>
+          <label class="ax-toggle ax-toggle--sm ax-toggle--primary">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Small (36px)</span>
+          </label>
+        </div>
+        <div class="demo-item">
+          <h3>Medium (Default)</h3>
+          <label class="ax-toggle ax-toggle--md ax-toggle--primary">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Medium (44px)</span>
+          </label>
+        </div>
+        <div class="demo-item">
+          <h3>Large</h3>
+          <label class="ax-toggle ax-toggle--lg ax-toggle--primary">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Large (52px)</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Variants -->
+    <section class="demo-section">
+      <h2>Color Variants</h2>
+      <div class="demo-grid">
+        <div class="demo-item">
+          <h3>Primary</h3>
+          <label class="ax-toggle ax-toggle--primary">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Primary</span>
+          </label>
+        </div>
+        <div class="demo-item">
+          <h3>Success</h3>
+          <label class="ax-toggle ax-toggle--success">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Success</span>
+          </label>
+        </div>
+        <div class="demo-item">
+          <h3>Danger</h3>
+          <label class="ax-toggle ax-toggle--danger">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Danger</span>
+          </label>
+        </div>
+        <div class="demo-item">
+          <h3>Warning</h3>
+          <label class="ax-toggle ax-toggle--warning">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Warning</span>
+          </label>
+        </div>
+        <div class="demo-item">
+          <h3>Info</h3>
+          <label class="ax-toggle ax-toggle--info">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Info</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- States -->
+    <section class="demo-section">
+      <h2>States</h2>
+      <div class="demo-grid">
+        <div class="demo-item">
+          <h3>Normal</h3>
+          <label class="ax-toggle ax-toggle--primary">
+            <input type="checkbox" class="ax-toggle__input" />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Unchecked</span>
+          </label>
+          <br />
+          <label class="ax-toggle ax-toggle--primary">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Checked</span>
+          </label>
+        </div>
+        <div class="demo-item">
+          <h3>Disabled</h3>
+          <label class="ax-toggle ax-toggle--primary">
+            <input type="checkbox" class="ax-toggle__input" disabled />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Disabled</span>
+          </label>
+          <br />
+          <label class="ax-toggle ax-toggle--primary">
+            <input type="checkbox" class="ax-toggle__input" checked disabled />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Disabled</span>
+          </label>
+        </div>
+        <div class="demo-item">
+          <h3>Loading</h3>
+          <label class="ax-toggle ax-toggle--primary ax-toggle--loading">
+            <input type="checkbox" class="ax-toggle__input" disabled />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Loading...</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="demo-section">
+      <h2>Interactive Demo</h2>
+      <p>Click the toggle to see it in action with JavaScript event handling.</p>
+
+      <label class="ax-toggle ax-toggle--lg ax-toggle--success" id="interactiveToggle">
+        <input type="checkbox" class="ax-toggle__input" />
+        <span class="ax-toggle__slider"></span>
+        <span class="ax-toggle__label">Enable Feature</span>
+      </label>
+
+      <div
+        id="toggleState"
+        style="
+          margin-top: 1rem;
+          padding: 1rem;
+          border-radius: 0.5rem;
+          background-color: var(--ax-bg-surface, #f3f4f6);
+        "
+      >
+        <strong>Current State:</strong> <span id="stateText">Off</span>
+      </div>
+    </section>
+
+    <!-- Settings Panel Example -->
+    <section class="demo-section">
+      <h2>Settings Panel Example</h2>
+      <div class="ax-card">
+        <h3>Account Settings</h3>
+
+        <div style="margin-bottom: 1rem">
+          <label class="ax-toggle ax-toggle--primary">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Email notifications</span>
+          </label>
+        </div>
+
+        <div style="margin-bottom: 1rem">
+          <label class="ax-toggle ax-toggle--success">
+            <input type="checkbox" class="ax-toggle__input" checked />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Auto-save drafts</span>
+          </label>
+        </div>
+
+        <div style="margin-bottom: 1rem">
+          <label class="ax-toggle ax-toggle--warning">
+            <input type="checkbox" class="ax-toggle__input" />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Desktop notifications</span>
+          </label>
+        </div>
+
+        <div style="margin-bottom: 1rem">
+          <label class="ax-toggle ax-toggle--danger">
+            <input type="checkbox" class="ax-toggle__input" />
+            <span class="ax-toggle__slider"></span>
+            <span class="ax-toggle__label">Delete account</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Dark mode toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+
+      themeToggle.addEventListener('click', () => {
+        html.classList.toggle('ax-dark');
+        themeToggle.textContent = html.classList.contains('ax-dark') ? 'Light Mode' : 'Dark Mode';
+      });
+
+      // Interactive toggle demo
+      const interactiveToggle = document.getElementById('interactiveToggle');
+      const stateText = document.getElementById('stateText');
+
+      interactiveToggle.querySelector('input').addEventListener('change', function () {
+        stateText.textContent = this.checked ? 'On ✓' : 'Off';
+        stateText.style.color = this.checked
+          ? 'var(--ax-color-success, #10b981)'
+          : 'var(--ax-color-dark, #1f2937)';
+
+        // Add a subtle animation
+        stateText.parentElement.style.transition = 'background-color 0.3s ease';
+        stateText.parentElement.style.backgroundColor = this.checked
+          ? 'var(--ax-bg-success, rgba(16, 185, 129, 0.1))'
+          : 'var(--ax-bg-surface, #f3f4f6)';
+      });
+    </script>
+  </body>
+</html>

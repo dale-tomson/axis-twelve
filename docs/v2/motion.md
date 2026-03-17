@@ -464,10 +464,61 @@ The `axis-motion` module provides animation utilities, transition controls, and 
 }
 ```
 
+## 🎬 Animation Utilities (v2.3.0+)
+
+> **Note:** Starting in v2.3.0, comprehensive animation utilities are available as a separate module.
+
+The Animation Utilities provide 20+ preset animations, timing controls, and state management classes.
+
+### Installation
+
+```html
+<!-- Animation Utilities (v2.3.0+) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/modules/axis-motion.min.css"
+/>
+```
+
+### What's Included
+
+- **20+ Preset Animations**: fade, slide, scale, rotate, bounce, shake, etc.
+- **Timing Utilities**: 11 durations, 9 delays, 9 easing variants
+- **State Classes**: Enter/exit states for JavaScript integration
+- **Staggered Animations**: Sequential animation delays
+
+### Basic Usage
+
+```html
+<!-- Preset animations -->
+<div class="ax-fade-in">Fade in</div>
+<div class="ax-slide-up">Slide up</div>
+<div class="ax-scale-up">Scale up</div>
+
+<!-- With timing controls -->
+<div class="ax-fade-in ax-duration-500 ax-delay-100">Fade in with 500ms duration, 100ms delay</div>
+
+<!-- Staggered list -->
+<div>
+  <div class="ax-fade-in ax-stagger-1">Item 1</div>
+  <div class="ax-fade-in ax-stagger-2">Item 2</div>
+  <div class="ax-fade-in ax-stagger-3">Item 3</div>
+</div>
+```
+
+### See Also
+
+- **[Animation Utilities Documentation](animations.md)** - Full documentation
+- **[Animations Example](../examples/animations.html)** - Interactive demo
+- **[Motion Example](../examples/motion.html)** - Motion preferences demo
+
+---
+
 ## 📜 API Evolution
 
 | Version    | Change Type   | Description                                                                                  |
 | ---------- | ------------- | -------------------------------------------------------------------------------------------- |
+| **v2.3.0** | Added Feature | Animation utilities with 20+ presets, timing controls, and state management                  |
 | **v2.1.0** | Added Feature | Enhanced motion module with entry animations, scroll triggers, and performance optimizations |
 | **v2.0.2** | Internal      | Improved reduced motion handling and accessibility compliance                                |
 | **v2.0.1** | Internal      | Added motion preference utilities and transition timing controls                             |

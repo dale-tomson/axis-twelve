@@ -62,8 +62,9 @@ Explore the documentation by choosing a module from the sidebar or following the
 
 - **[Typography](typography.md)**: Font sizing, weights, alignment, and text utilities.
 - **[Utilities](utilities.md)**: Borders, shadows, backgrounds, sizing, and positioning.
-- **[Dark Mode](dark-mode.md)**: Comprehensive dark mode support with system preference detection.
+- **[Dark Mode](dark-mode.md)**: Comprehensive dark mode support with system preference detection and 25+ CSS custom properties.
 - **[Motion](motion.md)**: Animation utilities and motion preference management.
+- **[Animation Utilities](animations.md)**: 20+ preset animations, timing controls, and state management. _(New in v2.3.0)_
 - **[Print](print.md)**: Optimized styles for printing web pages to paper or PDF.
 
 ### Indicators & Feedback
@@ -75,6 +76,8 @@ Explore the documentation by choosing a module from the sidebar or following the
 ### Form Components
 
 - **[Forms](forms.md)**: Accessible and beautiful form controls, input groups, and validation states.
+- **[Toggle Switch](toggle-switch.md)**: iOS-style toggle switch for binary on/off states. _(New in v2.3.0)_
+- **[Star Rating](rating.md)**: SVG-based star rating component with interactive mode. _(New in v2.3.0)_
 - **[Range Slider](range-slider.md)**: Customizable range input slider.
 - **[File Upload](file-upload.md)**: Styled file upload components with preview support.
 
