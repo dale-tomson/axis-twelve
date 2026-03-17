@@ -317,3 +317,248 @@ function loadContent() {
     });
 }
 ```
+
+## ♿ Accessibility
+
+### Skeleton Accessibility
+
+- **ARIA Attributes**: Use `aria-busy="true"` on loading containers
+- **Screen Reader Announcements**: Announce loading state to screen readers
+- **Focus Management**: Ensure focus isn't trapped on skeleton elements
+- **Reduced Motion**: Respect `prefers-reduced-motion` for shimmer animations
+- **Contrast Ratios**: Skeleton colors maintain sufficient contrast
+
+### Implementation Guidelines
+
+- **Loading Announcements**: Inform users when content is loading
+- **Error States**: Provide fallback content if loading fails
+- **Timing Indicators**: Consider showing estimated load times
+- **Progressive Loading**: Load critical content first, show skeletons for secondary content
+
+### Screen Reader Considerations
+
+```html
+<!-- Announce loading state -->
+<div aria-busy="true" aria-live="polite">
+  <div class="ax-skeleton ax-skeleton--text">Loading content...</div>
+</div>
+
+<!-- Hide skeletons from screen readers -->
+<div class="ax-skeleton" aria-hidden="true"></div>
+
+<!-- Provide loading status -->
+<div role="status" aria-label="Content loading">
+  <div class="ax-skeleton-container">
+    <!-- skeleton content -->
+  </div>
+</div>
+```
+
+## ⚙️ Customization
+
+### CSS Custom Properties
+
+```css
+.ax-skeleton {
+  /* Animation */
+  --ax-skeleton-duration: 1.5s;
+  --ax-skeleton-timing: linear;
+  --ax-skeleton-shimmer: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  /* Colors */
+  --ax-skeleton-bg: var(--ax-gray-200);
+  --ax-skeleton-highlight: var(--ax-gray-100);
+  --ax-skeleton-color: transparent;
+
+  /* Sizes */
+  --ax-skeleton-height-sm: 0.5rem;
+  --ax-skeleton-height-md: 0.75rem;
+  --ax-skeleton-height-lg: 1rem;
+  --ax-skeleton-height-xl: 1.25rem;
+
+  /* Border radius */
+  --ax-skeleton-radius-sm: 0.125rem;
+  --ax-skeleton-radius-md: 0.25rem;
+  --ax-skeleton-radius-lg: 0.5rem;
+  --ax-skeleton-radius-full: 9999px;
+}
+
+/* Skeleton variants */
+.ax-skeleton--text {
+  --ax-skeleton-height: var(--ax-skeleton-height-md);
+  --ax-skeleton-radius: var(--ax-skeleton-radius-sm);
+}
+
+.ax-skeleton--circle {
+  --ax-skeleton-radius: var(--ax-skeleton-radius-full);
+}
+
+.ax-skeleton--rect {
+  --ax-skeleton-radius: var(--ax-skeleton-radius-md);
+}
+
+.ax-skeleton--rounded {
+  --ax-skeleton-radius: var(--ax-skeleton-radius-lg);
+}
+
+/* Size variants */
+.ax-skeleton--sm {
+  --ax-skeleton-height: var(--ax-skeleton-height-sm);
+}
+
+.ax-skeleton--md {
+  --ax-skeleton-height: var(--ax-skeleton-height-md);
+}
+
+.ax-skeleton--lg {
+  --ax-skeleton-height: var(--ax-skeleton-height-lg);
+}
+
+.ax-skeleton--xl {
+  --ax-skeleton-height: var(--ax-skeleton-height-xl);
+}
+
+/* Container */
+.ax-skeleton-container {
+  --ax-skeleton-gap: 0.5rem;
+  gap: var(--ax-skeleton-gap);
+}
+```
+
+### Custom Animation Styles
+
+```css
+/* Custom shimmer animation */
+@keyframes ax-skeleton-shimmer-custom {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Custom pulse animation */
+@keyframes ax-skeleton-pulse-custom {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Apply custom animations */
+.ax-skeleton.custom-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--ax-skeleton-bg) 25%,
+    var(--ax-skeleton-highlight) 50%,
+    var(--ax-skeleton-bg) 75%
+  );
+  background-size: 200px 100%;
+  animation: ax-skeleton-shimmer-custom var(--ax-skeleton-duration) infinite;
+}
+
+.ax-skeleton.custom-pulse {
+  animation: ax-skeleton-pulse-custom 2s ease-in-out infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .ax-skeleton {
+    animation: none !important;
+  }
+
+  .ax-skeleton.custom-pulse {
+    opacity: 0.8;
+  }
+}
+```
+
+### JavaScript Integration
+
+```javascript
+// Enhanced skeleton loading with error handling
+class SkeletonLoader {
+  constructor(containerId) {
+    this.container = document.getElementById(containerId);
+    this.skeletons = [];
+    this.isLoading = false;
+  }
+
+  showSkeleton(type, count = 1) {
+    this.isLoading = true;
+    this.container.setAttribute('aria-busy', 'true');
+
+    for (let i = 0; i < count; i++) {
+      const skeleton = document.createElement('div');
+      skeleton.className = `ax-skeleton ax-skeleton--${type}`;
+      skeleton.setAttribute('aria-hidden', 'true');
+
+      this.container.appendChild(skeleton);
+      this.skeletons.push(skeleton);
+    }
+  }
+
+  hideSkeleton() {
+    this.isLoading = false;
+    this.container.removeAttribute('aria-busy');
+
+    // Fade out skeletons
+    this.skeletons.forEach((skeleton) => {
+      skeleton.style.opacity = '0';
+      skeleton.style.transition = 'opacity 0.3s ease';
+
+      setTimeout(() => {
+        if (skeleton.parentNode) {
+          skeleton.parentNode.removeChild(skeleton);
+        }
+      }, 300);
+    });
+
+    this.skeletons = [];
+  }
+
+  showError() {
+    this.hideSkeleton();
+
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'ax-alert ax-alert--danger';
+    errorDiv.innerHTML = `
+      <div class="ax-alert__icon">⚠️</div>
+      <div class="ax-alert__content">
+        <div class="ax-alert__title">Failed to load content</div>
+        <div class="ax-alert__description">Please try again later.</div>
+      </div>
+    `;
+
+    this.container.appendChild(errorDiv);
+  }
+}
+
+// Usage example
+const loader = new SkeletonLoader('content-container');
+loader.showSkeleton('text', 3);
+
+// Simulate loading
+setTimeout(() => {
+  loader.hideSkeleton();
+  document.getElementById('content-container').innerHTML = '<p>Loaded content!</p>';
+}, 2000);
+```
+
+## 📜 API Evolution
+
+| Version    | Change Type   | Description                                                                     |
+| ---------- | ------------- | ------------------------------------------------------------------------------- |
+| **v2.1.0** | Added Feature | Enhanced skeleton loaders with accessibility support and JavaScript integration |
+| **v2.0.2** | Internal      | Improved color contrast and reduced motion support                              |
+| **v2.0.1** | Internal      | Added CSS custom properties for comprehensive theming                           |
+| **v2.0.0** | Major         | Initial skeleton components with basic shapes and shimmer animation             |

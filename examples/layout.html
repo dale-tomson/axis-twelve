@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout - Axis Twelve Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/axis-twelve.min.css" />
+    <style>
+      body {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .demo-section {
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--ax-border-color);
+        background-color: var(--ax-bg-surface);
+      }
+      .grid-demo-item {
+        padding: 1rem;
+        background-color: var(--ax-color-primary);
+        color: white;
+        border-radius: 0.25rem;
+        text-align: center;
+      }
+      .grid-demo-item:nth-child(even) {
+        background-color: var(--ax-color-secondary);
+      }
+      .flex-demo-item {
+        padding: 1rem;
+        background-color: var(--ax-color-success);
+        color: white;
+        border-radius: 0.25rem;
+        text-align: center;
+        min-width: 100px;
+      }
+      .flex-demo-item:nth-child(even) {
+        background-color: var(--ax-color-info);
+      }
+      .spacing-demo {
+        background-color: var(--ax-gray-100);
+        border: 1px solid var(--ax-border-color);
+        margin-bottom: 1rem;
+      }
+      .container-demo {
+        background-color: var(--ax-gray-50);
+        border: 1px solid var(--ax-border-color);
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+      .demo-highlight {
+        background-color: rgba(59, 130, 246, 0.1);
+        border-left: 4px solid var(--ax-color-primary);
+        padding: 0.5rem 1rem;
+        margin: 1rem 0;
+      }
+      code {
+        background-color: var(--ax-gray-100);
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.25rem;
+        font-family: monospace;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Layout Examples</h1>
+    <p>Demonstrating grid, flexbox, spacing, and container utilities.</p>
+
+    <!-- Grid System -->
+    <div class="demo-section">
+      <h2>Grid System</h2>
+      <p class="ax-text-muted">12-column responsive grid with mobile-first approach.</p>
+
+      <h3 class="ax-mt-4">Basic 12-Column Grid</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-grid"&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-4"&gt;4/12&lt;/div&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-8"&gt;8/12&lt;/div&gt;</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-grid ax-gap-4">
+        <div class="ax-col-4 grid-demo-item">4/12</div>
+        <div class="ax-col-8 grid-demo-item">8/12</div>
+      </div>
+
+      <h3 class="ax-mt-4">Equal Columns</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-grid ax-gap-4"&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-6"&gt;6/12&lt;/div&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-6"&gt;6/12&lt;/div&gt;</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-grid ax-gap-4">
+        <div class="ax-col-6 grid-demo-item">6/12</div>
+        <div class="ax-col-6 grid-demo-item">6/12</div>
+      </div>
+
+      <h3 class="ax-mt-4">Three Column Layout</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-grid ax-gap-4"&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-4"&gt;4/12&lt;/div&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-4"&gt;4/12&lt;/div&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-4"&gt;4/12&lt;/div&gt;</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-grid ax-gap-4">
+        <div class="ax-col-4 grid-demo-item">4/12</div>
+        <div class="ax-col-4 grid-demo-item">4/12</div>
+        <div class="ax-col-4 grid-demo-item">4/12</div>
+      </div>
+    </div>
+
+    <!-- Responsive Grid -->
+    <div class="demo-section">
+      <h2>Responsive Grid</h2>
+      <p class="ax-text-muted">Columns that adapt to different screen sizes.</p>
+
+      <h3 class="ax-mt-4">Stack on Mobile, Side-by-Side on Desktop</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-grid ax-gap-4"&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-12 ax-col-md-6"&gt;Full on mobile, half on desktop&lt;/div&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-12 ax-col-md-6"&gt;Full on mobile, half on desktop&lt;/div&gt;</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-grid ax-gap-4">
+        <div class="ax-col-12 ax-col-md-6 grid-demo-item">Full on mobile, half on desktop</div>
+        <div class="ax-col-12 ax-col-md-6 grid-demo-item">Full on mobile, half on desktop</div>
+      </div>
+
+      <h3 class="ax-mt-4">Multi-breakpoint Responsive</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-grid ax-gap-4"&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-12 ax-col-sm-6 ax-col-md-4 ax-col-lg-3"&gt;Responsive&lt;/div&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-12 ax-col-sm-6 ax-col-md-4 ax-col-lg-3"&gt;Responsive&lt;/div&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-12 ax-col-sm-6 ax-col-md-4 ax-col-lg-3"&gt;Responsive&lt;/div&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-12 ax-col-sm-6 ax-col-md-4 ax-col-lg-3"&gt;Responsive&lt;/div&gt;</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-grid ax-gap-4">
+        <div class="ax-col-12 ax-col-sm-6 ax-col-md-4 ax-col-lg-3 grid-demo-item">Responsive</div>
+        <div class="ax-col-12 ax-col-sm-6 ax-col-md-4 ax-col-lg-3 grid-demo-item">Responsive</div>
+        <div class="ax-col-12 ax-col-sm-6 ax-col-md-4 ax-col-lg-3 grid-demo-item">Responsive</div>
+        <div class="ax-col-12 ax-col-sm-6 ax-col-md-4 ax-col-lg-3 grid-demo-item">Responsive</div>
+      </div>
+
+      <h3 class="ax-mt-4">Offset Columns</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-grid ax-gap-4"&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-col-4 ax-offset-4"&gt;Centered (4 offset)</div&gt;</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-grid ax-gap-4">
+        <div class="ax-col-4 ax-offset-4 grid-demo-item">Centered (4 offset)</div>
+      </div>
+    </div>
+
+    <!-- Grid Gap Utilities -->
+    <div class="demo-section">
+      <h2>Grid Gap Utilities</h2>
+      <p class="ax-text-muted">Control spacing between grid items.</p>
+
+      <h3 class="ax-mt-4">Small Gap (8px)</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-grid ax-gap-2"&gt;</code>
+      </div>
+      <div class="ax-grid ax-gap-2">
+        <div class="ax-col-6 grid-demo-item">Column 1</div>
+        <div class="ax-col-6 grid-demo-item">Column 2</div>
+      </div>
+
+      <h3 class="ax-mt-4">Medium Gap (16px)</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-grid ax-gap-4"&gt;</code>
+      </div>
+      <div class="ax-grid ax-gap-4">
+        <div class="ax-col-6 grid-demo-item">Column 1</div>
+        <div class="ax-col-6 grid-demo-item">Column 2</div>
+      </div>
+
+      <h3 class="ax-mt-4">Large Gap (32px)</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-grid ax-gap-8"&gt;</code>
+      </div>
+      <div class="ax-grid ax-gap-8">
+        <div class="ax-col-6 grid-demo-item">Column 1</div>
+        <div class="ax-col-6 grid-demo-item">Column 2</div>
+      </div>
+
+      <h3 class="ax-mt-4">Responsive Gap</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-grid ax-gap-2 ax-md-gap-4 ax-lg-gap-8"&gt;</code>
+      </div>
+      <div class="ax-grid ax-gap-2 ax-md-gap-4 ax-lg-gap-8">
+        <div class="ax-col-6 grid-demo-item">Column 1</div>
+        <div class="ax-col-6 grid-demo-item">Column 2</div>
+      </div>
+    </div>
+
+    <!-- Flexbox Utilities -->
+    <div class="demo-section">
+      <h2>Flexbox Utilities</h2>
+      <p class="ax-text-muted">Flexible box layout for alignment and distribution.</p>
+
+      <h3 class="ax-mt-4">Horizontal Centering</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-flex ax-justify-center"&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div&gt;Centered&lt;/div&gt;</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-flex ax-justify-center ax-border ax-p-4">
+        <div class="flex-demo-item">Centered</div>
+      </div>
+
+      <h3 class="ax-mt-4">Vertical Centering</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-flex ax-items-center" style="height: 100px;"&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div&gt;Vertically Centered&lt;/div&gt;</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-flex ax-items-center ax-border ax-p-4" style="height: 100px;">
+        <div class="flex-demo-item">Vertically Centered</div>
+      </div>
+
+      <h3 class="ax-mt-4">Both Axis Centering</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-flex ax-justify-center ax-items-center" style="height: 150px;"&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div&gt;Perfectly Centered&lt;/div&gt;</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-flex ax-justify-center ax-items-center ax-border ax-p-4" style="height: 150px;">
+        <div class="flex-demo-item">Perfectly Centered</div>
+      </div>
+
+      <h3 class="ax-mt-4">Space Between</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-flex ax-justify-between"&gt;</code>
+      </div>
+      <div class="ax-flex ax-justify-between ax-border ax-p-4">
+        <div class="flex-demo-item">Item 1</div>
+        <div class="flex-demo-item">Item 2</div>
+        <div class="flex-demo-item">Item 3</div>
+      </div>
+
+      <h3 class="ax-mt-4">Flex Direction</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-flex ax-flex-col ax-md-flex-row ax-gap-4"&gt;</code>
+      </div>
+      <div class="ax-flex ax-flex-col ax-md-flex-row ax-gap-4 ax-border ax-p-4">
+        <div class="flex-demo-item">Column on mobile</div>
+        <div class="flex-demo-item">Row on desktop</div>
+      </div>
+
+      <h3 class="ax-mt-4">Flex Wrap</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-flex ax-flex-wrap ax-gap-2"&gt;</code>
+      </div>
+      <div class="ax-flex ax-flex-wrap ax-gap-2 ax-border ax-p-4">
+        <div class="flex-demo-item">Item 1</div>
+        <div class="flex-demo-item">Item 2</div>
+        <div class="flex-demo-item">Item 3</div>
+        <div class="flex-demo-item">Item 4</div>
+        <div class="flex-demo-item">Item 5</div>
+        <div class="flex-demo-item">Item 6</div>
+        <div class="flex-demo-item">Item 7</div>
+        <div class="flex-demo-item">Item 8</div>
+      </div>
+    </div>
+
+    <!-- Spacing Utilities -->
+    <div class="demo-section">
+      <h2>Spacing Utilities</h2>
+      <p class="ax-text-muted">Margin and padding utilities for consistent spacing.</p>
+
+      <h3 class="ax-mt-4">Margin Examples</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-m-4"&gt;Margin: 1rem&lt;/div&gt;</code><br>
+        <code>&lt;div class="ax-mx-auto ax-w-1/2"&gt;Auto horizontal margin&lt;/div&gt;</code><br>
+        <code>&lt;div class="ax-mt-8"&gt;Top margin: 2rem&lt;/div&gt;</code>
+      </div>
+      <div class="ax-m-4 spacing-demo">Margin: 1rem on all sides</div>
+      <div class="ax-mx-auto ax-w-1/2 spacing-demo">Auto horizontal margin (centered)</div>
+      <div class="ax-mt-8 spacing-demo">Top margin: 2rem</div>
+
+      <h3 class="ax-mt-4">Padding Examples</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-p-4"&gt;Padding: 1rem&lt;/div&gt;</code><br>
+        <code>&lt;div class="ax-px-6 ax-py-3"&gt;Horizontal & vertical padding&lt;/div&gt;</code><br>
+        <code>&lt;div class="ax-pt-8 ax-pb-4 ax-pl-2 ax-pr-2"&gt;Individual side padding&lt;/div&gt;</code>
+      </div>
+      <div class="ax-p-4 spacing-demo">Padding: 1rem on all sides</div>
+      <div class="ax-px-6 ax-py-3 spacing-demo">Horizontal: 1.5rem, Vertical: 0.75rem</div>
+      <div class="ax-pt-8 ax-pb-4 ax-pl-2 ax-pr-2 spacing-demo">Top: 2rem, Bottom: 1rem, Left/Right: 0.5rem</div>
+
+      <h3 class="ax-mt-4">Responsive Spacing</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-p-2 ax-md-p-4 ax-lg-p-8"&gt;Responsive padding&lt;/div&gt;</code>
+      </div>
+      <div class="ax-p-2 ax-md-p-4 ax-lg-p-8 spacing-demo">
+        Small on mobile, medium on tablet, large on desktop
+      </div>
+    </div>
+
+    <!-- Container Utilities -->
+    <div class="demo-section">
+      <h2>Container Utilities</h2>
+      <p class="ax-text-muted">Responsive containers with max-width constraints.</p>
+
+      <h3 class="ax-mt-4">Default Container</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-container"&gt;</code><br>
+        <code>&nbsp;&nbsp;Centered content with max-width</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-container container-demo">
+        <p>Centered content with responsive max-width constraints.</p>
+      </div>
+
+      <h3 class="ax-mt-4">Fluid Container</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-container ax-container-fluid"&gt;</code><br>
+        <code>&nbsp;&nbsp;Full width container</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div class="ax-container ax-container-fluid container-demo">
+        <p>Full width container (no max-width constraints).</p>
+      </div>
+
+      <h3 class="ax-mt-4">Size-Specific Containers</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-container ax-container-sm"&gt;Small&lt;/div&gt;</code><br>
+        <code>&lt;div class="ax-container ax-container-md"&gt;Medium&lt;/div&gt;</code><br>
+        <code>&lt;div class="ax-container ax-container-lg"&gt;Large&lt;/div&gt;</code><br>
+        <code>&lt;div class="ax-container ax-container-xl"&gt;Extra Large&lt;/div&gt;</code><br>
+        <code>&lt;div class="ax-container ax-container-xxl"&gt;Extra Extra Large&lt;/div&gt;</code>
+      </div>
+      <div class="ax-container ax-container-sm container-demo ax-mb-2">Small Container (max-width: 640px)</div>
+      <div class="ax-container ax-container-md container-demo ax-mb-2">Medium Container (max-width: 768px)</div>
+      <div class="ax-container ax-container-lg container-demo ax-mb-2">Large Container (max-width: 1024px)</div>
+      <div class="ax-container ax-container-xl container-demo ax-mb-2">Extra Large Container (max-width: 1280px)</div>
+      <div class="ax-container ax-container-xxl container-demo">Extra Extra Large Container (max-width: 1536px)</div>
+    </div>
+
+    <!-- Logical Properties (RTL Support) -->
+    <div class="demo-section">
+      <h2>Logical Properties & RTL Support</h2>
+      <p class="ax-text-muted">Direction-aware utilities for LTR and RTL layouts.</p>
+
+      <h3 class="ax-mt-4">Physical vs Logical Properties</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-ml-4"&gt;Physical left margin&lt;/div&gt;</code><br>
+        <code>&lt;div class="ax-ms-4"&gt;Logical start margin&lt;/div&gt;</code>
+      </div>
+      <div class="ax-ml-4 spacing-demo">Physical left margin (always left)</div>
+      <div class="ax-ms-4 spacing-demo">Logical start margin (left in LTR, right in RTL)</div>
+
+      <h3 class="ax-mt-4">Text Alignment</h3>
+      <div class="demo-highlight">
+        <code>&lt;div class="ax-text-left"&gt;Physical left align&lt;/div&gt;</code><br>
+        <code>&lt;div class="ax-text-start"&gt;Logical start align&lt;/div&gt;</code>
+      </div>
+      <div class="ax-text-left spacing-demo">Physical left alignment</div>
+      <div class="ax-text-start spacing-demo">Logical start alignment (adapts to direction)</div>
+
+      <h3 class="ax-mt-4">RTL Demonstration</h3>
+      <div class="demo-highlight">
+        <code>&lt;div dir="rtl"&gt;</code><br>
+        <code>&nbsp;&nbsp;&lt;div class="ax-ms-4"&gt;This margin is on the right in RTL&lt;/div&gt;</code><br>
+        <code>&lt;/div&gt;</code>
+      </div>
+      <div dir="rtl" class="ax-border ax-p-4">
+        <div class="ax-ms-4 spacing-demo">This margin appears on the right in RTL layout</div>
+        <div class="ax-text-start spacing-demo ax-mt-4">This text is aligned to the right (start in RTL)</div>
+      </div>
+    </div>
+
+    <!-- Real-world Layout Example -->
+    <div class="demo-section">
+      <h2>Real-world Layout Example</h2>
+      <p class="ax-text-muted">Combining utilities to create a complete layout.</p>
+
+      <div class="ax-container ax-container-lg">
+        <!-- Header -->
+        <header class="ax-flex ax-justify-between ax-items-center ax-py-4 ax-border-b">
+          <div class="ax-text-xl ax-font-bold">Site Logo</div>
+          <nav class="ax-flex ax-gap-4">
+            <a href="#" class="ax-text-muted hover:ax-text-primary">Home</a>
+            <a href="#" class="ax-text-muted hover:ax-text-primary">About</a>
+            <a href="#" class="ax-text-muted hover:ax-text-primary">Contact</a>
+          </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="ax-grid ax-md-grid-cols-3 ax-gap-8 ax-my-8">
+          <!-- Sidebar -->
+          <aside class="ax-col-12 ax-md-col-1">
+            <div class="ax-sticky ax-top-8">
+              <div class="ax-card">
+                <div class="ax-card__body">
+                  <h3 class="ax-font-bold ax-mb-4">Navigation</h3>
+                  <ul class="ax-space-y-2">
+                    <li><a href="#" class="ax-block ax-p-2 hover:ax-bg-gray-100 ax-rounded">Section 1</a></li>
+                    <li><a href="#" class="ax-block ax-p-2 hover:ax-bg-gray-100 ax-rounded">Section 2</a></li>
+                    <li><a href="#" class="ax-block ax-p-2 hover:ax-bg-gray-100 ax-rounded">Section 3</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Content Area -->
+          <div class="ax-col-12 ax-md-col-2">
+            <div class="ax-space-y-6">
+              <div class="ax-card">
+                <div class="ax-card__header">
+                  <div class="ax-card__title">Welcome to Our Site</div>
+                </div>
+                <div class="ax-card__body">
+                  <p>This layout demonstrates responsive grid, flexbox, and spacing utilities working together.</p>
+                  <div class="ax-flex ax-flex-wrap ax-gap-4 ax-mt-4">
+                    <button class="ax-btn ax-btn--primary">Primary Action</button>
+                    <button class="ax-btn ax-btn--outline-secondary">Secondary Action</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ax-grid ax-gap-4">
+                <div class="ax-col-12 ax-sm-col-6 ax-lg-col-4">
+                  <div class="ax-card ax-card--outline">
+                    <div class="ax-card__body">
+                      <h4 class="ax-font-bold">Feature 1</h4>
+                      <p class="ax-text-sm ax-text-muted">Responsive grid column</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="ax-col-12 ax-sm-col-6 ax-lg-col-4">
+                  <div class="ax-card ax-card--outline">
+                    <div class="ax-card__body">
+                      <h4 class="ax-font-bold">Feature 2</h4>
+                      <p class="ax-text-sm ax-text-muted">Responsive grid column</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="ax-col-12 ax-sm-col-6 ax-lg-col-4">
+                  <div class="ax-card ax-card--outline">
+                    <div class="ax-card__body">
+                      <h4 class="ax-font-bold">Feature 3</h4>
+                      <p class="ax-text-sm ax-text-muted">Responsive grid column</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="ax-py-6 ax-border-t ax-text-center ax-text-muted">
+          <p>&copy; 2023 Axis Twelve Example. All utilities demonstrated above.</p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

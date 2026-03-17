@@ -279,3 +279,141 @@ function showToastPrepend(type, title, message) {
 5. **Priority**: Use appropriate variant for message type
 6. **Dismissal**: Always provide manual dismiss option
 7. **Timing**: Show progress indicator for auto-dismiss
+
+## ♿ Accessibility
+
+### Toast Accessibility
+
+- **ARIA Roles**: Use `role="alert"` or `role="status"` for live announcements
+- **Screen Readers**: Icons have `aria-hidden="true"`, text is announced
+- **Focus Management**: Dismiss buttons are focusable and operable via keyboard
+- **Live Regions**: Use appropriate `aria-live` attributes (`assertive` for errors, `polite` for info)
+- **Color Contrast**: All toast variants meet WCAG AA contrast requirements
+
+### Implementation Guidelines
+
+- **Keyboard Navigation**: Ensure toast notifications don't trap keyboard focus
+- **Screen Reader Announcements**: Announce toast appearance and content
+- **Timing Controls**: Allow users to pause or extend toast duration
+- **Reduced Motion**: Respect `prefers-reduced-motion` for animations
+
+## ⚙️ Customization
+
+### CSS Custom Properties
+
+```css
+.ax-toast {
+  /* Animation */
+  --ax-toast-duration: 5s;
+  --ax-toast-transition: 0.3s ease-out;
+
+  /* Colors */
+  --ax-toast-bg: #fff;
+  --ax-toast-color: var(--ax-color-dark);
+  --ax-toast-border-color: var(--ax-border-color);
+
+  /* Success variant */
+  --ax-toast-success-bg: #d1fae5;
+  --ax-toast-success-color: #065f46;
+  --ax-toast-success-border-color: #10b981;
+
+  /* Error variant */
+  --ax-toast-error-bg: #fee2e2;
+  --ax-toast-error-color: #7f1d1d;
+  --ax-toast-error-border-color: #ef4444;
+
+  /* Warning variant */
+  --ax-toast-warning-bg: #fef3c7;
+  --ax-toast-warning-color: #92400e;
+  --ax-toast-warning-border-color: #f59e0b;
+
+  /* Info variant */
+  --ax-toast-info-bg: #dbeafe;
+  --ax-toast-info-color: #1e40af;
+  --ax-toast-info-border-color: #3b82f6;
+
+  /* Progress bar */
+  --ax-toast-progress-height: 0.25rem;
+  --ax-toast-progress-bg: rgba(0, 0, 0, 0.1);
+  --ax-toast-progress-color: currentColor;
+}
+
+/* Toast container positioning */
+.ax-toasts--top-right {
+  --ax-toasts-top: 1rem;
+  --ax-toasts-right: 1rem;
+  --ax-toasts-z-index: 1000;
+}
+
+.ax-toasts--top-left {
+  --ax-toasts-top: 1rem;
+  --ax-toasts-left: 1rem;
+  --ax-toasts-z-index: 1000;
+}
+
+.ax-toasts--bottom-right {
+  --ax-toasts-bottom: 1rem;
+  --ax-toasts-right: 1rem;
+  --ax-toasts-z-index: 1000;
+}
+```
+
+### Animation Customization
+
+```css
+/* Custom toast animations */
+@keyframes ax-toast-custom-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes ax-toast-custom-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%) scale(0.9);
+  }
+}
+
+/* Custom progress animation */
+@keyframes ax-toast-custom-progress {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+/* Apply custom animations */
+.ax-toast.custom-toast {
+  animation: ax-toast-custom-in var(--ax-toast-transition);
+}
+
+.ax-toast.custom-toast.ax-toast--exiting {
+  animation: ax-toast-custom-out var(--ax-toast-transition);
+}
+
+.ax-toast__progress-bar.custom-progress {
+  animation: ax-toast-custom-progress linear forwards;
+  transform-origin: left center;
+}
+```
+
+## 📜 API Evolution
+
+| Version    | Change Type   | Description                                                            |
+| ---------- | ------------- | ---------------------------------------------------------------------- |
+| **v2.1.0** | Added Feature | Enhanced toast notifications with progress bars and position utilities |
+| **v2.0.2** | Internal      | Improved accessibility with ARIA roles and screen reader support       |
+| **v2.0.1** | Internal      | Added CSS custom properties for comprehensive theming                  |
+| **v2.0.0** | Major         | Initial toast component with basic variants and JavaScript API         |

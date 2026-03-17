@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode - Axis Twelve Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/axis-twelve/dist/axis-twelve.min.css"
+    />
+    <style>
+      body {
+        padding: 2rem;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
+      }
+      .demo-section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--ax-border-color);
+        background-color: var(--ax-bg-surface);
+        transition: all 0.3s ease;
+      }
+      .demo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .controls {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .theme-indicator {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: 2px solid currentColor;
+      }
+      .theme-indicator.light {
+        background-color: #fbbf24;
+      }
+      .theme-indicator.dark {
+        background-color: #1f2937;
+      }
+      .theme-indicator.auto {
+        background: linear-gradient(45deg, #fbbf24 50%, #1f2937 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <div class="theme-indicator" id="theme-indicator"></div>
+      <button class="ax-btn ax-btn--primary" id="theme-toggle">Toggle Dark Mode</button>
+      <select class="ax-select" id="theme-select">
+        <option value="auto">Auto (System)</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+
+    <h1>Dark Mode Examples</h1>
+    <p>Demonstrating dark mode support across Axis Twelve components.</p>
+
+    <!-- Cards Section -->
+    <div class="demo-section">
+      <h2>Cards in Dark Mode</h2>
+      <div class="demo-grid">
+        <div class="ax-card ax-card--elevated">
+          <div class="ax-card__header">
+            <div class="ax-card__title">Standard Card</div>
+            <div class="ax-card__subtitle">Adapts to theme automatically</div>
+          </div>
+          <div class="ax-card__body">
+            <p>This card automatically switches colors based on the current theme.</p>
+            <button class="ax-btn ax-btn--primary">Action Button</button>
+          </div>
+        </div>
+
+        <div class="ax-card ax-card--outline">
+          <div class="ax-card__header">
+            <div class="ax-card__title">Outline Card</div>
+          </div>
+          <div class="ax-card__body">
+            <p>Outline cards maintain proper border contrast in both themes.</p>
+            <div class="ax-flex ax-gap-2">
+              <button class="ax-btn ax-btn--primary">Primary</button>
+              <button class="ax-btn ax-btn--outline-secondary">Outline</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ax-dark">
+          <div class="ax-card ax-card--elevated">
+            <div class="ax-card__header">
+              <div class="ax-card__title">Forced Dark Card</div>
+            </div>
+            <div class="ax-card__body">
+              <p>This card is always dark, even in light mode.</p>
+              <button class="ax-btn ax-btn--primary">Dark Action</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Forms Section -->
+    <div class="demo-section">
+      <h2>Forms in Dark Mode</h2>
+      <div class="demo-grid">
+        <div>
+          <div class="ax-form-group">
+            <label class="ax-label" for="email-input">Email Address</label>
+            <input type="email" class="ax-input" id="email-input" placeholder="name@example.com" />
+            <div class="ax-form-text">We'll never share your email.</div>
+          </div>
+
+          <div class="ax-form-group">
+            <label class="ax-label" for="password-input">Password</label>
+            <input type="password" class="ax-input" id="password-input" placeholder="••••••••" />
+          </div>
+
+          <div class="ax-form-group">
+            <label class="ax-checkbox">
+              <input type="checkbox" id="remember-me" />
+              <span class="ax-checkbox__label">Remember me</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <div class="ax-form-group">
+            <label class="ax-label" for="select-input">Country</label>
+            <select class="ax-select" id="select-input">
+              <option>Select a country</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>United Kingdom</option>
+            </select>
+          </div>
+
+          <div class="ax-form-group">
+            <label class="ax-label" for="textarea-input">Message</label>
+            <textarea
+              class="ax-textarea"
+              id="textarea-input"
+              rows="3"
+              placeholder="Your message..."
+            ></textarea>
+          </div>
+
+          <div class="ax-form-group">
+            <div class="ax-radio-group">
+              <label class="ax-radio">
+                <input type="radio" name="option" checked />
+                <span class="ax-radio__label">Option A</span>
+              </label>
+              <label class="ax-radio">
+                <input type="radio" name="option" />
+                <span class="ax-radio__label">Option B</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="demo-section">
+      <h2>Buttons in Dark Mode</h2>
+      <div class="ax-flex ax-flex-wrap ax-gap-2 ax-mb-4">
+        <button class="ax-btn ax-btn--primary">Primary</button>
+        <button class="ax-btn ax-btn--secondary">Secondary</button>
+        <button class="ax-btn ax-btn--success">Success</button>
+        <button class="ax-btn ax-btn--danger">Danger</button>
+        <button class="ax-btn ax-btn--warning">Warning</button>
+        <button class="ax-btn ax-btn--info">Info</button>
+      </div>
+
+      <div class="ax-flex ax-flex-wrap ax-gap-2 ax-mb-4">
+        <button class="ax-btn ax-btn--outline-primary">Outline Primary</button>
+        <button class="ax-btn ax-btn--outline-secondary">Outline Secondary</button>
+        <button class="ax-btn ax-btn--outline-success">Outline Success</button>
+        <button class="ax-btn ax-btn--outline-danger">Outline Danger</button>
+      </div>
+
+      <div class="ax-flex ax-flex-wrap ax-gap-2">
+        <button class="ax-btn ax-btn--ghost">Ghost Button</button>
+        <button class="ax-btn ax-btn--primary ax-btn--sm">Small</button>
+        <button class="ax-btn ax-btn--primary">Default</button>
+        <button class="ax-btn ax-btn--primary ax-btn--lg">Large</button>
+        <button class="ax-btn ax-btn--primary ax-btn--block">Block Button</button>
+      </div>
+    </div>
+
+    <!-- Alerts & Indicators Section -->
+    <div class="demo-section">
+      <h2>Alerts & Indicators</h2>
+      <div class="demo-grid">
+        <div class="ax-alert ax-alert--success">
+          <div class="ax-alert__icon">✓</div>
+          <div class="ax-alert__content">
+            <div class="ax-alert__title">Success!</div>
+            <div class="ax-alert__description">Your changes have been saved.</div>
+          </div>
+        </div>
+
+        <div class="ax-alert ax-alert--danger">
+          <div class="ax-alert__icon">⚠️</div>
+          <div class="ax-alert__content">
+            <div class="ax-alert__title">Error</div>
+            <div class="ax-alert__description">Something went wrong.</div>
+          </div>
+        </div>
+
+        <div class="ax-alert ax-alert--warning">
+          <div class="ax-alert__icon">⚠️</div>
+          <div class="ax-alert__content">
+            <div class="ax-alert__title">Warning</div>
+            <div class="ax-alert__description">Your session expires soon.</div>
+          </div>
+        </div>
+
+        <div class="ax-alert ax-alert--info">
+          <div class="ax-alert__icon">ℹ️</div>
+          <div class="ax-alert__content">
+            <div class="ax-alert__title">Information</div>
+            <div class="ax-alert__description">New features available.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ax-flex ax-flex-wrap ax-gap-2 ax-mt-4">
+        <span class="ax-badge ax-badge--primary">Primary</span>
+        <span class="ax-badge ax-badge--secondary">Secondary</span>
+        <span class="ax-badge ax-badge--success">Success</span>
+        <span class="ax-badge ax-badge--danger">Danger</span>
+        <span class="ax-badge ax-badge--warning">Warning</span>
+        <span class="ax-badge ax-badge--info">Info</span>
+        <span class="ax-badge ax-badge--outline ax-badge--primary">Outline</span>
+        <span class="ax-badge ax-badge--pill ax-badge--primary">Pill</span>
+      </div>
+    </div>
+
+    <!-- Navigation Section -->
+    <div class="demo-section">
+      <h2>Navigation</h2>
+      <nav class="ax-navbar">
+        <div class="ax-navbar__brand">
+          <a href="/" class="ax-navbar__logo">AxisTwelve</a>
+        </div>
+        <ul class="ax-navbar__nav">
+          <li class="ax-navbar__item">
+            <a href="#" class="ax-navbar__link">Home</a>
+          </li>
+          <li class="ax-navbar__item">
+            <a href="#" class="ax-navbar__link">Docs</a>
+          </li>
+          <li class="ax-navbar__item">
+            <a href="#" class="ax-navbar__link">Examples</a>
+          </li>
+          <li class="ax-navbar__item">
+            <a href="#" class="ax-navbar__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="ax-tabs ax-mt-4">
+        <div class="ax-tabs__header">
+          <button class="ax-tabs__tab ax-tabs__tab--active">Profile</button>
+          <button class="ax-tabs__tab">Settings</button>
+          <button class="ax-tabs__tab">Notifications</button>
+          <button class="ax-tabs__tab">Security</button>
+        </div>
+        <div class="ax-tabs__content">
+          <div class="ax-tabs__panel">
+            <p>Profile content in current theme.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tables Section -->
+    <div class="demo-section">
+      <h2>Tables</h2>
+      <table class="ax-table ax-table--striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>Developer</td>
+            <td><span class="ax-badge ax-badge--success">Active</span></td>
+            <td>
+              <button class="ax-btn ax-btn--sm ax-btn--outline-primary">Edit</button>
+              <button class="ax-btn ax-btn--sm ax-btn--outline-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Designer</td>
+            <td><span class="ax-badge ax-badge--warning">Pending</span></td>
+            <td>
+              <button class="ax-btn ax-btn--sm ax-btn--outline-primary">Edit</button>
+              <button class="ax-btn ax-btn--sm ax-btn--outline-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Bob Johnson</td>
+            <td>Manager</td>
+            <td><span class="ax-badge ax-badge--danger">Inactive</span></td>
+            <td>
+              <button class="ax-btn ax-btn--sm ax-btn--outline-primary">Edit</button>
+              <button class="ax-btn ax-btn--sm ax-btn--outline-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- High Contrast Mode -->
+    <div class="demo-section ax-dark ax-dark--high-contrast">
+      <h2>High Contrast Dark Mode</h2>
+      <p>This section demonstrates high contrast dark mode for improved accessibility.</p>
+      <div class="ax-flex ax-flex-wrap ax-gap-2">
+        <button class="ax-btn ax-btn--primary">High Contrast Button</button>
+        <button class="ax-btn ax-btn--outline-secondary">Outline</button>
+      </div>
+      <div class="ax-alert ax-alert--warning ax-mt-4">
+        <div class="ax-alert__content">
+          High contrast mode provides better readability for users with visual impairments.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeSelect = document.getElementById('theme-select');
+      const themeIndicator = document.getElementById('theme-indicator');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+      // Load saved theme or use system preference
+      let currentTheme = localStorage.getItem('theme') || 'auto';
+      themeSelect.value = currentTheme;
+
+      function applyTheme(theme) {
+        // Remove all theme classes
+        document.body.classList.remove('ax-dark');
+        document.body.classList.remove('ax-dark-auto');
+
+        // Apply selected theme
+        if (theme === 'dark') {
+          document.body.classList.add('ax-dark');
+          themeIndicator.className = 'theme-indicator dark';
+        } else if (theme === 'light') {
+          themeIndicator.className = 'theme-indicator light';
+        } else {
+          // auto
+          if (prefersDark.matches) {
+            document.body.classList.add('ax-dark');
+            themeIndicator.className = 'theme-indicator dark';
+          } else {
+            themeIndicator.className = 'theme-indicator light';
+          }
+          document.body.classList.add('ax-dark-auto');
+        }
+
+        // Save preference
+        localStorage.setItem('theme', theme);
+        currentTheme = theme;
+      }
+
+      // Initialize theme
+      applyTheme(currentTheme);
+
+      // Toggle button
+      themeToggle.addEventListener('click', () => {
+        if (currentTheme === 'auto') {
+          applyTheme(prefersDark.matches ? 'light' : 'dark');
+        } else if (currentTheme === 'dark') {
+          applyTheme('light');
+        } else {
+          applyTheme('dark');
+        }
+
+        // Update select to match
+        if (currentTheme === 'auto') {
+          themeSelect.value = 'auto';
+        } else {
+          themeSelect.value = currentTheme;
+        }
+      });
+
+      // Select change
+      themeSelect.addEventListener('change', (e) => {
+        applyTheme(e.target.value);
+      });
+
+      // System preference change
+      prefersDark.addEventListener('change', (e) => {
+        if (currentTheme === 'auto') {
+          applyTheme('auto');
+        }
+      });
+    </script>
+  </body>
+</html>
