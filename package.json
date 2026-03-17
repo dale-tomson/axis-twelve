@@ -1,6 +1,6 @@
 {
   "name": "axis-twelve",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Build faster, center easier. Modular CSS framework with grid, flexbox, utilities, typography, behavior components, and comprehensive UI toolkit.",
   "type": "module",
   "main": "dist/axis-twelve.min.css",
